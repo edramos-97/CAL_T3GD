@@ -3,6 +3,7 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <cmath>
 
 void exercicio1();
 void exercicio2();
@@ -230,10 +231,23 @@ void exercicio3()
 	gv->rearrange();
 }
 
+//calculate haversine distance for linear distance // coordinates in radians
+double haversine_km(double lat1, double long1, double lat2, double long2)
+{
+    double dlong = (long2 - long1);
+    double dlat = (lat2 - lat1);
+    double a = pow(sin(dlat/2.0), 2) + cos(lat1) * cos(lat2) * pow(sin(dlong/2.0), 2);
+    double c = 2 * atan2(sqrt(a), sqrt(1-a));
+    double d = 6367 * c;
+
+    return d;
+}
+
 int main() {
 	//exercicio1();
-	exercicio2();
+	//exercicio2();
 	//exercicio3();
 	getchar();
+	cout << "END" << endl;
 	return 0;
 }
