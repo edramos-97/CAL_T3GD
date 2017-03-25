@@ -4,30 +4,35 @@
 #include <iostream>
 #include <sstream>
 #include <cmath>
-
-#include "C:/Users/Xavier Fontes/Downloads/boost_1_55_0/boost_1_55_0/boost/archive/binary_oarchive.hpp"
-#include "C:/Users/Xavier Fontes/Downloads/boost_1_55_0/boost_1_55_0/boost/archive/binary_iarchive.hpp"
+#include "Graph.h"
 
 void exercicio1();
 void exercicio2();
 void exercicio3();
 
-class CARRO {
+class NoInfo {
 public:
-	int i;
-	int j;
-	double z;
-	CARRO() {
-		i = 0;
-		j = 10;
-		z = 100.5;
+	long double longitude;
+	long double latitude;
+	int idNo;
+	NoInfo(int id, double longe, double lat) :
+			idNo(id), longitude(longe), latitude(lat) {
+	}
+	;
+
+	friend ostream & operator<<(ostream & os, const NoInfo obj) {
+		os << "idNo: " << obj.idNo << " long: " << obj.longitude << " lat: "
+				<< obj.latitude << endl;
+		return os;
+	}
+	;
+
+	friend bool operator==(const  NoInfo& left, const  NoInfo& right){
+		return ((left.idNo == right.idNo)&&(left.longitude==right.longitude)&&(left.latitude==right.latitude));
 	}
 };
 
 void exercicioTeste() {
-	CARRO novoCarro;
-	novoCarro.i = 20;
-
 
 }
 
@@ -252,12 +257,58 @@ double haversine_km(double lat1, double long1, double lat2, double long2) {
 	return d;
 }
 
+void abrirFicheiros(Graph<NoInfo> & grafo) {
+	ifstream inFile;
+	//Ler o ficheiro nos.txt
+	inFile.open("A2.txt");
+
+	if (!inFile) {
+		cerr << "Unable to open file datafile.txt";
+		exit(1);   // call system to stop
+	}
+
+	std::string line;
+
+	int idNo = 0;
+	long double X = 0;
+	long double Y = 0;
+
+	while (std::getline(inFile, line)) {
+		std::stringstream linestream(line);
+		std::string data;
+
+		linestream >> idNo;
+
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> X;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> Y;    //X and Y are in degrees
+
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> X;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> Y;    //X and Y are in radians
+		//cout << "idNo: " << idNo << " long: " << X << " lat: " << Y << endl;
+		NoInfo temp(idNo, X, Y);
+		grafo.addVertex(temp);
+
+	}
+
+	inFile.close();
+}
+
 int main() {
 	//exercicio1();
 	//exercicio2();
 	//exercicio3();
-	exercicioTeste();
-	getchar();
+	//exercicioTeste();
+	Graph<NoInfo> data;
+	abrirFicheiros(data);
+	vector<Vertex<NoInfo> *> vert = data.getVertexSet();
+	for(unsigned int i = 0; i < vert.size(); i++)
+		cout << vert[i]->getInfo();
+	//getchar();
+	cout << vert.size() << endl;
 	cout << "END" << endl;
 	return 0;
 }
