@@ -8,7 +8,8 @@
 #include <string>
 #include <map>
 #include <cstring>
-
+#include <unordered_set>
+#include <utility>
 
 void exercicio1();
 void exercicio2();
@@ -335,21 +336,29 @@ void abrirFicheiros(Graph<NoInfo> & grafo, GraphViewer * gv) {
 		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
 		linestream >> idNo2;    //X and Y are in degrees
 
-		NoInfo origem(idNo1,0,0);  //so para efeitos de pesquisa
+		NoInfo origem(idNo1, 0, 0);  //so para efeitos de pesquisa
 		Vertex<NoInfo>* source = grafo.getVertex(origem);
-		NoInfo destino(idNo2,0,0);
+		NoInfo destino(idNo2, 0, 0);
 		Vertex<NoInfo>* destiny = grafo.getVertex(destino);
 
 		//pre processamento do grafico pelo parser ja garante informacao sem erros //i think
 		//if(source != NULL && destiny != NULL){
 
-			if(grafo.removeEdge(origem,destino)) //conseguiu remover
-			{
-				grafo.addEdge(origem, destino, haversine_km(source->getInfo().latitude,source->getInfo().longitude, destiny->getInfo().latitude, destiny->getInfo().longitude));
-			}
-			grafo.addEdge(origem, destino, haversine_km(source->getInfo().latitude,source->getInfo().longitude, destiny->getInfo().latitude, destiny->getInfo().longitude));
-			gv->addEdge(i,idNo1,idNo2, EdgeType::DIRECTED);
-			i++;
+		if (grafo.removeEdge(origem, destino)) //conseguiu remover
+				{
+			grafo.addEdge(origem, destino,
+					haversine_km(source->getInfo().latitude,
+							source->getInfo().longitude,
+							destiny->getInfo().latitude,
+							destiny->getInfo().longitude));
+		}
+		grafo.addEdge(origem, destino,
+				haversine_km(source->getInfo().latitude,
+						source->getInfo().longitude,
+						destiny->getInfo().latitude,
+						destiny->getInfo().longitude));
+		gv->addEdge(i, idNo1, idNo2, EdgeType::DIRECTED);
+		i++;
 
 		//}
 
@@ -358,7 +367,73 @@ void abrirFicheiros(Graph<NoInfo> & grafo, GraphViewer * gv) {
 	inFile.close();
 }
 
+void abrirFicheirosImproved(Graph<NoInfo>& grafo, GraphViewer*& gv) {
+	//vector<NoInfo> nos_todos;
+	map<NoInfo,bool> nos_todos;
+	ifstream inFile;
+	//Ler o ficheiro A2.txt
+	inFile.open("A2.txt");
 
+	if (!inFile) {
+		cerr << "Unable to open file datafile.txt";
+		exit(1);   // call system to stop
+	}
+
+	std::string line;
+
+	int idNo = 0;
+	long double X = 0;
+	long double Y = 0;
+
+	while (std::getline(inFile, line)) {
+		std::stringstream linestream(line);
+		std::string data;
+
+		linestream >> idNo;
+
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> X;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> Y;    //X and Y are in degrees
+
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> X;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> Y;    //X and Y are in radians
+		//cout << "idNo: " << idNo << " long: " << X << " lat: " << Y << endl;
+		NoInfo temp(idNo, X, Y);
+		pair<NoInfo,bool> par(temp,false);
+		nos_todos.insert(par);
+	}
+
+	inFile.close();
+	// insere todos os nos a falso, no final so estarao a true aqueles que sao cruzamentos
+
+	class Aresta{
+		int idAresta;
+		double distancia;
+		NoInfo origem;
+		NoInfo destino;
+		string rua;
+		bool dois_sentidos;
+		bool operator==(const Aresta &other) const
+		  { return idAresta == other.idAresta; }
+		int operator()(const Aresta &are){
+			return idAresta*37+54;
+		}
+	};
+
+	unordered_set<Aresta> arestas;
+
+
+	//ler arestas
+
+	//ler ligacoes arestas entre nos para so ficar com nos cruzamentos
+
+	//escrever para graph e graphviewer
+
+
+}
 
 int main() {
 	//exercicio1();
@@ -369,7 +444,6 @@ int main() {
 	//CRIAR GRAFO INTERNO
 	Graph<NoInfo> data;
 
-
 	//CRIAR GRAPHVIEWER
 	GraphViewer *gv = new GraphViewer(600, 600, true);
 	gv->setBackground("background.jpg");
@@ -378,7 +452,6 @@ int main() {
 	gv->defineVertexColor("blue");
 	gv->defineEdgeColor("black");
 	abrirFicheiros(data, gv);
-
 
 	//testing serielization
 
