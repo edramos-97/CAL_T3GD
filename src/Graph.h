@@ -10,6 +10,7 @@
 #include <limits>
 #include <cmath>
 #include <limits.h>
+#include <string>
 
 using namespace std;
 
@@ -21,6 +22,7 @@ const int BEING_VISITED = 1;
 const int DONE_VISITED = 2;
 const unsigned int INT_INFINITY = 10000000;
 #define NULL 0
+#define NULL_STRING "NULL"
 
 /*
  * ================================================================================================
@@ -114,6 +116,7 @@ int Vertex<T>::getIndegree() const {
 template<class T>
 class Edge {
 	Vertex<T> * dest;
+	string name;
 	double weight;
 public:
 	Edge(Vertex<T> *d, double w);
@@ -123,7 +126,7 @@ public:
 
 template<class T>
 Edge<T>::Edge(Vertex<T> *d, double w) :
-		dest(d), weight(w) {
+		dest(d), weight(w), name("NULL") {
 }
 
 /* ================================================================================================

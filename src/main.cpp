@@ -5,6 +5,8 @@
 #include <sstream>
 #include <cmath>
 #include "Graph.h"
+#include <string>
+#include <map>
 
 void exercicio1();
 void exercicio2();
@@ -27,8 +29,8 @@ public:
 	}
 	;
 
-	friend bool operator==(const  NoInfo& left, const  NoInfo& right){
-		return ((left.idNo == right.idNo)&&(left.longitude==right.longitude)&&(left.latitude==right.latitude));
+	friend bool operator==(const NoInfo& left, const NoInfo& right) {
+		return ((left.idNo == right.idNo));
 	}
 };
 
@@ -257,9 +259,10 @@ double haversine_km(double lat1, double long1, double lat2, double long2) {
 	return d;
 }
 
-void abrirFicheiros(Graph<NoInfo> & grafo) {
+void abrirFicheiros(Graph<NoInfo> & grafo, GraphViewer * gv) {
+
 	ifstream inFile;
-	//Ler o ficheiro nos.txt
+	//Ler o ficheiro A2.txt
 	inFile.open("A2.txt");
 
 	if (!inFile) {
@@ -290,10 +293,55 @@ void abrirFicheiros(Graph<NoInfo> & grafo) {
 		linestream >> Y;    //X and Y are in radians
 		//cout << "idNo: " << idNo << " long: " << X << " lat: " << Y << endl;
 		NoInfo temp(idNo, X, Y);
+		gv->addNode(idNo);
 		grafo.addVertex(temp);
 
 	}
 
+	inFile.close();
+
+	//abrir C2.txt sao as arestas
+	inFile.open("C2.txt");
+
+	if (!inFile) {
+		cerr << "Unable to open file datafile.txt";
+		exit(1);   // call system to stop
+	}
+
+	int idAresta;
+	int idNo1;
+	int idNo2;
+
+	int i = 0;
+	while (std::getline(inFile, line)) {
+		std::stringstream linestream(line);
+		std::string data;
+
+		linestream >> idAresta;
+
+
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> idNo1;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> idNo2;    //X and Y are in degrees
+
+		NoInfo origem(idNo1,0,0);  //so para efeitos de pesquisa
+		Vertex<NoInfo>* source = grafo.getVertex(origem);
+		NoInfo destino(idNo2,0,0);
+		Vertex<NoInfo>* destiny = grafo.getVertex(destino);
+		if(source != NULL && destiny != NULL){
+
+			if(grafo.removeEdge(origem,destino)) //conseguiu remover
+			{
+				grafo.addEdge(origem, destino, haversine_km(source->getInfo().latitude,source->getInfo().longitude, destiny->getInfo().latitude, destiny->getInfo().longitude));
+			}
+			grafo.addEdge(origem, destino, haversine_km(source->getInfo().latitude,source->getInfo().longitude, destiny->getInfo().latitude, destiny->getInfo().longitude));
+			gv->addEdge(i,idNo1,idNo2, EdgeType::DIRECTED);
+			i++;
+
+		}
+	}
+	//gv->rearrange();
 	inFile.close();
 }
 
@@ -302,13 +350,24 @@ int main() {
 	//exercicio2();
 	//exercicio3();
 	//exercicioTeste();
+
+	//CRIAR GRAFO INTERNO
 	Graph<NoInfo> data;
-	abrirFicheiros(data);
-	vector<Vertex<NoInfo> *> vert = data.getVertexSet();
-	for(unsigned int i = 0; i < vert.size(); i++)
-		cout << vert[i]->getInfo();
-	//getchar();
-	cout << vert.size() << endl;
+
+
+	//CRIAR GRAPHVIEWER
+	GraphViewer *gv = new GraphViewer(600, 600, true);
+	gv->setBackground("background.jpg");
+	gv->createWindow(1200, 1200);
+	gv->defineEdgeDashed(true);
+	gv->defineVertexColor("blue");
+	gv->defineEdgeColor("black");
+	abrirFicheiros(data, gv);
+//	vector<Vertex<NoInfo> *> vert = data.getVertexSet();
+//	for (unsigned int i = 0; i < vert.size(); i++)
+//		cout << vert[i]->getInfo();
+	getchar();
+//	cout << vert.size() << endl;
 	cout << "END" << endl;
 	return 0;
 }
