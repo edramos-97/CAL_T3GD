@@ -315,12 +315,20 @@ void abrirFicheiros(Graph<NoInfo> & grafo, GraphViewer * gv) {
 	int idNo2;
 
 	int i = 0;
+//	bool novo = true;
+//	double weigth = 0;
+//
+//	int anterior;
 	while (std::getline(inFile, line)) {
 		std::stringstream linestream(line);
 		std::string data;
 
 		linestream >> idAresta;
 
+//		if(novo){
+//						anterior = idAresta;
+//						novo = false;
+//					}
 
 		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
 		linestream >> idNo1;
@@ -331,7 +339,9 @@ void abrirFicheiros(Graph<NoInfo> & grafo, GraphViewer * gv) {
 		Vertex<NoInfo>* source = grafo.getVertex(origem);
 		NoInfo destino(idNo2,0,0);
 		Vertex<NoInfo>* destiny = grafo.getVertex(destino);
-		if(source != NULL && destiny != NULL){
+
+		//pre processamento do grafico pelo parser ja garante informacao sem erros //i think
+		//if(source != NULL && destiny != NULL){
 
 			if(grafo.removeEdge(origem,destino)) //conseguiu remover
 			{
@@ -341,7 +351,8 @@ void abrirFicheiros(Graph<NoInfo> & grafo, GraphViewer * gv) {
 			gv->addEdge(i,idNo1,idNo2, EdgeType::DIRECTED);
 			i++;
 
-		}
+		//}
+
 	}
 	//gv->rearrange();
 	inFile.close();
@@ -355,18 +366,18 @@ int main() {
 	//exercicio3();
 	//exercicioTeste();
 
-//	//CRIAR GRAFO INTERNO
-//	Graph<NoInfo> data;
-//
-//
-//	//CRIAR GRAPHVIEWER
-//	GraphViewer *gv = new GraphViewer(600, 600, true);
-//	gv->setBackground("background.jpg");
-//	gv->createWindow(1200, 1200);
-//	gv->defineEdgeDashed(true);
-//	gv->defineVertexColor("blue");
-//	gv->defineEdgeColor("black");
-//	abrirFicheiros(data, gv);
+	//CRIAR GRAFO INTERNO
+	Graph<NoInfo> data;
+
+
+	//CRIAR GRAPHVIEWER
+	GraphViewer *gv = new GraphViewer(600, 600, true);
+	gv->setBackground("background.jpg");
+	gv->createWindow(1200, 1200);
+	gv->defineEdgeDashed(true);
+	gv->defineVertexColor("blue");
+	gv->defineEdgeColor("black");
+	abrirFicheiros(data, gv);
 
 
 	//testing serielization
@@ -401,30 +412,30 @@ int main() {
 //		cout << dois->vetor[i] << endl;
 //
 
-	GraphViewer *gv = new GraphViewer(600, 600, false);
-	gv->setBackground("background.jpg");
-	gv->createWindow(600, 600);
-	gv->defineEdgeDashed(true);
-	gv->defineVertexColor("blue");
-	gv->addNode(0,30,120);
-	gv->addNode(1,30,240);
-	gv->addNode(2,120,30);
-	gv->addEdge(0,1,2, EdgeType::UNDIRECTED);
-	gv->addEdge(1,2,0, EdgeType::DIRECTED);
-	gv->closeWindow();
-	cout << "gv closed" << endl;
-
-	Sleep(1000);
-
-	unsigned char testando[sizeof(GraphViewer)];
-	memcpy(testando, &(*gv), sizeof(GraphViewer));
-
-
-	GraphViewer * dois;
-	dois = (GraphViewer *)testando;
-	cout << "dois created" << endl;
-	dois->createWindow(600,600);
-	dois->defineVertexColor("blue");
+//	GraphViewer *gv = new GraphViewer(600, 600, false);
+//	gv->setBackground("background.jpg");
+//	gv->createWindow(600, 600);
+//	gv->defineEdgeDashed(true);
+//	gv->defineVertexColor("blue");
+//	gv->addNode(0,30,120);
+//	gv->addNode(1,30,240);
+//	gv->addNode(2,120,30);
+//	gv->addEdge(0,1,2, EdgeType::UNDIRECTED);
+//	gv->addEdge(1,2,0, EdgeType::DIRECTED);
+//	gv->closeWindow();
+//	cout << "gv closed" << endl;
+//
+//	Sleep(1000);
+//
+//	unsigned char testando[sizeof(GraphViewer)];
+//	memcpy(testando, &(*gv), sizeof(GraphViewer));
+//
+//
+//	GraphViewer * dois;
+//	dois = (GraphViewer *)testando;
+//	cout << "dois created" << endl;
+//	dois->createWindow(600,600);
+//	dois->defineVertexColor("blue");
 
 	getchar();
 	cout << "END" << endl;
