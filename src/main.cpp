@@ -7,6 +7,8 @@
 #include "Graph.h"
 #include <string>
 #include <map>
+#include <cstring>
+
 
 void exercicio1();
 void exercicio2();
@@ -345,29 +347,86 @@ void abrirFicheiros(Graph<NoInfo> & grafo, GraphViewer * gv) {
 	inFile.close();
 }
 
+
+
 int main() {
 	//exercicio1();
 	//exercicio2();
 	//exercicio3();
 	//exercicioTeste();
 
-	//CRIAR GRAFO INTERNO
-	Graph<NoInfo> data;
+//	//CRIAR GRAFO INTERNO
+//	Graph<NoInfo> data;
+//
+//
+//	//CRIAR GRAPHVIEWER
+//	GraphViewer *gv = new GraphViewer(600, 600, true);
+//	gv->setBackground("background.jpg");
+//	gv->createWindow(1200, 1200);
+//	gv->defineEdgeDashed(true);
+//	gv->defineVertexColor("blue");
+//	gv->defineEdgeColor("black");
+//	abrirFicheiros(data, gv);
 
 
-	//CRIAR GRAPHVIEWER
-	GraphViewer *gv = new GraphViewer(600, 600, true);
+	//testing serielization
+
+//	class teste {
+//	public:
+//		int i;
+//		double j;
+//		vector<int> vetor;
+//	};
+//
+//	teste um;
+//	um.i = 100;
+//	um.j = 55.55;
+//	um.vetor.push_back(10);
+//	um.vetor.push_back(20);
+//	um.vetor.push_back(30);
+//	um.vetor.push_back(45);
+//
+//	ofstream out;
+//
+//	unsigned char testando[sizeof(teste)];
+//	memcpy(testando, &um, sizeof(teste));
+//
+//
+//	teste * dois;
+//	dois = (teste *)testando;
+//
+//	cout << dois->i << endl;
+//	cout << dois->j << endl;
+//	for(int i = 0; i < dois->vetor.size(); i++)
+//		cout << dois->vetor[i] << endl;
+//
+
+	GraphViewer *gv = new GraphViewer(600, 600, false);
 	gv->setBackground("background.jpg");
-	gv->createWindow(1200, 1200);
+	gv->createWindow(600, 600);
 	gv->defineEdgeDashed(true);
 	gv->defineVertexColor("blue");
-	gv->defineEdgeColor("black");
-	abrirFicheiros(data, gv);
-//	vector<Vertex<NoInfo> *> vert = data.getVertexSet();
-//	for (unsigned int i = 0; i < vert.size(); i++)
-//		cout << vert[i]->getInfo();
+	gv->addNode(0,30,120);
+	gv->addNode(1,30,240);
+	gv->addNode(2,120,30);
+	gv->addEdge(0,1,2, EdgeType::UNDIRECTED);
+	gv->addEdge(1,2,0, EdgeType::DIRECTED);
+	gv->closeWindow();
+	cout << "gv closed" << endl;
+
+	Sleep(1000);
+
+	unsigned char testando[sizeof(GraphViewer)];
+	memcpy(testando, &(*gv), sizeof(GraphViewer));
+
+
+	GraphViewer * dois;
+	dois = (GraphViewer *)testando;
+	cout << "dois created" << endl;
+	dois->createWindow(600,600);
+	dois->defineVertexColor("blue");
+
 	getchar();
-//	cout << vert.size() << endl;
 	cout << "END" << endl;
 	return 0;
 }
