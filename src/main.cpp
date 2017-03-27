@@ -20,7 +20,7 @@ class NoInfo {
 public:
 	long double longitude;
 	long double latitude;
-	int idNo;
+	long int idNo;
 
 	NoInfo() {
 
@@ -49,7 +49,7 @@ public:
 
 class Aresta {
 public:
-	int idAresta;
+	long int idAresta;
 	long double distancia;
 	NoInfo origem;
 	NoInfo destino;
@@ -419,7 +419,7 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo, 
 
 	std::string line;
 
-	int idNo = 0;
+	long int idNo = 0;
 	long double X = 0;
 	long double Y = 0;
 
@@ -459,7 +459,7 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo, 
 		exit(1);   // call system to stop
 	}
 
-	int idAresta = 0;
+	long int idAresta = 0;
 	string Rua = "";
 	string dois_sent = "False";
 
@@ -512,8 +512,8 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo, 
 	}
 
 	idAresta = 0;
-	int idOrigem = 0;
-	int idDestino = 0;
+	long int idOrigem = 0;
+	long int idDestino = 0;
 	//double weight = 0.0;
 
 	while (std::getline(inFile, line)) {
@@ -575,7 +575,7 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo, 
 //	}
 
 	//Graph<NoInfo>& grafo, GraphViewer*& gv
-
+	//escrever para graph e graphviewer
 	tr1::unordered_set<Aresta, hashFunc, hashFunc>::const_iterator itH =
 			arestas.begin();
 	while (itH != arestas.end()) {
@@ -601,15 +601,16 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo, 
 	gv->rearrange();
 
 
-//	itH = arestas.begin();
-//	int i = 0;
-//	while(itH != arestas.end()){
-//		gv->setVertexColor(itH->origem.idNo,GREEN);
-//		itH++;
-//
-//	}
-//	gv->rearrange();
-	//escrever para graph e graphviewer
+	itH = arestas.begin();
+	int i = 0;
+	while(itH != arestas.end()){
+		gv->setVertexColor(itH->origem.idNo,GREEN);
+		//gv->setVertexColor(itH->destino.idNo,RED);
+		itH++;
+
+	}
+	gv->rearrange();
+
 
 }
 
