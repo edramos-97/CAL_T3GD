@@ -10,6 +10,7 @@
 #include <cstring>
 #include <unordered_set>
 #include <utility>
+#include <tr1/unordered_set>
 
 void exercicio1();
 void exercicio2();
@@ -20,6 +21,11 @@ public:
 	long double longitude;
 	long double latitude;
 	int idNo;
+
+	NoInfo() {
+
+	}
+	;
 	NoInfo(int id, double longe, double lat) :
 			idNo(id), longitude(longe), latitude(lat) {
 	}
@@ -35,8 +41,38 @@ public:
 	friend bool operator==(const NoInfo& left, const NoInfo& right) {
 		return ((left.idNo == right.idNo));
 	}
+
+	friend bool operator<(const NoInfo& left, const NoInfo& right) {
+		return left.idNo < right.idNo;
+	}
 };
 
+class Aresta {
+public:
+	int idAresta;
+	long double distancia;
+	NoInfo origem;
+	NoInfo destino;
+	string rua;
+	bool dois_sentidos;
+//		bool operator==(const Aresta &other) const {
+//			return idAresta == other.idAresta;
+//		}
+//		size_t operator()(const Aresta &are) const {
+//			return idAresta * 37 + 54;
+//		}
+};
+
+struct hashFunc {
+	bool operator()(const Aresta &s1, const Aresta &s2) const {
+		return s1.idAresta == s2.idAresta;
+	}
+
+	int operator()(const Aresta &s1) const {
+		return s1.idAresta * 37;
+	}
+
+};
 void exercicioTeste() {
 
 }
@@ -251,13 +287,14 @@ void exercicio3() {
 }
 
 //calculate haversine distance for linear distance // coordinates in radians
-double haversine_km(double lat1, double long1, double lat2, double long2) {
-	double dlong = (long2 - long1);
-	double dlat = (lat2 - lat1);
-	double a = pow(sin(dlat / 2.0), 2)
+long double haversine_km(long double lat1, long double long1, long double lat2,
+		long double long2) {
+	long double dlong = (long2 - long1);
+	long double dlat = (lat2 - lat1);
+	long double a = pow(sin(dlat / 2.0), 2)
 			+ cos(lat1) * cos(lat2) * pow(sin(dlong / 2.0), 2);
-	double c = 2 * atan2(sqrt(a), sqrt(1 - a));
-	double d = 6367 * c;
+	long double c = 2 * atan2(sqrt(a), sqrt(1 - a));
+	long double d = 6367 * c;
 
 	return d;
 }
@@ -367,15 +404,16 @@ void abrirFicheiros(Graph<NoInfo> & grafo, GraphViewer * gv) {
 	inFile.close();
 }
 
-void abrirFicheirosImproved(Graph<NoInfo>& grafo, GraphViewer*& gv) {
-	//vector<NoInfo> nos_todos;
-	map<NoInfo,bool> nos_todos;
+void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo, GraphViewer*& gv) {
+	NoInfo nulo(0, 0, 0);
+	map<NoInfo, bool> nos_todos;
 	ifstream inFile;
+
 	//Ler o ficheiro A2.txt
-	inFile.open("A2.txt");
+	inFile.open(A);
 
 	if (!inFile) {
-		cerr << "Unable to open file datafile.txt";
+		cerr << "Unable to open file A2.txt";
 		exit(1);   // call system to stop
 	}
 
@@ -402,36 +440,176 @@ void abrirFicheirosImproved(Graph<NoInfo>& grafo, GraphViewer*& gv) {
 		linestream >> Y;    //X and Y are in radians
 		//cout << "idNo: " << idNo << " long: " << X << " lat: " << Y << endl;
 		NoInfo temp(idNo, X, Y);
-		pair<NoInfo,bool> par(temp,false);
+		pair<NoInfo, bool> par(temp, false);
 		nos_todos.insert(par);
 	}
 
 	inFile.close();
 	// insere todos os nos a falso, no final so estarao a true aqueles que sao cruzamentos
 
-	class Aresta{
-		int idAresta;
-		double distancia;
-		NoInfo origem;
-		NoInfo destino;
-		string rua;
-		bool dois_sentidos;
-		bool operator==(const Aresta &other) const
-		  { return idAresta == other.idAresta; }
-		int operator()(const Aresta &are){
-			return idAresta*37+54;
-		}
-	};
-
-	unordered_set<Aresta> arestas;
-
+	tr1::unordered_set<Aresta, hashFunc, hashFunc> arestas;
+	//unordered_set<Aresta> arestas;
 
 	//ler arestas
 
+	inFile.open(B);
+
+	if (!inFile) {
+		cerr << "Unable to open file B2.txt";
+		exit(1);   // call system to stop
+	}
+
+	int idAresta = 0;
+	string Rua = "";
+	string dois_sent = "False";
+
+	while (std::getline(inFile, line)) {
+		std::stringstream linestream(line);
+		std::string data;
+
+		linestream >> idAresta;
+
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+
+		char teste;
+		linestream >> teste;
+		if (teste == ';') {
+			Rua = "unnamed";
+
+		} else {
+			string resto;
+			std::getline(linestream, resto, ';');
+			Rua = teste;
+			Rua = teste + resto;
+		}
+
+		linestream >> dois_sent;
+
+		Aresta temp;
+		temp.origem = NoInfo(0, 0, 0);
+		temp.destino = NoInfo(0, 0, 0);
+		temp.distancia = 0;
+		temp.idAresta = idAresta;
+		temp.rua = Rua;
+		if (dois_sent == "True")
+			temp.dois_sentidos = true;
+		else if (dois_sent == "False")
+			temp.dois_sentidos = false;
+
+		arestas.insert(temp);
+
+	}
+
+	inFile.close();
+
 	//ler ligacoes arestas entre nos para so ficar com nos cruzamentos
 
-	//escrever para graph e graphviewer
+	inFile.open(C);
 
+	if (!inFile) {
+		cerr << "Unable to open file C2.txt";
+		exit(1);   // call system to stop
+	}
+
+	idAresta = 0;
+	int idOrigem = 0;
+	int idDestino = 0;
+	//double weight = 0.0;
+
+	while (std::getline(inFile, line)) {
+		std::stringstream linestream(line);
+		std::string data;
+
+		linestream >> idAresta;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> idOrigem;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> idDestino;
+
+		map<NoInfo, bool>::iterator itOrigem = nos_todos.find(
+				NoInfo(idOrigem, 0, 0));
+		NoInfo ori = itOrigem->first;
+		map<NoInfo, bool>::iterator itDestino = nos_todos.find(
+				NoInfo(idDestino, 0, 0));
+		NoInfo dest = itDestino->first;
+		Aresta teste;
+		teste.idAresta = idAresta;
+		tr1::unordered_set<Aresta, hashFunc, hashFunc>::iterator itAresta =
+				arestas.find(teste);
+		Aresta alterada = *itAresta;
+
+		if (alterada.origem == nulo) {
+			alterada.origem = ori;
+			itOrigem->second = true;
+		}
+
+		alterada.destino = dest;
+		//haversine_km(double lat1, double long1, double lat2, double long2)
+		alterada.distancia += haversine_km(ori.latitude, ori.longitude,
+				dest.latitude, dest.longitude);
+
+		//atualiza em todas as coisas
+		arestas.erase(itAresta);
+		arestas.insert(alterada);
+
+	}
+
+	inFile.close();
+
+//	//escrever consola, teste
+//	map<NoInfo, bool>::const_iterator it;
+//	it = nos_todos.begin();
+//	while (it != nos_todos.end()) {
+//		cout << "id: " << it->first.idNo << " lat: " << it->first.latitude
+//				<< " long:" << it->first.longitude << " cruz:" << it->second
+//				<< endl;
+//		it++;
+//	}
+//
+//	tr1::unordered_set<Aresta, hashFunc, hashFunc>::const_iterator itH =
+//			arestas.begin();
+//	while (itH != arestas.end()) {
+//		cout << " idA: " << itH->idAresta << " nome: " << itH->rua << " dois: "
+//				<< itH->dois_sentidos << " dist: " << itH->distancia <<endl;
+//		itH++;
+//	}
+
+	//Graph<NoInfo>& grafo, GraphViewer*& gv
+
+	tr1::unordered_set<Aresta, hashFunc, hashFunc>::const_iterator itH =
+			arestas.begin();
+	while (itH != arestas.end()) {
+		grafo.addVertex(itH->origem);
+		grafo.addVertex(itH->destino);
+		gv->addNode(itH->origem.idNo);
+		//gv->addNode(itH->origem.idNo, itH->origem.longitude*636700, itH->origem.latitude*636700);
+		gv->addNode(itH->destino.idNo);
+		//gv->addNode(itH->destino.idNo, itH->destino.longitude*636700, itH->destino.latitude*636700);
+
+		if(itH->dois_sentidos){
+			grafo.addEdge(itH->origem, itH->destino, itH->distancia);
+			grafo.addEdge(itH->destino, itH->origem, itH->distancia);
+			gv->addEdge(itH->idAresta, itH->origem.idNo, itH->destino.idNo,EdgeType::UNDIRECTED);
+		}
+		else{
+			grafo.addEdge(itH->origem, itH->destino, itH->distancia);
+			gv->addEdge(itH->idAresta, itH->origem.idNo, itH->destino.idNo,EdgeType::DIRECTED);
+		}
+		itH++;
+	}
+
+	gv->rearrange();
+
+
+//	itH = arestas.begin();
+//	int i = 0;
+//	while(itH != arestas.end()){
+//		gv->setVertexColor(itH->origem.idNo,GREEN);
+//		itH++;
+//
+//	}
+//	gv->rearrange();
+	//escrever para graph e graphviewer
 
 }
 
@@ -445,14 +623,20 @@ int main() {
 	Graph<NoInfo> data;
 
 	//CRIAR GRAPHVIEWER
-	GraphViewer *gv = new GraphViewer(600, 600, true);
+	GraphViewer *gv = new GraphViewer(5000, 5000, true); //not dynamic
 	gv->setBackground("background.jpg");
-	gv->createWindow(1200, 1200);
+	gv->createWindow(5000, 5000);
 	gv->defineEdgeDashed(true);
 	gv->defineVertexColor("blue");
 	gv->defineEdgeColor("black");
-	abrirFicheiros(data, gv);
+	//amostra pequena
+	//abrirFicheirosImproved("A2.txt","B2.txt", "C2.txt",data, gv);
+	//amostra media
+	//abrirFicheirosImproved("A.txt","B.txt", "C.txt",data, gv);
+	//amostra grande
+	abrirFicheirosImproved("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
 
+	gv->rearrange();
 	//testing serielization
 
 //	class teste {
