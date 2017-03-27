@@ -299,11 +299,11 @@ long double haversine_km(long double lat1, long double long1, long double lat2,
 	return d;
 }
 
-void abrirFicheiros(Graph<NoInfo> & grafo, GraphViewer * gv) {
+void abrirFicheiros(string A, string B, string C,Graph<NoInfo> & grafo, GraphViewer * gv) {
 
 	ifstream inFile;
 	//Ler o ficheiro A2.txt
-	inFile.open("A2.txt");
+	inFile.open(A);
 
 	if (!inFile) {
 		cerr << "Unable to open file datafile.txt";
@@ -341,7 +341,7 @@ void abrirFicheiros(Graph<NoInfo> & grafo, GraphViewer * gv) {
 	inFile.close();
 
 	//abrir C2.txt sao as arestas
-	inFile.open("C2.txt");
+	inFile.open(C);
 
 	if (!inFile) {
 		cerr << "Unable to open file datafile.txt";
@@ -395,12 +395,13 @@ void abrirFicheiros(Graph<NoInfo> & grafo, GraphViewer * gv) {
 						destiny->getInfo().latitude,
 						destiny->getInfo().longitude));
 		gv->addEdge(i, idNo1, idNo2, EdgeType::DIRECTED);
+		gv->setVertexColor(idNo1,GREEN);
 		i++;
 
 		//}
 
 	}
-	//gv->rearrange();
+	gv->rearrange();
 	inFile.close();
 }
 
@@ -630,12 +631,16 @@ int main() {
 	gv->defineEdgeDashed(true);
 	gv->defineVertexColor("blue");
 	gv->defineEdgeColor("black");
+	//tiniest
+	//abrirFicheiros("tinyA.txt","tinyB.txt", "tinyC.txt",data, gv);
+	//amostra really small
+	//abrirFicheiros("smallerA.txt","smallerB.txt", "smallerC.txt",data, gv);
 	//amostra pequena
 	//abrirFicheirosImproved("A2.txt","B2.txt", "C2.txt",data, gv);
 	//amostra media
 	//abrirFicheirosImproved("A.txt","B.txt", "C.txt",data, gv);
 	//amostra grande
-	abrirFicheirosImproved("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
+	abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
 
 	gv->rearrange();
 	//testing serielization

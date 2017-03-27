@@ -1,0 +1,5 @@
+5701109;60th Road;False
+5703787;86th Street;False
+5706845;85th Street;False
+275286700;60th Avenue;False
+275286701;60th Avenue;False

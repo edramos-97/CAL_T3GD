@@ -1,0 +1,23 @@
+5701109;60th Road;False
+5703328;60th Drive;False
+5704238;60th Avenue;False
+5704313;83rd Street;False
+5704486;84th Place;False
+5704487;84th Place;False
+5704515;61st Road;False
+5704517;61st Road;False
+5706512;61st Drive;False
+5706845;85th Street;False
+5708716;83rd Place;False
+127843270;Eliot Avenue;True
+273382956;84th Street;False
+275286700;60th Avenue;False
+275286701;60th Avenue;False
+276332079;Caldwell Avenue;False
+283694419;;False
+283694420;;False
+283698923;;False
+283698924;;False
+283698925;;False
+321883204;60th Drive;False
+321883205;60th Drive;False
