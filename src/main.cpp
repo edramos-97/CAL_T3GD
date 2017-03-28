@@ -24,21 +24,14 @@ public:
 	long double latitude;
 	BigAssInteger idNo;
 
-	NoInfo() {
+	NoInfo() {}
 
-	}
-	;
-	NoInfo(BigAssInteger id, long double longe, long double lat) :
-			idNo(id), longitude(longe), latitude(lat) {
-	}
-	;
+	NoInfo(BigAssInteger id, long double longe, long double lat) : idNo(id), longitude(longe), latitude(lat) {}
 
 	friend ostream & operator<<(ostream & os, const NoInfo obj) {
-		os << "idNo: " << obj.idNo << " long: " << obj.longitude << " lat: "
-				<< obj.latitude << endl;
+		os << "idNo: " << obj.idNo << " long: " << obj.longitude << " lat: " << obj.latitude << endl;
 		return os;
 	}
-	;
 
 	friend bool operator==(const NoInfo& left, const NoInfo& right) {
 		return ((left.idNo == right.idNo));
@@ -87,6 +80,7 @@ struct hashFunc {
 	}
 
 };
+
 void exercicioTeste() {
 	GraphViewer *gv = new GraphViewer(1000, 1000, false); //not dynamic
 	gv->setBackground("background.jpg");
@@ -309,6 +303,13 @@ void exercicio3() {
 }
 
 //calculate haversine distance for linear distance // coordinates in radians
+/**
+ * Method to calculate the distance between two points of a spherical surface. This function applies the Haversine formula.
+ * @param lat1 Latitude in radians of the first point.
+ * @param long1 Longitude in radians of the first point.
+ * @param lat2 Latitude in radians of the second point.
+ * @param long2 Longitude in radians of the second point.
+ */
 long double haversine_km(long double lat1, long double long1, long double lat2,
 		long double long2) {
 	long double dlong = (long2 - long1);
@@ -789,7 +790,53 @@ struct cantos {
 	long double maxLat;
 };
 
+/**
+ * Method that reads the nodes from a text file and adds them to both a GraphViwer a a Graph
+ * @param A
+ * @param gv
+ * @param grafo
+ * @param nos_todos
+ */
+void read_node_radians(const std::string& A,GraphViewer*& gv,Graph<NoInfo>& grafo,map<NoInfo, bool> nos_todos){
+	ifstream inFile;
+	string line;
 
+	inFile.open(A);
+
+		if (!inFile) {
+			cerr << "Unable to open file A2.txt";
+			exit(1);   // call system to stop
+		}
+
+		std::string line;
+
+		BigAssInteger idNo = 0;
+		long double X = 0;
+		long double Y = 0;
+
+		while (std::getline(inFile, line)) {
+			std::stringstream linestream(line);
+			std::string data;
+
+			linestream >> idNo;
+
+			std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+			linestream >> X;
+			std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+			linestream >> Y;    //X and Y are in degrees
+
+			std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+			linestream >> X;
+			std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+			linestream >> Y;    //X and Y are in radians
+			//cout << "idNo: " << idNo << " long: " << X << " lat: " << Y << endl;
+			NoInfo temp(idNo, X, Y);
+			pair<NoInfo, bool> par(temp, false);
+			nos_todos.insert(par);
+		}
+
+		inFile.close();
+}
 
 /**
  * Method that reads the nodes from a text file and adds them to both a GraphViwer a a Graph
@@ -944,6 +991,69 @@ void read_edges(const std::string& C,GraphViewer*& gv,Graph<NoInfo>& grafo){
 		inFile.close();
 }
 
+
+/**
+ * Method to assign a name to an Edge and determine if it is one or two ways.
+ * @param B
+ * @param gv
+ * @param grafo
+ */
+void read_edges_names(const std::string& B,GraphViewer*& gv,Graph<NoInfo>& grafo){
+	ifstream inFile;
+	string line;
+	tr1::unordered_set<Aresta, hashFunc, hashFunc> arestas;
+	//unordered_set<Aresta> arestas;
+
+	inFile.open(B);
+
+	if (!inFile) {
+		cerr << "Unable to open file B2.txt";
+		exit(1);   // call system to stop
+	}
+
+	BigAssInteger idAresta = 0;
+	string Rua = "";
+	string dois_sent = "False";
+
+	while (std::getline(inFile, line)) {
+		std::stringstream linestream(line);
+		std::string data;
+
+		linestream >> idAresta;
+
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+
+		char teste;
+		linestream >> teste;
+		if (teste == ';') {
+			Rua = "unnamed";
+
+		} else {
+			string resto;
+			std::getline(linestream, resto, ';');
+			Rua = teste;
+			Rua = teste + resto;
+		}
+
+		linestream >> dois_sent;
+
+		Aresta temp;
+		temp.origem = NoInfo(0, 0, 0);
+		temp.destino = NoInfo(0, 0, 0);
+		temp.distancia = 0;
+		temp.idAresta = idAresta;
+		temp.rua = Rua;
+		if (dois_sent == "True")
+			temp.dois_sentidos = true;
+		else if (dois_sent == "False")
+			temp.dois_sentidos = false;
+
+		arestas.insert(temp);
+
+	}
+
+	inFile.close();
+}
 
 void abrirFicheiroXY(const std::string& A, const std::string& B,const std::string& C, Graph<NoInfo>& grafo, GraphViewer*& gv,struct cantos corners, int maxXwindow, int maxYwindow) {
 
