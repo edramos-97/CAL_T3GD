@@ -36,7 +36,7 @@ class Vertex {
 	bool visited;
 	bool processing;
 	int indegree;
-	int dist;
+	long double dist;
 public:
 
 	Vertex(T in);
@@ -48,7 +48,7 @@ public:
 	T getInfo() const;
 	void setInfo(T info);
 
-	int getDist() const;
+	long double getDist() const;
 	int getIndegree() const;
 
 	Vertex* path;
@@ -95,7 +95,7 @@ T Vertex<T>::getInfo() const {
 }
 
 template<class T>
-int Vertex<T>::getDist() const {
+long double  Vertex<T>::getDist() const {
 	return this->dist;
 }
 
@@ -146,7 +146,7 @@ class Graph {
 	int edgeCost(int i, int j);
 
 	//exercicio 6
-	vector<vector<int>> distancias;
+	vector<vector<long double>> distancias;
 	vector<vector<int>> precedentes;
 
 public:
@@ -616,7 +616,7 @@ void Graph<T>::floydWarshallShortestPath() {
 	//inicia distancias
 	distancias.clear();
 	for (unsigned int i = 0; i < vertexSet.size(); i++) {
-		vector<int> dist;
+		vector<long double > dist;
 		dist.clear();
 		for (unsigned int j = 0; j < vertexSet.size(); j++) {
 			dist.push_back(edgeCost(i, j));

@@ -706,15 +706,18 @@ void testFloidWarshal_med(Graph<NoInfo>& data, GraphViewer*& gv) {
 }
 
 void testDijkstra(Graph<NoInfo>& data, GraphViewer*& gv) {
-	Vertex<NoInfo>* origem = data.getVertex(NoInfo(173452776, 0, 0));
+	Vertex<NoInfo>* origem = data.getVertex(
+			NoInfo(173452776 % 100000000, 0, 0));
 	data.dijkstraShortestPath(origem->getInfo());
 
 	vector<Vertex<NoInfo>*> todos = data.getVertexSet();
 
-	Vertex<NoInfo>* destino = data.getVertex(NoInfo(541769885, 0, 0));
+	Vertex<NoInfo>* destino = data.getVertex(
+			NoInfo(541769885 % 100000000, 0, 0));
 	while (destino != NULL) {
 
 		gv->setVertexColor(destino->getInfo().idNo, YELLOW);
+		gv->setVertexSize(destino->getInfo().idNo, 50);
 		destino = destino->path;
 	}
 
@@ -724,59 +727,193 @@ void testDijkstra(Graph<NoInfo>& data, GraphViewer*& gv) {
 
 void testSerial() {
 	//	class teste {
-		//	public:
-		//		int i;
-		//		double j;
-		//		vector<int> vetor;
-		//	};
-		//
-		//	teste um;
-		//	um.i = 100;
-		//	um.j = 55.55;
-		//	um.vetor.push_back(10);
-		//	um.vetor.push_back(20);
-		//	um.vetor.push_back(30);
-		//	um.vetor.push_back(45);
-		//
-		//	ofstream out;
-		//
-		//	unsigned char testando[sizeof(teste)];
-		//	memcpy(testando, &um, sizeof(teste));
-		//
-		//
-		//	teste * dois;
-		//	dois = (teste *)testando;
-		//
-		//	cout << dois->i << endl;
-		//	cout << dois->j << endl;
-		//	for(int i = 0; i < dois->vetor.size(); i++)
-		//		cout << dois->vetor[i] << endl;
-		//-----------------------------fim teste serialization
+	//	public:
+	//		int i;
+	//		double j;
+	//		vector<int> vetor;
+	//	};
+	//
+	//	teste um;
+	//	um.i = 100;
+	//	um.j = 55.55;
+	//	um.vetor.push_back(10);
+	//	um.vetor.push_back(20);
+	//	um.vetor.push_back(30);
+	//	um.vetor.push_back(45);
+	//
+	//	ofstream out;
+	//
+	//	unsigned char testando[sizeof(teste)];
+	//	memcpy(testando, &um, sizeof(teste));
+	//
+	//
+	//	teste * dois;
+	//	dois = (teste *)testando;
+	//
+	//	cout << dois->i << endl;
+	//	cout << dois->j << endl;
+	//	for(int i = 0; i < dois->vetor.size(); i++)
+	//		cout << dois->vetor[i] << endl;
+	//-----------------------------fim teste serialization
 
-		//	GraphViewer *gv = new GraphViewer(600, 600, false);
-		//	gv->setBackground("background.jpg");
-		//	gv->createWindow(600, 600);
-		//	gv->defineEdgeDashed(true);
-		//	gv->defineVertexColor("blue");
-		//	gv->addNode(0,30,120);
-		//	gv->addNode(1,30,240);
-		//	gv->addNode(2,120,30);
-		//	gv->addEdge(0,1,2, EdgeType::UNDIRECTED);
-		//	gv->addEdge(1,2,0, EdgeType::DIRECTED);
-		//	gv->closeWindow();
-		//	cout << "gv closed" << endl;
-		//
-		//	Sleep(1000);
-		//
-		//	unsigned char testando[sizeof(GraphViewer)];
-		//	memcpy(testando, &(*gv), sizeof(GraphViewer));
-		//
-		//
-		//	GraphViewer * dois;
-		//	dois = (GraphViewer *)testando;
-		//	cout << "dois created" << endl;
-		//	dois->createWindow(600,600);
-		//	dois->defineVertexColor("blue");
+	//	GraphViewer *gv = new GraphViewer(600, 600, false);
+	//	gv->setBackground("background.jpg");
+	//	gv->createWindow(600, 600);
+	//	gv->defineEdgeDashed(true);
+	//	gv->defineVertexColor("blue");
+	//	gv->addNode(0,30,120);
+	//	gv->addNode(1,30,240);
+	//	gv->addNode(2,120,30);
+	//	gv->addEdge(0,1,2, EdgeType::UNDIRECTED);
+	//	gv->addEdge(1,2,0, EdgeType::DIRECTED);
+	//	gv->closeWindow();
+	//	cout << "gv closed" << endl;
+	//
+	//	Sleep(1000);
+	//
+	//	unsigned char testando[sizeof(GraphViewer)];
+	//	memcpy(testando, &(*gv), sizeof(GraphViewer));
+	//
+	//
+	//	GraphViewer * dois;
+	//	dois = (GraphViewer *)testando;
+	//	cout << "dois created" << endl;
+	//	dois->createWindow(600,600);
+	//	dois->defineVertexColor("blue");
+}
+
+struct cantos {
+	long double minLong;
+	long double minLat;
+	long double maxLong;
+	long double maxLat;
+};
+
+void abrirFicheiroXY(const std::string& A, const std::string& B,
+		const std::string& C, Graph<NoInfo>& grafo, GraphViewer*& gv,
+		struct cantos corners, int maxXwindow, int maxYwindow) {
+
+	ifstream inFile;
+	//Ler o ficheiro A2.txt
+	inFile.open(A);
+
+	if (!inFile) {
+		cerr << "Unable to open file datafile.txt";
+		exit(1);   // call system to stop
+	}
+
+	std::string line;
+
+	BigAssInteger idNo = 0;
+	long double X = 0;
+	long double Y = 0;
+
+	while (std::getline(inFile, line)) {
+		std::stringstream linestream(line);
+		std::string data;
+
+		linestream >> idNo;
+
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> Y;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> X;    //X and Y are in degrees
+
+//		cout << X << endl;
+//		cout << Y << endl;
+//		cout << corners.minLong << endl;
+//		cout << corners.minLat << endl;
+//		cout << corners.maxLong << endl;
+//		cout << corners.maxLat << endl;
+		long double x = ((X * 100000) - (corners.minLong * 100000))
+				* (maxXwindow
+						/ ((corners.maxLong * 100000)
+								- (corners.minLong * 100000)));
+		long double y =
+				((Y * 100000) - (corners.minLat * 100000))
+						* (maxYwindow
+								/ ((corners.maxLat * 100000)
+										- (corners.minLat * 100000)));
+
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> X;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> Y;    //X and Y are in radians
+		//cout << "idNo: " << idNo << " long: " << X << " lat: " << Y << endl;
+		NoInfo temp(idNo % 100000000, X, Y); //x long, y lat
+
+		gv->addNode(idNo % 100000000, x, maxYwindow - y);
+		cout << "x: " << x << " y: " << y << endl;
+		grafo.addVertex(temp);
+
+	}
+
+	inFile.close();
+
+	//abrir C2.txt sao as arestas
+	inFile.open(C);
+
+	if (!inFile) {
+		cerr << "Unable to open file datafile.txt";
+		exit(1);   // call system to stop
+	}
+
+	BigAssInteger idAresta;
+	BigAssInteger idNo1;
+	BigAssInteger idNo2;
+
+	BigAssInteger i = 0;
+	//	bool novo = true;
+	//	double weigth = 0;
+	//
+	//	int anterior;
+	while (std::getline(inFile, line)) {
+		std::stringstream linestream(line);
+		std::string data;
+
+		linestream >> idAresta;
+
+		//		if(novo){
+		//						anterior = idAresta;
+		//						novo = false;
+		//					}
+
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> idNo1;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> idNo2;    //X and Y are in degrees
+
+		NoInfo origem(idNo1 % 100000000, 0, 0);  //so para efeitos de pesquisa
+		Vertex<NoInfo>* source = grafo.getVertex(origem);
+		NoInfo destino(idNo2 % 100000000, 0, 0);
+		Vertex<NoInfo>* destiny = grafo.getVertex(destino);
+
+		//pre processamento do grafico pelo parser ja garante informacao sem erros //i think
+		//if(source != NULL && destiny != NULL){
+
+		if (grafo.removeEdge(origem, destino)) //conseguiu remover
+				{
+			grafo.addEdge(origem, destino,
+					haversine_km(source->getInfo().latitude,
+							source->getInfo().longitude,
+							destiny->getInfo().latitude,
+							destiny->getInfo().longitude));
+		}
+		grafo.addEdge(origem, destino,
+				haversine_km(source->getInfo().latitude,
+						source->getInfo().longitude,
+						destiny->getInfo().latitude,
+						destiny->getInfo().longitude));
+		gv->addEdge(i, idNo1 % 100000000, idNo2 % 100000000,
+				EdgeType::DIRECTED);
+		gv->setVertexColor(idNo1 % 100000000, GREEN);
+		i++;
+
+		//}
+
+	}
+	//gv->rearrange();
+	inFile.close();
 }
 
 int main() {
@@ -789,12 +926,46 @@ int main() {
 	Graph<NoInfo> data;
 
 	//CRIAR GRAPHVIEWER
-	GraphViewer *gv = new GraphViewer(1000, 1000, true); //not dynamic
-	gv->setBackground("background.jpg");
-	gv->createWindow(1000, 1000);
-	gv->defineEdgeDashed(false);
+//	GraphViewer *gv = new GraphViewer(1000, 1000, true); //not dynamic
+//	gv->setBackground("background.jpg");
+//	gv->createWindow(1000, 1000);
+//	gv->defineEdgeDashed(false);
+//	gv->defineVertexColor("blue");
+//	gv->defineVertexSize(5);
+//	gv->defineEdgeColor("black");
+
+	int xMaxW = 5000, yMaxW = 1910;
+	GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
+	gv->setBackground("NEWY.png");
+	gv->createWindow(xMaxW, yMaxW);
+	gv->defineEdgeDashed(true);
 	gv->defineVertexColor("blue");
+	gv->defineVertexSize(4);
 	gv->defineEdgeColor("black");
+	struct cantos corners;
+	corners.maxLat = 40.7127;
+	corners.maxLong = -73.9784;
+	corners.minLat = 40.7007;
+	corners.minLong = -74.0194;
+	abrirFicheiroXY("NEWYA.txt", "NEWYB.txt", "NEWYC.txt", data, gv, corners,xMaxW,yMaxW);
+
+
+	//img text
+
+//	int xMaxW = 1000, yMaxW = 947;
+//		GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
+//		gv->setBackground("10IMG1000-947.png");
+	//	struct cantos corners;
+//	corners.maxLat = 40.72988;
+//	corners.maxLong = -73.87300;
+//	corners.minLat = 40.72638;
+//	corners.minLong = -73.87790;
+//	abrirFicheiroXY("10IMG1000-947A.txt", "10IMG1000-947B.txt", "10IMG1000-947C.txt", data, gv, corners,xMaxW,yMaxW);
+
+
+
+
+
 	//------------------------tiniest
 	//abrirFicheiros("tinyA.txt","tinyB.txt", "tinyC.txt",data, gv);
 	//-------------------------amostra really small
@@ -806,9 +977,6 @@ int main() {
 	//--------------------------------amostra grande
 	//abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
 
-	gv->rearrange();
-
-
 	//abrirFicheiros("smallerA.txt","smallerB.txt", "smallerC.txt",data, gv); //com esta
 	//testFloidWarshal_med(data, gv);
 
@@ -817,8 +985,8 @@ int main() {
 	//abrirFicheiros("A2.txt","B2.txt", "C2.txt",data, gv);
 	//testDijkstra(data, gv);
 
+	//gv->rearrange();
 	//testSerial();
-
 
 	getchar();
 	cout << "END" << endl;
