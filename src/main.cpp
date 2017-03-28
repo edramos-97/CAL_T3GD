@@ -16,17 +16,19 @@ void exercicio1();
 void exercicio2();
 void exercicio3();
 
+typedef unsigned long long BigAssInteger;
+
 class NoInfo {
 public:
 	long double longitude;
 	long double latitude;
-	long int idNo;
+	BigAssInteger idNo;
 
 	NoInfo() {
 
 	}
 	;
-	NoInfo(int id, double longe, double lat) :
+	NoInfo(BigAssInteger id, long double longe, long double lat) :
 			idNo(id), longitude(longe), latitude(lat) {
 	}
 	;
@@ -42,6 +44,10 @@ public:
 		return ((left.idNo == right.idNo));
 	}
 
+	friend bool operator!=(const NoInfo& left, const NoInfo& right) {
+		return ((left.idNo != right.idNo));
+	}
+
 	friend bool operator<(const NoInfo& left, const NoInfo& right) {
 		return left.idNo < right.idNo;
 	}
@@ -49,7 +55,7 @@ public:
 
 class Aresta {
 public:
-	long int idAresta;
+	BigAssInteger idAresta;
 	long double distancia;
 	NoInfo origem;
 	NoInfo destino;
@@ -299,7 +305,8 @@ long double haversine_km(long double lat1, long double long1, long double lat2,
 	return d;
 }
 
-void abrirFicheiros(string A, string B, string C,Graph<NoInfo> & grafo, GraphViewer * gv) {
+void abrirFicheiros(string A, string B, string C, Graph<NoInfo> & grafo,
+		GraphViewer * gv) {
 
 	ifstream inFile;
 	//Ler o ficheiro A2.txt
@@ -312,7 +319,7 @@ void abrirFicheiros(string A, string B, string C,Graph<NoInfo> & grafo, GraphVie
 
 	std::string line;
 
-	int idNo = 0;
+	BigAssInteger idNo = 0;
 	long double X = 0;
 	long double Y = 0;
 
@@ -348,11 +355,11 @@ void abrirFicheiros(string A, string B, string C,Graph<NoInfo> & grafo, GraphVie
 		exit(1);   // call system to stop
 	}
 
-	int idAresta;
-	int idNo1;
-	int idNo2;
+	BigAssInteger idAresta;
+	BigAssInteger idNo1;
+	BigAssInteger idNo2;
 
-	int i = 0;
+	BigAssInteger i = 0;
 //	bool novo = true;
 //	double weigth = 0;
 //
@@ -395,7 +402,7 @@ void abrirFicheiros(string A, string B, string C,Graph<NoInfo> & grafo, GraphVie
 						destiny->getInfo().latitude,
 						destiny->getInfo().longitude));
 		gv->addEdge(i, idNo1, idNo2, EdgeType::DIRECTED);
-		gv->setVertexColor(idNo1,GREEN);
+		gv->setVertexColor(idNo1, GREEN);
 		i++;
 
 		//}
@@ -405,7 +412,8 @@ void abrirFicheiros(string A, string B, string C,Graph<NoInfo> & grafo, GraphVie
 	inFile.close();
 }
 
-void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo, GraphViewer*& gv) {
+void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo,
+		GraphViewer*& gv) {
 	NoInfo nulo(0, 0, 0);
 	map<NoInfo, bool> nos_todos;
 	ifstream inFile;
@@ -420,7 +428,7 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo, 
 
 	std::string line;
 
-	long int idNo = 0;
+	BigAssInteger idNo = 0;
 	long double X = 0;
 	long double Y = 0;
 
@@ -460,7 +468,7 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo, 
 		exit(1);   // call system to stop
 	}
 
-	long int idAresta = 0;
+	BigAssInteger idAresta = 0;
 	string Rua = "";
 	string dois_sent = "False";
 
@@ -513,8 +521,8 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo, 
 	}
 
 	idAresta = 0;
-	long int idOrigem = 0;
-	long int idDestino = 0;
+	BigAssInteger idOrigem = 0;
+	BigAssInteger idDestino = 0;
 	//double weight = 0.0;
 
 	while (std::getline(inFile, line)) {
@@ -587,31 +595,30 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo, 
 		gv->addNode(itH->destino.idNo);
 		//gv->addNode(itH->destino.idNo, itH->destino.longitude*636700, itH->destino.latitude*636700);
 
-		if(itH->dois_sentidos){
+		if (itH->dois_sentidos) {
 			grafo.addEdge(itH->origem, itH->destino, itH->distancia);
 			grafo.addEdge(itH->destino, itH->origem, itH->distancia);
-			gv->addEdge(itH->idAresta, itH->origem.idNo, itH->destino.idNo,EdgeType::UNDIRECTED);
-		}
-		else{
+			gv->addEdge(itH->idAresta, itH->origem.idNo, itH->destino.idNo,
+					EdgeType::UNDIRECTED);
+		} else {
 			grafo.addEdge(itH->origem, itH->destino, itH->distancia);
-			gv->addEdge(itH->idAresta, itH->origem.idNo, itH->destino.idNo,EdgeType::DIRECTED);
+			gv->addEdge(itH->idAresta, itH->origem.idNo, itH->destino.idNo,
+					EdgeType::DIRECTED);
 		}
 		itH++;
 	}
 
 	gv->rearrange();
 
-
 	itH = arestas.begin();
 	int i = 0;
-	while(itH != arestas.end()){
-		gv->setVertexColor(itH->origem.idNo,GREEN);
+	while (itH != arestas.end()) {
+		gv->setVertexColor(itH->origem.idNo, GREEN);
 		//gv->setVertexColor(itH->destino.idNo,RED);
 		itH++;
 
 	}
 	gv->rearrange();
-
 
 }
 
@@ -625,24 +632,67 @@ int main() {
 	Graph<NoInfo> data;
 
 	//CRIAR GRAPHVIEWER
-	GraphViewer *gv = new GraphViewer(5000, 5000, true); //not dynamic
+	GraphViewer *gv = new GraphViewer(1000, 1000, true); //not dynamic
 	gv->setBackground("background.jpg");
-	gv->createWindow(5000, 5000);
-	gv->defineEdgeDashed(true);
+	gv->createWindow(1000, 1000);
+	gv->defineEdgeDashed(false);
 	gv->defineVertexColor("blue");
 	gv->defineEdgeColor("black");
 	//tiniest
 	//abrirFicheiros("tinyA.txt","tinyB.txt", "tinyC.txt",data, gv);
 	//amostra really small
-	//abrirFicheiros("smallerA.txt","smallerB.txt", "smallerC.txt",data, gv);
+	abrirFicheiros("smallerA.txt","smallerB.txt", "smallerC.txt",data, gv);
 	//amostra pequena
-	//abrirFicheirosImproved("A2.txt","B2.txt", "C2.txt",data, gv);
+	//abrirFicheiros("A2.txt","B2.txt", "C2.txt",data, gv);
 	//amostra media
-	//abrirFicheirosImproved("A.txt","B.txt", "C.txt",data, gv);
+	//abrirFicheiros("A.txt", "B.txt", "C.txt", data, gv);
 	//amostra grande
-	abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
+	//abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
 
 	gv->rearrange();
+
+	int i = 0;
+
+	while (i < 5) {
+		int ind0 = rand()%data.getVertexSet().size();
+		int ind1 = rand()%data.getVertexSet().size();
+		Vertex<NoInfo> * ori = data.getVertex(NoInfo(data.getVertexSet()[ind0]->getInfo().idNo, 0, 0));
+		Vertex<NoInfo> *  des = data.getVertex(NoInfo(data.getVertexSet()[ind1]->getInfo().idNo, 0, 0));
+		if(ori == NULL || des == NULL || ori == des)
+			continue;
+
+		vector<NoInfo> path = data.getfloydWarshallPath(ori->getInfo(), des->getInfo());
+		string color = "BLACK";
+		switch(i){
+		case 0:color = YELLOW;break;
+		case 1 : color = ORANGE;break;
+		case 2 : color = RED;break;
+		case 3 : color = PINK;break;
+		case 4 : color = GRAY;break;
+		}
+
+		cout << "novo caminho: " << i << endl;
+			for(unsigned int i = 0; i < path.size(); i++){
+				Sleep(100);
+				cout << path[i] << endl;
+				gv->setVertexColor(path[i].idNo,color);
+			}
+
+			i++;
+	}
+
+	//----------------------------teste floyd warshal
+	//abrirFicheiros("smallerA.txt","smallerB.txt", "smallerC.txt",data, gv); com esta
+//	NoInfo ori = data.getVertex(NoInfo(42809630,0,0))->getInfo();
+//	NoInfo des = data.getVertex(NoInfo(42809660,0,0))->getInfo();
+//	vector<NoInfo> path = data.getfloydWarshallPath(ori,des);
+//
+//	for(unsigned int i = 0; i < path.size(); i++){
+//		Sleep(100);
+//		cout << path[i] << endl;
+//		gv->setVertexColor(path[i].idNo,YELLOW);
+//	}
+
 	//testing serielization
 
 //	class teste {
