@@ -51,6 +51,14 @@ public:
 	friend bool operator<(const NoInfo& left, const NoInfo& right) {
 		return left.idNo < right.idNo;
 	}
+
+};
+
+template<>
+struct vertex_greater_than<int> {
+	bool operator()(Vertex<NoInfo> * a, Vertex<NoInfo> * b) const {
+		return a->getDist() > b->getDist();
+	}
 };
 
 class Aresta {
@@ -80,6 +88,14 @@ struct hashFunc {
 
 };
 void exercicioTeste() {
+	GraphViewer *gv = new GraphViewer(1000, 1000, false); //not dynamic
+	gv->setBackground("background.jpg");
+	gv->createWindow(1000, 1000);
+	gv->defineEdgeDashed(false);
+	gv->defineVertexColor("blue");
+	gv->defineEdgeColor("black");
+	for (int i = 0; i < 5; i++)
+		gv->addNode(i, i * 100, i * 100);
 
 }
 
@@ -339,8 +355,8 @@ void abrirFicheiros(string A, string B, string C, Graph<NoInfo> & grafo,
 		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
 		linestream >> Y;    //X and Y are in radians
 		//cout << "idNo: " << idNo << " long: " << X << " lat: " << Y << endl;
-		NoInfo temp(idNo, X, Y);
-		gv->addNode(idNo);
+		NoInfo temp(idNo % 100000000, X, Y);
+		gv->addNode(idNo % 100000000);
 		grafo.addVertex(temp);
 
 	}
@@ -380,9 +396,9 @@ void abrirFicheiros(string A, string B, string C, Graph<NoInfo> & grafo,
 		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
 		linestream >> idNo2;    //X and Y are in degrees
 
-		NoInfo origem(idNo1, 0, 0);  //so para efeitos de pesquisa
+		NoInfo origem(idNo1 % 100000000, 0, 0);  //so para efeitos de pesquisa
 		Vertex<NoInfo>* source = grafo.getVertex(origem);
-		NoInfo destino(idNo2, 0, 0);
+		NoInfo destino(idNo2 % 100000000, 0, 0);
 		Vertex<NoInfo>* destiny = grafo.getVertex(destino);
 
 		//pre processamento do grafico pelo parser ja garante informacao sem erros //i think
@@ -401,8 +417,9 @@ void abrirFicheiros(string A, string B, string C, Graph<NoInfo> & grafo,
 						source->getInfo().longitude,
 						destiny->getInfo().latitude,
 						destiny->getInfo().longitude));
-		gv->addEdge(i, idNo1, idNo2, EdgeType::DIRECTED);
-		gv->setVertexColor(idNo1, GREEN);
+		gv->addEdge(i, idNo1 % 100000000, idNo2 % 100000000,
+				EdgeType::DIRECTED);
+		gv->setVertexColor(idNo1 % 100000000, GREEN);
 		i++;
 
 		//}
@@ -410,6 +427,57 @@ void abrirFicheiros(string A, string B, string C, Graph<NoInfo> & grafo,
 	}
 	gv->rearrange();
 	inFile.close();
+}
+
+void testFloidWarshal_big(Graph<NoInfo>& data, GraphViewer*& gv) {
+	//teste floyd warshal bigger
+	int i = 0;
+
+	while (i < 6) {
+		int ind0 = rand() % data.getVertexSet().size();
+		int ind1 = rand() % data.getVertexSet().size();
+		Vertex<NoInfo> * ori = data.getVertex(
+				NoInfo(data.getVertexSet()[ind0]->getInfo().idNo, 0, 0));
+		Vertex<NoInfo> * des = data.getVertex(
+				NoInfo(data.getVertexSet()[ind1]->getInfo().idNo, 0, 0));
+		if (ori == NULL || des == NULL || ori == des)
+			continue;
+
+		vector<NoInfo> path = data.getfloydWarshallPath(ori->getInfo(),
+				des->getInfo());
+		string color = "BLACK";
+		switch (i) {
+		case 0:
+			color = YELLOW;
+			break;
+		case 1:
+			color = ORANGE;
+			break;
+		case 2:
+			color = RED;
+			break;
+		case 3:
+			color = PINK;
+			break;
+		case 4:
+			color = GRAY;
+			break;
+		case 5:
+			color = BLACK;
+			break;
+		}
+
+		cout << "novo caminho: " << i << endl;
+		for (unsigned int i = 0; i < path.size(); i++) {
+			//Sleep(100);
+			cout << path[i] << endl;
+			gv->setVertexColor(path[i].idNo, color);
+		}
+
+		i++;
+	}
+//-----------------------fim floydwarshal bigger
+
 }
 
 void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo,
@@ -622,6 +690,95 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo,
 
 }
 
+void testFloidWarshal_med(Graph<NoInfo>& data, GraphViewer*& gv) {
+	//----------------------------teste floyd warshal
+
+	NoInfo ori = data.getVertex(NoInfo(42809630, 0, 0))->getInfo();
+	NoInfo des = data.getVertex(NoInfo(42809660, 0, 0))->getInfo();
+	vector<NoInfo> path = data.getfloydWarshallPath(ori, des);
+
+	for (unsigned int i = 0; i < path.size(); i++) {
+		Sleep(100);
+		cout << path[i] << endl;
+		gv->setVertexColor(path[i].idNo, YELLOW);
+	}
+	//------------------------------fim teste floyd warshal
+}
+
+void testDijkstra(Graph<NoInfo>& data, GraphViewer*& gv) {
+	Vertex<NoInfo>* origem = data.getVertex(NoInfo(173452776, 0, 0));
+	data.dijkstraShortestPath(origem->getInfo());
+
+	vector<Vertex<NoInfo>*> todos = data.getVertexSet();
+
+	Vertex<NoInfo>* destino = data.getVertex(NoInfo(541769885, 0, 0));
+	while (destino != NULL) {
+
+		gv->setVertexColor(destino->getInfo().idNo, YELLOW);
+		destino = destino->path;
+	}
+
+	gv->rearrange();
+	// --------------------------fim teste dijkstra
+}
+
+void testSerial() {
+	//	class teste {
+		//	public:
+		//		int i;
+		//		double j;
+		//		vector<int> vetor;
+		//	};
+		//
+		//	teste um;
+		//	um.i = 100;
+		//	um.j = 55.55;
+		//	um.vetor.push_back(10);
+		//	um.vetor.push_back(20);
+		//	um.vetor.push_back(30);
+		//	um.vetor.push_back(45);
+		//
+		//	ofstream out;
+		//
+		//	unsigned char testando[sizeof(teste)];
+		//	memcpy(testando, &um, sizeof(teste));
+		//
+		//
+		//	teste * dois;
+		//	dois = (teste *)testando;
+		//
+		//	cout << dois->i << endl;
+		//	cout << dois->j << endl;
+		//	for(int i = 0; i < dois->vetor.size(); i++)
+		//		cout << dois->vetor[i] << endl;
+		//-----------------------------fim teste serialization
+
+		//	GraphViewer *gv = new GraphViewer(600, 600, false);
+		//	gv->setBackground("background.jpg");
+		//	gv->createWindow(600, 600);
+		//	gv->defineEdgeDashed(true);
+		//	gv->defineVertexColor("blue");
+		//	gv->addNode(0,30,120);
+		//	gv->addNode(1,30,240);
+		//	gv->addNode(2,120,30);
+		//	gv->addEdge(0,1,2, EdgeType::UNDIRECTED);
+		//	gv->addEdge(1,2,0, EdgeType::DIRECTED);
+		//	gv->closeWindow();
+		//	cout << "gv closed" << endl;
+		//
+		//	Sleep(1000);
+		//
+		//	unsigned char testando[sizeof(GraphViewer)];
+		//	memcpy(testando, &(*gv), sizeof(GraphViewer));
+		//
+		//
+		//	GraphViewer * dois;
+		//	dois = (GraphViewer *)testando;
+		//	cout << "dois created" << endl;
+		//	dois->createWindow(600,600);
+		//	dois->defineVertexColor("blue");
+}
+
 int main() {
 	//exercicio1();
 	//exercicio2();
@@ -638,117 +795,30 @@ int main() {
 	gv->defineEdgeDashed(false);
 	gv->defineVertexColor("blue");
 	gv->defineEdgeColor("black");
-	//tiniest
+	//------------------------tiniest
 	//abrirFicheiros("tinyA.txt","tinyB.txt", "tinyC.txt",data, gv);
-	//amostra really small
-	abrirFicheiros("smallerA.txt","smallerB.txt", "smallerC.txt",data, gv);
-	//amostra pequena
+	//-------------------------amostra really small
+	//abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
+	//-----------------------amostra pequena
 	//abrirFicheiros("A2.txt","B2.txt", "C2.txt",data, gv);
-	//amostra media
+	//----------------------amostra media
 	//abrirFicheiros("A.txt", "B.txt", "C.txt", data, gv);
-	//amostra grande
+	//--------------------------------amostra grande
 	//abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
 
 	gv->rearrange();
 
-	int i = 0;
 
-	while (i < 5) {
-		int ind0 = rand()%data.getVertexSet().size();
-		int ind1 = rand()%data.getVertexSet().size();
-		Vertex<NoInfo> * ori = data.getVertex(NoInfo(data.getVertexSet()[ind0]->getInfo().idNo, 0, 0));
-		Vertex<NoInfo> *  des = data.getVertex(NoInfo(data.getVertexSet()[ind1]->getInfo().idNo, 0, 0));
-		if(ori == NULL || des == NULL || ori == des)
-			continue;
+	//abrirFicheiros("smallerA.txt","smallerB.txt", "smallerC.txt",data, gv); //com esta
+	//testFloidWarshal_med(data, gv);
 
-		vector<NoInfo> path = data.getfloydWarshallPath(ori->getInfo(), des->getInfo());
-		string color = "BLACK";
-		switch(i){
-		case 0:color = YELLOW;break;
-		case 1 : color = ORANGE;break;
-		case 2 : color = RED;break;
-		case 3 : color = PINK;break;
-		case 4 : color = GRAY;break;
-		}
+	//testFloidWarshal_big(data, gv);
 
-		cout << "novo caminho: " << i << endl;
-			for(unsigned int i = 0; i < path.size(); i++){
-				Sleep(100);
-				cout << path[i] << endl;
-				gv->setVertexColor(path[i].idNo,color);
-			}
+	//abrirFicheiros("A2.txt","B2.txt", "C2.txt",data, gv);
+	//testDijkstra(data, gv);
 
-			i++;
-	}
+	//testSerial();
 
-	//----------------------------teste floyd warshal
-	//abrirFicheiros("smallerA.txt","smallerB.txt", "smallerC.txt",data, gv); com esta
-//	NoInfo ori = data.getVertex(NoInfo(42809630,0,0))->getInfo();
-//	NoInfo des = data.getVertex(NoInfo(42809660,0,0))->getInfo();
-//	vector<NoInfo> path = data.getfloydWarshallPath(ori,des);
-//
-//	for(unsigned int i = 0; i < path.size(); i++){
-//		Sleep(100);
-//		cout << path[i] << endl;
-//		gv->setVertexColor(path[i].idNo,YELLOW);
-//	}
-
-	//testing serielization
-
-//	class teste {
-//	public:
-//		int i;
-//		double j;
-//		vector<int> vetor;
-//	};
-//
-//	teste um;
-//	um.i = 100;
-//	um.j = 55.55;
-//	um.vetor.push_back(10);
-//	um.vetor.push_back(20);
-//	um.vetor.push_back(30);
-//	um.vetor.push_back(45);
-//
-//	ofstream out;
-//
-//	unsigned char testando[sizeof(teste)];
-//	memcpy(testando, &um, sizeof(teste));
-//
-//
-//	teste * dois;
-//	dois = (teste *)testando;
-//
-//	cout << dois->i << endl;
-//	cout << dois->j << endl;
-//	for(int i = 0; i < dois->vetor.size(); i++)
-//		cout << dois->vetor[i] << endl;
-//
-
-//	GraphViewer *gv = new GraphViewer(600, 600, false);
-//	gv->setBackground("background.jpg");
-//	gv->createWindow(600, 600);
-//	gv->defineEdgeDashed(true);
-//	gv->defineVertexColor("blue");
-//	gv->addNode(0,30,120);
-//	gv->addNode(1,30,240);
-//	gv->addNode(2,120,30);
-//	gv->addEdge(0,1,2, EdgeType::UNDIRECTED);
-//	gv->addEdge(1,2,0, EdgeType::DIRECTED);
-//	gv->closeWindow();
-//	cout << "gv closed" << endl;
-//
-//	Sleep(1000);
-//
-//	unsigned char testando[sizeof(GraphViewer)];
-//	memcpy(testando, &(*gv), sizeof(GraphViewer));
-//
-//
-//	GraphViewer * dois;
-//	dois = (GraphViewer *)testando;
-//	cout << "dois created" << endl;
-//	dois->createWindow(600,600);
-//	dois->defineVertexColor("blue");
 
 	getchar();
 	cout << "END" << endl;
