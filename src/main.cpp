@@ -808,8 +808,6 @@ void read_node_radians(const std::string& A,GraphViewer*& gv,Graph<NoInfo>& graf
 			exit(1);   // call system to stop
 		}
 
-		std::string line;
-
 		BigAssInteger idNo = 0;
 		long double X = 0;
 		long double Y = 0;
