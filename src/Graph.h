@@ -175,6 +175,9 @@ public:
 	void floydWarshallShortestPath();
 	vector<T> getfloydWarshallPath(const T &origin, const T &dest);
 
+	//testing
+	void A_star(const T &origin, const T &dest);
+	vector<T> getA_starPath(const T &origin, const T &dest);
 };
 
 template<class T>
@@ -673,6 +676,10 @@ void Graph<T>::floydWarshallShortestPath() {
 }
 
 template<class T>
+void Graph<T>::getPathTo(Vertex<T>* origin, list<T>& res) {
+}
+
+template<class T>
 vector<T> Graph<T>::getfloydWarshallPath(const T& origin, const T& dest) {
 	floydWarshallShortestPath();
 
@@ -728,6 +735,84 @@ vector<T> Graph<T>::getfloydWarshallPath(const T& origin, const T& dest) {
 	}
 
 	return res;
+}
+
+template<class T>
+struct heuristicFunc {
+	T destino;
+	bool operator()(Vertex<T> * a, Vertex<T> * b) const {
+		return true;
+	}
+
+	long double operator()(Vertex<T> * a) const {
+		return 0.0;
+	}
+};
+
+template<class T>
+void Graph<T>::A_star(const T& origin, const T& dest) {
+	for (unsigned int i = 0; i < vertexSet.size(); i++) {
+			vertexSet[i]->path = NULL;
+			vertexSet[i]->dist = INT_INFINITY;
+			vertexSet[i]->processing = false; //estao na fila de espera
+		}
+
+		Vertex<T>* v = getVertex(origin);
+		Vertex<T>* des = getVertex(dest);
+		heuristicFunc<T> comparador;
+		if(v == NULL)
+			return;
+		if(des != NULL){
+			comparador.destino = des->getInfo();
+		}
+		else return;
+
+		v->dist = 0;
+		vector<Vertex<T>*> q;
+		q.push_back(v);
+		make_heap(q.begin(), q.end(), comparador); //construir heap
+
+		while (!q.empty()) {
+			pop_heap(q.begin(), q.end());
+			v = q[q.size() - 1];
+			q.pop_back();
+
+			for (unsigned int i = 0; i < v->adj.size(); i++) {
+				Vertex<T>* w = v->adj[i].dest;
+				if (v->dist + v->adj[i].weight + comparador(v->adj[i].dest) < w->dist + comparador(w)) {
+					w->dist = v->dist + v->adj[i].weight;
+					w->path = v;
+					if (!w->processing) {
+						q.push_back(w); //acrescenta
+						w->processing = true;
+					} // decrese key ou atualiza depois de introduzir w
+					make_heap(q.begin(), q.end(), comparador);
+				}
+			}
+		}
+}
+
+template<class T>
+vector<T> Graph<T>::getA_starPath(const T& origin, const T& dest) {
+	A_star(origin,dest);
+	list<T> buffer;
+	Vertex<T>* v = getVertex(dest);
+
+		//cout << v->info << " ";
+		buffer.push_front(v->info);
+		while (v->path != NULL && v->path->info != origin) {
+			v = v->path;
+			buffer.push_front(v->info);
+		}
+		if (v->path != NULL)
+			buffer.push_front(v->path->info);
+
+		vector<T> res;
+		while (!buffer.empty()) {
+			res.push_back(buffer.front());
+			buffer.pop_front();
+		}
+		return res;
 }
 
 #endif /* GRAPH_H_ */

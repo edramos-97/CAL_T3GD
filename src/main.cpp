@@ -17,6 +17,9 @@ void exercicio2();
 void exercicio3();
 
 typedef unsigned long long BigAssInteger;
+long double haversine_km(long double lat1, long double long1, long double lat2,
+		long double long2);
+
 
 class NoInfo {
 public:
@@ -51,6 +54,20 @@ template<>
 struct vertex_greater_than<int> {
 	bool operator()(Vertex<NoInfo> * a, Vertex<NoInfo> * b) const {
 		return a->getDist() > b->getDist();
+	}
+};
+
+
+template<>
+struct heuristicFunc<NoInfo>{
+	NoInfo destino;
+	bool operator()(Vertex<NoInfo> * a, Vertex<NoInfo> * b){
+		long double distOri = haversine_km(a->getInfo().latitude,a->getInfo().longitude,destino.latitude,destino.longitude);
+		long double distDest = haversine_km(b->getInfo().latitude,b->getInfo().longitude,destino.latitude,destino.longitude);
+		return (distOri > distDest? true : false);
+	}
+	long double operator()(Vertex<NoInfo> * a) const {
+			return haversine_km(a->getInfo().latitude,a->getInfo().longitude,destino.latitude,destino.longitude);
 	}
 };
 
@@ -89,7 +106,7 @@ void exercicioTeste() {
 	gv->defineVertexColor("blue");
 	gv->defineEdgeColor("black");
 	for (int i = 0; i < 5; i++)
-		gv->addNode(i, i * 100, i * 100);
+	gv->addNode(i, i * 100, i * 100);
 
 }
 
@@ -1119,52 +1136,49 @@ void abrirFicheiroXY(const std::string& A, const std::string& B,const std::strin
 	read_edges(C,gv,grafo);
 }
 
-int main() {
-	//exercicio1();
-	//exercicio2();
-	//exercicio3();
-	//exercicioTeste();
+void TesteNewYork(){
+	//	int xMaxW = 1000, yMaxW = 947;
+	//		GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
+	//		gv->setBackground("10IMG1000-947.png");
+		//	struct cantos corners;
+	//	corners.maxLat = 40.72988;
+	//	corners.maxLong = -73.87300;
+	//	corners.minLat = 40.72638;
+	//	corners.minLong = -73.87790;
+	//	abrirFicheiroXY("10IMG1000-947A.txt", "10IMG1000-947B.txt", "10IMG1000-947C.txt", data, gv, corners,xMaxW,yMaxW);
 
+
+
+	//CRIAR GRAFO INTERNO
+		Graph<NoInfo> data;
+	int xMaxW = 5000, yMaxW = 1910;
+		GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
+		gv->setBackground("NEWY.png");
+		gv->createWindow(xMaxW, yMaxW);
+		gv->defineEdgeDashed(true);
+		gv->defineVertexColor("blue");
+		gv->defineVertexSize(4);
+		gv->defineEdgeColor("black");
+		struct cantos corners;
+		corners.maxLat = 40.7127;
+		corners.maxLong = -73.9784;
+		corners.minLat = 40.7007;
+		corners.minLong = -74.0194;
+		abrirFicheiroXY("NEWYA.txt", "NEWYB.txt", "NEWYC.txt", data, gv, corners,xMaxW,yMaxW);
+}
+
+int main() {
 	//CRIAR GRAFO INTERNO
 	Graph<NoInfo> data;
 
 	//CRIAR GRAPHVIEWER
-//	GraphViewer *gv = new GraphViewer(1000, 1000, true); //not dynamic
-//	gv->setBackground("background.jpg");
-//	gv->createWindow(1000, 1000);
-//	gv->defineEdgeDashed(false);
-//	gv->defineVertexColor("blue");
-//	gv->defineVertexSize(5);
-//	gv->defineEdgeColor("black");
-
-	int xMaxW = 5000, yMaxW = 1910;
-	GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
-	gv->setBackground("NEWY.png");
-	gv->createWindow(xMaxW, yMaxW);
-	gv->defineEdgeDashed(true);
+	GraphViewer *gv = new GraphViewer(1000, 1000, true); //not dynamic
+	gv->setBackground("background.jpg");
+	gv->createWindow(1000, 1000);
+	gv->defineEdgeDashed(false);
 	gv->defineVertexColor("blue");
-	gv->defineVertexSize(4);
+	gv->defineVertexSize(5);
 	gv->defineEdgeColor("black");
-	struct cantos corners;
-	corners.maxLat = 40.7127;
-	corners.maxLong = -73.9784;
-	corners.minLat = 40.7007;
-	corners.minLong = -74.0194;
-	abrirFicheiroXY("NEWYA.txt", "NEWYB.txt", "NEWYC.txt", data, gv, corners,xMaxW,yMaxW);
-
-
-	//img text
-
-//	int xMaxW = 1000, yMaxW = 947;
-//		GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
-//		gv->setBackground("10IMG1000-947.png");
-	//	struct cantos corners;
-//	corners.maxLat = 40.72988;
-//	corners.maxLong = -73.87300;
-//	corners.minLat = 40.72638;
-//	corners.minLong = -73.87790;
-//	abrirFicheiroXY("10IMG1000-947A.txt", "10IMG1000-947B.txt", "10IMG1000-947C.txt", data, gv, corners,xMaxW,yMaxW);
-
 
 
 
@@ -1172,13 +1186,27 @@ int main() {
 	//------------------------tiniest
 	//abrirFicheiros("tinyA.txt","tinyB.txt", "tinyC.txt",data, gv);
 	//-------------------------amostra really small
-	//abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
+	abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
 	//-----------------------amostra pequena
 	//abrirFicheiros("A2.txt","B2.txt", "C2.txt",data, gv);
 	//----------------------amostra media
 	//abrirFicheiros("A.txt", "B.txt", "C.txt", data, gv);
 	//--------------------------------amostra grande
 	//abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
+
+
+	NoInfo ori = data.getVertex(NoInfo(42809632, 0, 0))->getInfo();
+	NoInfo des = data.getVertex(NoInfo(42809642, 0, 0))->getInfo();
+		vector<NoInfo> path = data.getA_starPath(ori, des);
+
+		for (unsigned int i = 0; i < path.size(); i++) {
+			Sleep(100);
+			cout << path[i] << endl;
+			gv->setVertexColor(path[i].idNo, YELLOW);
+			//gv->setVertexSize(path[i].idNo, 20);
+		}
+
+
 
 	//abrirFicheiros("smallerA.txt","smallerB.txt", "smallerC.txt",data, gv); //com esta
 	//testFloidWarshal_med(data, gv);
@@ -1189,7 +1217,6 @@ int main() {
 	//testDijkstra(data, gv);
 
 	//gv->rearrange();
-	//testSerial();
 
 	getchar();
 	cout << "END" << endl;
