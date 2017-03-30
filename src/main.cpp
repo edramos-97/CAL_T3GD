@@ -62,8 +62,8 @@ template<>
 struct heuristicFunc<NoInfo>{
 	NoInfo destino;
 	bool operator()(Vertex<NoInfo> * a, Vertex<NoInfo> * b){
-		long double distOri = haversine_km(a->getInfo().latitude,a->getInfo().longitude,destino.latitude,destino.longitude)+a->dist;
-		long double distDest = haversine_km(b->getInfo().latitude,b->getInfo().longitude,destino.latitude,destino.longitude)+b->dist;
+		long double distOri = haversine_km(a->getInfo().latitude,a->getInfo().longitude,destino.latitude,destino.longitude)+a->getDist();
+		long double distDest = haversine_km(b->getInfo().latitude,b->getInfo().longitude,destino.latitude,destino.longitude)+b->getDist();
 		return (distOri > distDest? true : false);
 	}
 	//no longer needed
@@ -932,13 +932,15 @@ void read_nodes_degrees(const std::string& A,GraphViewer*& gv,Graph<NoInfo>& gra
 		inFile.close();
 }
 
+
+
 /**
  * Method that reads the edges from a text file and adds them to both a GraphViwer and a Graph. Also calculates the weight of the edge wich is added to the Graph
  * @param C
  * @param gv
  * @param grafo
  */
-void read_edges(const std::string& C,GraphViewer*& gv,Graph<NoInfo>& grafo){
+void read_edges(tr1::unordered_set<Aresta, hashFunc, hashFunc> arestas, const std::string& C,GraphViewer*& gv,Graph<NoInfo>& grafo){
 	ifstream inFile;
 	string line;
 
@@ -961,9 +963,10 @@ void read_edges(const std::string& C,GraphViewer*& gv,Graph<NoInfo>& grafo){
 		while (std::getline(inFile, line)) {
 			std::stringstream linestream(line);
 			std::string data;
-
 			linestream >> idAresta;
-
+			Aresta temp;
+			temp.idAresta = idAresta;
+			tr1::unordered_set<Aresta, hashFunc, hashFunc>::iterator itAre = arestas.find(temp);
 			//		if(novo){
 			//						anterior = idAresta;
 			//						novo = false;
@@ -995,9 +998,21 @@ void read_edges(const std::string& C,GraphViewer*& gv,Graph<NoInfo>& grafo){
 							source->getInfo().longitude,
 							destiny->getInfo().latitude,
 							destiny->getInfo().longitude));
+
 			gv->addEdge(i, idNo1 % 100000000, idNo2 % 100000000,
 					EdgeType::DIRECTED);
 			gv->setVertexColor(idNo1 % 100000000, GREEN);
+			if(itAre->dois_sentidos){
+				i++;
+				grafo.addEdge(destino, origem,
+									haversine_km(source->getInfo().latitude,
+											source->getInfo().longitude,
+											destiny->getInfo().latitude,
+											destiny->getInfo().longitude)); //distancia entre A e B == distancia entre B e A;
+				gv->addEdge(i, idNo2 % 100000000, idNo1 % 100000000,
+									EdgeType::DIRECTED);
+				gv->setVertexColor(idNo2 % 100000000, GREEN);
+			}
 			i++;
 
 			//}
@@ -1014,7 +1029,7 @@ void read_edges(const std::string& C,GraphViewer*& gv,Graph<NoInfo>& grafo){
  * @param gv
  * @param grafo
  */
-void read_edges_names(const std::string& B,GraphViewer*& gv,Graph<NoInfo>& grafo){
+tr1::unordered_set<Aresta, hashFunc, hashFunc> read_edges_names(const std::string& B){
 	ifstream inFile;
 	string line;
 	tr1::unordered_set<Aresta, hashFunc, hashFunc> arestas;
@@ -1069,6 +1084,8 @@ void read_edges_names(const std::string& B,GraphViewer*& gv,Graph<NoInfo>& grafo
 	}
 
 	inFile.close();
+
+	return arestas;
 }
 
 void abrirFicheiroXY(const std::string& A, const std::string& B,const std::string& C, Graph<NoInfo>& grafo, GraphViewer*& gv,struct cantos corners, int maxXwindow, int maxYwindow) {
@@ -1133,8 +1150,11 @@ void abrirFicheiroXY(const std::string& A, const std::string& B,const std::strin
 
 	read_nodes_degrees(A,gv,grafo,corners,maxXwindow,maxYwindow);
 
+	tr1::unordered_set<Aresta, hashFunc, hashFunc> arestas = read_edges_names(B);
+
+
 	//abrir C2.txt sao as arestas
-	read_edges(C,gv,grafo);
+	read_edges(arestas,C,gv,grafo);
 }
 
 void TesteNewYork(){
@@ -1156,6 +1176,7 @@ void TesteNewYork(){
 		GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
 		gv->setBackground("NEWY.png");
 		gv->createWindow(xMaxW, yMaxW);
+		gv->defineEdgeCurved(false);
 		gv->defineEdgeDashed(true);
 		gv->defineVertexColor("blue");
 		gv->defineVertexSize(4);
@@ -1173,21 +1194,21 @@ int main() {
 	Graph<NoInfo> data;
 
 	//CRIAR GRAPHVIEWER
-	GraphViewer *gv = new GraphViewer(1000, 1000, true); //not dynamic
-	gv->setBackground("background.jpg");
-	gv->createWindow(1000, 1000);
-	gv->defineEdgeDashed(false);
-	gv->defineVertexColor("blue");
-	gv->defineVertexSize(5);
-	gv->defineEdgeColor("black");
+//	GraphViewer *gv = new GraphViewer(1000, 1000, true); //not dynamic
+//	gv->setBackground("background.jpg");
+//	gv->createWindow(1000, 1000);
+//	gv->defineEdgeDashed(false);
+//	gv->defineVertexColor("blue");
+//	gv->defineVertexSize(5);
+//	gv->defineEdgeColor("black");
 
 
-
+	TesteNewYork();
 
 	//------------------------tiniest
 	//abrirFicheiros("tinyA.txt","tinyB.txt", "tinyC.txt",data, gv);
 	//-------------------------amostra really small
-	abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
+	//abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
 	//-----------------------amostra pequena
 	//abrirFicheiros("A2.txt","B2.txt", "C2.txt",data, gv);
 	//----------------------amostra media
@@ -1195,17 +1216,17 @@ int main() {
 	//--------------------------------amostra grande
 	//abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
 
-
-	NoInfo ori = data.getVertex(NoInfo(42809632, 0, 0))->getInfo();
-	NoInfo des = data.getVertex(NoInfo(42809642, 0, 0))->getInfo();
-		vector<NoInfo> path = data.getA_starPath(ori, des);
-
-		for (unsigned int i = 0; i < path.size(); i++) {
-			Sleep(100);
-			cout << path[i] << endl;
-			gv->setVertexColor(path[i].idNo, YELLOW);
-			//gv->setVertexSize(path[i].idNo, 20);
-		}
+	//abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
+//	NoInfo ori = data.getVertex(NoInfo(42809632, 0, 0))->getInfo();
+//	NoInfo des = data.getVertex(NoInfo(42809642, 0, 0))->getInfo();
+//		vector<NoInfo> path = data.getA_starPath(ori, des);
+//
+//		for (unsigned int i = 0; i < path.size(); i++) {
+//			Sleep(100);
+//			cout << path[i] << endl;
+//			gv->setVertexColor(path[i].idNo, YELLOW);
+//			//gv->setVertexSize(path[i].idNo, 20);
+//		}
 
 
 
