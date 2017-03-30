@@ -62,10 +62,11 @@ template<>
 struct heuristicFunc<NoInfo>{
 	NoInfo destino;
 	bool operator()(Vertex<NoInfo> * a, Vertex<NoInfo> * b){
-		long double distOri = haversine_km(a->getInfo().latitude,a->getInfo().longitude,destino.latitude,destino.longitude);
-		long double distDest = haversine_km(b->getInfo().latitude,b->getInfo().longitude,destino.latitude,destino.longitude);
+		long double distOri = haversine_km(a->getInfo().latitude,a->getInfo().longitude,destino.latitude,destino.longitude)+a->dist;
+		long double distDest = haversine_km(b->getInfo().latitude,b->getInfo().longitude,destino.latitude,destino.longitude)+b->dist;
 		return (distOri > distDest? true : false);
 	}
+	//no longer needed
 	long double operator()(Vertex<NoInfo> * a) const {
 			return haversine_km(a->getInfo().latitude,a->getInfo().longitude,destino.latitude,destino.longitude);
 	}

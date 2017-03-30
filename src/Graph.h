@@ -777,9 +777,10 @@ void Graph<T>::A_star(const T& origin, const T& dest) {
 			v = q[q.size() - 1];
 			q.pop_back();
 
+			//TODO alterar para encontrar o destino !!!
 			for (unsigned int i = 0; i < v->adj.size(); i++) {
 				Vertex<T>* w = v->adj[i].dest;
-				if (v->dist + v->adj[i].weight + comparador(v->adj[i].dest) < w->dist + comparador(w)) {
+				if (v->dist + v->adj[i].weight < w->dist) {
 					w->dist = v->dist + v->adj[i].weight;
 					w->path = v;
 					if (!w->processing) {
