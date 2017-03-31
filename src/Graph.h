@@ -24,6 +24,8 @@ const unsigned int INT_INFINITY = 10000000;
 #define NULL 0
 #define NULL_STRING "NULL"
 
+
+
 /*
  * ================================================================================================
  * Class Vertex
@@ -37,10 +39,14 @@ class Vertex {
 	bool processing;
 	int indegree;
 	long double dist;
+	long double dist_DESTINY = 0.0; //distancia so usada antes de carregar a*
 public:
 
 	Vertex(T in);
 	friend class Graph<T> ;
+
+	void setDestiny(long double dest){ this->dist_DESTINY = dest;};
+	long double getDestinyDistance(){ return dist_DESTINY;};
 
 	void addEdge(Vertex<T> *dest, long double w);
 	bool removeEdgeTo(Vertex<T> *d);
@@ -54,10 +60,17 @@ public:
 	Vertex* path;
 };
 
-template<class T>
+template<class T> //for Dijkstra
 struct vertex_greater_than {
 	bool operator()(Vertex<T> * a, Vertex<T> * b) const {
 		return a->getDist() > b->getDist();
+	}
+};
+
+template<class T>  //for A*
+struct vertex_greater_than_A {
+	bool operator()(Vertex<T> * a, Vertex<T> * b) const {
+			return (a->getDist()+a->getDestinyDistance()) > (b->getDist()+b->getDestinyDistance());
 	}
 };
 
@@ -176,8 +189,9 @@ public:
 	vector<T> getfloydWarshallPath(const T &origin, const T &dest);
 
 	//testing
-	void A_star_all(const T &origin, const T &dest);
 
+
+	void A_star_all(const T &origin, const T &dest);
 	void A_star(const T &origin, const T &dest);
 	vector<T> getA_starPath(const T &origin, const T &dest);
 	void dijkstraShortestPath(const T &s, const T& dest);
@@ -580,7 +594,7 @@ void Graph<T>::dijkstraShortestPath_all(const T& s) {
 	v->dist = 0;
 	vector<Vertex<T>*> q;
 	q.push_back(v);
-	make_heap(q.begin(), q.end(), vertex_greater_than<int>()); //construir heap
+	make_heap(q.begin(), q.end(), vertex_greater_than<long double>()); //construir heap
 
 	while (!q.empty()) {
 
@@ -597,7 +611,7 @@ void Graph<T>::dijkstraShortestPath_all(const T& s) {
 					q.push_back(w); //acrescenta
 					w->processing = true;
 				} // decrese key ou atualiza depois de introduzir w
-				make_heap(q.begin(), q.end(), vertex_greater_than<int>());
+				make_heap(q.begin(), q.end(), vertex_greater_than<long double>());
 			}
 		}
 	}
@@ -616,7 +630,7 @@ void Graph<T>::dijkstraShortestPath(const T& s, const T& dest) {
 	v->dist = 0;
 	vector<Vertex<T>*> q;
 	q.push_back(v);
-	make_heap(q.begin(), q.end(), vertex_greater_than<int>()); //construir heap
+	make_heap(q.begin(), q.end(), vertex_greater_than<long double>()); //construir heap
 
 	while (!q.empty()) {
 
@@ -635,7 +649,7 @@ void Graph<T>::dijkstraShortestPath(const T& s, const T& dest) {
 					q.push_back(w); //acrescenta
 					w->processing = true;
 				} // decrese key ou atualiza depois de introduzir w
-				make_heap(q.begin(), q.end(), vertex_greater_than<int>());
+				make_heap(q.begin(), q.end(), vertex_greater_than<long double>());
 			}
 		}
 	}
@@ -800,19 +814,14 @@ void Graph<T>::A_star_all(const T& origin, const T& dest) {
 		}
 
 		Vertex<T>* v = getVertex(origin);
-		Vertex<T>* des = getVertex(dest);
-		heuristicFunc<T> comparador;
+		//Vertex<T>* des = getVertex(dest);
 		if(v == NULL)
 			return;
-		if(des != NULL){
-			comparador.destino = des->getInfo();
-		}
-		else return;
 
 		v->dist = 0;
 		vector<Vertex<T>*> q;
 		q.push_back(v);
-		make_heap(q.begin(), q.end(), comparador); //construir heap
+		make_heap(q.begin(), q.end(), vertex_greater_than_A<long double>()); //construir heap
 
 		while (!q.empty()) {
 			pop_heap(q.begin(), q.end());
@@ -829,7 +838,7 @@ void Graph<T>::A_star_all(const T& origin, const T& dest) {
 						q.push_back(w); //acrescenta
 						w->processing = true;
 					} // decrese key ou atualiza depois de introduzir w
-					make_heap(q.begin(), q.end(), comparador);
+					make_heap(q.begin(), q.end(), vertex_greater_than_A<long double>());
 				}
 			}
 		}
@@ -844,19 +853,14 @@ void Graph<T>::A_star(const T& origin, const T& dest) {
 		}
 
 		Vertex<T>* v = getVertex(origin);
-		Vertex<T>* des = getVertex(dest);
-		heuristicFunc<T> comparador;
 		if(v == NULL)
 			return;
-		if(des != NULL){
-			comparador.destino = des->getInfo();
-		}
-		else return;
+
 
 		v->dist = 0;
 		vector<Vertex<T>*> q;
 		q.push_back(v);
-		make_heap(q.begin(), q.end(), comparador); //construir heap
+		make_heap(q.begin(), q.end(), vertex_greater_than_A<long double>()); //construir heap
 
 		while (!q.empty()) {
 			pop_heap(q.begin(), q.end());
@@ -871,10 +875,11 @@ void Graph<T>::A_star(const T& origin, const T& dest) {
 					w->dist = v->dist + v->adj[i].weight;
 					w->path = v;
 					if (!w->processing) {
+						//TODO MAYBE ACRESCENTAR LAT E LONG Ào vertex
 						q.push_back(w); //acrescenta
 						w->processing = true;
 					} // decrese key ou atualiza depois de introduzir w
-					make_heap(q.begin(), q.end(), comparador);
+					make_heap(q.begin(), q.end(), vertex_greater_than_A<long double>());
 				}
 			}
 		}
@@ -883,47 +888,13 @@ void Graph<T>::A_star(const T& origin, const T& dest) {
 template<class T>
 vector<T> Graph<T>::getA_starPath(const T& origin, const T& dest) {
 	A_star(origin,dest);
-	list<T> buffer;
-	Vertex<T>* v = getVertex(dest);
-
-		//cout << v->info << " ";
-		buffer.push_front(v->info);
-		while (v->path != NULL && v->path->info != origin) {
-			v = v->path;
-			buffer.push_front(v->info);
-		}
-		if (v->path != NULL)
-			buffer.push_front(v->path->info);
-
-		vector<T> res;
-		while (!buffer.empty()) {
-			res.push_back(buffer.front());
-			buffer.pop_front();
-		}
-		return res;
+	return getPath(origin, dest);
 }
 
 
 template<class T>
 vector<T> Graph<T>::getDijkstraPath(const T& origin, const T& dest) {
 	dijkstraShortestPath(origin,dest);
-	list<T> buffer;
-	Vertex<T>* v = getVertex(dest);
-
-		//cout << v->info << " ";
-		buffer.push_front(v->info);
-		while (v->path != NULL && v->path->info != origin) {
-			v = v->path;
-			buffer.push_front(v->info);
-		}
-		if (v->path != NULL)
-			buffer.push_front(v->path->info);
-
-		vector<T> res;
-		while (!buffer.empty()) {
-			res.push_back(buffer.front());
-			buffer.pop_front();
-		}
-		return res;
+	return getPath(origin,dest);
 }
 #endif /* GRAPH_H_ */

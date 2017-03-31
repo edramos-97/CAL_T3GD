@@ -11,6 +11,7 @@
 #include <unordered_set>
 #include <utility>
 #include <tr1/unordered_set>
+#include <time.h>
 
 void exercicio1();
 void exercicio2();
@@ -54,9 +55,16 @@ public:
 };
 
 template<>
-struct vertex_greater_than<int> {
+struct vertex_greater_than<long double> {
 	bool operator()(Vertex<NoInfo> * a, Vertex<NoInfo> * b) const {
 		return a->getDist() > b->getDist();
+	}
+};
+
+template<>  //for A*
+struct vertex_greater_than_A<long double>{
+	bool operator()(Vertex<NoInfo> * a, Vertex<NoInfo> * b) const {
+			return ((a->getDist()+a->getDestinyDistance()) > (b->getDist()+b->getDestinyDistance()));
 	}
 };
 
@@ -105,6 +113,17 @@ struct hashFunc {
 	}
 
 };
+
+//TODO se puser lat e long dentro do Vertex<T>, é possivel nao chamar esta funçao e diminuir o nr de vezes
+//que a mesma é chamada, em vez de ser pa cada no so vai pos nos que entram na fila de prioridade, que sao
+//em pratica muito menos
+void preparaA_star(Graph<NoInfo> &data,const NoInfo& destino){
+
+	for(unsigned int i = 0; i < data.getVertexSet().size() ; i++){
+		data.getVertexSet()[i]->setDestiny(haversine_km(data.getVertexSet()[i]->getInfo().latitude,
+				data.getVertexSet()[i]->getInfo().longitude,destino.longitude,destino.longitude));
+	}
+}
 
 void exercicioTeste() {
 	GraphViewer *gv = new GraphViewer(1000, 1000, false); //not dynamic
@@ -469,7 +488,7 @@ void testFloidWarshal_big(Graph<NoInfo>& data, GraphViewer*& gv) {
 		if (ori == NULL || des == NULL || ori == des)
 			continue;
 
-		vector<NoInfo> path = data.getfloydWarshallPath(ori->getInfo(),
+		vector<NoInfo> path = data.getDijkstraPath(ori->getInfo(),
 				des->getInfo());
 		string color = "BLACK";
 		switch (i) {
@@ -1012,6 +1031,7 @@ void read_edges(tr1::unordered_set<Aresta, hashFunc, hashFunc> arestas,
 		gv->addEdge(i, idNo1 % 100000000, idNo2 % 100000000,
 				EdgeType::DIRECTED);
 		gv->setVertexColor(idNo1 % 100000000, GREEN);
+
 		if (itAre->dois_sentidos) {
 			i++;
 			grafo.addEdge(destino, origem,
@@ -1198,6 +1218,8 @@ void TesteNewYork() {
 	corners.minLong = -74.0194;
 	abrirFicheiroXY("NEWYA.txt", "NEWYB.txt", "NEWYC.txt", data, gv, corners,
 			xMaxW, yMaxW);
+
+	testFloidWarshal_big(data, gv);
 }
 
 void paintPath(GraphViewer *gv, vector<NoInfo> vect, string COLOR) {
@@ -1209,18 +1231,90 @@ void paintPath(GraphViewer *gv, vector<NoInfo> vect, string COLOR) {
 	}
 }
 
+void testExecutionTimes(Graph<NoInfo>& data, GraphViewer*& gv) {
+
+	//teste 6 caminhos pelo dijkstra e pelo a*
+	int i = 0;
+
+	while (i < 6) {
+		int ind0 = rand() % data.getVertexSet().size();
+		int ind1 = rand() % data.getVertexSet().size();
+		Vertex<NoInfo> * ori = data.getVertex(
+				NoInfo(data.getVertexSet()[ind0]->getInfo().idNo, 0, 0));
+		Vertex<NoInfo> * des = data.getVertex(
+				NoInfo(data.getVertexSet()[ind1]->getInfo().idNo, 0, 0));
+		if (ori == NULL || des == NULL || ori == des)
+			continue;
+
+		preparaA_star(data,des->getInfo());
+		vector<NoInfo> teste = data.getA_starPath(ori->getInfo(),des->getInfo());
+		if(teste.size() < 220)
+			continue;
+
+		cout << "CAMINHO : " << i+1 << endl;
+
+		cout << "A* " << i + 1 << ":" << endl;
+		preparaA_star(data,des->getInfo());
+		clock_t tStart = clock();
+
+		vector<NoInfo> pathA = data.getA_starPath(ori->getInfo(),
+				des->getInfo());
+		cout << (double) (clock() - tStart) << endl;
+
+		cout << "Dijkstra " << i + 1 << ":" << endl;
+		tStart = clock();
+		vector<NoInfo> pathD = data.getDijkstraPath(ori->getInfo(),
+				des->getInfo());
+		cout << (double) (clock() - tStart) << endl;
+
+		string color = "BLACK";
+		switch (i) {
+		case 0:
+			color = YELLOW;
+			break;
+		case 1:
+			color = ORANGE;
+			break;
+		case 2:
+			color = RED;
+			break;
+		case 3:
+			color = PINK;
+			break;
+		case 4:
+			color = GRAY;
+			break;
+		case 5:
+			color = BLACK;
+			break;
+		}
+
+		//so faz caminho A*
+		//cout << "novo caminho: " << i << endl;
+		for (unsigned int i = 0; i < pathA.size(); i++) {
+			//cout << pathA[i] << endl;
+			gv->setVertexColor(pathA[i].idNo, color);
+			gv->setVertexSize(pathA[i].idNo, 40);
+		}
+
+		cout << "tamanho: " << pathA.size() << endl;
+		i++;
+
+	}
+}
+
 int main(int argc, char * argv[]) {
 	//CRIAR GRAFO INTERNO
-	Graph<NoInfo> data;
-
-	//CRIAR GRAPHVIEWER
-	GraphViewer *gv = new GraphViewer(1000, 1000, true); //not dynamic
-	gv->setBackground("background.jpg");
-	gv->createWindow(1000, 1000);
-	gv->defineEdgeDashed(false);
-	gv->defineVertexColor("blue");
-	gv->defineVertexSize(5);
-	gv->defineEdgeColor("black");
+//	Graph<NoInfo> data;
+//
+//	//CRIAR GRAPHVIEWER
+//	GraphViewer *gv = new GraphViewer(1000, 1000, true); //not dynamic
+//	gv->setBackground("background.jpg");
+//	gv->createWindow(1000, 1000);
+//	gv->defineEdgeDashed(false);
+//	gv->defineVertexColor("blue");
+//	gv->defineVertexSize(5);
+//	gv->defineEdgeColor("black");
 
 	//TesteNewYork();
 
@@ -1235,22 +1329,38 @@ int main(int argc, char * argv[]) {
 	//--------------------------------amostra grande
 	//abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
 
-	abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
-	NoInfo ori = data.getVertex(NoInfo(atoi(argv[1])/*14020846*/, 0, 0))->getInfo();
-	NoInfo des = data.getVertex(NoInfo(atoi(argv[2])/*42815457*/, 0, 0))->getInfo();
+	Graph<NoInfo> data;
+	int xMaxW = 5000, yMaxW = 1910;
+	GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
+	gv->setBackground("NEWY.png");
+	gv->createWindow(xMaxW, yMaxW);
+	gv->defineEdgeCurved(false);
+	gv->defineEdgeDashed(true);
+	gv->defineVertexColor(GREEN);
+	gv->defineVertexSize(4);
+	gv->defineEdgeColor("black");
+	struct cantos corners;
+	corners.maxLat = 40.7127;
+	corners.maxLong = -73.9784;
+	corners.minLat = 40.7007;
+	corners.minLong = -74.0194;
+	abrirFicheiroXY("NEWYA.txt", "NEWYB.txt", "NEWYC.txt", data, gv, corners,
+			xMaxW, yMaxW);
 
-	switch(argv[3]){
-		case "A star":
-			vector<NoInfo> path = data.getA_starPath(ori, des);
-			break;
-		case "Dijkstra":
-			vector<NoInfo> path = data.get_Dijkstra(ori, des);
-		default:
-			cout << "default switch";
-		}
+	testExecutionTimes(data, gv);
 
-	paintPath(gv,path,YELLOW);
-
+//	abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
+//	NoInfo ori = data.getVertex(NoInfo(atoi(argv[1])/*14020846*/, 0, 0))->getInfo();
+//	NoInfo des = data.getVertex(NoInfo(atoi(argv[2])/*42815457*/, 0, 0))->getInfo();
+//
+//	vector<NoInfo> path;
+//	if(strcmp(argv[3],"A star"))
+//		path = data.getA_starPath(ori, des);
+//	else if(strcmp(argv[3],"Dijkstra"))
+//		path = data.getDijkstraPath(ori, des);
+//	else cout << "no more..." << endl;
+//
+//	paintPath(gv,path,YELLOW);
 
 	//abrirFicheiros("smallerA.txt","smallerB.txt", "smallerC.txt",data, gv); //com esta
 	//testFloidWarshal_med(data, gv);
@@ -1260,7 +1370,7 @@ int main(int argc, char * argv[]) {
 	//abrirFicheiros("A2.txt","B2.txt", "C2.txt",data, gv);
 	//testDijkstra(data, gv);
 
-	gv->rearrange();
+	//gv->rearrange();
 
 	getchar();
 	cout << "END" << endl;
