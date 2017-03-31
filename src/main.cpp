@@ -1214,19 +1214,19 @@ int main() {
 	//----------------------amostra media
 	//abrirFicheiros("A.txt", "B.txt", "C.txt", data, gv);
 	//--------------------------------amostra grande
-	abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
+	//abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
 
-//	abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
-//	NoInfo ori = data.getVertex(NoInfo(42809632, 0, 0))->getInfo();
-//	NoInfo des = data.getVertex(NoInfo(42809642, 0, 0))->getInfo();
-//		vector<NoInfo> path = data.getA_starPath(ori, des);
-//
-//		for (unsigned int i = 0; i < path.size(); i++) {
-//			//Sleep(100);
-//			cout << path[i] << endl;
-//			gv->setVertexColor(path[i].idNo, YELLOW);
-//			gv->setVertexSize(path[i].idNo, 20);
-//		}
+	abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
+	NoInfo ori = data.getVertex(NoInfo(14020846, 0, 0))->getInfo();
+	NoInfo des = data.getVertex(NoInfo(42815457, 0, 0))->getInfo();
+		vector<NoInfo> path = data.getA_starPath(ori, des);
+
+		for (unsigned int i = 0; i < path.size(); i++) {
+			//Sleep(100);
+			cout << path[i] << endl;
+			gv->setVertexColor(path[i].idNo, YELLOW);
+			gv->setVertexSize(path[i].idNo, 20);
+		}
 
 
 
