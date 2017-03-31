@@ -727,7 +727,7 @@ void testFloidWarshal_med(Graph<NoInfo>& data, GraphViewer*& gv) {
 void testDijkstra(Graph<NoInfo>& data, GraphViewer*& gv) {
 	Vertex<NoInfo>* origem = data.getVertex(
 			NoInfo(173452776 % 100000000, 0, 0));
-	data.dijkstraShortestPath(origem->getInfo());
+	data.dijkstraShortestPath_all(origem->getInfo());
 
 	vector<Vertex<NoInfo>*> todos = data.getVertexSet();
 
@@ -1189,12 +1189,12 @@ void TesteNewYork(){
 		abrirFicheiroXY("NEWYA.txt", "NEWYB.txt", "NEWYC.txt", data, gv, corners,xMaxW,yMaxW);
 }
 
-int main() {
+int main(int argc, char * argv[]) {
 	//CRIAR GRAFO INTERNO
 	Graph<NoInfo> data;
 
 	//CRIAR GRAPHVIEWER
-	GraphViewer *gv = new GraphViewer(10000, 10000, true); //not dynamic
+	GraphViewer *gv = new GraphViewer(1000, 1000, true); //not dynamic
 	gv->setBackground("background.jpg");
 	gv->createWindow(1000, 1000);
 	gv->defineEdgeDashed(false);
@@ -1217,8 +1217,8 @@ int main() {
 	//abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
 
 	abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
-	NoInfo ori = data.getVertex(NoInfo(14020846, 0, 0))->getInfo();
-	NoInfo des = data.getVertex(NoInfo(42815457, 0, 0))->getInfo();
+	NoInfo ori = data.getVertex(NoInfo(atoi(argv[1])/*14020846*/, 0, 0))->getInfo();
+	NoInfo des = data.getVertex(NoInfo(atoi(argv[2])/*42815457*/, 0, 0))->getInfo();
 		vector<NoInfo> path = data.getA_starPath(ori, des);
 
 		for (unsigned int i = 0; i < path.size(); i++) {

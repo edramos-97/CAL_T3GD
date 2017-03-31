@@ -171,13 +171,15 @@ public:
 	bool isDAG();
 	//exercicio 6
 	void bellmanFordShortestPath(const T &s);
-	void dijkstraShortestPath(const T &s);
+	void dijkstraShortestPath_all(const T &s);
 	void floydWarshallShortestPath();
 	vector<T> getfloydWarshallPath(const T &origin, const T &dest);
 
 	//testing
 	void A_star(const T &origin, const T &dest);
+	void A_star_all(const T &origin, const T &dest);
 	vector<T> getA_starPath(const T &origin, const T &dest);
+	void dijkstraShortestPath(const T &s, const T& dest);
 };
 
 template<class T>
@@ -565,7 +567,7 @@ void Graph<T>::bellmanFordShortestPath(const T& s) {
 }
 
 template<class T>
-void Graph<T>::dijkstraShortestPath(const T& s) {
+void Graph<T>::dijkstraShortestPath_all(const T& s) {
 	for (unsigned int i = 0; i < vertexSet.size(); i++) {
 		vertexSet[i]->path = NULL;
 		vertexSet[i]->dist = INT_INFINITY;
@@ -583,6 +585,44 @@ void Graph<T>::dijkstraShortestPath(const T& s) {
 		pop_heap(q.begin(), q.end());
 		v = q[q.size() - 1];
 		q.pop_back();
+
+		for (unsigned int i = 0; i < v->adj.size(); i++) {
+			Vertex<T>* w = v->adj[i].dest;
+			if (v->dist + v->adj[i].weight < w->dist) {
+				w->dist = v->dist + v->adj[i].weight;
+				w->path = v;
+				if (!w->processing) {
+					q.push_back(w); //acrescenta
+					w->processing = true;
+				} // decrese key ou atualiza depois de introduzir w
+				make_heap(q.begin(), q.end(), vertex_greater_than<int>());
+			}
+		}
+	}
+
+}
+
+template<class T>
+void Graph<T>::dijkstraShortestPath(const T& s, const T& dest) {
+	for (unsigned int i = 0; i < vertexSet.size(); i++) {
+		vertexSet[i]->path = NULL;
+		vertexSet[i]->dist = INT_INFINITY;
+		vertexSet[i]->processing = false; //estao na fila de espera
+	}
+
+	Vertex<T>* v = getVertex(s);
+	v->dist = 0;
+	vector<Vertex<T>*> q;
+	q.push_back(v);
+	make_heap(q.begin(), q.end(), vertex_greater_than<int>()); //construir heap
+
+	while (!q.empty()) {
+
+		pop_heap(q.begin(), q.end());
+		v = q[q.size() - 1];
+		q.pop_back();
+		if(v->info == dest)
+			break;
 
 		for (unsigned int i = 0; i < v->adj.size(); i++) {
 			Vertex<T>* w = v->adj[i].dest;
@@ -750,7 +790,7 @@ struct heuristicFunc {
 };
 
 template<class T>
-void Graph<T>::A_star(const T& origin, const T& dest) {
+void Graph<T>::A_star_all(const T& origin, const T& dest) {
 	for (unsigned int i = 0; i < vertexSet.size(); i++) {
 			vertexSet[i]->path = NULL;
 			vertexSet[i]->dist = INT_INFINITY;
@@ -794,6 +834,51 @@ void Graph<T>::A_star(const T& origin, const T& dest) {
 }
 
 template<class T>
+void Graph<T>::A_star(const T& origin, const T& dest) {
+	for (unsigned int i = 0; i < vertexSet.size(); i++) {
+			vertexSet[i]->path = NULL;
+			vertexSet[i]->dist = INT_INFINITY;
+			vertexSet[i]->processing = false; //estao na fila de espera
+		}
+
+		Vertex<T>* v = getVertex(origin);
+		Vertex<T>* des = getVertex(dest);
+		heuristicFunc<T> comparador;
+		if(v == NULL)
+			return;
+		if(des != NULL){
+			comparador.destino = des->getInfo();
+		}
+		else return;
+
+		v->dist = 0;
+		vector<Vertex<T>*> q;
+		q.push_back(v);
+		make_heap(q.begin(), q.end(), comparador); //construir heap
+
+		while (!q.empty()) {
+			pop_heap(q.begin(), q.end());
+			v = q[q.size() - 1];
+			q.pop_back();
+			if(v->info == dest) //destino é o topo da fila de prioridade
+				break;
+
+			for (unsigned int i = 0; i < v->adj.size(); i++) {
+				Vertex<T>* w = v->adj[i].dest;
+				if (v->dist + v->adj[i].weight < w->dist) {
+					w->dist = v->dist + v->adj[i].weight;
+					w->path = v;
+					if (!w->processing) {
+						q.push_back(w); //acrescenta
+						w->processing = true;
+					} // decrese key ou atualiza depois de introduzir w
+					make_heap(q.begin(), q.end(), comparador);
+				}
+			}
+		}
+}
+
+template<class T>
 vector<T> Graph<T>::getA_starPath(const T& origin, const T& dest) {
 	A_star(origin,dest);
 	list<T> buffer;
@@ -816,5 +901,4 @@ vector<T> Graph<T>::getA_starPath(const T& origin, const T& dest) {
 		return res;
 }
 
-//TODO nota: em dijkstra e a* , critério de paragem no caso de origem->fim é o nó destino chegar ao topo da fila de prioridade
 #endif /* GRAPH_H_ */
