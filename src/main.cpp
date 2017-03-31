@@ -1236,11 +1236,18 @@ int main(int argc, char * argv[]) {
 	//abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
 
 	abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
-	NoInfo ori =
-			data.getVertex(NoInfo(atoi(argv[1])/*14020846*/, 0, 0))->getInfo();
-	NoInfo des =
-			data.getVertex(NoInfo(atoi(argv[2])/*42815457*/, 0, 0))->getInfo();
-	vector<NoInfo> path = data.getA_starPath(ori, des);
+	NoInfo ori = data.getVertex(NoInfo(atoi(argv[1])/*14020846*/, 0, 0))->getInfo();
+	NoInfo des = data.getVertex(NoInfo(atoi(argv[2])/*42815457*/, 0, 0))->getInfo();
+
+	switch(argv[3]){
+		case "A star":
+			vector<NoInfo> path = data.getA_starPath(ori, des);
+			break;
+		case "Dijkstra":
+			vector<NoInfo> path = data.get_Dijkstra(ori, des);
+		default:
+			cout << "default switch";
+		}
 
 	paintPath(gv,path,YELLOW);
 
