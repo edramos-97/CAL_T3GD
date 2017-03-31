@@ -1194,16 +1194,16 @@ int main() {
 	Graph<NoInfo> data;
 
 	//CRIAR GRAPHVIEWER
-//	GraphViewer *gv = new GraphViewer(1000, 1000, true); //not dynamic
-//	gv->setBackground("background.jpg");
-//	gv->createWindow(1000, 1000);
-//	gv->defineEdgeDashed(false);
-//	gv->defineVertexColor("blue");
-//	gv->defineVertexSize(5);
-//	gv->defineEdgeColor("black");
+	GraphViewer *gv = new GraphViewer(10000, 10000, true); //not dynamic
+	gv->setBackground("background.jpg");
+	gv->createWindow(1000, 1000);
+	gv->defineEdgeDashed(false);
+	gv->defineVertexColor("blue");
+	gv->defineVertexSize(5);
+	gv->defineEdgeColor("black");
 
 
-	TesteNewYork();
+	//TesteNewYork();
 
 	//------------------------tiniest
 	//abrirFicheiros("tinyA.txt","tinyB.txt", "tinyC.txt",data, gv);
@@ -1214,18 +1214,18 @@ int main() {
 	//----------------------amostra media
 	//abrirFicheiros("A.txt", "B.txt", "C.txt", data, gv);
 	//--------------------------------amostra grande
-	//abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
+	abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
 
-	//abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
+//	abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
 //	NoInfo ori = data.getVertex(NoInfo(42809632, 0, 0))->getInfo();
 //	NoInfo des = data.getVertex(NoInfo(42809642, 0, 0))->getInfo();
 //		vector<NoInfo> path = data.getA_starPath(ori, des);
 //
 //		for (unsigned int i = 0; i < path.size(); i++) {
-//			Sleep(100);
+//			//Sleep(100);
 //			cout << path[i] << endl;
 //			gv->setVertexColor(path[i].idNo, YELLOW);
-//			//gv->setVertexSize(path[i].idNo, 20);
+//			gv->setVertexSize(path[i].idNo, 20);
 //		}
 
 
@@ -1238,7 +1238,7 @@ int main() {
 	//abrirFicheiros("A2.txt","B2.txt", "C2.txt",data, gv);
 	//testDijkstra(data, gv);
 
-	//gv->rearrange();
+	gv->rearrange();
 
 	getchar();
 	cout << "END" << endl;

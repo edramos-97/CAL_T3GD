@@ -816,4 +816,5 @@ vector<T> Graph<T>::getA_starPath(const T& origin, const T& dest) {
 		return res;
 }
 
+//TODO nota: em dijkstra e a* , critério de paragem no caso de origem->fim é o nó destino chegar ao topo da fila de prioridade
 #endif /* GRAPH_H_ */
