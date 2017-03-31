@@ -20,19 +20,22 @@ typedef unsigned long long BigAssInteger;
 long double haversine_km(long double lat1, long double long1, long double lat2,
 		long double long2);
 
-
 class NoInfo {
 public:
 	long double longitude;
 	long double latitude;
 	BigAssInteger idNo;
 
-	NoInfo() {}
+	NoInfo() {
+	}
 
-	NoInfo(BigAssInteger id, long double longe, long double lat) : idNo(id), longitude(longe), latitude(lat) {}
+	NoInfo(BigAssInteger id, long double longe, long double lat) :
+			idNo(id), longitude(longe), latitude(lat) {
+	}
 
 	friend ostream & operator<<(ostream & os, const NoInfo obj) {
-		os << "idNo: " << obj.idNo << " long: " << obj.longitude << " lat: " << obj.latitude << endl;
+		os << "idNo: " << obj.idNo << " long: " << obj.longitude << " lat: "
+				<< obj.latitude << endl;
 		return os;
 	}
 
@@ -57,18 +60,22 @@ struct vertex_greater_than<int> {
 	}
 };
 
-
 template<>
-struct heuristicFunc<NoInfo>{
+struct heuristicFunc<NoInfo> {
 	NoInfo destino;
-	bool operator()(Vertex<NoInfo> * a, Vertex<NoInfo> * b){
-		long double distOri = haversine_km(a->getInfo().latitude,a->getInfo().longitude,destino.latitude,destino.longitude)+a->getDist();
-		long double distDest = haversine_km(b->getInfo().latitude,b->getInfo().longitude,destino.latitude,destino.longitude)+b->getDist();
-		return (distOri > distDest? true : false);
+	bool operator()(Vertex<NoInfo> * a, Vertex<NoInfo> * b) {
+		long double distOri = haversine_km(a->getInfo().latitude,
+				a->getInfo().longitude, destino.latitude, destino.longitude)
+				+ a->getDist();
+		long double distDest = haversine_km(b->getInfo().latitude,
+				b->getInfo().longitude, destino.latitude, destino.longitude)
+				+ b->getDist();
+		return (distOri > distDest ? true : false);
 	}
 	//no longer needed
 	long double operator()(Vertex<NoInfo> * a) const {
-			return haversine_km(a->getInfo().latitude,a->getInfo().longitude,destino.latitude,destino.longitude);
+		return haversine_km(a->getInfo().latitude, a->getInfo().longitude,
+				destino.latitude, destino.longitude);
 	}
 };
 
@@ -107,7 +114,7 @@ void exercicioTeste() {
 	gv->defineVertexColor("blue");
 	gv->defineEdgeColor("black");
 	for (int i = 0; i < 5; i++)
-	gv->addNode(i, i * 100, i * 100);
+		gv->addNode(i, i * 100, i * 100);
 
 }
 
@@ -815,43 +822,44 @@ struct cantos {
  * @param grafo
  * @param nos_todos
  */
-void read_node_radians(const std::string& A,GraphViewer*& gv,Graph<NoInfo>& grafo,map<NoInfo, bool> nos_todos){
+void read_node_radians(const std::string& A, GraphViewer*& gv,
+		Graph<NoInfo>& grafo, map<NoInfo, bool> nos_todos) {
 	ifstream inFile;
 	string line;
 
 	inFile.open(A);
 
-		if (!inFile) {
-			cerr << "Unable to open file A2.txt";
-			exit(1);   // call system to stop
-		}
+	if (!inFile) {
+		cerr << "Unable to open file A2.txt";
+		exit(1);   // call system to stop
+	}
 
-		BigAssInteger idNo = 0;
-		long double X = 0;
-		long double Y = 0;
+	BigAssInteger idNo = 0;
+	long double X = 0;
+	long double Y = 0;
 
-		while (std::getline(inFile, line)) {
-			std::stringstream linestream(line);
-			std::string data;
+	while (std::getline(inFile, line)) {
+		std::stringstream linestream(line);
+		std::string data;
 
-			linestream >> idNo;
+		linestream >> idNo;
 
-			std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-			linestream >> X;
-			std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-			linestream >> Y;    //X and Y are in degrees
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> X;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> Y;    //X and Y are in degrees
 
-			std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-			linestream >> X;
-			std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-			linestream >> Y;    //X and Y are in radians
-			//cout << "idNo: " << idNo << " long: " << X << " lat: " << Y << endl;
-			NoInfo temp(idNo, X, Y);
-			pair<NoInfo, bool> par(temp, false);
-			nos_todos.insert(par);
-		}
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> X;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> Y;    //X and Y are in radians
+		//cout << "idNo: " << idNo << " long: " << X << " lat: " << Y << endl;
+		NoInfo temp(idNo, X, Y);
+		pair<NoInfo, bool> par(temp, false);
+		nos_todos.insert(par);
+	}
 
-		inFile.close();
+	inFile.close();
 }
 
 /**
@@ -863,21 +871,23 @@ void read_node_radians(const std::string& A,GraphViewer*& gv,Graph<NoInfo>& graf
  * @param maxXwindow
  * @param maxYwindow
  */
-void read_nodes_degrees(const std::string& A,GraphViewer*& gv,Graph<NoInfo>& grafo,struct cantos corners,int maxXwindow, int maxYwindow){
+void read_nodes_degrees(const std::string& A, GraphViewer*& gv,
+		Graph<NoInfo>& grafo, struct cantos corners, int maxXwindow,
+		int maxYwindow) {
 	ifstream inFile;
-		//Ler o ficheiro A2.txt
-		inFile.open(A);
+	//Ler o ficheiro A2.txt
+	inFile.open(A);
 
-		if (!inFile) {
-			cerr << "Unable to open file datafile.txt";
-			exit(1);   // call system to stop
-		}
+	if (!inFile) {
+		cerr << "Unable to open file datafile.txt";
+		exit(1);   // call system to stop
+	}
 
-		std::string line;
+	std::string line;
 
-		BigAssInteger idNo = 0;
-		long double X = 0;
-		long double Y = 0;
+	BigAssInteger idNo = 0;
+	long double X = 0;
+	long double Y = 0;
 
 	while (std::getline(inFile, line)) {
 		std::stringstream linestream(line);
@@ -908,11 +918,11 @@ void read_nodes_degrees(const std::string& A,GraphViewer*& gv,Graph<NoInfo>& gra
 										- (corners.minLat * 100000)));
 
 		/*cout << X << endl;
-		cout << Y << endl;
-		cout << corners.minLong << endl;
-		cout << corners.minLat << endl;
-		cout << corners.maxLong << endl;
-		cout << corners.maxLat << endl;*/
+		 cout << Y << endl;
+		 cout << corners.minLong << endl;
+		 cout << corners.minLat << endl;
+		 cout << corners.maxLong << endl;
+		 cout << corners.maxLat << endl;*/
 
 		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
 		linestream >> X;
@@ -929,10 +939,8 @@ void read_nodes_degrees(const std::string& A,GraphViewer*& gv,Graph<NoInfo>& gra
 
 	}
 
-		inFile.close();
+	inFile.close();
 }
-
-
 
 /**
  * Method that reads the edges from a text file and adds them to both a GraphViwer and a Graph. Also calculates the weight of the edge wich is added to the Graph
@@ -940,88 +948,89 @@ void read_nodes_degrees(const std::string& A,GraphViewer*& gv,Graph<NoInfo>& gra
  * @param gv
  * @param grafo
  */
-void read_edges(tr1::unordered_set<Aresta, hashFunc, hashFunc> arestas, const std::string& C,GraphViewer*& gv,Graph<NoInfo>& grafo){
+void read_edges(tr1::unordered_set<Aresta, hashFunc, hashFunc> arestas,
+		const std::string& C, GraphViewer*& gv, Graph<NoInfo>& grafo) {
 	ifstream inFile;
 	string line;
 
 	inFile.open(C);
 
-		if (!inFile) {
-			cerr << "Unable to open file datafile.txt";
-			exit(1);   // call system to stop
-		}
+	if (!inFile) {
+		cerr << "Unable to open file datafile.txt";
+		exit(1);   // call system to stop
+	}
 
-		BigAssInteger idAresta;
-		BigAssInteger idNo1;
-		BigAssInteger idNo2;
+	BigAssInteger idAresta;
+	BigAssInteger idNo1;
+	BigAssInteger idNo2;
 
-		BigAssInteger i = 0;
-		//	bool novo = true;
-		//	double weigth = 0;
-		//
-		//	int anterior;
-		while (std::getline(inFile, line)) {
-			std::stringstream linestream(line);
-			std::string data;
-			linestream >> idAresta;
-			Aresta temp;
-			temp.idAresta = idAresta;
-			tr1::unordered_set<Aresta, hashFunc, hashFunc>::iterator itAre = arestas.find(temp);
-			//		if(novo){
-			//						anterior = idAresta;
-			//						novo = false;
-			//					}
+	BigAssInteger i = 0;
+	//	bool novo = true;
+	//	double weigth = 0;
+	//
+	//	int anterior;
+	while (std::getline(inFile, line)) {
+		std::stringstream linestream(line);
+		std::string data;
+		linestream >> idAresta;
+		Aresta temp;
+		temp.idAresta = idAresta;
+		tr1::unordered_set<Aresta, hashFunc, hashFunc>::iterator itAre =
+				arestas.find(temp);
+		//		if(novo){
+		//						anterior = idAresta;
+		//						novo = false;
+		//					}
 
-			std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-			linestream >> idNo1;
-			std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-			linestream >> idNo2;    //X and Y are in degrees
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> idNo1;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> idNo2;    //X and Y are in degrees
 
-			NoInfo origem(idNo1 % 100000000, 0, 0);  //so para efeitos de pesquisa
-			Vertex<NoInfo>* source = grafo.getVertex(origem);
-			NoInfo destino(idNo2 % 100000000, 0, 0);
-			Vertex<NoInfo>* destiny = grafo.getVertex(destino);
+		NoInfo origem(idNo1 % 100000000, 0, 0);  //so para efeitos de pesquisa
+		Vertex<NoInfo>* source = grafo.getVertex(origem);
+		NoInfo destino(idNo2 % 100000000, 0, 0);
+		Vertex<NoInfo>* destiny = grafo.getVertex(destino);
 
-			//pre processamento do grafico pelo parser ja garante informacao sem erros //i think
-			//if(source != NULL && destiny != NULL){
+		//pre processamento do grafico pelo parser ja garante informacao sem erros //i think
+		//if(source != NULL && destiny != NULL){
 
-			if (grafo.removeEdge(origem, destino)) //conseguiu remover
-					{
-				grafo.addEdge(origem, destino,
-						haversine_km(source->getInfo().latitude,
-								source->getInfo().longitude,
-								destiny->getInfo().latitude,
-								destiny->getInfo().longitude));
-			}
+		if (grafo.removeEdge(origem, destino)) //conseguiu remover
+				{
 			grafo.addEdge(origem, destino,
 					haversine_km(source->getInfo().latitude,
 							source->getInfo().longitude,
 							destiny->getInfo().latitude,
 							destiny->getInfo().longitude));
-
-			gv->addEdge(i, idNo1 % 100000000, idNo2 % 100000000,
-					EdgeType::DIRECTED);
-			gv->setVertexColor(idNo1 % 100000000, GREEN);
-			if(itAre->dois_sentidos){
-				i++;
-				grafo.addEdge(destino, origem,
-									haversine_km(source->getInfo().latitude,
-											source->getInfo().longitude,
-											destiny->getInfo().latitude,
-											destiny->getInfo().longitude)); //distancia entre A e B == distancia entre B e A;
-				gv->addEdge(i, idNo2 % 100000000, idNo1 % 100000000,
-									EdgeType::DIRECTED);
-				gv->setVertexColor(idNo2 % 100000000, GREEN);
-			}
-			i++;
-
-			//}
-
 		}
-		//gv->rearrange();
-		inFile.close();
-}
+		grafo.addEdge(origem, destino,
+				haversine_km(source->getInfo().latitude,
+						source->getInfo().longitude,
+						destiny->getInfo().latitude,
+						destiny->getInfo().longitude));
 
+		gv->addEdge(i, idNo1 % 100000000, idNo2 % 100000000,
+				EdgeType::DIRECTED);
+		gv->setVertexColor(idNo1 % 100000000, GREEN);
+		if (itAre->dois_sentidos) {
+			i++;
+			grafo.addEdge(destino, origem,
+					haversine_km(source->getInfo().latitude,
+							source->getInfo().longitude,
+							destiny->getInfo().latitude,
+							destiny->getInfo().longitude)); //distancia entre A e B == distancia entre B e A;
+			gv->addEdge(i, idNo2 % 100000000, idNo1 % 100000000,
+					EdgeType::DIRECTED);
+			gv->setVertexColor(idNo2 % 100000000, GREEN);
+		}
+		i++;
+
+		//}
+
+	}
+	//gv->rearrange();
+	inFile.close();
+}
 
 /**
  * Method to assign a name to an Edge and determine if it is one or two ways.
@@ -1029,7 +1038,8 @@ void read_edges(tr1::unordered_set<Aresta, hashFunc, hashFunc> arestas, const st
  * @param gv
  * @param grafo
  */
-tr1::unordered_set<Aresta, hashFunc, hashFunc> read_edges_names(const std::string& B){
+tr1::unordered_set<Aresta, hashFunc, hashFunc> read_edges_names(
+		const std::string& B) {
 	ifstream inFile;
 	string line;
 	tr1::unordered_set<Aresta, hashFunc, hashFunc> arestas;
@@ -1088,105 +1098,115 @@ tr1::unordered_set<Aresta, hashFunc, hashFunc> read_edges_names(const std::strin
 	return arestas;
 }
 
-void abrirFicheiroXY(const std::string& A, const std::string& B,const std::string& C, Graph<NoInfo>& grafo, GraphViewer*& gv,struct cantos corners, int maxXwindow, int maxYwindow) {
+void abrirFicheiroXY(const std::string& A, const std::string& B,
+		const std::string& C, Graph<NoInfo>& grafo, GraphViewer*& gv,
+		struct cantos corners, int maxXwindow, int maxYwindow) {
 
 	ifstream inFile;
 	std::string line;
 	//Ler o ficheiro A2.txt
 	/*inFile.open(A);
 
-	if (!inFile) {
-		cerr << "Unable to open file datafile.txt";
-		exit(1);   // call system to stop
-	}
+	 if (!inFile) {
+	 cerr << "Unable to open file datafile.txt";
+	 exit(1);   // call system to stop
+	 }
 
-	std::string line;
+	 std::string line;
 
-	BigAssInteger idNo = 0;
-	long double X = 0;
-	long double Y = 0;
+	 BigAssInteger idNo = 0;
+	 long double X = 0;
+	 long double Y = 0;
 
-	while (std::getline(inFile, line)) {
-		std::stringstream linestream(line);
-		std::string data;
+	 while (std::getline(inFile, line)) {
+	 std::stringstream linestream(line);
+	 std::string data;
 
-		linestream >> idNo;
+	 linestream >> idNo;
 
-		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> Y;
-		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> X;    //X and Y are in degrees
+	 std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+	 linestream >> Y;
+	 std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+	 linestream >> X;    //X and Y are in degrees
 
-//		cout << X << endl;
-//		cout << Y << endl;
-//		cout << corners.minLong << endl;
-//		cout << corners.minLat << endl;
-//		cout << corners.maxLong << endl;
-//		cout << corners.maxLat << endl;
-		long double x = ((X * 100000) - (corners.minLong * 100000))
-				* (maxXwindow
-						/ ((corners.maxLong * 100000)
-								- (corners.minLong * 100000)));
-		long double y =
-				((Y * 100000) - (corners.minLat * 100000))
-						* (maxYwindow
-								/ ((corners.maxLat * 100000)
-										- (corners.minLat * 100000)));
+	 //		cout << X << endl;
+	 //		cout << Y << endl;
+	 //		cout << corners.minLong << endl;
+	 //		cout << corners.minLat << endl;
+	 //		cout << corners.maxLong << endl;
+	 //		cout << corners.maxLat << endl;
+	 long double x = ((X * 100000) - (corners.minLong * 100000))
+	 * (maxXwindow
+	 / ((corners.maxLong * 100000)
+	 - (corners.minLong * 100000)));
+	 long double y =
+	 ((Y * 100000) - (corners.minLat * 100000))
+	 * (maxYwindow
+	 / ((corners.maxLat * 100000)
+	 - (corners.minLat * 100000)));
 
-		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> X;
-		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> Y;    //X and Y are in radians
-		//cout << "idNo: " << idNo << " long: " << X << " lat: " << Y << endl;
-		NoInfo temp(idNo % 100000000, X, Y); //x long, y lat
+	 std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+	 linestream >> X;
+	 std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+	 linestream >> Y;    //X and Y are in radians
+	 //cout << "idNo: " << idNo << " long: " << X << " lat: " << Y << endl;
+	 NoInfo temp(idNo % 100000000, X, Y); //x long, y lat
 
-		gv->addNode(idNo % 100000000, x, maxYwindow - y);
-		cout << "x: " << x << " y: " << y << endl;
-		grafo.addVertex(temp);
+	 gv->addNode(idNo % 100000000, x, maxYwindow - y);
+	 cout << "x: " << x << " y: " << y << endl;
+	 grafo.addVertex(temp);
 
-	}
+	 }
 
-	inFile.close();*/
+	 inFile.close();*/
 
-	read_nodes_degrees(A,gv,grafo,corners,maxXwindow,maxYwindow);
+	read_nodes_degrees(A, gv, grafo, corners, maxXwindow, maxYwindow);
 
-	tr1::unordered_set<Aresta, hashFunc, hashFunc> arestas = read_edges_names(B);
-
+	tr1::unordered_set<Aresta, hashFunc, hashFunc> arestas = read_edges_names(
+			B);
 
 	//abrir C2.txt sao as arestas
-	read_edges(arestas,C,gv,grafo);
+	read_edges(arestas, C, gv, grafo);
 }
 
-void TesteNewYork(){
+void TesteNewYork() {
 	//	int xMaxW = 1000, yMaxW = 947;
 	//		GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
 	//		gv->setBackground("10IMG1000-947.png");
-		//	struct cantos corners;
+	//	struct cantos corners;
 	//	corners.maxLat = 40.72988;
 	//	corners.maxLong = -73.87300;
 	//	corners.minLat = 40.72638;
 	//	corners.minLong = -73.87790;
 	//	abrirFicheiroXY("10IMG1000-947A.txt", "10IMG1000-947B.txt", "10IMG1000-947C.txt", data, gv, corners,xMaxW,yMaxW);
 
-
-
 	//CRIAR GRAFO INTERNO
-		Graph<NoInfo> data;
+	Graph<NoInfo> data;
 	int xMaxW = 5000, yMaxW = 1910;
-		GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
-		gv->setBackground("NEWY.png");
-		gv->createWindow(xMaxW, yMaxW);
-		gv->defineEdgeCurved(false);
-		gv->defineEdgeDashed(true);
-		gv->defineVertexColor("blue");
-		gv->defineVertexSize(4);
-		gv->defineEdgeColor("black");
-		struct cantos corners;
-		corners.maxLat = 40.7127;
-		corners.maxLong = -73.9784;
-		corners.minLat = 40.7007;
-		corners.minLong = -74.0194;
-		abrirFicheiroXY("NEWYA.txt", "NEWYB.txt", "NEWYC.txt", data, gv, corners,xMaxW,yMaxW);
+	GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
+	gv->setBackground("NEWY.png");
+	gv->createWindow(xMaxW, yMaxW);
+	gv->defineEdgeCurved(false);
+	gv->defineEdgeDashed(true);
+	gv->defineVertexColor("blue");
+	gv->defineVertexSize(4);
+	gv->defineEdgeColor("black");
+	struct cantos corners;
+	corners.maxLat = 40.7127;
+	corners.maxLong = -73.9784;
+	corners.minLat = 40.7007;
+	corners.minLong = -74.0194;
+	abrirFicheiroXY("NEWYA.txt", "NEWYB.txt", "NEWYC.txt", data, gv, corners,
+			xMaxW, yMaxW);
+}
+
+void paintPath(GraphViewer *gv, vector<NoInfo> vect, string COLOR) {
+	for (unsigned int i = 0; i < vect.size(); i++) {
+		//Sleep(100);
+		cout << vect[i] << endl;
+		gv->setVertexColor(vect[i].idNo, COLOR);
+		//gv->setVertexSize(vect[i].idNo, 20);
+	}
 }
 
 int main(int argc, char * argv[]) {
@@ -1202,7 +1222,6 @@ int main(int argc, char * argv[]) {
 	gv->defineVertexSize(5);
 	gv->defineEdgeColor("black");
 
-
 	//TesteNewYork();
 
 	//------------------------tiniest
@@ -1217,17 +1236,13 @@ int main(int argc, char * argv[]) {
 	//abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
 
 	abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
-	NoInfo ori = data.getVertex(NoInfo(atoi(argv[1])/*14020846*/, 0, 0))->getInfo();
-	NoInfo des = data.getVertex(NoInfo(atoi(argv[2])/*42815457*/, 0, 0))->getInfo();
-		vector<NoInfo> path = data.getA_starPath(ori, des);
+	NoInfo ori =
+			data.getVertex(NoInfo(atoi(argv[1])/*14020846*/, 0, 0))->getInfo();
+	NoInfo des =
+			data.getVertex(NoInfo(atoi(argv[2])/*42815457*/, 0, 0))->getInfo();
+	vector<NoInfo> path = data.getA_starPath(ori, des);
 
-		for (unsigned int i = 0; i < path.size(); i++) {
-			//Sleep(100);
-			cout << path[i] << endl;
-			gv->setVertexColor(path[i].idNo, YELLOW);
-			gv->setVertexSize(path[i].idNo, 20);
-		}
-
+	paintPath(gv,path,YELLOW);
 
 
 	//abrirFicheiros("smallerA.txt","smallerB.txt", "smallerC.txt",data, gv); //com esta

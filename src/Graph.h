@@ -176,10 +176,12 @@ public:
 	vector<T> getfloydWarshallPath(const T &origin, const T &dest);
 
 	//testing
-	void A_star(const T &origin, const T &dest);
 	void A_star_all(const T &origin, const T &dest);
+
+	void A_star(const T &origin, const T &dest);
 	vector<T> getA_starPath(const T &origin, const T &dest);
 	void dijkstraShortestPath(const T &s, const T& dest);
+	vector<T> getDijkstraPath(const T& origin, const T& dest);
 };
 
 template<class T>
@@ -901,4 +903,27 @@ vector<T> Graph<T>::getA_starPath(const T& origin, const T& dest) {
 		return res;
 }
 
+
+template<class T>
+vector<T> Graph<T>::getDijkstraPath(const T& origin, const T& dest) {
+	dijkstraShortestPath(origin,dest);
+	list<T> buffer;
+	Vertex<T>* v = getVertex(dest);
+
+		//cout << v->info << " ";
+		buffer.push_front(v->info);
+		while (v->path != NULL && v->path->info != origin) {
+			v = v->path;
+			buffer.push_front(v->info);
+		}
+		if (v->path != NULL)
+			buffer.push_front(v->path->info);
+
+		vector<T> res;
+		while (!buffer.empty()) {
+			res.push_back(buffer.front());
+			buffer.pop_front();
+		}
+		return res;
+}
 #endif /* GRAPH_H_ */
