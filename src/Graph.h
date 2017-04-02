@@ -21,7 +21,6 @@ const int NOT_VISITED = 0;
 const int BEING_VISITED = 1;
 const int DONE_VISITED = 2;
 const unsigned int INT_INFINITY = 10000000;
-#define NULL 0
 #define NULL_STRING "NULL"
 
 
@@ -130,7 +129,7 @@ template<class T>
 class Edge {
 	Vertex<T> * dest;
 	string name;
-	long double weight;
+	long double weight = 0.0;
 public:
 	Edge(Vertex<T> *d, long double w);
 	friend class Graph<T> ;
@@ -139,7 +138,8 @@ public:
 
 template<class T>
 Edge<T>::Edge(Vertex<T> *d, long double w) :
-		dest(d), weight(w), name("NULL") {
+		dest(d), weight(w){
+	this->name = "unnamed";
 }
 
 /* ================================================================================================

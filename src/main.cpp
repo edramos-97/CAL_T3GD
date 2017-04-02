@@ -22,10 +22,16 @@ public:
 	BigAssInteger idNo;
 
 	NoInfo() {
+		longitude = 0.0;
+		latitude = 0.0;
+		idNo = 0;
 	}
 
-	NoInfo(BigAssInteger id, long double longe, long double lat) :
-			idNo(id), longitude(longe), latitude(lat) {
+	NoInfo(BigAssInteger id, long double longe, long double lat){
+		this->idNo = id;
+		this->longitude = longe;
+		this->latitude = lat;
+
 	}
 
 	friend ostream & operator<<(ostream & os, const NoInfo obj) {
@@ -107,6 +113,9 @@ struct hashFunc {
 	}
 
 };
+
+
+
 
 //TODO se puser lat e long dentro do Vertex<T>, é possivel nao chamar esta funçao e diminuir o nr de vezes
 //que a mesma é chamada, em vez de ser pa cada no so vai pos nos que entram na fila de prioridade, que sao
@@ -478,7 +487,6 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo,
 	gv->rearrange();
 
 	itH = arestas.begin();
-	int i = 0;
 	while (itH != arestas.end()) {
 		gv->setVertexColor(itH->origem.idNo, GREEN);
 		//gv->setVertexColor(itH->destino.idNo,RED);
