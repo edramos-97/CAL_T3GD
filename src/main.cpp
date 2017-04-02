@@ -12,106 +12,101 @@
 #include <utility>
 #include <tr1/unordered_set>
 #include <time.h>
-#include "utils.cpp"
-
-void exercicio1();
-void exercicio2();
-void exercicio3();
+#include "utils.h"
 
 
+class NoInfo {
+public:
+	long double longitude;
+	long double latitude;
+	BigAssInteger idNo;
 
-//class NoInfo {
-//public:
-//	long double longitude;
-//	long double latitude;
-//	BigAssInteger idNo;
-//
-//	NoInfo() {
-//	}
-//
-//	NoInfo(BigAssInteger id, long double longe, long double lat) :
-//			idNo(id), longitude(longe), latitude(lat) {
-//	}
-//
-//	friend ostream & operator<<(ostream & os, const NoInfo obj) {
-//		os << "idNo: " << obj.idNo << " long: " << obj.longitude << " lat: "
-//				<< obj.latitude << endl;
-//		return os;
-//	}
-//
-//	friend bool operator==(const NoInfo& left, const NoInfo& right) {
-//		return ((left.idNo == right.idNo));
-//	}
-//
-//	friend bool operator!=(const NoInfo& left, const NoInfo& right) {
-//		return ((left.idNo != right.idNo));
-//	}
-//
-//	friend bool operator<(const NoInfo& left, const NoInfo& right) {
-//		return left.idNo < right.idNo;
-//	}
-//
-//};
-//
-//template<>
-//struct vertex_greater_than<long double> {
-//	bool operator()(Vertex<NoInfo> * a, Vertex<NoInfo> * b) const {
-//		return a->getDist() > b->getDist();
-//	}
-//};
-//
-//template<>  //for A*
-//struct vertex_greater_than_A<long double>{
-//	bool operator()(Vertex<NoInfo> * a, Vertex<NoInfo> * b) const {
-//			return ((a->getDist()+a->getDestinyDistance()) > (b->getDist()+b->getDestinyDistance()));
-//	}
-//};
-//
-//template<>
-//struct heuristicFunc<NoInfo> {
-//	NoInfo destino;
-//	bool operator()(Vertex<NoInfo> * a, Vertex<NoInfo> * b) {
-//		long double distOri = haversine_km(a->getInfo().latitude,
-//				a->getInfo().longitude, destino.latitude, destino.longitude)
-//				+ a->getDist();
-//		long double distDest = haversine_km(b->getInfo().latitude,
-//				b->getInfo().longitude, destino.latitude, destino.longitude)
-//				+ b->getDist();
-//		return (distOri > distDest ? true : false);
-//	}
-//	//no longer needed
-//	long double operator()(Vertex<NoInfo> * a) const {
-//		return haversine_km(a->getInfo().latitude, a->getInfo().longitude,
-//				destino.latitude, destino.longitude);
-//	}
-//};
-//
-//class Aresta {
-//public:
-//	BigAssInteger idAresta;
-//	long double distancia;
-//	NoInfo origem;
-//	NoInfo destino;
-//	string rua;
-//	bool dois_sentidos;
-////		bool operator==(const Aresta &other) const {
-////			return idAresta == other.idAresta;
-////		}
-////		size_t operator()(const Aresta &are) const {
-////			return idAresta * 37 + 54;
-////		}
-//};
-//
-//struct hashFunc {
-//	bool operator()(const Aresta &s1, const Aresta &s2) const {
-//		return s1.idAresta == s2.idAresta;
-//	}
-//
-//	int operator()(const Aresta &s1) const {
-//		return s1.idAresta * 37;
-//	}
-//
-//};
+	NoInfo() {
+	}
+
+	NoInfo(BigAssInteger id, long double longe, long double lat) :
+			idNo(id), longitude(longe), latitude(lat) {
+	}
+
+	friend ostream & operator<<(ostream & os, const NoInfo obj) {
+		os << "idNo: " << obj.idNo << " long: " << obj.longitude << " lat: "
+				<< obj.latitude << endl;
+		return os;
+	}
+
+	friend bool operator==(const NoInfo& left, const NoInfo& right) {
+		return ((left.idNo == right.idNo));
+	}
+
+	friend bool operator!=(const NoInfo& left, const NoInfo& right) {
+		return ((left.idNo != right.idNo));
+	}
+
+	friend bool operator<(const NoInfo& left, const NoInfo& right) {
+		return left.idNo < right.idNo;
+	}
+
+};
+
+template<>
+struct vertex_greater_than<long double> {
+	bool operator()(Vertex<NoInfo> * a, Vertex<NoInfo> * b) const {
+		return a->getDist() > b->getDist();
+	}
+};
+
+template<>  //for A*
+struct vertex_greater_than_A<long double>{
+	bool operator()(Vertex<NoInfo> * a, Vertex<NoInfo> * b) const {
+			return ((a->getDist()+a->getDestinyDistance()) > (b->getDist()+b->getDestinyDistance()));
+	}
+};
+
+template<>
+struct heuristicFunc<NoInfo> {
+	NoInfo destino;
+	bool operator()(Vertex<NoInfo> * a, Vertex<NoInfo> * b) {
+		long double distOri = haversine_km(a->getInfo().latitude,
+				a->getInfo().longitude, destino.latitude, destino.longitude)
+				+ a->getDist();
+		long double distDest = haversine_km(b->getInfo().latitude,
+				b->getInfo().longitude, destino.latitude, destino.longitude)
+				+ b->getDist();
+		return (distOri > distDest ? true : false);
+	}
+	//no longer needed
+	long double operator()(Vertex<NoInfo> * a) const {
+		return haversine_km(a->getInfo().latitude, a->getInfo().longitude,
+				destino.latitude, destino.longitude);
+	}
+};
+
+class Aresta {
+public:
+	BigAssInteger idAresta;
+	long double distancia;
+	NoInfo origem;
+	NoInfo destino;
+	string rua;
+	bool dois_sentidos;
+//		bool operator==(const Aresta &other) const {
+//			return idAresta == other.idAresta;
+//		}
+//		size_t operator()(const Aresta &are) const {
+//			return idAresta * 37 + 54;
+//		}
+};
+
+struct hashFunc {
+	bool operator()(const Aresta &s1, const Aresta &s2) const {
+		return s1.idAresta == s2.idAresta;
+	}
+
+	int operator()(const Aresta &s1) const {
+		return s1.idAresta * 37;
+	}
+
+};
 
 //TODO se puser lat e long dentro do Vertex<T>, é possivel nao chamar esta funçao e diminuir o nr de vezes
 //que a mesma é chamada, em vez de ser pa cada no so vai pos nos que entram na fila de prioridade, que sao
@@ -124,246 +119,6 @@ void preparaA_star(Graph<NoInfo> &data,const NoInfo& destino){
 	}
 }
 
-void exercicioTeste() {
-	GraphViewer *gv = new GraphViewer(1000, 1000, false); //not dynamic
-	gv->setBackground("background.jpg");
-	gv->createWindow(1000, 1000);
-	gv->defineEdgeDashed(false);
-	gv->defineVertexColor("blue");
-	gv->defineEdgeColor("black");
-	for (int i = 0; i < 5; i++)
-		gv->addNode(i, i * 100, i * 100);
-
-}
-
-void exercicio1() {
-	GraphViewer *gv = new GraphViewer(600, 600, true);
-
-	gv->setBackground("background.jpg");
-
-	gv->createWindow(600, 600);
-
-	gv->defineEdgeDashed(true);
-	gv->defineVertexColor("blue");
-	gv->defineEdgeColor("black");
-
-	gv->addNode(0);
-	gv->addNode(1);
-	gv->addEdge(0, 0, 1, EdgeType::UNDIRECTED);
-
-	Sleep(2000); // use sleep(1) in linux ; Sleep(2000) on Windows
-
-	gv->removeEdge(0);
-	gv->removeNode(1);
-	gv->addNode(2);
-
-	gv->rearrange();
-
-	Sleep(2000);
-
-	gv->addEdge(1, 0, 2, EdgeType::UNDIRECTED);
-	gv->defineEdgeCurved(false);
-
-	gv->setVertexLabel(0, "Isto e um no");
-	gv->setEdgeLabel(1, "Isto e uma aresta");
-
-	gv->setVertexColor(2, "green");
-	gv->setEdgeColor(1, "yellow");
-
-	gv->setVertexSize(2, 40);
-	gv->setVertexIcon(0, "icon.gif");
-
-	gv->setEdgeDashed(1, false);
-
-	gv->rearrange();
-
-}
-
-void exercicio2() {
-	GraphViewer *gv = new GraphViewer(600, 600, false);
-
-	gv->createWindow(600, 600);
-
-	gv->defineEdgeColor("blue");
-	gv->defineVertexColor("yellow");
-	gv->addNode(0, 300, 50);
-	gv->addNode(1, 318, 58);
-	gv->addNode(4, 300, 100);
-	gv->addNode(7, 282, 58);
-	gv->addNode(2, 325, 75);
-	gv->addNode(3, 318, 93);
-	gv->addNode(6, 275, 75);
-	gv->addNode(5, 282, 93);
-
-	gv->addNode(8, 150, 200);
-
-	gv->setVertexColor(8, "green");
-	gv->setVertexColor(9, "blue");
-	gv->setVertexColor(10, "green");
-	gv->setVertexColor(11, "blue");
-	gv->setVertexColor(12, "green");
-	gv->setVertexColor(13, "green");
-	gv->addNode(9, 300, 200);
-	gv->addNode(10, 450, 200);
-	gv->addNode(11, 300, 400);
-
-	gv->addNode(12, 200, 550);
-	gv->addNode(13, 400, 550);
-
-	gv->addEdge(0, 0, 1, EdgeType::UNDIRECTED);
-	gv->addEdge(1, 1, 2, EdgeType::UNDIRECTED);
-	gv->addEdge(2, 2, 3, EdgeType::UNDIRECTED);
-	gv->addEdge(3, 3, 4, EdgeType::UNDIRECTED);
-	gv->addEdge(4, 4, 5, EdgeType::UNDIRECTED);
-	gv->addEdge(5, 5, 6, EdgeType::UNDIRECTED);
-	gv->addEdge(6, 6, 7, EdgeType::UNDIRECTED);
-	gv->addEdge(7, 7, 0, EdgeType::UNDIRECTED);
-
-	gv->addEdge(8, 4, 9, EdgeType::UNDIRECTED);
-	gv->addEdge(9, 9, 8, EdgeType::UNDIRECTED);
-	gv->addEdge(10, 9, 10, EdgeType::UNDIRECTED);
-	gv->addEdge(11, 9, 11, EdgeType::UNDIRECTED);
-	gv->addEdge(12, 11, 12, EdgeType::UNDIRECTED);
-	gv->addEdge(13, 11, 13, EdgeType::UNDIRECTED);
-
-	gv->rearrange();
-	bool first = true;
-
-	while (1) {
-		Sleep(2000);
-		if (first) {
-			gv->removeNode(12);
-			gv->removeNode(13);
-			first = false;
-		} else {
-			gv->removeNode(20);
-			gv->removeNode(21);
-		}
-		gv->addNode(14, 250, 550);
-		gv->addNode(15, 350, 550);
-		gv->addEdge(14, 11, 14, EdgeType::UNDIRECTED);
-		gv->addEdge(15, 11, 15, EdgeType::UNDIRECTED);
-		gv->rearrange();
-
-		Sleep(2000);
-		gv->removeNode(14);
-		gv->removeNode(15);
-		gv->addNode(16, 300, 550);
-		gv->addNode(17, 300, 550);
-		gv->addEdge(16, 11, 16, EdgeType::UNDIRECTED);
-		gv->addEdge(17, 11, 17, EdgeType::UNDIRECTED);
-		gv->rearrange();
-		Sleep(2000);
-
-		gv->removeNode(16);
-		gv->removeNode(17);
-		gv->addNode(18, 250, 550);
-		gv->addNode(19, 350, 550);
-		gv->addEdge(18, 11, 18, EdgeType::UNDIRECTED);
-		gv->addEdge(19, 11, 19, EdgeType::UNDIRECTED);
-		gv->rearrange();
-		Sleep(2000);
-
-		gv->removeNode(18);
-		gv->removeNode(19);
-		gv->addNode(20, 200, 550);
-		gv->addNode(21, 400, 550);
-		gv->addEdge(20, 11, 20, EdgeType::UNDIRECTED);
-		gv->addEdge(21, 11, 21, EdgeType::UNDIRECTED);
-		gv->rearrange();
-	}
-}
-
-void exercicio3() {
-	GraphViewer *gv = new GraphViewer(600, 600, false);
-
-	gv->createWindow(600, 600);
-
-	gv->defineEdgeColor("blue");
-	gv->defineVertexColor("yellow");
-
-	ifstream inFile;
-
-	//Ler o ficheiro nos.txt
-	inFile.open("nos.txt");
-
-	if (!inFile) {
-		cerr << "Unable to open file datafile.txt";
-		exit(1);   // call system to stop
-	}
-
-	std::string line;
-
-	int idNo = 0;
-	int X = 0;
-	int Y = 0;
-
-	while (std::getline(inFile, line)) {
-		std::stringstream linestream(line);
-		std::string data;
-
-		linestream >> idNo;
-
-		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> X;
-		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> Y;
-		gv->addNode(idNo, X, Y);
-
-	}
-
-	inFile.close();
-
-	//Ler o ficheiro arestas.txt
-	inFile.open("arestas.txt");
-
-	if (!inFile) {
-		cerr << "Unable to open file datafile.txt";
-		exit(1);   // call system to stop
-	}
-
-	int idAresta = 0;
-	int idNoOrigem = 0;
-	int idNoDestino = 0;
-
-	while (std::getline(inFile, line)) {
-		std::stringstream linestream(line);
-		std::string data;
-
-		linestream >> idAresta;
-
-		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> idNoOrigem;
-		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> idNoDestino;
-		gv->addEdge(idAresta, idNoOrigem, idNoDestino, EdgeType::UNDIRECTED);
-
-	}
-
-	inFile.close();
-
-	gv->rearrange();
-}
-
-//calculate haversine distance for linear distance // coordinates in radians
-/**
- * Method to calculate the distance between two points of a spherical surface. This function applies the Haversine formula.
- * @param lat1 Latitude in radians of the first point.
- * @param long1 Longitude in radians of the first point.
- * @param lat2 Latitude in radians of the second point.
- * @param long2 Longitude in radians of the second point.
- */
-long double haversine_km(long double lat1, long double long1, long double lat2,
-		long double long2) {
-	long double dlong = (long2 - long1);
-	long double dlat = (lat2 - lat1);
-	long double a = pow(sin(dlat / 2.0), 2)
-			+ cos(lat1) * cos(lat2) * pow(sin(dlong / 2.0), 2);
-	long double c = 2 * atan2(sqrt(a), sqrt(1 - a));
-	long double d = 6367 * c;
-
-	return d;
-}
 
 void abrirFicheiros(string A, string B, string C, Graph<NoInfo> & grafo,
 		GraphViewer * gv) {
@@ -825,13 +580,6 @@ void testSerial() {
 	//	dois->createWindow(600,600);
 	//	dois->defineVertexColor("blue");
 }
-
-struct cantos {
-	long double minLong;
-	long double minLat;
-	long double maxLong;
-	long double maxLat;
-};
 
 /**
  * Method that reads the nodes from a text file and adds them to both a GraphViwer a a Graph
