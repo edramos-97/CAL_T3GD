@@ -8,6 +8,9 @@
 #ifndef SRC_UTILS_H_
 #define SRC_UTILS_H_
 
+#include <cmath>
+
+
 typedef unsigned long long BigAssInteger;
 
 struct cantos {
@@ -25,8 +28,7 @@ struct cantos {
  * @param lat2 Latitude in radians of the second point.
  * @param long2 Longitude in radians of the second point.
  */
-long double haversine_km(long double lat1, long double long1, long double lat2,
-		long double long2) {
+static long double haversine_km(long double lat1, long double long1, long double lat2,	long double long2) {
 	long double dlong = (long2 - long1);
 	long double dlat = (lat2 - lat1);
 	long double a = pow(sin(dlat / 2.0), 2)

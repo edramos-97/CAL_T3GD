@@ -1,8 +1,8 @@
 #include <cstdio>
 #include "graphviewer.h"
-#include <fstream>
-#include <iostream>
-#include <sstream>
+//#include <fstream>
+//#include <iostream>
+//#include <sstream>
 #include <cmath>
 #include "Graph.h"
 #include <string>
@@ -10,48 +10,50 @@
 #include <cstring>
 #include <unordered_set>
 #include <utility>
-#include <tr1/unordered_set>
+//#include <tr1/unordered_set>
 #include <time.h>
 #include "utils.h"
+#include "aresta.h"
+#include "NoInfo.h"
 
-class NoInfo {
-public:
-	long double longitude;
-	long double latitude;
-	BigAssInteger idNo;
-
-	NoInfo() {
-		longitude = 0.0;
-		latitude = 0.0;
-		idNo = 0;
-	}
-
-	NoInfo(BigAssInteger id, long double longe, long double lat) {
-		this->idNo = id;
-		this->longitude = longe;
-		this->latitude = lat;
-
-	}
-
-	friend ostream & operator<<(ostream & os, const NoInfo obj) {
-		os << "idNo: " << obj.idNo << " long: " << obj.longitude << " lat: "
-				<< obj.latitude << endl;
-		return os;
-	}
-
-	friend bool operator==(const NoInfo& left, const NoInfo& right) {
-		return ((left.idNo == right.idNo));
-	}
-
-	friend bool operator!=(const NoInfo& left, const NoInfo& right) {
-		return ((left.idNo != right.idNo));
-	}
-
-	friend bool operator<(const NoInfo& left, const NoInfo& right) {
-		return left.idNo < right.idNo;
-	}
-
-};
+//class NoInfo {
+//public:
+//	long double longitude;
+//	long double latitude;
+//	BigAssInteger idNo;
+//
+//	NoInfo() {
+//		longitude = 0.0;
+//		latitude = 0.0;
+//		idNo = 0;
+//	}
+//
+//	NoInfo(BigAssInteger id, long double longe, long double lat) {
+//		this->idNo = id;
+//		this->longitude = longe;
+//		this->latitude = lat;
+//
+//	}
+//
+//	friend ostream & operator<<(ostream & os, const NoInfo obj) {
+//		os << "idNo: " << obj.idNo << " long: " << obj.longitude << " lat: "
+//				<< obj.latitude << endl;
+//		return os;
+//	}
+//
+//	friend bool operator==(const NoInfo& left, const NoInfo& right) {
+//		return ((left.idNo == right.idNo));
+//	}
+//
+//	friend bool operator!=(const NoInfo& left, const NoInfo& right) {
+//		return ((left.idNo != right.idNo));
+//	}
+//
+//	friend bool operator<(const NoInfo& left, const NoInfo& right) {
+//		return left.idNo < right.idNo;
+//	}
+//
+//};
 
 template<>
 struct vertex_greater_than<long double> {
@@ -87,26 +89,26 @@ struct heuristicFunc<NoInfo> {
 	}
 };
 
-class Aresta {
-public:
-	BigAssInteger idAresta;
-	long double distancia;
-	NoInfo origem;
-	NoInfo destino;
-	string rua;
-	bool dois_sentidos;
-};
+//class Aresta {
+//public:
+//	BigAssInteger idAresta;
+//	long double distancia;
+//	NoInfo origem;
+//	NoInfo destino;
+//	string rua;
+//	bool dois_sentidos;
+//};
 
-struct hashFuncAresta {
-	bool operator()(const Aresta &s1, const Aresta &s2) const {
-		return s1.idAresta == s2.idAresta;
-	}
-
-	int operator()(const Aresta &s1) const {
-		return s1.idAresta * 37;
-	}
-
-};
+//struct hashFuncAresta {
+//	bool operator()(const Aresta &s1, const Aresta &s2) const {
+//		return s1.idAresta == s2.idAresta;
+//	}
+//
+//	int operator()(const Aresta &s1) const {
+//		return s1.idAresta * 37;
+//	}
+//
+//};
 
 //TODO se puser lat e long dentro do Vertex<T>, é possivel nao chamar esta funçao e diminuir o nr de vezes
 //que a mesma é chamada, em vez de ser pa cada no so vai pos nos que entram na fila de prioridade, que sao
@@ -324,7 +326,7 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo,
 	inFile.close();
 	// insere todos os nos a falso, no final so estarao a true aqueles que sao cruzamentos
 
-	tr1::unordered_set<Aresta, hashFuncAresta, hashFuncAresta> arestas;
+	unordered_set<Aresta, hashFuncAresta, hashFuncAresta> arestas;
 	//unordered_set<Aresta> arestas;
 
 	//ler arestas
@@ -411,7 +413,7 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo,
 		NoInfo dest = itDestino->first;
 		Aresta teste;
 		teste.idAresta = idAresta;
-		tr1::unordered_set<Aresta, hashFuncAresta, hashFuncAresta>::iterator itAresta =
+		unordered_set<Aresta, hashFuncAresta, hashFuncAresta>::iterator itAresta =
 				arestas.find(teste);
 		Aresta alterada = *itAresta;
 
@@ -453,7 +455,7 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo,
 
 	//Graph<NoInfo>& grafo, GraphViewer*& gv
 	//escrever para graph e graphviewer
-	tr1::unordered_set<Aresta, hashFuncAresta, hashFuncAresta>::const_iterator itH =
+	unordered_set<Aresta, hashFuncAresta, hashFuncAresta>::const_iterator itH =
 			arestas.begin();
 	while (itH != arestas.end()) {
 		grafo.addVertex(itH->origem);
@@ -480,7 +482,7 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo,
 
 	itH = arestas.begin();
 	while (itH != arestas.end()) {
-		gv->setVertexColor(itH->origem.idNo, GREEN);
+		gv->setVertexColor(itH->origem.idNo, "GREEN");
 		//gv->setVertexColor(itH->destino.idNo,RED);
 		itH++;
 
@@ -491,8 +493,8 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo,
 
 void testFloidWarshal_med(Graph<NoInfo>& data, GraphViewer*& gv) {
 	//----------------------------teste floyd warshal
-
-	NoInfo ori = data.getVertex(NoInfo(42809630, 0, 0))->getInfo();
+	NoInfo temp(42809630, 0, 0);
+	NoInfo ori = data.getVertex(temp)->getInfo();
 	NoInfo des = data.getVertex(NoInfo(42809660, 0, 0))->getInfo();
 	vector<NoInfo> path = data.getfloydWarshallPath(ori, des);
 
@@ -715,8 +717,9 @@ void read_nodes_degrees(const std::string& A, GraphViewer*& gv,
  * @param grafo
  */
 void read_edges(
-		tr1::unordered_set<Aresta, hashFuncAresta, hashFuncAresta> arestas,
-		const std::string& C, GraphViewer*& gv, Graph<NoInfo>& grafo) {
+	unordered_set<Aresta, hashFuncAresta, hashFuncAresta> arestas,
+	const std::string& C, GraphViewer*& gv, Graph<NoInfo>& grafo) {
+
 	ifstream inFile;
 	string line;
 
@@ -742,7 +745,7 @@ void read_edges(
 		linestream >> idAresta;
 		Aresta temp;
 		temp.idAresta = idAresta;
-		tr1::unordered_set<Aresta, hashFuncAresta, hashFuncAresta>::iterator itAre =
+		unordered_set<Aresta, hashFuncAresta, hashFuncAresta>::iterator itAre =
 				arestas.find(temp);
 		//		if(novo){
 		//						anterior = idAresta;
@@ -783,10 +786,10 @@ void read_edges(
 		if (itAre->dois_sentidos) {
 			i++;
 			grafo.addEdge(destino, origem,
-					haversine_km(source->getInfo().latitude,
-							source->getInfo().longitude,
-							destiny->getInfo().latitude,
-							destiny->getInfo().longitude)); //distancia entre A e B == distancia entre B e A;
+					haversine_km(source->getInfo().getLatitude(),
+							source->getInfo().getLongitude(),
+							destiny->getInfo().getLatitude(),
+							destiny->getInfo().getLongitude())); //distancia entre A e B == distancia entre B e A;
 			gv->addEdge(i, idNo2 % 100000000, idNo1 % 100000000,
 					EdgeType::DIRECTED);
 			gv->setVertexColor(idNo2 % 100000000, GREEN);
@@ -806,11 +809,11 @@ void read_edges(
  * @param gv
  * @param grafo
  */
-tr1::unordered_set<Aresta, hashFuncAresta, hashFuncAresta> read_edges_names(
+unordered_set<Aresta, hashFuncAresta, hashFuncAresta> read_edges_names(
 		const std::string& B) {
 	ifstream inFile;
 	string line;
-	tr1::unordered_set<Aresta, hashFuncAresta, hashFuncAresta> arestas;
+	unordered_set<Aresta, hashFuncAresta, hashFuncAresta> arestas;
 	//unordered_set<Aresta> arestas;
 
 	inFile.open(B);
@@ -930,7 +933,7 @@ void abrirFicheiroXY(const std::string& A, const std::string& B,
 
 	read_nodes_degrees(A, gv, grafo, corners, maxXwindow, maxYwindow);
 
-	tr1::unordered_set<Aresta, hashFuncAresta, hashFuncAresta> arestas =
+	unordered_set<Aresta, hashFuncAresta, hashFuncAresta> arestas =
 			read_edges_names(B);
 
 	//abrir C2.txt sao as arestas
@@ -1009,7 +1012,7 @@ void testExecutionTimes(Graph<NoInfo>& data, GraphViewer*& gv) {
 		preparaA_star(data, des->getInfo());
 		vector<NoInfo> teste = data.getA_starPath(ori->getInfo(),
 				des->getInfo());
-		if (teste.size() < 220)
+		if (teste.size() < 100)
 			continue;
 
 		cout << "CAMINHO : " << i + 1 << endl;
