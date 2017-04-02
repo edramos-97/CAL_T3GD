@@ -14,7 +14,6 @@
 #include <time.h>
 #include "utils.h"
 
-
 class NoInfo {
 public:
 	long double longitude;
@@ -27,7 +26,7 @@ public:
 		idNo = 0;
 	}
 
-	NoInfo(BigAssInteger id, long double longe, long double lat){
+	NoInfo(BigAssInteger id, long double longe, long double lat) {
 		this->idNo = id;
 		this->longitude = longe;
 		this->latitude = lat;
@@ -62,9 +61,10 @@ struct vertex_greater_than<long double> {
 };
 
 template<>  //for A*
-struct vertex_greater_than_A<long double>{
+struct vertex_greater_than_A<long double> {
 	bool operator()(Vertex<NoInfo> * a, Vertex<NoInfo> * b) const {
-			return ((a->getDist()+a->getDestinyDistance()) > (b->getDist()+b->getDestinyDistance()));
+		return ((a->getDist() + a->getDestinyDistance())
+				> (b->getDist() + b->getDestinyDistance()));
 	}
 };
 
@@ -95,15 +95,9 @@ public:
 	NoInfo destino;
 	string rua;
 	bool dois_sentidos;
-//		bool operator==(const Aresta &other) const {
-//			return idAresta == other.idAresta;
-//		}
-//		size_t operator()(const Aresta &are) const {
-//			return idAresta * 37 + 54;
-//		}
 };
 
-struct hashFunc {
+struct hashFuncAresta {
 	bool operator()(const Aresta &s1, const Aresta &s2) const {
 		return s1.idAresta == s2.idAresta;
 	}
@@ -114,20 +108,18 @@ struct hashFunc {
 
 };
 
-
-
-
 //TODO se puser lat e long dentro do Vertex<T>, é possivel nao chamar esta funçao e diminuir o nr de vezes
 //que a mesma é chamada, em vez de ser pa cada no so vai pos nos que entram na fila de prioridade, que sao
 //em pratica muito menos
-void preparaA_star(Graph<NoInfo> &data,const NoInfo& destino){
+void preparaA_star(Graph<NoInfo> &data, const NoInfo& destino) {
 
-	for(unsigned int i = 0; i < data.getVertexSet().size() ; i++){
-		data.getVertexSet()[i]->setDestiny(haversine_km(data.getVertexSet()[i]->getInfo().latitude,
-				data.getVertexSet()[i]->getInfo().longitude,destino.longitude,destino.longitude));
+	for (unsigned int i = 0; i < data.getVertexSet().size(); i++) {
+		data.getVertexSet()[i]->setDestiny(
+				haversine_km(data.getVertexSet()[i]->getInfo().latitude,
+						data.getVertexSet()[i]->getInfo().longitude,
+						destino.longitude, destino.longitude));
 	}
 }
-
 
 void abrirFicheiros(string A, string B, string C, Graph<NoInfo> & grafo,
 		GraphViewer * gv) {
@@ -332,7 +324,7 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo,
 	inFile.close();
 	// insere todos os nos a falso, no final so estarao a true aqueles que sao cruzamentos
 
-	tr1::unordered_set<Aresta, hashFunc, hashFunc> arestas;
+	tr1::unordered_set<Aresta, hashFuncAresta, hashFuncAresta> arestas;
 	//unordered_set<Aresta> arestas;
 
 	//ler arestas
@@ -419,7 +411,7 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo,
 		NoInfo dest = itDestino->first;
 		Aresta teste;
 		teste.idAresta = idAresta;
-		tr1::unordered_set<Aresta, hashFunc, hashFunc>::iterator itAresta =
+		tr1::unordered_set<Aresta, hashFuncAresta, hashFuncAresta>::iterator itAresta =
 				arestas.find(teste);
 		Aresta alterada = *itAresta;
 
@@ -451,7 +443,7 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo,
 //		it++;
 //	}
 //
-//	tr1::unordered_set<Aresta, hashFunc, hashFunc>::const_iterator itH =
+//	tr1::unordered_set<Aresta, hashFuncAresta, hashFuncAresta>::const_iterator itH =
 //			arestas.begin();
 //	while (itH != arestas.end()) {
 //		cout << " idA: " << itH->idAresta << " nome: " << itH->rua << " dois: "
@@ -461,7 +453,7 @@ void abrirFicheirosImproved(string A, string B, string C, Graph<NoInfo>& grafo,
 
 	//Graph<NoInfo>& grafo, GraphViewer*& gv
 	//escrever para graph e graphviewer
-	tr1::unordered_set<Aresta, hashFunc, hashFunc>::const_iterator itH =
+	tr1::unordered_set<Aresta, hashFuncAresta, hashFuncAresta>::const_iterator itH =
 			arestas.begin();
 	while (itH != arestas.end()) {
 		grafo.addVertex(itH->origem);
@@ -722,7 +714,8 @@ void read_nodes_degrees(const std::string& A, GraphViewer*& gv,
  * @param gv
  * @param grafo
  */
-void read_edges(tr1::unordered_set<Aresta, hashFunc, hashFunc> arestas,
+void read_edges(
+		tr1::unordered_set<Aresta, hashFuncAresta, hashFuncAresta> arestas,
 		const std::string& C, GraphViewer*& gv, Graph<NoInfo>& grafo) {
 	ifstream inFile;
 	string line;
@@ -749,7 +742,7 @@ void read_edges(tr1::unordered_set<Aresta, hashFunc, hashFunc> arestas,
 		linestream >> idAresta;
 		Aresta temp;
 		temp.idAresta = idAresta;
-		tr1::unordered_set<Aresta, hashFunc, hashFunc>::iterator itAre =
+		tr1::unordered_set<Aresta, hashFuncAresta, hashFuncAresta>::iterator itAre =
 				arestas.find(temp);
 		//		if(novo){
 		//						anterior = idAresta;
@@ -813,11 +806,11 @@ void read_edges(tr1::unordered_set<Aresta, hashFunc, hashFunc> arestas,
  * @param gv
  * @param grafo
  */
-tr1::unordered_set<Aresta, hashFunc, hashFunc> read_edges_names(
+tr1::unordered_set<Aresta, hashFuncAresta, hashFuncAresta> read_edges_names(
 		const std::string& B) {
 	ifstream inFile;
 	string line;
-	tr1::unordered_set<Aresta, hashFunc, hashFunc> arestas;
+	tr1::unordered_set<Aresta, hashFuncAresta, hashFuncAresta> arestas;
 	//unordered_set<Aresta> arestas;
 
 	inFile.open(B);
@@ -937,23 +930,36 @@ void abrirFicheiroXY(const std::string& A, const std::string& B,
 
 	read_nodes_degrees(A, gv, grafo, corners, maxXwindow, maxYwindow);
 
-	tr1::unordered_set<Aresta, hashFunc, hashFunc> arestas = read_edges_names(
-			B);
+	tr1::unordered_set<Aresta, hashFuncAresta, hashFuncAresta> arestas =
+			read_edges_names(B);
 
 	//abrir C2.txt sao as arestas
 	read_edges(arestas, C, gv, grafo);
 }
 
+void TesteOtherMap() {
+	Graph<NoInfo> data;
+	int xMaxW = 1000, yMaxW = 947;
+	GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
+	gv->setBackground("10IMG1000-947.png");
+	gv->createWindow(xMaxW, yMaxW);
+	gv->defineEdgeCurved(false);
+	gv->defineEdgeDashed(true);
+	gv->defineVertexColor("blue");
+	gv->defineVertexSize(4);
+	gv->defineEdgeColor("black");
+	struct cantos corners;
+	corners.maxLat = 40.72988;
+	corners.maxLong = -73.87300;
+	corners.minLat = 40.72638;
+	corners.minLong = -73.87790;
+	abrirFicheiroXY("10IMG1000-947A.txt", "10IMG1000-947B.txt",
+			"10IMG1000-947C.txt", data, gv, corners, xMaxW, yMaxW);
+
+	testFloidWarshal_big(data, gv);
+}
+
 void TesteNewYork() {
-	//	int xMaxW = 1000, yMaxW = 947;
-	//		GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
-	//		gv->setBackground("10IMG1000-947.png");
-	//	struct cantos corners;
-	//	corners.maxLat = 40.72988;
-	//	corners.maxLong = -73.87300;
-	//	corners.minLat = 40.72638;
-	//	corners.minLong = -73.87790;
-	//	abrirFicheiroXY("10IMG1000-947A.txt", "10IMG1000-947B.txt", "10IMG1000-947C.txt", data, gv, corners,xMaxW,yMaxW);
 
 	//CRIAR GRAFO INTERNO
 	Graph<NoInfo> data;
@@ -979,7 +985,6 @@ void TesteNewYork() {
 
 void paintPath(GraphViewer *gv, vector<NoInfo> vect, string COLOR) {
 	for (unsigned int i = 0; i < vect.size(); i++) {
-		//Sleep(100);
 		cout << vect[i] << endl;
 		gv->setVertexColor(vect[i].idNo, COLOR);
 		//gv->setVertexSize(vect[i].idNo, 20);
@@ -1001,15 +1006,16 @@ void testExecutionTimes(Graph<NoInfo>& data, GraphViewer*& gv) {
 		if (ori == NULL || des == NULL || ori == des)
 			continue;
 
-		preparaA_star(data,des->getInfo());
-		vector<NoInfo> teste = data.getA_starPath(ori->getInfo(),des->getInfo());
-		if(teste.size() < 220)
+		preparaA_star(data, des->getInfo());
+		vector<NoInfo> teste = data.getA_starPath(ori->getInfo(),
+				des->getInfo());
+		if (teste.size() < 220)
 			continue;
 
-		cout << "CAMINHO : " << i+1 << endl;
+		cout << "CAMINHO : " << i + 1 << endl;
 
 		cout << "A* " << i + 1 << ":" << endl;
-		preparaA_star(data,des->getInfo());
+		preparaA_star(data, des->getInfo());
 		clock_t tStart = clock();
 
 		vector<NoInfo> pathA = data.getA_starPath(ori->getInfo(),
