@@ -9,9 +9,9 @@
 #define SRC_UTILS_H_
 
 #include <cmath>
-
-
-typedef unsigned long long BigAssInteger;
+#include "NoInfo.h"
+#include "Graph.h"
+#include "graphviewer.h"
 
 struct cantos {
 	long double minLong;
@@ -38,5 +38,25 @@ static long double haversine_km(long double lat1, long double long1, long double
 
 	return d;
 }
+
+static void preparaA_star(Graph<NoInfo> &data, const NoInfo& destino) {
+
+	for (unsigned int i = 0; i < data.getVertexSet().size(); i++) {
+		data.getVertexSet()[i]->setDestiny(
+				haversine_km(data.getVertexSet()[i]->getInfo().latitude,
+						data.getVertexSet()[i]->getInfo().longitude,
+						destino.longitude, destino.longitude));
+	}
+}
+
+static void paintPath(GraphViewer *gv, vector<NoInfo> vect, string COLOR) {
+	for (unsigned int i = 0; i < vect.size(); i++) {
+		cout << vect[i] << endl;
+		gv->setVertexColor(vect[i].idNo, COLOR);
+		//gv->setVertexSize(vect[i].idNo, 20);
+	}
+}
+
+
 
 #endif /* SRC_UTILS_H_ */

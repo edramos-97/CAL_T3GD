@@ -11,9 +11,10 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include "utils.h"
 
 using namespace std;
+
+typedef unsigned long long BigAssInteger;
 
 class NoInfo {
 public:
