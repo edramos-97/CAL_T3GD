@@ -89,9 +89,10 @@ static void testFloidWarshal_big(Graph<NoInfo>& data, GraphViewer*& gv) {
 
 		cout << "novo caminho: " << i << endl;
 		for (unsigned int i = 0; i < path.size(); i++) {
-			//Sleep(100);
+			Sleep(100);
 			cout << path[i] << endl;
 			gv->setVertexColor(path[i].idNo, color);
+			gv->setVertexSize(path[i].idNo, 40);
 		}
 
 		i++;

@@ -48,6 +48,8 @@ public:
 	long double getDestinyDistance(){ return dist_DESTINY;};
 
 	void addEdge(Vertex<T> *dest, long double w);
+	void addEdge(Vertex<T> *dest, long double w, unsigned long long id);
+	unsigned long long getIdEdge(const T& dest);
 	bool removeEdgeTo(Vertex<T> *d);
 
 	T getInfo() const;
@@ -102,6 +104,12 @@ void Vertex<T>::addEdge(Vertex<T> *dest, long double w) {
 }
 
 template<class T>
+void Vertex<T>::addEdge(Vertex<T> *dest, long double w, unsigned long long id) {
+	Edge<T> edgeD(dest, w, id);
+	adj.push_back(edgeD);
+}
+
+template<class T>
 T Vertex<T>::getInfo() const {
 	return this->info;
 }
@@ -117,6 +125,16 @@ void Vertex<T>::setInfo(T info) {
 }
 
 template<class T>
+unsigned long long Vertex<T>::getIdEdge(const T& dest) {
+	for(unsigned int i = 0; i < adj.size(); i++){
+		if(adj[i].dest->getInfo() == dest)
+			return adj[i].id;
+	}
+
+	return -1;
+}
+
+template<class T>
 int Vertex<T>::getIndegree() const {
 	return this->indegree;
 }
@@ -127,11 +145,14 @@ int Vertex<T>::getIndegree() const {
  */
 template<class T>
 class Edge {
+
 	Vertex<T> * dest;
 	string name;
 	long double weight = 0.0;
 public:
+	unsigned long long id;
 	Edge(Vertex<T> *d, long double w);
+	Edge(Vertex<T> *d, long double w, unsigned long long id);
 	friend class Graph<T> ;
 	friend class Vertex<T> ;
 };
@@ -140,6 +161,14 @@ template<class T>
 Edge<T>::Edge(Vertex<T> *d, long double w) :
 		dest(d), weight(w){
 	this->name = "unnamed";
+	this->id = 0;
+}
+
+template<class T>
+Edge<T>::Edge(Vertex<T> *d, long double w, unsigned long long id) :
+		dest(d), weight(w){
+	this->name = "unnamed";
+	this->id = id;
 }
 
 /* ================================================================================================
@@ -165,6 +194,7 @@ class Graph {
 public:
 	bool addVertex(const T &in);
 	bool addEdge(const T &sourc, const T &dest, long double w);
+	bool addEdge(const T &sourc, const T &dest, long double w, unsigned long long id);
 	bool removeVertex(const T &in);
 	bool removeEdge(const T &sourc, const T &dest);
 	vector<T> dfs() const;
@@ -281,6 +311,32 @@ bool Graph<T>::addEdge(const T &sourc, const T &dest, long double w) {
 
 	return true;
 }
+
+template<class T>
+bool Graph<T>::addEdge(const T &sourc, const T &dest, long double w, unsigned long long id) {
+	typename vector<Vertex<T>*>::iterator it = vertexSet.begin();
+	typename vector<Vertex<T>*>::iterator ite = vertexSet.end();
+	int found = 0;
+	Vertex<T> *vS, *vD;
+	while (found != 2 && it != ite) {
+		if ((*it)->info == sourc) {
+			vS = *it;
+			found++;
+		}
+		if ((*it)->info == dest) {
+			vD = *it;
+			found++;
+		}
+		it++;
+	}
+	if (found != 2)
+		return false;
+	vD->indegree++;
+	vS->addEdge(vD, w, id);
+
+	return true;
+}
+
 
 template<class T>
 bool Graph<T>::removeEdge(const T &sourc, const T &dest) {

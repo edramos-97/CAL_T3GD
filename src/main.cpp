@@ -18,7 +18,6 @@
 #include "map_tests.h"
 #include "file_reading.h"
 
-
 //class NoInfo {
 //public:
 //	long double longitude;
@@ -126,113 +125,113 @@ struct heuristicFunc<NoInfo> {
 //	}
 //}
 
-//void abrirFicheiros(string A, string B, string C, Graph<NoInfo> & grafo,
-//		GraphViewer * gv) {
+void abrirFicheiros(string A, string B, string C, Graph<NoInfo> & grafo,
+		GraphViewer * gv) {
+
+	ifstream inFile;
+	//Ler o ficheiro A2.txt
+	inFile.open(A);
+
+	if (!inFile) {
+		cerr << "Unable to open file datafile.txt";
+		exit(1);   // call system to stop
+	}
+
+	std::string line;
+
+	BigAssInteger idNo = 0;
+	long double X = 0;
+	long double Y = 0;
+
+	while (std::getline(inFile, line)) {
+		std::stringstream linestream(line);
+		std::string data;
+
+		linestream >> idNo;
+
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> X;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> Y;    //X and Y are in degrees
+
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> X;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> Y;    //X and Y are in radians
+		//cout << "idNo: " << idNo << " long: " << X << " lat: " << Y << endl;
+		NoInfo temp(idNo % 100000000, X, Y);
+		gv->addNode(idNo % 100000000);
+		grafo.addVertex(temp);
+
+	}
+
+	inFile.close();
+
+	//abrir C2.txt sao as arestas
+	inFile.open(C);
+
+	if (!inFile) {
+		cerr << "Unable to open file datafile.txt";
+		exit(1);   // call system to stop
+	}
+
+	BigAssInteger idAresta;
+	BigAssInteger idNo1;
+	BigAssInteger idNo2;
+
+	BigAssInteger i = 0;
+//	bool novo = true;
+//	double weigth = 0;
 //
-//	ifstream inFile;
-//	//Ler o ficheiro A2.txt
-//	inFile.open(A);
-//
-//	if (!inFile) {
-//		cerr << "Unable to open file datafile.txt";
-//		exit(1);   // call system to stop
-//	}
-//
-//	std::string line;
-//
-//	BigAssInteger idNo = 0;
-//	long double X = 0;
-//	long double Y = 0;
-//
-//	while (std::getline(inFile, line)) {
-//		std::stringstream linestream(line);
-//		std::string data;
-//
-//		linestream >> idNo;
-//
-//		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-//		linestream >> X;
-//		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-//		linestream >> Y;    //X and Y are in degrees
-//
-//		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-//		linestream >> X;
-//		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-//		linestream >> Y;    //X and Y are in radians
-//		//cout << "idNo: " << idNo << " long: " << X << " lat: " << Y << endl;
-//		NoInfo temp(idNo % 100000000, X, Y);
-//		gv->addNode(idNo % 100000000);
-//		grafo.addVertex(temp);
-//
-//	}
-//
-//	inFile.close();
-//
-//	//abrir C2.txt sao as arestas
-//	inFile.open(C);
-//
-//	if (!inFile) {
-//		cerr << "Unable to open file datafile.txt";
-//		exit(1);   // call system to stop
-//	}
-//
-//	BigAssInteger idAresta;
-//	BigAssInteger idNo1;
-//	BigAssInteger idNo2;
-//
-//	BigAssInteger i = 0;
-////	bool novo = true;
-////	double weigth = 0;
-////
-////	int anterior;
-//	while (std::getline(inFile, line)) {
-//		std::stringstream linestream(line);
-//		std::string data;
-//
-//		linestream >> idAresta;
-//
-////		if(novo){
-////						anterior = idAresta;
-////						novo = false;
-////					}
-//
-//		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-//		linestream >> idNo1;
-//		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-//		linestream >> idNo2;    //X and Y are in degrees
-//
-//		NoInfo origem(idNo1 % 100000000, 0, 0);  //so para efeitos de pesquisa
-//		Vertex<NoInfo>* source = grafo.getVertex(origem);
-//		NoInfo destino(idNo2 % 100000000, 0, 0);
-//		Vertex<NoInfo>* destiny = grafo.getVertex(destino);
-//
-//		//pre processamento do grafico pelo parser ja garante informacao sem erros //i think
-//		//if(source != NULL && destiny != NULL){
-//
-//		if (grafo.removeEdge(origem, destino)) //conseguiu remover
-//				{
-//			grafo.addEdge(origem, destino,
-//					haversine_km(source->getInfo().latitude,
-//							source->getInfo().longitude,
-//							destiny->getInfo().latitude,
-//							destiny->getInfo().longitude));
-//		}
-//		grafo.addEdge(origem, destino,
-//				haversine_km(source->getInfo().latitude,
-//						source->getInfo().longitude,
-//						destiny->getInfo().latitude,
-//						destiny->getInfo().longitude));
-//		gv->addEdge(i, idNo1 % 100000000, idNo2 % 100000000,
-//				EdgeType::DIRECTED);
-//		gv->setVertexColor(idNo1 % 100000000, GREEN);
-//		i++;
-//
-//		//}
-//
-//	}
-//	gv->rearrange();
-//	inFile.close();
-//}
+//	int anterior;
+	while (std::getline(inFile, line)) {
+		std::stringstream linestream(line);
+		std::string data;
+
+		linestream >> idAresta;
+
+//		if(novo){
+//						anterior = idAresta;
+//						novo = false;
+//					}
+
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> idNo1;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> idNo2;    //X and Y are in degrees
+
+		NoInfo origem(idNo1 % 100000000, 0, 0);  //so para efeitos de pesquisa
+		Vertex<NoInfo>* source = grafo.getVertex(origem);
+		NoInfo destino(idNo2 % 100000000, 0, 0);
+		Vertex<NoInfo>* destiny = grafo.getVertex(destino);
+
+		//pre processamento do grafico pelo parser ja garante informacao sem erros //i think
+		//if(source != NULL && destiny != NULL){
+
+		if (grafo.removeEdge(origem, destino)) //conseguiu remover
+				{
+			grafo.addEdge(origem, destino,
+					haversine_km(source->getInfo().latitude,
+							source->getInfo().longitude,
+							destiny->getInfo().latitude,
+							destiny->getInfo().longitude),i);
+		}
+		grafo.addEdge(origem, destino,
+				haversine_km(source->getInfo().latitude,
+						source->getInfo().longitude,
+						destiny->getInfo().latitude,
+						destiny->getInfo().longitude),i);
+		gv->addEdge(i, idNo1 % 100000000, idNo2 % 100000000,
+				EdgeType::DIRECTED);
+		gv->setVertexColor(idNo1 % 100000000, GREEN);
+		i++;
+
+		//}
+
+	}
+	gv->rearrange();
+	inFile.close();
+}
 
 //void testFloidWarshal_big(Graph<NoInfo>& data, GraphViewer*& gv) {
 //	//teste floyd warshal bigger
@@ -584,6 +583,68 @@ void testSerial() {
 	//	cout << "dois created" << endl;
 	//	dois->createWindow(600,600);
 	//	dois->defineVertexColor("blue");
+}
+
+void teste_colorir(Graph<NoInfo>& data, GraphViewer*& gv, int numCaminhos,
+		int sizeCaminhos) {
+	int i = 0;
+
+	while (i < numCaminhos) {
+		int ind0 = rand() % data.getVertexSet().size();
+		int ind1 = rand() % data.getVertexSet().size();
+		Vertex<NoInfo> * ori = data.getVertex(
+				NoInfo(data.getVertexSet()[ind0]->getInfo().idNo, 0, 0));
+		Vertex<NoInfo> * des = data.getVertex(
+				NoInfo(data.getVertexSet()[ind1]->getInfo().idNo, 0, 0));
+		if (ori == NULL || des == NULL || ori == des)
+			continue;
+
+		vector<NoInfo> path = data.getDijkstraPath(ori->getInfo(),
+				des->getInfo());
+
+		if(path.size() < sizeCaminhos)
+			continue;
+
+		string color = "BLACK";
+		switch (i) {
+		case 0:
+			color = YELLOW;
+			break;
+		case 1:
+			color = ORANGE;
+			break;
+		case 2:
+			color = RED;
+			break;
+		case 3:
+			color = PINK;
+			break;
+		case 4:
+			color = GRAY;
+			break;
+		case 5:
+			color = BLACK;
+			break;
+		}
+
+		cout << "novo caminho: " << i << endl;
+		for (unsigned int i = 0; i < path.size(); i++) {
+			Sleep(100);
+			cout << path[i] << endl;
+
+			gv->setVertexColor(path[i].idNo, color);
+			gv->setVertexSize(path[i].idNo, 40);
+			if(i < (path.size()-1)){
+				cout << data.getVertex(path[i])->getIdEdge(path[i+1]) << endl;
+				gv->setEdgeDashed(data.getVertex(path[i])->getIdEdge(path[i+1]), false);
+				gv->setEdgeColor(data.getVertex(path[i])->getIdEdge(path[i+1]), color);
+				gv->setEdgeThickness(data.getVertex(path[i])->getIdEdge(path[i+1]), 5);
+			}
+			gv->rearrange();
+		}
+
+		i++;
+	}
 }
 
 ///**
@@ -1071,6 +1132,7 @@ void testSerial() {
 //}
 
 int main(int argc, char * argv[]) {
+	srand(time(NULL));
 	//CRIAR GRAFO INTERNO
 //	Graph<NoInfo> data;
 //
@@ -1098,6 +1160,7 @@ int main(int argc, char * argv[]) {
 
 	Graph<NoInfo> data;
 	int xMaxW = 5000, yMaxW = 1910;
+	//int xMaxW = 600, yMaxW = 600;
 	GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
 	gv->setBackground("NEWY.png");
 	gv->createWindow(xMaxW, yMaxW);
@@ -1114,7 +1177,7 @@ int main(int argc, char * argv[]) {
 	abrirFicheiroXY("NEWYA.txt", "NEWYB.txt", "NEWYC.txt", data, gv, corners,
 			xMaxW, yMaxW);
 
-	testExecutionTimes(data, gv);
+	//testExecutionTimes(data, gv);
 
 //	abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
 //	NoInfo ori = data.getVertex(NoInfo(atoi(argv[1])/*14020846*/, 0, 0))->getInfo();
@@ -1129,8 +1192,11 @@ int main(int argc, char * argv[]) {
 //
 //	paintPath(gv,path,YELLOW);
 
-	//abrirFicheiros("smallerA.txt","smallerB.txt", "smallerC.txt",data, gv); //com esta
-	//testFloidWarshal_med(data, gv);
+	//abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv); //com esta
+
+	teste_colorir(data, gv, 6, 50);
+
+	//testFloidWarshal_big(data, gv);
 
 	//testFloidWarshal_big(data, gv);
 

@@ -200,13 +200,13 @@ void read_edges(
 					haversine_km(source->getInfo().latitude,
 							source->getInfo().longitude,
 							destiny->getInfo().latitude,
-							destiny->getInfo().longitude));
+							destiny->getInfo().longitude),i);
 		}
 		grafo.addEdge(origem, destino,
 				haversine_km(source->getInfo().latitude,
 						source->getInfo().longitude,
 						destiny->getInfo().latitude,
-						destiny->getInfo().longitude));
+						destiny->getInfo().longitude),i);
 
 		gv->addEdge(i, idNo1 % 100000000, idNo2 % 100000000,
 				EdgeType::DIRECTED);
@@ -218,7 +218,7 @@ void read_edges(
 					haversine_km(source->getInfo().getLatitude(),
 							source->getInfo().getLongitude(),
 							destiny->getInfo().getLatitude(),
-							destiny->getInfo().getLongitude())); //distancia entre A e B == distancia entre B e A;
+							destiny->getInfo().getLongitude()),i); //distancia entre A e B == distancia entre B e A;
 			gv->addEdge(i, idNo2 % 100000000, idNo1 % 100000000,
 					EdgeType::DIRECTED);
 			gv->setVertexColor(idNo2 % 100000000, GREEN);
