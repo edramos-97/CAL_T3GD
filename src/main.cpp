@@ -214,13 +214,13 @@ void abrirFicheiros(string A, string B, string C, Graph<NoInfo> & grafo,
 					haversine_km(source->getInfo().latitude,
 							source->getInfo().longitude,
 							destiny->getInfo().latitude,
-							destiny->getInfo().longitude),i);
+							destiny->getInfo().longitude), i);
 		}
 		grafo.addEdge(origem, destino,
 				haversine_km(source->getInfo().latitude,
 						source->getInfo().longitude,
 						destiny->getInfo().latitude,
-						destiny->getInfo().longitude),i);
+						destiny->getInfo().longitude), i);
 		gv->addEdge(i, idNo1 % 100000000, idNo2 % 100000000,
 				EdgeType::DIRECTED);
 		gv->setVertexColor(idNo1 % 100000000, GREEN);
@@ -586,66 +586,99 @@ void testSerial() {
 }
 
 void teste_colorir(Graph<NoInfo>& data, GraphViewer*& gv, int numCaminhos,
-		int sizeCaminhos) {
-	int i = 0;
+		int sizeCaminhos, Vertex<NoInfo>* source, Vertex<NoInfo>* destiny, string cor) {
 
-	while (i < numCaminhos) {
-		int ind0 = rand() % data.getVertexSet().size();
-		int ind1 = rand() % data.getVertexSet().size();
-		Vertex<NoInfo> * ori = data.getVertex(
-				NoInfo(data.getVertexSet()[ind0]->getInfo().idNo, 0, 0));
-		Vertex<NoInfo> * des = data.getVertex(
-				NoInfo(data.getVertexSet()[ind1]->getInfo().idNo, 0, 0));
-		if (ori == NULL || des == NULL || ori == des)
-			continue;
+	if (source == NULL || destiny == NULL) {
+		int i = 0;
+		while (i < numCaminhos) {
+			int ind0 = rand() % data.getVertexSet().size();
+			int ind1 = rand() % data.getVertexSet().size();
+			Vertex<NoInfo> * ori = data.getVertex(
+					NoInfo(data.getVertexSet()[ind0]->getInfo().idNo, 0, 0));
+			Vertex<NoInfo> * des = data.getVertex(
+					NoInfo(data.getVertexSet()[ind1]->getInfo().idNo, 0, 0));
+			if (ori == NULL || des == NULL || ori == des)
+				continue;
 
-		vector<NoInfo> path = data.getDijkstraPath(ori->getInfo(),
-				des->getInfo());
+			vector<NoInfo> path = data.getDijkstraPath(ori->getInfo(),
+					des->getInfo());
 
-		if(path.size() < sizeCaminhos)
-			continue;
+			if (path.size() < sizeCaminhos)
+				continue;
 
-		string color = "BLACK";
-		switch (i) {
-		case 0:
-			color = YELLOW;
-			break;
-		case 1:
-			color = ORANGE;
-			break;
-		case 2:
-			color = RED;
-			break;
-		case 3:
-			color = PINK;
-			break;
-		case 4:
-			color = GRAY;
-			break;
-		case 5:
-			color = BLACK;
-			break;
+			string color = "BLACK";
+			switch (i) {
+			case 0:
+				color = YELLOW;
+				break;
+			case 1:
+				color = ORANGE;
+				break;
+			case 2:
+				color = RED;
+				break;
+			case 3:
+				color = PINK;
+				break;
+			case 4:
+				color = GRAY;
+				break;
+			case 5:
+				color = BLACK;
+				break;
+			}
+
+			cout << "novo caminho: " << i << endl;
+			for (unsigned int i = 0; i < path.size(); i++) {
+				Sleep(100);
+				cout << path[i] << endl;
+
+				gv->setVertexColor(path[i].idNo, color);
+				gv->setVertexSize(path[i].idNo, 40);
+				if (i < (path.size() - 1)) {
+					cout << data.getVertex(path[i])->getIdEdge(path[i + 1])
+							<< endl;
+					gv->setEdgeDashed(
+							data.getVertex(path[i])->getIdEdge(path[i + 1]),
+							false);
+					gv->setEdgeColor(
+							data.getVertex(path[i])->getIdEdge(path[i + 1]),
+							color);
+					gv->setEdgeThickness(
+							data.getVertex(path[i])->getIdEdge(path[i + 1]), 5);
+				}
+				gv->rearrange();
+			}
+
+			i++;
 		}
+	}
 
-		cout << "novo caminho: " << i << endl;
+	else {
+		vector<NoInfo> path = data.getDijkstraPath(source->getInfo(),
+				destiny->getInfo());
+
 		for (unsigned int i = 0; i < path.size(); i++) {
 			Sleep(100);
 			cout << path[i] << endl;
 
-			gv->setVertexColor(path[i].idNo, color);
+			gv->setVertexColor(path[i].idNo, cor);
 			gv->setVertexSize(path[i].idNo, 40);
-			if(i < (path.size()-1)){
-				cout << data.getVertex(path[i])->getIdEdge(path[i+1]) << endl;
-				gv->setEdgeDashed(data.getVertex(path[i])->getIdEdge(path[i+1]), false);
-				gv->setEdgeColor(data.getVertex(path[i])->getIdEdge(path[i+1]), color);
-				gv->setEdgeThickness(data.getVertex(path[i])->getIdEdge(path[i+1]), 5);
+			if (i < (path.size() - 1)) {
+				cout << data.getVertex(path[i])->getIdEdge(path[i + 1]) << endl;
+				gv->setEdgeDashed(
+						data.getVertex(path[i])->getIdEdge(path[i + 1]), false);
+				gv->setEdgeColor(
+						data.getVertex(path[i])->getIdEdge(path[i + 1]), cor);
+				gv->setEdgeThickness(
+						data.getVertex(path[i])->getIdEdge(path[i + 1]), 5);
 			}
 			gv->rearrange();
 		}
 
-		i++;
 	}
 }
+
 
 ///**
 // * Method that reads the nodes from a text file and adds them to both a GraphViwer a a Graph
@@ -1132,8 +1165,8 @@ void teste_colorir(Graph<NoInfo>& data, GraphViewer*& gv, int numCaminhos,
 //}
 
 int main(int argc, char * argv[]) {
-	srand(time(NULL));
-	//CRIAR GRAFO INTERNO
+srand(time(NULL));
+//CRIAR GRAFO INTERNO
 //	Graph<NoInfo> data;
 //
 //	//CRIAR GRAPHVIEWER
@@ -1145,39 +1178,39 @@ int main(int argc, char * argv[]) {
 //	gv->defineVertexSize(5);
 //	gv->defineEdgeColor("black");
 
-	//TesteNewYork();
+//TesteNewYork();
 
-	//------------------------tiniest
-	//abrirFicheiros("tinyA.txt","tinyB.txt", "tinyC.txt",data, gv);
-	//-------------------------amostra really small
-	//abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
-	//-----------------------amostra pequena
-	//abrirFicheiros("A2.txt","B2.txt", "C2.txt",data, gv);
-	//----------------------amostra media
-	//abrirFicheiros("A.txt", "B.txt", "C.txt", data, gv);
-	//--------------------------------amostra grande
-	//abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
+//------------------------tiniest
+//abrirFicheiros("tinyA.txt","tinyB.txt", "tinyC.txt",data, gv);
+//-------------------------amostra really small
+//abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
+//-----------------------amostra pequena
+//abrirFicheiros("A2.txt","B2.txt", "C2.txt",data, gv);
+//----------------------amostra media
+//abrirFicheiros("A.txt", "B.txt", "C.txt", data, gv);
+//--------------------------------amostra grande
+//abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
 
-	Graph<NoInfo> data;
-	int xMaxW = 5000, yMaxW = 1910;
-	//int xMaxW = 600, yMaxW = 600;
-	GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
-	gv->setBackground("NEWY.png");
-	gv->createWindow(xMaxW, yMaxW);
-	gv->defineEdgeCurved(false);
-	gv->defineEdgeDashed(true);
-	gv->defineVertexColor(GREEN);
-	gv->defineVertexSize(4);
-	gv->defineEdgeColor("black");
-	struct cantos corners;
-	corners.maxLat = 40.7127;
-	corners.maxLong = -73.9784;
-	corners.minLat = 40.7007;
-	corners.minLong = -74.0194;
-	abrirFicheiroXY("NEWYA.txt", "NEWYB.txt", "NEWYC.txt", data, gv, corners,
-			xMaxW, yMaxW);
+Graph<NoInfo> data;
+int xMaxW = 5000, yMaxW = 1910;
+//int xMaxW = 600, yMaxW = 600;
+GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
+gv->setBackground("NEWY.png");
+gv->createWindow(xMaxW, yMaxW);
+gv->defineEdgeCurved(false);
+gv->defineEdgeDashed(true);
+gv->defineVertexColor(GREEN);
+gv->defineVertexSize(4);
+gv->defineEdgeColor("black");
+struct cantos corners;
+corners.maxLat = 40.7127;
+corners.maxLong = -73.9784;
+corners.minLat = 40.7007;
+corners.minLong = -74.0194;
+abrirFicheiroXY("NEWYA.txt", "NEWYB.txt", "NEWYC.txt", data, gv, corners, xMaxW,
+		yMaxW);
 
-	//testExecutionTimes(data, gv);
+//testExecutionTimes(data, gv);
 
 //	abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
 //	NoInfo ori = data.getVertex(NoInfo(atoi(argv[1])/*14020846*/, 0, 0))->getInfo();
@@ -1192,20 +1225,23 @@ int main(int argc, char * argv[]) {
 //
 //	paintPath(gv,path,YELLOW);
 
-	//abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv); //com esta
+//abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv); //com esta
 
-	teste_colorir(data, gv, 6, 50);
+teste_colorir(data, gv, 6, 50, data.getVertex(NoInfo(58875400,0,0)), data.getVertex(NoInfo(42454795,0,0)), YELLOW);
+teste_colorir(data, gv, 6, 50, data.getVertex(NoInfo(42454795,0,0)), data.getVertex(NoInfo(30286753,0,0)), BLUE);
+teste_colorir(data, gv, 6, 50, data.getVertex(NoInfo(58875400,0,0)), data.getVertex(NoInfo(30286753,0,0)), RED);
 
-	//testFloidWarshal_big(data, gv);
 
-	//testFloidWarshal_big(data, gv);
+//testFloidWarshal_big(data, gv);
 
-	//abrirFicheiros("A2.txt","B2.txt", "C2.txt",data, gv);
-	//testDijkstra(data, gv);
+//testFloidWarshal_big(data, gv);
 
-	//gv->rearrange();
+//abrirFicheiros("A2.txt","B2.txt", "C2.txt",data, gv);
+//testDijkstra(data, gv);
 
-	getchar();
-	cout << "END" << endl;
-	return 0;
+//gv->rearrange();
+
+getchar();
+cout << "END" << endl;
+return 0;
 }
