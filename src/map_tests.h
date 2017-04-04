@@ -13,7 +13,11 @@
 #include "graphviewer.h"
 #include "file_reading.h"
 
-
+/**
+ * @brief Run djikstra algorithm from one to all nodes.
+ * @param data graph that will be run in the algorithm.
+ * @param gv graph viewer that will be updated after the algorithm is run.
+ */
 static void testDijkstra(Graph<NoInfo>& data, GraphViewer*& gv) {
 	Vertex<NoInfo>* origem = data.getVertex(
 			NoInfo(173452776 % 100000000, 0, 0));
@@ -34,6 +38,11 @@ static void testDijkstra(Graph<NoInfo>& data, GraphViewer*& gv) {
 	// --------------------------fim teste dijkstra
 }
 
+/**
+ * @brief Run Floid-Warshall algorithm from one to all nodes.
+ * @param data graph that will be run in the algorithm.
+ * @param gv graph viewer that will be updated after the algorithm is run.
+ */
 static void testFloidWarshal_med(Graph<NoInfo>& data, GraphViewer*& gv) {
 	//----------------------------teste floyd warshal
 	NoInfo temp(42809630, 0, 0);
@@ -49,6 +58,11 @@ static void testFloidWarshal_med(Graph<NoInfo>& data, GraphViewer*& gv) {
 	//------------------------------fim teste floyd warshal
 }
 
+/**
+ * @brief Run Floid-Warshall algorithm from one to all nodes and find a certain amount of paths.
+ * @param data graph that will be run in the algorithm.
+ * @param gv graph viewer that will be updated after the algorithm is run.
+ */
 static void testFloidWarshal_big(Graph<NoInfo>& data, GraphViewer*& gv) {
 	//teste floyd warshal bigger
 	int i = 0;
@@ -101,6 +115,9 @@ static void testFloidWarshal_big(Graph<NoInfo>& data, GraphViewer*& gv) {
 
 }
 
+/**
+ * @brief Run Floid-Warshall algorithm from one to all nodes with a certain map.
+ */
 static void TesteOtherMap() {
 	Graph<NoInfo> data;
 	int xMaxW = 1000, yMaxW = 947;
@@ -123,6 +140,9 @@ static void TesteOtherMap() {
 	testFloidWarshal_big(data, gv);
 }
 
+/**
+ * @brief Run Floid-Warshall algorithm from one to all nodes with a New York map.
+ */
 static void TesteNewYork() {
 
 	//CRIAR GRAFO INTERNO

@@ -13,7 +13,7 @@
 #include <iostream>
 
 /**
- * Method that reads the nodes from a text file and adds them to both a GraphViwer a a Graph
+ * @brief Method that reads the nodes from a text file and adds them to both a GraphViwer a a Graph
  * @param A
  * @param gv
  * @param grafo
@@ -60,7 +60,7 @@ static void read_node_radians(const std::string& A, GraphViewer*& gv,
 }
 
 /**
- * Method that reads the nodes from a text file and adds them to both a GraphViwer a a Graph
+ * @brief Method that reads the nodes from a text file and adds them to both a GraphViwer a a Graph
  * @param A
  * @param gv
  * @param grafo
@@ -140,7 +140,7 @@ void read_nodes_degrees(const std::string& A, GraphViewer*& gv,
 }
 
 /**
- * Method that reads the edges from a text file and adds them to both a GraphViwer and a Graph. Also calculates the weight of the edge wich is added to the Graph
+ * @brief Method that reads the edges from a text file and adds them to both a GraphViwer and a Graph. Also calculates the weight of the edge wich is added to the Graph
  * @param C
  * @param gv
  * @param grafo
@@ -233,7 +233,7 @@ void read_edges(
 }
 
 /**
- * Method to assign a name to an Edge and determine if it is one or two ways.
+ * @brief Method to assign a name to an Edge and determine if it is one or two ways.
  * @param B
  * @param gv
  * @param grafo
@@ -298,6 +298,18 @@ unordered_set<Aresta, hashFuncAresta, hashFuncAresta> read_edges_names(
 	return arestas;
 }
 
+
+/**
+ * @brief Method to assign a name to an Edge and determine if it is one or two ways.
+ * @param A Nodes file to be read.
+ * @param B Street name file to be read.
+ * @param C Edges file to be read.
+ * @param grafo graph que vai ser modificado ao ler os ficheiros.
+ * @param gv graphviewer that is going to represent the graph.
+ * @param corners Struct that contains the latitude and longitude of the map.
+ * @param maxXWindow Window max X coordinate size.
+ * @param maxYWindow Window max Y coordinate size.
+ */
 void abrirFicheiroXY(const std::string& A, const std::string& B,
 		const std::string& C, Graph<NoInfo>& grafo, GraphViewer*& gv,
 		struct cantos corners, int maxXwindow, int maxYwindow) {
