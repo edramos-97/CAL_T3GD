@@ -1192,10 +1192,10 @@ srand(time(NULL));
 //abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
 
 Graph<NoInfo> data;
-int xMaxW = 5000, yMaxW = 1910;
+int xMaxW = 946, yMaxW = 440;
 //int xMaxW = 600, yMaxW = 600;
 GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
-gv->setBackground("NEWY.png");
+gv->setBackground("porto.png");
 gv->createWindow(xMaxW, yMaxW);
 gv->defineEdgeCurved(false);
 gv->defineEdgeDashed(true);
@@ -1203,11 +1203,15 @@ gv->defineVertexColor(GREEN);
 gv->defineVertexSize(4);
 gv->defineEdgeColor("black");
 struct cantos corners;
-corners.maxLat = 40.7127;
-corners.maxLong = -73.9784;
-corners.minLat = 40.7007;
-corners.minLong = -74.0194;
-abrirFicheiroXY("NEWYA.txt", "NEWYB.txt", "NEWYC.txt", data, gv, corners, xMaxW,
+//corners.maxLat = 40.7127;
+//corners.maxLong = -73.9784;
+//corners.minLat = 40.7007;
+//corners.minLong = -74.0194;
+corners.maxLat = 41.1615;
+corners.maxLong = -8.5923;
+corners.minLat = 41.1473;
+corners.minLong = -8.6329;
+abrirFicheiroXY("porto_a.txt", "porto_b.txt", "porto_c.txt", data, gv, corners, xMaxW,
 		yMaxW);
 
 //testExecutionTimes(data, gv);
@@ -1227,9 +1231,9 @@ abrirFicheiroXY("NEWYA.txt", "NEWYB.txt", "NEWYC.txt", data, gv, corners, xMaxW,
 
 //abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv); //com esta
 
-teste_colorir(data, gv, 6, 50, data.getVertex(NoInfo(58875400,0,0)), data.getVertex(NoInfo(42454795,0,0)), YELLOW);
-teste_colorir(data, gv, 6, 50, data.getVertex(NoInfo(42454795,0,0)), data.getVertex(NoInfo(30286753,0,0)), BLUE);
-teste_colorir(data, gv, 6, 50, data.getVertex(NoInfo(58875400,0,0)), data.getVertex(NoInfo(30286753,0,0)), RED);
+teste_colorir(data, gv, 3, 150, data.getVertex(NoInfo(58875400,0,0)), data.getVertex(NoInfo(42454795,0,0)), YELLOW);
+//teste_colorir(data, gv, 1, 100, data.getVertex(NoInfo(42454795,0,0)), data.getVertex(NoInfo(30286753,0,0)), BLUE);
+//teste_colorir(data, gv, 1, 100, data.getVertex(NoInfo(58875400,0,0)), data.getVertex(NoInfo(30286753,0,0)), RED);
 
 
 //testFloidWarshal_big(data, gv);
