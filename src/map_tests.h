@@ -188,20 +188,46 @@ static void testExecutionTimes(Graph<NoInfo>& data, GraphViewer*& gv) {
 		if (teste.size() < 150)
 			continue;
 
+//		cout << "CAMINHO : " << i + 1 << endl;
+//
+//		cout << "A* " << i + 1 << ":" << endl;
+//		vector<NoInfo> pathA;
+//		clock_t tStart = clock();
+//		preparaA_star(data, des->getInfo());
+//		for(unsigned int i = 0; i < 10000 ; i++){
+//			pathA = data.getA_starPath(ori->getInfo(),des->getInfo());
+//		}
+//		cout << (double) (clock() - tStart) << endl;
+//
+//
+//		cout << "Dijkstra " << i + 1 << ":" << endl;
+//
+//		tStart = clock();
+//		for(unsigned int i = 0; i < 10000 ; i++){
+//		vector<NoInfo> pathD = data.getDijkstraPath(ori->getInfo(),
+//				des->getInfo());
+//		}
+//		cout << (double) (clock() - tStart) << endl;
+
+
 		cout << "CAMINHO : " << i + 1 << endl;
 
-		cout << "A* " << i + 1 << ":" << endl;
-		preparaA_star(data, des->getInfo());
+		cout << "FloydWarshal " << i + 1 << ":" << endl;
+		vector<NoInfo> pathA;
 		clock_t tStart = clock();
-
-		vector<NoInfo> pathA = data.getA_starPath(ori->getInfo(),
-				des->getInfo());
+		//preparaA_star(data, des->getInfo());
+		for(unsigned int i = 0; i < 1 ; i++){
+			pathA = data.getfloydWarshallPath(ori->getInfo(),des->getInfo());
+		}
 		cout << (double) (clock() - tStart) << endl;
 
+
 		cout << "Dijkstra " << i + 1 << ":" << endl;
+
 		tStart = clock();
-		vector<NoInfo> pathD = data.getDijkstraPath(ori->getInfo(),
-				des->getInfo());
+		for(unsigned int i = 0; i < 1 ; i++){
+		vector<NoInfo> pathD = data.getDijkstraPathAll(ori->getInfo(),des->getInfo());
+		}
 		cout << (double) (clock() - tStart) << endl;
 
 		string color = "BLACK";
