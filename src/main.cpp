@@ -1192,10 +1192,10 @@ srand(time(NULL));
 //abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
 
 Graph<NoInfo> data;
-int xMaxW = 946, yMaxW = 440;
+int xMaxW = 5000/*946*/, yMaxW =2325/* 440*/;
 //int xMaxW = 600, yMaxW = 600;
 GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
-gv->setBackground("porto.png");
+gv->setBackground("porto2.png");
 gv->createWindow(xMaxW, yMaxW);
 gv->defineEdgeCurved(false);
 gv->defineEdgeDashed(true);
