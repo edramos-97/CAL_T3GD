@@ -680,6 +680,7 @@ void teste_colorir(Graph<NoInfo>& data, GraphViewer*& gv, int numCaminhos,
 }
 
 
+
 ///**
 // * Method that reads the nodes from a text file and adds them to both a GraphViwer a a Graph
 // * @param A
@@ -1211,7 +1212,7 @@ gv->defineEdgeCurved(false);
 gv->defineEdgeDashed(true);
 gv->defineVertexColor(GREEN);
 gv->defineVertexSize(4);
-gv->defineEdgeColor("black");
+gv->defineEdgeColor(BLACK);
 struct cantos corners;
 //corners.maxLat = 40.7127;
 //corners.maxLong = -73.9784;
@@ -1224,6 +1225,12 @@ corners.minLong = -8.6329;
 abrirFicheiroXY("porto_a.txt", "porto_b.txt", "porto_c.txt", data, gv, corners, xMaxW,
 		yMaxW);
 
+int linhas_metro = 10;
+int linhas_autocarro = 10;
+int comp_metro = 30;
+int comp_autocarro = 30;
+
+gera_linhas(data,linhas_metro,linhas_autocarro,comp_metro,comp_autocarro);
 //testExecutionTimes(data, gv);
 
 //	abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);

@@ -14,6 +14,11 @@
 #include "graphviewer.h"
 #include "Transporte.h"
 
+#define VELOCIDADE_PE 5 //km/h
+#define VELOCIDADE_AUTOCARRO 25
+#define VELOCIDADE_METRO 50
+
+
 struct cantos {
 	long double minLong;
 	long double minLat;

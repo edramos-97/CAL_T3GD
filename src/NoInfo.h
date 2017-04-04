@@ -19,30 +19,33 @@ typedef unsigned long long BigAssInteger;
 
 class NoInfo {
 public:
+	char layer;
 	long double longitude;
 	long double latitude;
 	BigAssInteger idNo;
-	Transporte trans;
 	NoInfo() {
 		longitude = 0.0;
 		latitude = 0.0;
 		idNo = 0;
+		layer = ' ';
 	}
 
 	NoInfo(BigAssInteger id, long double longe, long double lat) {
 		this->idNo = id;
 		this->longitude = longe;
 		this->latitude = lat;
-		this->trans = Transporte("",0,0,0);
+		this->layer = ' ';
 
 	}
 
-	NoInfo(BigAssInteger id, long double longe, long double lat, Transporte t) {
-			this->idNo = id;
-			this->longitude = longe;
-			this->latitude = lat;
-			this->trans =t;
-		}
+
+
+	NoInfo(BigAssInteger id, long double longe, long double lat, char lay) {
+					this->idNo = id;
+					this->longitude = longe;
+					this->latitude = lat;
+					this->layer = lay;
+				}
 
 	friend ostream & operator<<(ostream & os, const NoInfo obj) {
 		os << "idNo: " << obj.idNo << " long: " << obj.longitude << " lat: "
@@ -51,11 +54,11 @@ public:
 	}
 
 	friend bool operator==(const NoInfo& left, const NoInfo& right) {
-		return ((left.idNo == right.idNo));
+		return ((left.idNo == right.idNo) && (left.layer == right.layer));
 	}
 
 	friend bool operator!=(const NoInfo& left, const NoInfo& right) {
-		return ((left.idNo != right.idNo));
+		return ((left.idNo != right.idNo) || (left.layer != right.layer));
 	}
 
 	friend bool operator<(const NoInfo& left, const NoInfo& right) {
