@@ -12,6 +12,7 @@
 #include "NoInfo.h"
 #include "Graph.h"
 #include "graphviewer.h"
+#include "Transporte.h"
 
 struct cantos {
 	long double minLong;
@@ -19,6 +20,11 @@ struct cantos {
 	long double maxLong;
 	long double maxLat;
 };
+
+vector<Transporte> todos_transportes =
+		{ Transporte("Pe", 0.0, 0.0, 4),
+			Transporte("Autocarro", 1.0, 0.2, 20),
+			Transporte("Metro", 2.0, 0.1, 50) };
 
 //calculate haversine distance for linear distance // coordinates in radians
 /**
@@ -28,7 +34,8 @@ struct cantos {
  * @param lat2 Latitude in radians of the second point.
  * @param long2 Longitude in radians of the second point.
  */
-static long double haversine_km(long double lat1, long double long1, long double lat2,	long double long2) {
+static long double haversine_km(long double lat1, long double long1,
+		long double lat2, long double long2) {
 	long double dlong = (long2 - long1);
 	long double dlat = (lat2 - lat1);
 	long double a = pow(sin(dlat / 2.0), 2)
@@ -56,7 +63,5 @@ static void paintPath(GraphViewer *gv, vector<NoInfo> vect, string COLOR) {
 		//gv->setVertexSize(vect[i].idNo, 20);
 	}
 }
-
-
 
 #endif /* SRC_UTILS_H_ */

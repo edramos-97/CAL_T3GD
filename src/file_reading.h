@@ -11,7 +11,15 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+#include "Transporte.h"
 
+void read_edges_custo(
+	unordered_set<Aresta, hashFuncAresta, hashFuncAresta> arestas,
+	const std::string& C, GraphViewer*& gv, Graph<NoInfo>& grafo);
+
+void read_nodes_degrees_custo(const std::string& A, GraphViewer*& gv,
+		Graph<NoInfo>& grafo, struct cantos corners, int maxXwindow,
+		int maxYwindow);
 /**
  * @brief Method that reads the nodes from a text file and adds them to both a GraphViwer a a Graph
  * @param A
@@ -381,7 +389,179 @@ void abrirFicheiroXY(const std::string& A, const std::string& B,
 	read_edges(arestas, C, gv, grafo);
 }
 
+void abrirFicheiroXY_custo(const std::string& A, const std::string& B,
+		const std::string& C, Graph<NoInfo>& grafo, GraphViewer*& gv,
+		struct cantos corners, int maxXwindow, int maxYwindow) {
+
+	read_nodes_degrees_custo(A, gv, grafo, corners, maxXwindow, maxYwindow);
+
+	unordered_set<Aresta, hashFuncAresta, hashFuncAresta> arestas =
+			read_edges_names(B);
+
+	//abrir C2.txt sao as arestas
+	read_edges_custo(arestas, C, gv, grafo);
+}
 
 
+void read_edges_custo(
+	unordered_set<Aresta, hashFuncAresta, hashFuncAresta> arestas,
+	const std::string& C, GraphViewer*& gv, Graph<NoInfo>& grafo) {
+
+
+	ifstream inFile;
+	string line;
+
+	inFile.open(C);
+
+	if (!inFile) {
+		cerr << "Unable to open file datafile.txt";
+		exit(1);   // call system to stop
+	}
+
+	BigAssInteger idAresta;
+	BigAssInteger idNo1;
+	BigAssInteger idNo2;
+
+	BigAssInteger i = 0;
+	//	bool novo = true;
+	//	double weigth = 0;
+	//
+	//	int anterior;
+	while (std::getline(inFile, line)) {
+		std::stringstream linestream(line);
+		std::string data;
+		linestream >> idAresta;
+		Aresta temp;
+		temp.idAresta = idAresta;
+		unordered_set<Aresta, hashFuncAresta, hashFuncAresta>::iterator itAre =
+				arestas.find(temp);
+		//		if(novo){
+		//						anterior = idAresta;
+		//						novo = false;
+		//					}
+
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> idNo1;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> idNo2;    //X and Y are in degrees
+
+		NoInfo origem(idNo1 % 100000000, 0, 0);  //so para efeitos de pesquisa
+		Vertex<NoInfo>* source = grafo.getVertex(origem);
+		NoInfo destino(idNo2 % 100000000, 0, 0);
+		Vertex<NoInfo>* destiny = grafo.getVertex(destino);
+
+		//pre processamento do grafico pelo parser ja garante informacao sem erros //i think
+		//if(source != NULL && destiny != NULL){
+
+		if (grafo.removeEdge(origem, destino)) //conseguiu remover
+				{
+			grafo.addEdge(origem, destino,
+					haversine_km(source->getInfo().latitude,
+							source->getInfo().longitude,
+							destiny->getInfo().latitude,
+							destiny->getInfo().longitude),i);
+		}
+		grafo.addEdge(origem, destino,
+				haversine_km(source->getInfo().latitude,
+						source->getInfo().longitude,
+						destiny->getInfo().latitude,
+						destiny->getInfo().longitude),i);
+
+		gv->addEdge(i, idNo1 % 100000000, idNo2 % 100000000,
+				EdgeType::DIRECTED);
+		gv->setVertexColor(idNo1 % 100000000, GREEN);
+
+		if (itAre->dois_sentidos) {
+			i++;
+			grafo.addEdge(destino, origem,
+					haversine_km(source->getInfo().getLatitude(),
+							source->getInfo().getLongitude(),
+							destiny->getInfo().getLatitude(),
+							destiny->getInfo().getLongitude()),i); //distancia entre A e B == distancia entre B e A;
+			gv->addEdge(i, idNo2 % 100000000, idNo1 % 100000000,
+					EdgeType::DIRECTED);
+			gv->setVertexColor(idNo2 % 100000000, GREEN);
+		}
+		i++;
+
+		//}
+
+	}
+	//gv->rearrange();
+	inFile.close();
+}
+
+void read_nodes_degrees_custo(const std::string& A, GraphViewer*& gv,
+		Graph<NoInfo>& grafo, struct cantos corners, int maxXwindow,
+		int maxYwindow) {
+	ifstream inFile;
+	//Ler o ficheiro A2.txt
+	inFile.open(A);
+
+	if (!inFile) {
+		cerr << "Unable to open file datafile.txt";
+		exit(1);   // call system to stop
+	}
+
+	std::string line;
+
+	BigAssInteger idNo = 0;
+	long double X = 0;
+	long double Y = 0;
+
+	while (std::getline(inFile, line)) {
+		std::stringstream linestream(line);
+		std::string data;
+
+		linestream >> idNo;
+
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;). LATITUDE
+		linestream >> Y;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;). LONGITUDE
+		linestream >> X;    //X and Y are in degrees
+
+		/*cout << X << endl;
+		 cout << Y << endl;
+		 cout << corners.minLong << endl;
+		 cout << corners.minLat << endl;
+		 cout << corners.maxLong << endl;
+		 cout << corners.maxLat << endl;*/
+
+		long double x = ((X * 100000) - (corners.minLong * 100000))
+				* (maxXwindow
+						/ ((corners.maxLong * 100000)
+								- (corners.minLong * 100000)));
+		long double y =
+				((Y * 100000) - (corners.minLat * 100000))
+						* (maxYwindow
+								/ ((corners.maxLat * 100000)
+										- (corners.minLat * 100000)));
+
+		/*cout << X << endl;
+		 cout << Y << endl;
+		 cout << corners.minLong << endl;
+		 cout << corners.minLat << endl;
+		 cout << corners.maxLong << endl;
+		 cout << corners.maxLat << endl;*/
+
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> X;
+		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+		linestream >> Y;    //X and Y are in radians
+
+		//cout << "idNo: " << idNo << " long: " << X << " lat: " << Y << endl;
+
+		//TODO THIS
+		//todos_transportes;
+		NoInfo temp(idNo % 100000000, X, Y); //x long, y lat
+
+		gv->addNode(idNo % 100000000, x, maxYwindow - y);
+		cout << "x: " << x << " y: " << y << endl;
+		grafo.addVertex(temp);
+
+	}
+
+	inFile.close();
+}
 
 #endif /* SRC_FILE_READING_H_ */

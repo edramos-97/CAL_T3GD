@@ -11,6 +11,7 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include "Transporte.h"
 
 using namespace std;
 
@@ -21,7 +22,7 @@ public:
 	long double longitude;
 	long double latitude;
 	BigAssInteger idNo;
-
+	Transporte trans;
 	NoInfo() {
 		longitude = 0.0;
 		latitude = 0.0;
@@ -32,8 +33,16 @@ public:
 		this->idNo = id;
 		this->longitude = longe;
 		this->latitude = lat;
+		this->trans = Transporte("",0,0,0);
 
 	}
+
+	NoInfo(BigAssInteger id, long double longe, long double lat, Transporte t) {
+			this->idNo = id;
+			this->longitude = longe;
+			this->latitude = lat;
+			this->trans =t;
+		}
 
 	friend ostream & operator<<(ostream & os, const NoInfo obj) {
 		os << "idNo: " << obj.idNo << " long: " << obj.longitude << " lat: "

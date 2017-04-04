@@ -16,12 +16,14 @@ class Transporte {
 	string nome;
 	double custo;
 	double tempo_espera;
+	double velocidade_media;
 public:
 	Transporte();
-	Transporte(string nome, double custo, double tempo){
+	Transporte(string nome, double custo, double tempo, double velo){
 		this->nome = nome;
 		this->custo = custo;
 		this->tempo_espera = tempo;
+		this->velocidade_media = velo;
 	}
 	virtual ~Transporte();
 
