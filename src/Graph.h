@@ -226,6 +226,7 @@ public:
 	vector<T> getA_starPath(const T &origin, const T &dest);
 	void dijkstraShortestPath(const T &s, const T& dest);
 	vector<T> getDijkstraPath(const T& origin, const T& dest);
+	vector<T> getDijkstraPathAll(const T& origin, const T& dest);
 };
 
 template<class T>
@@ -953,4 +954,11 @@ vector<T> Graph<T>::getDijkstraPath(const T& origin, const T& dest) {
 	dijkstraShortestPath(origin,dest);
 	return getPath(origin,dest);
 }
+
+template<class T>
+vector<T> Graph<T>::getDijkstraPathAll(const T& origin, const T& dest) {
+	dijkstraShortestPath_all(origin);
+	return getPath(origin,dest);
+}
+
 #endif /* GRAPH_H_ */
