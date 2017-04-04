@@ -1191,6 +1191,16 @@ srand(time(NULL));
 //--------------------------------amostra grande
 //abrirFicheiros("AnodeINFO.txt","BroadINFO.txt", "CconectionINFO.txt",data, gv);
 
+/*
+//corners.maxLat = 41.1925;
+//corners.maxLong = -8.5609;
+//corners.minLat = 41.1372;
+//corners.minLong = -8.7001;
+//abrirFicheiroXY("portogrande_a.txt", "portogrande_b.txt", "portogrande_c.txt", data, gv, corners, xMaxW,
+//		yMaxW);
+ */
+
+
 Graph<NoInfo> data;
 int xMaxW = 5000/*946*/, yMaxW =2325/* 440*/;
 //int xMaxW = 600, yMaxW = 600;
@@ -1231,7 +1241,7 @@ abrirFicheiroXY("porto_a.txt", "porto_b.txt", "porto_c.txt", data, gv, corners, 
 
 //abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv); //com esta
 
-teste_colorir(data, gv, 3, 150, data.getVertex(NoInfo(58875400,0,0)), data.getVertex(NoInfo(42454795,0,0)), YELLOW);
+//teste_colorir(data, gv, 3, 150, data.getVertex(NoInfo(58875400,0,0)), data.getVertex(NoInfo(42454795,0,0)), YELLOW);
 //teste_colorir(data, gv, 1, 100, data.getVertex(NoInfo(42454795,0,0)), data.getVertex(NoInfo(30286753,0,0)), BLUE);
 //teste_colorir(data, gv, 1, 100, data.getVertex(NoInfo(58875400,0,0)), data.getVertex(NoInfo(30286753,0,0)), RED);
 
