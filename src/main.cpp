@@ -1225,10 +1225,10 @@ corners.minLong = -8.6329;
 abrirFicheiroXY("porto_a.txt", "porto_b.txt", "porto_c.txt", data, gv, corners, xMaxW,
 		yMaxW);
 
-int linhas_metro = 10;
-int linhas_autocarro = 10;
-int comp_metro = 30;
-int comp_autocarro = 30;
+unsigned int linhas_metro = 10;
+unsigned int linhas_autocarro = 10;
+unsigned int comp_metro = 30;
+unsigned int comp_autocarro = 30;
 
 gera_linhas(data,linhas_metro,linhas_autocarro,comp_metro,comp_autocarro);
 //testExecutionTimes(data, gv);

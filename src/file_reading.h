@@ -382,8 +382,8 @@ void abrirFicheiroXY(const std::string& A, const std::string& B,
 	read_edges(arestas, C, gv, grafo);
 }
 
-void gera_linhas(Graph<NoInfo>& data, int linhas_metro, int linhas_autocarro,
-		int comp_metro, int comp_autocarro) {
+void gera_linhas(Graph<NoInfo>& data, unsigned int linhas_metro, unsigned int linhas_autocarro,
+		unsigned int comp_metro, unsigned int comp_autocarro) {
 
 	//indices random
 	unsigned int indiceSource = 0;
