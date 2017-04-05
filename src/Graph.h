@@ -57,7 +57,7 @@ public:
 
 	long double getDist() const;
 	int getIndegree() const;
-
+	vector<Edge<T>> getEdges(){ return adj;};
 	Vertex* path;
 };
 

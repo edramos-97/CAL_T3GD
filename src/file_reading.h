@@ -13,6 +13,8 @@
 #include <iostream>
 #include "Transporte.h"
 #include "utils.h"
+#include <vector>
+#include "Graph.h"
 
 /**
  * @brief Method that reads the nodes from a text file and adds them to both a GraphViwer a a Graph
@@ -395,7 +397,7 @@ void gera_linhas(Graph<NoInfo>& data, unsigned int linhas_metro, unsigned int li
 	vector<NoInfo> linha_provisoria;
 
 	//gerar linhas de autocarro
-	int numero_linhas_autocarro = 0;
+	unsigned int numero_linhas_autocarro = 0;
 	while (numero_linhas_autocarro < linhas_autocarro) {
 
 		indiceSource = rand() % data.getVertexSet().size();
@@ -416,11 +418,58 @@ void gera_linhas(Graph<NoInfo>& data, unsigned int linhas_metro, unsigned int li
 		if (linha_provisoria.size() < comp_autocarro)
 			continue;
 
+		//cria linha autocarro equivalente à provisoria mas com layer A;
+		vector<NoInfo> linha_autocarro;
+		for(unsigned int i = 0; i < linha_provisoria.size(); i++)
+			 linha_autocarro.push_back(NoInfo(linha_provisoria[i].idNo,linha_provisoria[i].longitude, linha_provisoria[i].latitude, 'A'));
+
+		unsigned int indice_paragem = 0;
+		while(indice_paragem < linha_provisoria.size())
+		{
+			//nos intermedios
+			if(indice_paragem != 0 && indice_paragem !=  (linha_provisoria.size()-1)){
+				//pode entrar e sair do autocarro, no ja foi adicionado pelo anterior
+				data.addEdge(linha_autocarro[indice_paragem], linha_provisoria[indice_paragem],0);
+				data.addEdge(linha_provisoria[indice_paragem], linha_autocarro[indice_paragem],0);
+
+				//adiciona o no seguinte frente
+				data.addVertex(linha_autocarro[indice_paragem+1]);
+				//liga caminho do autocarro com o no da frente
+				data.addEdge(linha_autocarro[indice_paragem], linha_autocarro[indice_paragem+1],haversine_km(linha_autocarro[indice_paragem].latitude,
+										linha_autocarro[indice_paragem].longitude,
+										linha_autocarro[indice_paragem+1].latitude,
+										linha_autocarro[indice_paragem+1].longitude) / VELOCIDADE_AUTOCARRO);
+
+
+			}//inicial
+			else if(indice_paragem == 0){
+				//adiciona novo nó "sobreposto"
+				data.addVertex(linha_autocarro[indice_paragem]);
+
+
+				//so pode entrar no autocarro
+				data.addEdge(linha_provisoria[indice_paragem], linha_autocarro[indice_paragem],0);
+
+				//adiciona o no seguinte frente
+				data.addVertex(linha_autocarro[indice_paragem+1]);
+				//liga caminho do autocarro
+				data.addEdge(linha_autocarro[indice_paragem], linha_autocarro[indice_paragem+1],haversine_km(linha_autocarro[indice_paragem].latitude,
+						linha_autocarro[indice_paragem].longitude,
+						linha_autocarro[indice_paragem+1].latitude,
+						linha_autocarro[indice_paragem+1].longitude) / VELOCIDADE_AUTOCARRO);
+
+			} //no final
+			else if(indice_paragem ==  (linha_provisoria.size()-1)){
+				//so pode sair
+				data.addEdge(linha_autocarro[indice_paragem], linha_provisoria[indice_paragem],0);
+			}
+			indice_paragem++;
+		}
 		numero_linhas_autocarro++;
 	}
 
 	//gerar linhas de metro
-	int numero_linhas_metro = 0;
+	unsigned int numero_linhas_metro = 0;
 	while (numero_linhas_metro < linhas_metro) {
 		indiceSource = rand() % data.getVertexSet().size();
 		indiceDestiny = rand() % data.getVertexSet().size();
@@ -437,9 +486,59 @@ void gera_linhas(Graph<NoInfo>& data, unsigned int linhas_metro, unsigned int li
 
 		linha_provisoria = data.getDijkstraPath(vertice_ori->getInfo(),
 				vertice_des->getInfo());
+
 		if (linha_provisoria.size() < comp_metro)
 			continue;
 
+		/////
+		//cria linha metro equivalente à provisoria mas com layer M;
+		vector<NoInfo> linha_metro;
+		for(unsigned int i = 0; i < linha_provisoria.size(); i++)
+			linha_metro.push_back(NoInfo(linha_provisoria[i].idNo,linha_provisoria[i].longitude, linha_provisoria[i].latitude, 'M'));
+
+		unsigned int indice_paragem = 0;
+		while(indice_paragem < linha_provisoria.size())
+		{
+			//nos intermedios
+			if(indice_paragem != 0 && indice_paragem !=  (linha_provisoria.size()-1)){
+				//pode entrar e sair do metro, no ja foi adicionado pelo anterior
+				data.addEdge(linha_metro[indice_paragem], linha_provisoria[indice_paragem],0);
+				data.addEdge(linha_provisoria[indice_paragem], linha_metro[indice_paragem],0);
+
+				//adiciona o no seguinte frente
+				data.addVertex(linha_metro[indice_paragem+1]);
+				//liga caminho do metro com o no da frente
+				data.addEdge(linha_metro[indice_paragem], linha_metro[indice_paragem+1],haversine_km(linha_metro[indice_paragem].latitude,
+						linha_metro[indice_paragem].longitude,
+						linha_metro[indice_paragem+1].latitude,
+						linha_metro[indice_paragem+1].longitude) / VELOCIDADE_METRO);
+
+
+			}//inicial
+			else if(indice_paragem == 0){
+				//adiciona novo nó "sobreposto"
+				data.addVertex(linha_metro[indice_paragem]);
+
+
+				//so pode entrar no metro
+				data.addEdge(linha_provisoria[indice_paragem], linha_metro[indice_paragem],0);
+
+				//adiciona o no seguinte frente
+				data.addVertex(linha_metro[indice_paragem+1]);
+				//liga caminho do metro
+				data.addEdge(linha_metro[indice_paragem], linha_metro[indice_paragem+1],haversine_km(linha_metro[indice_paragem].latitude,
+						linha_metro[indice_paragem].longitude,
+						linha_metro[indice_paragem+1].latitude,
+						linha_metro[indice_paragem+1].longitude) / VELOCIDADE_AUTOCARRO);
+
+			} //no final
+			else if(indice_paragem ==  (linha_provisoria.size()-1)){
+				//so pode sair
+				data.addEdge(linha_metro[indice_paragem], linha_provisoria[indice_paragem],0);
+			}
+			indice_paragem++;
+		}
+		/////
 		numero_linhas_metro++;
 	}
 

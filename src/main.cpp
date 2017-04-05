@@ -586,7 +586,7 @@ void testSerial() {
 }
 
 void teste_colorir(Graph<NoInfo>& data, GraphViewer*& gv, int numCaminhos,
-		int sizeCaminhos, Vertex<NoInfo>* source, Vertex<NoInfo>* destiny, string cor) {
+		unsigned int sizeCaminhos, Vertex<NoInfo>* source, Vertex<NoInfo>* destiny, string cor) {
 
 	if (source == NULL || destiny == NULL) {
 		int i = 0;
@@ -1225,12 +1225,21 @@ corners.minLong = -8.6329;
 abrirFicheiroXY("porto_a.txt", "porto_b.txt", "porto_c.txt", data, gv, corners, xMaxW,
 		yMaxW);
 
-unsigned int linhas_metro = 10;
-unsigned int linhas_autocarro = 10;
+unsigned int linhas_metro = 0;
+unsigned int linhas_autocarro = 1;
 unsigned int comp_metro = 30;
-unsigned int comp_autocarro = 30;
+unsigned int comp_autocarro = 100;
 
 gera_linhas(data,linhas_metro,linhas_autocarro,comp_metro,comp_autocarro);
+
+//teste ver se poe cor nas linhas
+//for(unsigned int i = 0; i < data.getVertexSet().size(); i++){
+//	if(data.getVertexSet()[i]->getInfo().layer == 'M')
+//		gv->setVertexColor(data.getVertexSet()[i]->getInfo().idNo,ORANGE);
+//	else if(data.getVertexSet()[i]->getInfo().layer == 'A')
+//		gv->setVertexColor(data.getVertexSet()[i]->getInfo().idNo,RED);
+//}
+
 //testExecutionTimes(data, gv);
 
 //	abrirFicheiros("smallerA.txt", "smallerB.txt", "smallerC.txt", data, gv);
