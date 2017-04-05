@@ -57,7 +57,7 @@ static void preparaA_star(Graph<NoInfo> &data, const NoInfo& destino) {
 		data.getVertexSet()[i]->setDestiny(
 				haversine_km(data.getVertexSet()[i]->getInfo().latitude,
 						data.getVertexSet()[i]->getInfo().longitude,
-						destino.longitude, destino.longitude));
+						destino.longitude, destino.longitude)/VELOCIDADE_METRO);
 	}
 }
 
