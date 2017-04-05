@@ -14,6 +14,15 @@
 #include "file_reading.h"
 #include <chrono>
 
+
+
+static void printPathColored(Graph<NoInfo>& data, GraphViewer*& gv, vector<NoInfo> caminho){
+
+
+
+
+}
+
 /**
  * @brief Run djikstra algorithm from one to all nodes.
  * @param data graph that will be run in the algorithm.
@@ -64,11 +73,11 @@ static void testFloidWarshal_med(Graph<NoInfo>& data, GraphViewer*& gv) {
  * @param data graph that will be run in the algorithm.
  * @param gv graph viewer that will be updated after the algorithm is run.
  */
-static void testFloidWarshal_big(Graph<NoInfo>& data, GraphViewer*& gv) {
+static void testFloidWarshal_big(Graph<NoInfo>& data, GraphViewer*& gv, int num) {
 	//teste floyd warshal bigger
 	int i = 0;
 
-	while (i < 6) {
+	while (i < num) {
 		int ind0 = rand() % data.getVertexSet().size();
 		int ind1 = rand() % data.getVertexSet().size();
 		Vertex<NoInfo> * ori = data.getVertex(
@@ -80,6 +89,10 @@ static void testFloidWarshal_big(Graph<NoInfo>& data, GraphViewer*& gv) {
 
 		vector<NoInfo> path = data.getDijkstraPath(ori->getInfo(),
 				des->getInfo());
+
+		if(path.size() < 50)
+			continue;
+
 		string color = "BLACK";
 		switch (i) {
 		case 0:
@@ -107,7 +120,7 @@ static void testFloidWarshal_big(Graph<NoInfo>& data, GraphViewer*& gv) {
 			Sleep(100);
 			cout << path[i] << endl;
 			gv->setVertexColor(path[i].idNo, color);
-			gv->setVertexSize(path[i].idNo, 40);
+			gv->setVertexSize(path[i].idNo, 30);
 		}
 
 		i++;
@@ -138,7 +151,7 @@ static void TesteOtherMap() {
 	abrirFicheiroXY("10IMG1000-947A.txt", "10IMG1000-947B.txt",
 			"10IMG1000-947C.txt", data, gv, corners, xMaxW, yMaxW);
 
-	testFloidWarshal_big(data, gv);
+	testFloidWarshal_big(data, gv,6);
 }
 
 /**
@@ -165,7 +178,7 @@ static void TesteNewYork() {
 	abrirFicheiroXY("NEWYA.txt", "NEWYB.txt", "NEWYC.txt", data, gv, corners,
 			xMaxW, yMaxW);
 
-	testFloidWarshal_big(data, gv);
+	testFloidWarshal_big(data, gv, 6);
 }
 
 static void testExecutionTimes(Graph<NoInfo>& data, GraphViewer*& gv) {
@@ -186,55 +199,33 @@ static void testExecutionTimes(Graph<NoInfo>& data, GraphViewer*& gv) {
 		preparaA_star(data, des->getInfo());
 		vector<NoInfo> teste = data.getA_starPath(ori->getInfo(),
 				des->getInfo());
-		if (teste.size() < 150)
+		if (teste.size() < 100)
 			continue;
 
 		cout << "CAMINHO : " << i + 1 << endl;
 		cout << "A* " << i + 1 << ":" << endl;
 		vector<NoInfo> pathA;
-		//clock_t tStart = clock();
-		auto startA_star = std::chrono::system_clock::now();
 
+
+		auto startA_star = std::chrono::system_clock::now();
 		preparaA_star(data, des->getInfo());
-		for(unsigned int i = 0; i < 100 ; i++){
+		for(unsigned int i = 0; i < 200 ; i++){
 			pathA = data.getA_starPath(ori->getInfo(),des->getInfo());
 		}
-
 		 auto endA_star = std::chrono::system_clock::now();
 		cout << (double)std::chrono::duration_cast<std::chrono::milliseconds>(endA_star - startA_star).count() << endl ;
-		//cout << (double) (clock() - tStart) << endl;
 
 
 		cout << "Dijkstra " << i + 1 << ":" << endl;
-		//tStart = clock();
 		auto dijkstra_start = std::chrono::system_clock::now();
-		for(unsigned int i = 0; i < 100 ; i++){
+		for(unsigned int i = 0; i < 200 ; i++){
 		vector<NoInfo> pathD = data.getDijkstraPath(ori->getInfo(),
 				des->getInfo());
 		}
 		auto dijkstra_end = std::chrono::system_clock::now();
-		//cout << (double) (clock() - tStart) << endl;
 		cout << (double)std::chrono::duration_cast<std::chrono::milliseconds>(dijkstra_end - dijkstra_start).count() << endl ;
 
-//		cout << "CAMINHO : " << i + 1 << endl;
-//
-//		cout << "FloydWarshal " << i + 1 << ":" << endl;
-//		vector<NoInfo> pathA;
-//		clock_t tStart = clock();
-//		//preparaA_star(data, des->getInfo());
-//		for(unsigned int i = 0; i < 1 ; i++){
-//			pathA = data.getfloydWarshallPath(ori->getInfo(),des->getInfo());
-//		}
-//		cout << (double) (clock() - tStart) << endl;
-//
-//
-//		cout << "Dijkstra " << i + 1 << ":" << endl;
-//
-//		tStart = clock();
-//		for(unsigned int i = 0; i < 1 ; i++){
-//		vector<NoInfo> pathD = data.getDijkstraPathAll(ori->getInfo(),des->getInfo());
-//		}
-//		cout << (double) (clock() - tStart) << endl;
+
 
 		string color = "BLACK";
 		switch (i) {

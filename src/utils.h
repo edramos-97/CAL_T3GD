@@ -18,6 +18,10 @@
 #define VELOCIDADE_AUTOCARRO 25
 #define VELOCIDADE_METRO 50
 
+#define COR_METRO "ORANGE"
+#define COR_AUTOCARRO "BLUE"
+#define COR_PE "YELLOW"
+
 
 struct cantos {
 	long double minLong;
