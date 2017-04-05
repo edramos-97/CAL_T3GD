@@ -1096,13 +1096,13 @@ void teste_colorir(Graph<NoInfo>& data, GraphViewer*& gv, int numCaminhos,
 int main(int argc, char * argv[]) {
 	srand(time(NULL));
 	//argv[1] auto, comp or startNode
-	//argv[2] endNode or number_of_nodes
+	//argv[2] endNode(from startNode) or number_of_nodes(from auto)
 	//argv[3] algorithm to use in case startNode->endNode
 	//argv[4]	linhas metro
 	//argv[5]	comp metro
 	//argv[6]	linhas autocarro
 	//argv[7]	comp autocarro
-	//argv[8]	radical do ficheiro
+	//argv[8]	radical do ficheiro  exemplo: xxx.png xxxA.txt xxxB.txt xxxC.txt
 	//argv[9]	xMaxWindow
 	//argv[10]	yMaxWindow
 	//argv[11]  minLong
