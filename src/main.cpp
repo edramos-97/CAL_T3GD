@@ -1134,7 +1134,7 @@ int main(int argc, char * argv[]) {
 	corners.maxLong = atof(argv[13]);
 	corners.maxLat = atof(argv[14]);
 
-	abrirFicheiroXY(ficheiro+"A.txt", ficheiro+"B.txt",ficheiro+"C.txt", data, gv, corners, xMaxW, yMaxW);
+	abrirFicheiroXY(ficheiro+"_a.txt", ficheiro+"_b.txt",ficheiro+"_c.txt", data, gv, corners, xMaxW, yMaxW);
 
 	int linhas_metro = atoi(argv[4]);
 	int linhas_autocarro = atoi(argv[6]);

@@ -23,10 +23,22 @@
 #define COR_PE "YELLOW"
 
 static void printPathColored(Graph<NoInfo>& data, GraphViewer*& gv, vector<NoInfo> caminho, vector<vector<NoInfo>> linhas_geradas){
+	gv->setVertexColor(caminho[0].idNo,BLACK);
+	for(unsigned int i = 0; i < caminho.size()-1; i++ ){
 
+		if(caminho[i].layer == 'M' && caminho[i+1].layer == 'M'){
+			gv->setEdgeColor(data.getVertex(NoInfo(caminho[i].idNo,0,0,' '))->getIdEdge(NoInfo(caminho[i+1].idNo,0,0,' ')),COR_METRO);
+		}
+		else if(caminho[i].layer == 'A' && caminho[i+1].layer == 'A'){
+			gv->setEdgeColor(data.getVertex(NoInfo(caminho[i].idNo,0,0,' '))->getIdEdge(NoInfo(caminho[i+1].idNo,0,0,' ')),COR_AUTOCARRO);
+		}
+		else if(caminho[i].layer == ' ' && caminho[i+1].layer == ' '){
+			gv->setEdgeColor(data.getVertex(NoInfo(caminho[i].idNo,0,0,' '))->getIdEdge(NoInfo(caminho[i+1].idNo,0,0,' ')),COR_PE);
+		}
+		else gv->setEdgeColor(data.getVertex(NoInfo(caminho[i].idNo,0,0,' '))->getIdEdge(NoInfo(caminho[i+1].idNo,0,0,' ')),BLACK);
+	}
 
-
-
+	gv->setVertexColor(caminho[caminho.size()-1].idNo,BLACK);
 }
 
 /**
