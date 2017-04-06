@@ -23,45 +23,45 @@
  * @param grafo
  * @param nos_todos
  */
-static void read_node_radians(const std::string& A, GraphViewer*& gv,
-		Graph<NoInfo>& grafo, map<NoInfo, bool> nos_todos) {
-	ifstream inFile;
-	string line;
-
-	inFile.open(A);
-
-	if (!inFile) {
-		cerr << "Unable to open file A2.txt";
-		exit(1);   // call system to stop
-	}
-
-	BigAssInteger idNo = 0;
-	long double X = 0;
-	long double Y = 0;
-
-	while (std::getline(inFile, line)) {
-		std::stringstream linestream(line);
-		std::string data;
-
-		linestream >> idNo;
-
-		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> X;
-		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> Y;    //X and Y are in degrees
-
-		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> X;
-		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
-		linestream >> Y;    //X and Y are in radians
-		//cout << "idNo: " << idNo << " long: " << X << " lat: " << Y << endl;
-		NoInfo temp(idNo, X, Y);
-		pair<NoInfo, bool> par(temp, false);
-		nos_todos.insert(par);
-	}
-
-	inFile.close();
-}
+//static void read_node_radians(const std::string& A, GraphViewer*& gv,
+//		Graph<NoInfo>& grafo, map<NoInfo, bool> nos_todos) {
+//	ifstream inFile;
+//	string line;
+//
+//	inFile.open(A);
+//
+//	if (!inFile) {
+//		cerr << "Unable to open file A2.txt";
+//		exit(1);   // call system to stop
+//	}
+//
+//	BigAssInteger idNo = 0;
+//	long double X = 0;
+//	long double Y = 0;
+//
+//	while (std::getline(inFile, line)) {
+//		std::stringstream linestream(line);
+//		std::string data;
+//
+//		linestream >> idNo;
+//
+//		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+//		linestream >> X;
+//		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+//		linestream >> Y;    //X and Y are in degrees
+//
+//		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+//		linestream >> X;
+//		std::getline(linestream, data, ';'); // read up-to the first ; (discard ;).
+//		linestream >> Y;    //X and Y are in radians
+//		//cout << "idNo: " << idNo << " long: " << X << " lat: " << Y << endl;
+//		NoInfo temp(idNo, X, Y);
+//		pair<NoInfo, bool> par(temp, false);
+//		nos_todos.insert(par);
+//	}
+//
+//	inFile.close();
+//}
 
 /**
  * @brief Method that reads the nodes from a text file and adds them to both a GraphViwer a a Graph

@@ -65,12 +65,12 @@ static void preparaA_star(Graph<NoInfo> &data, const NoInfo& destino) {
 	}
 }
 
-static void paintPath(GraphViewer *gv, vector<NoInfo> vect, string COLOR) {
-	for (unsigned int i = 0; i < vect.size(); i++) {
-		cout << vect[i] << endl;
-		gv->setVertexColor(vect[i].idNo, COLOR);
-		//gv->setVertexSize(vect[i].idNo, 20);
-	}
-}
+//static void paintPath(GraphViewer *gv, vector<NoInfo> vect, string COLOR) {
+//	for (unsigned int i = 0; i < vect.size(); i++) {
+//		cout << vect[i] << endl;
+//		gv->setVertexColor(vect[i].idNo, COLOR);
+//		//gv->setVertexSize(vect[i].idNo, 20);
+//	}
+//}
 
 #endif /* SRC_UTILS_H_ */

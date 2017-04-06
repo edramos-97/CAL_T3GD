@@ -1169,7 +1169,7 @@ int main(int argc, char * argv[]) {
 		Vertex<NoInfo> * origem = data.getVertex(NoInfo(atoi(argv[1]),0,0,' '));
 		Vertex<NoInfo> * destino = data.getVertex(NoInfo(atoi(argv[2]),0,0,' '));
 		if(origem == NULL || destino == NULL){
-			cout << "There is no such path" << endl;
+			cerr << "There is no such path" << endl;
 			return 2;
 		}
 		vector<NoInfo> caminho;
@@ -1182,6 +1182,9 @@ int main(int argc, char * argv[]) {
 
 		}else if(strcmp(argv[3],"Floyd-Warshall")==0){
 			caminho = data.getfloydWarshallPath(origem->getInfo(),destino->getInfo());
+		}else {
+			cerr << "There is no such Algorithm." << endl;
+			return 3;
 		}
 
 
