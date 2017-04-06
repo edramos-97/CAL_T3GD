@@ -14,9 +14,15 @@
 #include "file_reading.h"
 #include <chrono>
 
+#define VELOCIDADE_PE 5 //km/h
+#define VELOCIDADE_AUTOCARRO 25
+#define VELOCIDADE_METRO 50
 
+#define COR_METRO "ORANGE"
+#define COR_AUTOCARRO "BLUE"
+#define COR_PE "YELLOW"
 
-static void printPathColored(Graph<NoInfo>& data, GraphViewer*& gv, vector<NoInfo> caminho){
+static void printPathColored(Graph<NoInfo>& data, GraphViewer*& gv, vector<NoInfo> caminho, vector<vector<NoInfo>> linhas_geradas){
 
 
 

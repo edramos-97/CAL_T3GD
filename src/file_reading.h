@@ -384,8 +384,9 @@ void abrirFicheiroXY(const std::string& A, const std::string& B,
 	read_edges(arestas, C, gv, grafo);
 }
 
-void gera_linhas(Graph<NoInfo>& data, unsigned int linhas_metro, unsigned int linhas_autocarro,
+vector<vector<NoInfo>> gera_linhas(Graph<NoInfo>& data, unsigned int linhas_metro, unsigned int linhas_autocarro,
 		unsigned int comp_metro, unsigned int comp_autocarro) {
+	vector<vector<NoInfo>> linhas_geradas;
 
 	//indices random
 	unsigned int indiceSource = 0;
@@ -422,6 +423,9 @@ void gera_linhas(Graph<NoInfo>& data, unsigned int linhas_metro, unsigned int li
 		vector<NoInfo> linha_autocarro;
 		for(unsigned int i = 0; i < linha_provisoria.size(); i++)
 			 linha_autocarro.push_back(NoInfo(linha_provisoria[i].idNo,linha_provisoria[i].longitude, linha_provisoria[i].latitude, 'A'));
+
+		//guarda linha gerada
+		linhas_geradas.push_back(linha_autocarro);
 
 		unsigned int indice_paragem = 0;
 		while(indice_paragem < linha_provisoria.size())
@@ -496,6 +500,9 @@ void gera_linhas(Graph<NoInfo>& data, unsigned int linhas_metro, unsigned int li
 		for(unsigned int i = 0; i < linha_provisoria.size(); i++)
 			linha_metro.push_back(NoInfo(linha_provisoria[i].idNo,linha_provisoria[i].longitude, linha_provisoria[i].latitude, 'M'));
 
+		//guarda linha gerada
+		linhas_geradas.push_back(linha_metro);
+
 		unsigned int indice_paragem = 0;
 		while(indice_paragem < linha_provisoria.size())
 		{
@@ -542,6 +549,8 @@ void gera_linhas(Graph<NoInfo>& data, unsigned int linhas_metro, unsigned int li
 		numero_linhas_metro++;
 	}
 
+
+	return linhas_geradas;
 }
 
 #endif /* SRC_FILE_READING_H_ */

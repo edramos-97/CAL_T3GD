@@ -1095,6 +1095,7 @@ void teste_colorir(Graph<NoInfo>& data, GraphViewer*& gv, int numCaminhos,
 
 int main(int argc, char * argv[]) {
 	srand(time(NULL));
+	vector<vector<NoInfo>> linhas_geradas;
 	//argv[1] auto, comp or startNode
 	//argv[2] endNode(from startNode) or number_of_nodes(from auto)
 	//argv[3] algorithm to use in case startNode->endNode
@@ -1139,7 +1140,7 @@ int main(int argc, char * argv[]) {
 	int linhas_autocarro = atoi(argv[6]);
 	int comp_metro = atoi(argv[5]);
 	int comp_autocarro = atoi(argv[7]);
-	gera_linhas(data, linhas_metro, linhas_autocarro, comp_metro, comp_autocarro);
+	linhas_geradas = gera_linhas(data, linhas_metro, linhas_autocarro, comp_metro, comp_autocarro);
 
 	//	for (unsigned int i = 0; i < data.getVertexSet().size(); i++) {
 	//		if (data.getVertexSet()[i]->getInfo().layer == 'M')
@@ -1184,7 +1185,7 @@ int main(int argc, char * argv[]) {
 		}
 
 
-		printPathColored(data,gv,caminho);
+		printPathColored(data,gv,caminho, linhas_geradas);
 
 		getchar();
 		cout << "END" << endl;
