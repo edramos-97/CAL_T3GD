@@ -1096,7 +1096,7 @@ void teste_colorir(Graph<NoInfo>& data, GraphViewer*& gv, int numCaminhos,
 int main(int argc, char * argv[]) {
 	srand(time(NULL));
 	vector<vector<NoInfo>> linhas_geradas;
-	//argv[1] auto, comp or startNode
+	//argv[1] auto, comp or startNode or Assess connectivity
 	//argv[2] endNode(from startNode) or number_of_nodes(from auto)
 	//argv[3] algorithm to use in case startNode->endNode
 	//argv[4]	linhas metro
@@ -1111,7 +1111,7 @@ int main(int argc, char * argv[]) {
 	//argv[13] maxLong
 	//argv[14] maxLat
 	if(argc != 15){
-		cerr << "There was an input error, please contact the developers." << endl;
+		cout << "There was an input error, please contact the developers." << endl;
 		return 1;
 	}
 
@@ -1153,23 +1153,45 @@ int main(int argc, char * argv[]) {
 	if(strcmp(argv[1],"auto")==0){
 		number_of_paths = atoi(argv[2]);
 		testFloidWarshal_big(data,gv,number_of_paths);
-		getchar();
 		cout << "END" << endl;
+		getchar();
 		return 0;
 
 	}
 	else if(strcmp(argv[1],"comp")==0){
 		testExecutionTimes(data,gv);
-		getchar();
 		cout << "END" << endl;
+		getchar();
 		return 0;
+	}
+	else if(strcmp(argv[1],"Connectivity")==0){
+		vector<int> soma;
+		vector<Vertex<NoInfo>*> vertices = data.getVertexSet();
+		for(unsigned int i = 0; i < vertices.size(); i++){
+			vector<NoInfo> tentativa = data.bfs(vertices[i]);
+			soma.push_back(vertices.size()-tentativa.size());
+		}
+		int max_falha = 0;
+		int min_falha = vertices.size();
+		for(int ind : soma){
+			if(ind < min_falha)
+				min_falha = ind;
+			if(ind > max_falha)
+				max_falha = ind;
+		}
+		cout << "Em " << vertices.size() << " nos, o minimo de falhas foi " << min_falha << endl;
+		cout << "O maximo foi " << max_falha << endl;
+		cout << "END"<< endl;
+		getchar();
+		return 0;
+
 	}
 	else { //no inicio para o fim
 
 		Vertex<NoInfo> * origem = data.getVertex(NoInfo(atoi(argv[1]),0,0,' '));
 		Vertex<NoInfo> * destino = data.getVertex(NoInfo(atoi(argv[2]),0,0,' '));
 		if(origem == NULL || destino == NULL){
-			cerr << "There is no such path" << endl;
+			cout << "There is no such path" << endl;
 			return 2;
 		}
 		vector<NoInfo> caminho;
@@ -1183,22 +1205,18 @@ int main(int argc, char * argv[]) {
 		}else if(strcmp(argv[3],"Floyd-Warshall")==0){
 			caminho = data.getfloydWarshallPath(origem->getInfo(),destino->getInfo());
 		}else {
-			cerr << "There is no such Algorithm." << endl;
+			cout << "There is no such Algorithm." << endl;
 			return 3;
 		}
 
 
 		printPathColored(data,gv,caminho, linhas_geradas);
-
-		getchar();
 		cout << "END" << endl;
+		getchar();
 		return 0;
 
 	}
-
-
-
-	getchar();
 	cout << "END" << endl;
+	getchar();
 	return 0;
 }

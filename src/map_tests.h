@@ -20,45 +20,85 @@
 
 #define COR_METRO "ORANGE"
 #define COR_AUTOCARRO "BLUE"
-#define COR_PE "YELLOW"
+#define COR_PE "GREEN"
+#define COR_NO_NORMAL "RED"
+#define COR_NO_INICIO "CYAN"
+#define COR_NO_FIM "BLACK"
 
-static void printPathColored(Graph<NoInfo>& data, GraphViewer*& gv, vector<NoInfo> caminho){
-	gv->setVertexColor(caminho[0].idNo,BLACK);
-	for(unsigned int i = 0; i < caminho.size()-1; i++ ){
+static void printPathColored(Graph<NoInfo>& data, GraphViewer*& gv,
+		vector<NoInfo> caminho) {
 
-		if(caminho[i].layer == 'M' && caminho[i+1].layer == 'M'){
-			gv->setEdgeColor(data.getVertex(NoInfo(caminho[i].idNo,0,0,' '))->getIdEdge(NoInfo(caminho[i+1].idNo,0,0,' ')),COR_METRO);
-		}
-		else if(caminho[i].layer == 'A' && caminho[i+1].layer == 'A'){
-			gv->setEdgeColor(data.getVertex(NoInfo(caminho[i].idNo,0,0,' '))->getIdEdge(NoInfo(caminho[i+1].idNo,0,0,' ')),COR_AUTOCARRO);
-		}
-		else if(caminho[i].layer == ' ' && caminho[i+1].layer == ' '){
-			gv->setEdgeColor(data.getVertex(NoInfo(caminho[i].idNo,0,0,' '))->getIdEdge(NoInfo(caminho[i+1].idNo,0,0,' ')),COR_PE);
-		}
-		else gv->setEdgeColor(data.getVertex(NoInfo(caminho[i].idNo,0,0,' '))->getIdEdge(NoInfo(caminho[i+1].idNo,0,0,' ')),BLACK);
+	for (unsigned int i = 0; i < caminho.size() - 1; i++) {
+		gv->setVertexColor(caminho[i].idNo, COR_NO_NORMAL);
+		gv->setEdgeDashed(
+				data.getVertex(NoInfo(caminho[i].idNo, 0, 0, ' '))->getIdEdge(
+						NoInfo(caminho[i + 1].idNo, 0, 0, ' ')), false);
+		gv->setEdgeThickness(
+				data.getVertex(NoInfo(caminho[i].idNo, 0, 0, ' '))->getIdEdge(
+						NoInfo(caminho[i + 1].idNo, 0, 0, ' ')), 10);
+
+		if (caminho[i].layer == 'M' && caminho[i + 1].layer == 'M') {
+			gv->setEdgeColor(
+					data.getVertex(NoInfo(caminho[i].idNo, 0, 0, ' '))->getIdEdge(
+							NoInfo(caminho[i + 1].idNo, 0, 0, ' ')), COR_METRO);
+		} else if (caminho[i].layer == 'A' && caminho[i + 1].layer == 'A') {
+			gv->setEdgeColor(
+					data.getVertex(NoInfo(caminho[i].idNo, 0, 0, ' '))->getIdEdge(
+							NoInfo(caminho[i + 1].idNo, 0, 0, ' ')),
+					COR_AUTOCARRO);
+		} else if (caminho[i].layer == ' ' && caminho[i + 1].layer == ' ') {
+			gv->setEdgeColor(
+					data.getVertex(NoInfo(caminho[i].idNo, 0, 0, ' '))->getIdEdge(
+							NoInfo(caminho[i + 1].idNo, 0, 0, ' ')), COR_PE);
+		} else
+			gv->setEdgeColor(
+					data.getVertex(NoInfo(caminho[i].idNo, 0, 0, ' '))->getIdEdge(
+							NoInfo(caminho[i + 1].idNo, 0, 0, ' ')), BLACK);
+
 	}
-
-	gv->setVertexColor(caminho[caminho.size()-1].idNo,BLACK);
+	gv->setVertexSize(caminho[0].idNo, 30);
+	gv->setVertexColor(caminho[0].idNo, COR_NO_INICIO);
+	gv->setVertexSize(caminho[caminho.size() - 1].idNo, 30);
+	gv->setVertexColor(caminho[caminho.size() - 1].idNo, COR_NO_FIM);
+	gv->rearrange();
 }
 
+static void printPathColored(Graph<NoInfo>& data, GraphViewer*& gv,
+		vector<NoInfo> caminho, vector<vector<NoInfo>> linhas_geradas) {
 
-static void printPathColored(Graph<NoInfo>& data, GraphViewer*& gv, vector<NoInfo> caminho, vector<vector<NoInfo>> linhas_geradas){
-	gv->setVertexColor(caminho[0].idNo,BLACK);
-	for(unsigned int i = 0; i < caminho.size()-1; i++ ){
+	for (unsigned int i = 0; i < caminho.size() - 1; i++) {
+		gv->setVertexColor(caminho[i].idNo, COR_NO_NORMAL);
+		gv->setEdgeDashed(
+				data.getVertex(NoInfo(caminho[i].idNo, 0, 0, ' '))->getIdEdge(
+						NoInfo(caminho[i + 1].idNo, 0, 0, ' ')), false);
+		gv->setEdgeThickness(
+				data.getVertex(NoInfo(caminho[i].idNo, 0, 0, ' '))->getIdEdge(
+						NoInfo(caminho[i + 1].idNo, 0, 0, ' ')), 10);
 
-		if(caminho[i].layer == 'M' && caminho[i+1].layer == 'M'){
-			gv->setEdgeColor(data.getVertex(NoInfo(caminho[i].idNo,0,0,' '))->getIdEdge(NoInfo(caminho[i+1].idNo,0,0,' ')),COR_METRO);
-		}
-		else if(caminho[i].layer == 'A' && caminho[i+1].layer == 'A'){
-			gv->setEdgeColor(data.getVertex(NoInfo(caminho[i].idNo,0,0,' '))->getIdEdge(NoInfo(caminho[i+1].idNo,0,0,' ')),COR_AUTOCARRO);
-		}
-		else if(caminho[i].layer == ' ' && caminho[i+1].layer == ' '){
-			gv->setEdgeColor(data.getVertex(NoInfo(caminho[i].idNo,0,0,' '))->getIdEdge(NoInfo(caminho[i+1].idNo,0,0,' ')),COR_PE);
-		}
-		else gv->setEdgeColor(data.getVertex(NoInfo(caminho[i].idNo,0,0,' '))->getIdEdge(NoInfo(caminho[i+1].idNo,0,0,' ')),BLACK);
+		if (caminho[i].layer == 'M' && caminho[i + 1].layer == 'M') {
+			gv->setEdgeColor(
+					data.getVertex(NoInfo(caminho[i].idNo, 0, 0, ' '))->getIdEdge(
+							NoInfo(caminho[i + 1].idNo, 0, 0, ' ')), COR_METRO);
+		} else if (caminho[i].layer == 'A' && caminho[i + 1].layer == 'A') {
+			gv->setEdgeColor(
+					data.getVertex(NoInfo(caminho[i].idNo, 0, 0, ' '))->getIdEdge(
+							NoInfo(caminho[i + 1].idNo, 0, 0, ' ')),
+					COR_AUTOCARRO);
+		} else if (caminho[i].layer == ' ' && caminho[i + 1].layer == ' ') {
+			gv->setEdgeColor(
+					data.getVertex(NoInfo(caminho[i].idNo, 0, 0, ' '))->getIdEdge(
+							NoInfo(caminho[i + 1].idNo, 0, 0, ' ')), COR_PE);
+		} else
+			gv->setEdgeColor(
+					data.getVertex(NoInfo(caminho[i].idNo, 0, 0, ' '))->getIdEdge(
+							NoInfo(caminho[i + 1].idNo, 0, 0, ' ')), BLACK);
 	}
 
-	gv->setVertexColor(caminho[caminho.size()-1].idNo,BLACK);
+	gv->setVertexSize(caminho[0].idNo, 30);
+		gv->setVertexColor(caminho[0].idNo, COR_NO_INICIO);
+		gv->setVertexSize(caminho[caminho.size() - 1].idNo, 30);
+		gv->setVertexColor(caminho[caminho.size() - 1].idNo, COR_NO_FIM);
+		gv->rearrange();
 }
 
 /**
@@ -85,7 +125,6 @@ static void printPathColored(Graph<NoInfo>& data, GraphViewer*& gv, vector<NoInf
 //	gv->rearrange();
 //	// --------------------------fim teste dijkstra
 //}
-
 /**
  * @brief Run Floid-Warshall algorithm from one to all nodes.
  * @param data graph that will be run in the algorithm.
@@ -105,13 +144,13 @@ static void printPathColored(Graph<NoInfo>& data, GraphViewer*& gv, vector<NoInf
 //	}
 //	//------------------------------fim teste floyd warshal
 //}
-
 /**
  * @brief Run Floid-Warshall algorithm from one to all nodes and find a certain amount of paths.
  * @param data graph that will be run in the algorithm.
  * @param gv graph viewer that will be updated after the algorithm is run.
  */
-static void testFloidWarshal_big(Graph<NoInfo>& data, GraphViewer*& gv, int num) {
+static void testFloidWarshal_big(Graph<NoInfo>& data, GraphViewer*& gv,
+		int num) {
 	//teste floyd warshal bigger
 	int i = 0;
 
@@ -128,7 +167,7 @@ static void testFloidWarshal_big(Graph<NoInfo>& data, GraphViewer*& gv, int num)
 		vector<NoInfo> path = data.getDijkstraPath(ori->getInfo(),
 				des->getInfo());
 
-		if(path.size() < 50)
+		if (path.size() < 50)
 			continue;
 
 		string color = "BLACK";
@@ -160,7 +199,7 @@ static void testFloidWarshal_big(Graph<NoInfo>& data, GraphViewer*& gv, int num)
 //			gv->setVertexColor(path[i].idNo, color);
 //			gv->setVertexSize(path[i].idNo, 30);
 //		}
-		printPathColored(data,gv,path);
+		printPathColored(data, gv, path);
 
 		i++;
 	}
@@ -192,7 +231,6 @@ static void testFloidWarshal_big(Graph<NoInfo>& data, GraphViewer*& gv, int num)
 //
 //	testFloidWarshal_big(data, gv,6);
 //}
-
 /**
  * @brief Run Floid-Warshall algorithm from one to all nodes with a New York map.
  */
@@ -219,7 +257,6 @@ static void testFloidWarshal_big(Graph<NoInfo>& data, GraphViewer*& gv, int num)
 //
 //	testFloidWarshal_big(data, gv, 6);
 //}
-
 static void testExecutionTimes(Graph<NoInfo>& data, GraphViewer*& gv) {
 
 	//teste 6 caminhos pelo dijkstra e pelo a*
@@ -245,26 +282,26 @@ static void testExecutionTimes(Graph<NoInfo>& data, GraphViewer*& gv) {
 		cout << "A* " << i + 1 << ":" << endl;
 		vector<NoInfo> pathA;
 
-
 		auto startA_star = std::chrono::system_clock::now();
 		preparaA_star(data, des->getInfo());
-		for(unsigned int i = 0; i < 200 ; i++){
-			pathA = data.getA_starPath(ori->getInfo(),des->getInfo());
+		for (unsigned int i = 0; i < 200; i++) {
+			pathA = data.getA_starPath(ori->getInfo(), des->getInfo());
 		}
-		 auto endA_star = std::chrono::system_clock::now();
-		cout << (double)std::chrono::duration_cast<std::chrono::milliseconds>(endA_star - startA_star).count() << endl ;
-
+		auto endA_star = std::chrono::system_clock::now();
+		cout
+				<< (double) std::chrono::duration_cast<std::chrono::milliseconds>(
+						endA_star - startA_star).count() << endl;
 
 		cout << "Dijkstra " << i + 1 << ":" << endl;
 		auto dijkstra_start = std::chrono::system_clock::now();
-		for(unsigned int i = 0; i < 200 ; i++){
-		vector<NoInfo> pathD = data.getDijkstraPath(ori->getInfo(),
-				des->getInfo());
+		for (unsigned int i = 0; i < 200; i++) {
+			vector<NoInfo> pathD = data.getDijkstraPath(ori->getInfo(),
+					des->getInfo());
 		}
 		auto dijkstra_end = std::chrono::system_clock::now();
-		cout << (double)std::chrono::duration_cast<std::chrono::milliseconds>(dijkstra_end - dijkstra_start).count() << endl ;
-
-
+		cout
+				<< (double) std::chrono::duration_cast<std::chrono::milliseconds>(
+						dijkstra_end - dijkstra_start).count() << endl;
 
 		string color = "BLACK";
 		switch (i) {
@@ -301,6 +338,5 @@ static void testExecutionTimes(Graph<NoInfo>& data, GraphViewer*& gv) {
 
 	}
 }
-
 
 #endif /* SRC_MAP_TESTS_H_ */
