@@ -16,6 +16,8 @@
 #include <vector>
 #include "Graph.h"
 
+/** @file */
+
 /**
  * @brief Method that reads the nodes from a text file and adds them to both GraphViwer and a Graph
  * @param A the xxx_a.txt file

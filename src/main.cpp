@@ -11,6 +11,7 @@
 #include "map_tests.h"
 #include "file_reading.h"
 
+/** @file */
 
 template<>
 struct vertex_greater_than<long double> {

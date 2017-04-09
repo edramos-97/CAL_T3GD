@@ -28,6 +28,8 @@
 #define REP_FOR 15
 #define NUM_CAMINHOS 500
 
+/** @file */
+
 /**
  * @brief Prints a path (with a start and end point) in the graphviewer window.
  * @param data the graph being displayed
