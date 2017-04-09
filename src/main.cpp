@@ -1140,7 +1140,7 @@ int main(int argc, char * argv[]) {
 	int linhas_autocarro = atoi(argv[6]);
 	int comp_metro = atoi(argv[5]);
 	int comp_autocarro = atoi(argv[7]);
-	linhas_geradas = gera_linhas(data, linhas_metro, linhas_autocarro, comp_metro, comp_autocarro);
+
 
 	//	for (unsigned int i = 0; i < data.getVertexSet().size(); i++) {
 	//		if (data.getVertexSet()[i]->getInfo().layer == 'M')
@@ -1151,6 +1151,7 @@ int main(int argc, char * argv[]) {
 
 	int number_of_paths = -1;
 	if(strcmp(argv[1],"auto")==0){
+		linhas_geradas = gera_linhas(data, linhas_metro, linhas_autocarro, comp_metro, comp_autocarro);
 		number_of_paths = atoi(argv[2]);
 		testFloidWarshal_big(data,gv,number_of_paths);
 		cout << "END" << endl;
@@ -1187,7 +1188,7 @@ int main(int argc, char * argv[]) {
 
 	}
 	else { //no inicio para o fim
-
+		linhas_geradas = gera_linhas(data, linhas_metro, linhas_autocarro, comp_metro, comp_autocarro);
 		Vertex<NoInfo> * origem = data.getVertex(NoInfo(atoi(argv[1]),0,0,' '));
 		Vertex<NoInfo> * destino = data.getVertex(NoInfo(atoi(argv[2]),0,0,' '));
 		if(origem == NULL || destino == NULL){

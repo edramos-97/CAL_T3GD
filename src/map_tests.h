@@ -25,6 +25,9 @@
 #define COR_NO_INICIO "CYAN"
 #define COR_NO_FIM "BLACK"
 
+#define REP_FOR 15
+#define NUM_CAMINHOS 500
+
 static void printPathColored(Graph<NoInfo>& data, GraphViewer*& gv,
 		vector<NoInfo> caminho) {
 
@@ -261,8 +264,9 @@ static void testExecutionTimes(Graph<NoInfo>& data, GraphViewer*& gv) {
 
 	//teste 6 caminhos pelo dijkstra e pelo a*
 	int i = 0;
-
-	while (i < 6) {
+	double mediaAstar = 0;
+	double mediaDijkstra = 0;
+	while (i < NUM_CAMINHOS) {
 		int ind0 = rand() % data.getVertexSet().size();
 		int ind1 = rand() % data.getVertexSet().size();
 		Vertex<NoInfo> * ori = data.getVertex(
@@ -272,37 +276,45 @@ static void testExecutionTimes(Graph<NoInfo>& data, GraphViewer*& gv) {
 		if (ori == NULL || des == NULL || ori == des)
 			continue;
 
-		preparaA_star(data, des->getInfo());
-		vector<NoInfo> teste = data.getA_starPath(ori->getInfo(),
+
+		vector<NoInfo> teste = data.getDijkstraPath(ori->getInfo(),
 				des->getInfo());
-		if (teste.size() < 100)
+
+		if (teste.size() < 2)
 			continue;
 
 		cout << "CAMINHO : " << i + 1 << endl;
 		cout << "A* " << i + 1 << ":" << endl;
 		vector<NoInfo> pathA;
 
-		auto startA_star = std::chrono::system_clock::now();
+
 		preparaA_star(data, des->getInfo());
-		for (unsigned int i = 0; i < 200; i++) {
+		auto startA_star = std::chrono::high_resolution_clock::now();
+		for (unsigned int i = 0; i < REP_FOR; i++) {
 			pathA = data.getA_starPath(ori->getInfo(), des->getInfo());
 		}
-		auto endA_star = std::chrono::system_clock::now();
+		auto endA_star = std::chrono::high_resolution_clock::now();
 		cout
-				<< (double) std::chrono::duration_cast<std::chrono::milliseconds>(
+				<< (double) std::chrono::duration_cast<std::chrono::microseconds>(
 						endA_star - startA_star).count() << endl;
 
+		mediaAstar += (double) std::chrono::duration_cast<std::chrono::microseconds>(
+				endA_star - startA_star).count();
+
+
 		cout << "Dijkstra " << i + 1 << ":" << endl;
-		auto dijkstra_start = std::chrono::system_clock::now();
-		for (unsigned int i = 0; i < 200; i++) {
+		auto dijkstra_start = std::chrono::high_resolution_clock::now();
+		for (unsigned int i = 0; i < REP_FOR; i++) {
 			vector<NoInfo> pathD = data.getDijkstraPath(ori->getInfo(),
 					des->getInfo());
 		}
-		auto dijkstra_end = std::chrono::system_clock::now();
+		auto dijkstra_end = std::chrono::high_resolution_clock::now();
 		cout
-				<< (double) std::chrono::duration_cast<std::chrono::milliseconds>(
+				<< (double) std::chrono::duration_cast<std::chrono::microseconds>(
 						dijkstra_end - dijkstra_start).count() << endl;
 
+		mediaDijkstra += (double) std::chrono::duration_cast<std::chrono::microseconds>(
+				dijkstra_end - dijkstra_start).count();
 		string color = "BLACK";
 		switch (i) {
 		case 0:
@@ -337,6 +349,12 @@ static void testExecutionTimes(Graph<NoInfo>& data, GraphViewer*& gv) {
 		i++;
 
 	}
-}
+
+	mediaAstar /= (NUM_CAMINHOS*REP_FOR);
+	mediaDijkstra /= (NUM_CAMINHOS*REP_FOR);
+
+	cout << "MEDIA A* : " << mediaAstar << endl;
+	cout << "MEDIA DIJKSTRA : " << mediaDijkstra << endl;
+ }
 
 #endif /* SRC_MAP_TESTS_H_ */
