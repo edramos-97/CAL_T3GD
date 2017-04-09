@@ -22,7 +22,9 @@
 #define COR_AUTOCARRO "BLUE"
 #define COR_PE "YELLOW"
 
-
+/**
+ * This struct defines the map borders using the OpenStreetMap coordinates.
+ */
 struct cantos {
 	long double minLong;
 	long double minLat;
@@ -30,12 +32,17 @@ struct cantos {
 	long double maxLat;
 };
 
+/**
+ * Declaration of means of transportation used:
+ *     - Travelling by foot is free, has no wait time but is the slowest mode of transportation
+ *     - Travelling by bus is cheaper than subway, but the wait time is longer and the bus runs slower
+ *     - Travelling by subway is the most expensive, but has a short wait time and is the fastest
+ */
 vector<Transporte> todos_transportes =
 		{ Transporte("Pe", 0.0, 0.0, 4),
 			Transporte("Autocarro", 1.0, 0.2, 20),
 			Transporte("Metro", 2.0, 0.1, 50) };
 
-//calculate haversine distance for linear distance // coordinates in radians
 /**
  * Method to calculate the distance between two points of a spherical surface. This function applies the Haversine formula.
  * @param lat1 Latitude in radians of the first point.
@@ -55,6 +62,11 @@ static long double haversine_km(long double lat1, long double long1,
 	return d;
 }
 
+/**
+ * @brief Prepares the usage of the A* algorithm by calculating the distance from all nodes to the destination.
+ * @param data the graph being worked on
+ * @param destino the destination
+ */
 static void preparaA_star(Graph<NoInfo> &data, const NoInfo& destino) {
 
 	for (unsigned int i = 0; i < data.getVertexSet().size(); i++) {
@@ -64,13 +76,5 @@ static void preparaA_star(Graph<NoInfo> &data, const NoInfo& destino) {
 						destino.longitude, destino.longitude)/VELOCIDADE_METRO);
 	}
 }
-
-//static void paintPath(GraphViewer *gv, vector<NoInfo> vect, string COLOR) {
-//	for (unsigned int i = 0; i < vect.size(); i++) {
-//		cout << vect[i] << endl;
-//		gv->setVertexColor(vect[i].idNo, COLOR);
-//		//gv->setVertexSize(vect[i].idNo, 20);
-//	}
-//}
 
 #endif /* SRC_UTILS_H_ */

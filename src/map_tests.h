@@ -28,6 +28,12 @@
 #define REP_FOR 15
 #define NUM_CAMINHOS 500
 
+/**
+ * @brief Prints a path (with a start and end point) in the graphviewer window.
+ * @param data the graph being displayed
+ * @param gv the graphviewer instance being used
+ * @param caminho the path to be printed
+ */
 static void printPathColored(Graph<NoInfo>& data, GraphViewer*& gv,
 		vector<NoInfo> caminho) {
 
@@ -66,6 +72,14 @@ static void printPathColored(Graph<NoInfo>& data, GraphViewer*& gv,
 	gv->rearrange();
 }
 
+
+/**
+ * @brief Prints the bus and metro lines existent in the selected path.
+ * @param data the graph being displayed
+ * @param gv the graphviewer instance being used
+ * @param caminho the path where the bus and metro lines are
+ * @param linhas_geradas the bus and metro lines that exist in the map
+ */
 static void printPathColored(Graph<NoInfo>& data, GraphViewer*& gv,
 		vector<NoInfo> caminho, vector<vector<NoInfo>> linhas_geradas) {
 
@@ -104,51 +118,9 @@ static void printPathColored(Graph<NoInfo>& data, GraphViewer*& gv,
 		gv->rearrange();
 }
 
+
 /**
- * @brief Run djikstra algorithm from one to all nodes.
- * @param data graph that will be run in the algorithm.
- * @param gv graph viewer that will be updated after the algorithm is run.
- */
-//static void testDijkstra(Graph<NoInfo>& data, GraphViewer*& gv) {
-//	Vertex<NoInfo>* origem = data.getVertex(
-//			NoInfo(173452776 % 100000000, 0, 0));
-//	data.dijkstraShortestPath_all(origem->getInfo());
-//
-//	vector<Vertex<NoInfo>*> todos = data.getVertexSet();
-//
-//	Vertex<NoInfo>* destino = data.getVertex(
-//			NoInfo(541769885 % 100000000, 0, 0));
-//	while (destino != NULL) {
-//
-//		gv->setVertexColor(destino->getInfo().idNo, YELLOW);
-//		gv->setVertexSize(destino->getInfo().idNo, 50);
-//		destino = destino->path;
-//	}
-//
-//	gv->rearrange();
-//	// --------------------------fim teste dijkstra
-//}
-/**
- * @brief Run Floid-Warshall algorithm from one to all nodes.
- * @param data graph that will be run in the algorithm.
- * @param gv graph viewer that will be updated after the algorithm is run.
- */
-//static void testFloidWarshal_med(Graph<NoInfo>& data, GraphViewer*& gv) {
-//	//----------------------------teste floyd warshal
-//	NoInfo temp(42809630, 0, 0);
-//	NoInfo ori = data.getVertex(temp)->getInfo();
-//	NoInfo des = data.getVertex(NoInfo(42809660, 0, 0))->getInfo();
-//	vector<NoInfo> path = data.getfloydWarshallPath(ori, des);
-//
-//	for (unsigned int i = 0; i < path.size(); i++) {
-//		Sleep(100);
-//		cout << path[i] << endl;
-//		gv->setVertexColor(path[i].idNo, YELLOW);
-//	}
-//	//------------------------------fim teste floyd warshal
-//}
-/**
- * @brief Run Floid-Warshall algorithm from one to all nodes and find a certain amount of paths.
+ * @brief Runs the Floyd-Warshall algorithm from one to all nodes and find a certain amount of paths.
  * @param data graph that will be run in the algorithm.
  * @param gv graph viewer that will be updated after the algorithm is run.
  */
@@ -196,70 +168,18 @@ static void testFloidWarshal_big(Graph<NoInfo>& data, GraphViewer*& gv,
 		}
 
 		cout << "novo caminho: " << i << endl;
-//		for (unsigned int i = 0; i < path.size(); i++) {
-//			Sleep(100);
-//			cout << path[i] << endl;
-//			gv->setVertexColor(path[i].idNo, color);
-//			gv->setVertexSize(path[i].idNo, 30);
-//		}
+
 		printPathColored(data, gv, path);
 
 		i++;
 	}
-//-----------------------fim floydwarshal bigger
-
 }
 
 /**
- * @brief Run Floid-Warshall algorithm from one to all nodes with a certain map.
+ * @brief Tests algorithm execution times (called when the main function receives "comp" as the first parameter)
+ * @param data the graph being used
+ * @param gv the graphviewer instance being used
  */
-//static void TesteOtherMap() {
-//	Graph<NoInfo> data;
-//	int xMaxW = 1000, yMaxW = 947;
-//	GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
-//	gv->setBackground("10IMG1000-947.png");
-//	gv->createWindow(xMaxW, yMaxW);
-//	gv->defineEdgeCurved(false);
-//	gv->defineEdgeDashed(true);
-//	gv->defineVertexColor("blue");
-//	gv->defineVertexSize(4);
-//	gv->defineEdgeColor("black");
-//	struct cantos corners;
-//	corners.maxLat = 40.72988;
-//	corners.maxLong = -73.87300;
-//	corners.minLat = 40.72638;
-//	corners.minLong = -73.87790;
-//	abrirFicheiroXY("10IMG1000-947A.txt", "10IMG1000-947B.txt",
-//			"10IMG1000-947C.txt", data, gv, corners, xMaxW, yMaxW);
-//
-//	testFloidWarshal_big(data, gv,6);
-//}
-/**
- * @brief Run Floid-Warshall algorithm from one to all nodes with a New York map.
- */
-//static void TesteNewYork() {
-//
-//	//CRIAR GRAFO INTERNO
-//	Graph<NoInfo> data;
-//	int xMaxW = 5000, yMaxW = 1910;
-//	GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
-//	gv->setBackground("NEWY.png");
-//	gv->createWindow(xMaxW, yMaxW);
-//	gv->defineEdgeCurved(false);
-//	gv->defineEdgeDashed(true);
-//	gv->defineVertexColor("blue");
-//	gv->defineVertexSize(4);
-//	gv->defineEdgeColor("black");
-//	struct cantos corners;
-//	corners.maxLat = 40.7127;
-//	corners.maxLong = -73.9784;
-//	corners.minLat = 40.7007;
-//	corners.minLong = -74.0194;
-//	abrirFicheiroXY("NEWYA.txt", "NEWYB.txt", "NEWYC.txt", data, gv, corners,
-//			xMaxW, yMaxW);
-//
-//	testFloidWarshal_big(data, gv, 6);
-//}
 static void testExecutionTimes(Graph<NoInfo>& data, GraphViewer*& gv) {
 
 	//teste 6 caminhos pelo dijkstra e pelo a*

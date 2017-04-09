@@ -10,6 +10,11 @@
 
 #include "NoInfo.h"
 
+/**
+ * This class deals with the information existent in the edges.
+ * Each edge has an id number, a length, start and end points (nodes), a name for the street that is
+ * represented by the edge and a flag indicating if it is a two-way street.
+ */
 class Aresta {
 public:
 	BigAssInteger idAresta;

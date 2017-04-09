@@ -12,6 +12,10 @@
 
 using namespace std;
 
+/**
+ * Transportes are modes of transportation. Each transport has a name, a travel cost for the fare,
+ * a wait time, and an average speed. All of these are accounted for in the graph.
+ */
 class Transporte {
 	string nome;
 	double custo;
