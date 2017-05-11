@@ -25,6 +25,7 @@ vector<unsigned int> computePrefix(string toSearch) {
 		if (toSearch.at(k) == toSearch.at(q - 1)) {
 			k++;
 		}
+
 		pi.at(q) = k;
 	}
 

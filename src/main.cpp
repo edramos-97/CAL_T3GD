@@ -9,8 +9,9 @@
 #include "utils.h"
 #include "aresta.h"
 #include "map_tests.h"
-#include "file_reading.h"
 #include "string_find.h"
+#include "file_reading.h"
+
 
 /** @file */
 
