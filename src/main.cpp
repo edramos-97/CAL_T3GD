@@ -17,6 +17,7 @@
 //#include "NoInfo.h"
 #include "map_tests.h"
 #include "file_reading.h"
+#include "string_find.h"
 
 //class NoInfo {
 //public:
