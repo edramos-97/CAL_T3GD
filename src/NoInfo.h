@@ -17,6 +17,11 @@ using namespace std;
 
 typedef unsigned long long BigAssInteger;
 
+/**
+ * This class deals with the information existent in the nodes.
+ * Each node has a layer (base, bus and subway), geographical coordinates (longitude and latitude)
+ * and an identification number.
+ */
 class NoInfo {
 public:
 	char layer;
