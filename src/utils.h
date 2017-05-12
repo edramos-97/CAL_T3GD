@@ -22,8 +22,16 @@
 #define COR_AUTOCARRO "BLUE"
 #define COR_PE "YELLOW"
 
-ifstream nomes_autocarros;
-ifstream nomes_metros;
+/*
+ * This class facilitates the station naming.
+ */
+class par {
+public:
+	BigAssInteger id = 0;
+	string nome_estacao = "";
+	bool usado = false;
+	par(BigAssInteger id, string nome):id(id),nome_estacao(nome){};
+};
 
 /**
  * This struct defines the map borders using the OpenStreetMap coordinates.

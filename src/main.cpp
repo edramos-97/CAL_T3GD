@@ -262,7 +262,8 @@ void teste_colorir(Graph<NoInfo>& data, GraphViewer*& gv, int numCaminhos,
  * The main function.
  *
  * It receives up to 14 arguments:
- *  - argv[1]  Start node (node number), assess connectivity ("Connectivity"), complexity ("comp") or auto ("auto");
+ *  - argv[1]  Start node (node number), assess connectivity ("Connectivity"), complexity ("comp") or auto ("auto")
+ *             or exact string search ("StringSearchExact") or aproximate string search ("StringSearchAprox");
  *  - argv[2]  End node (argv[1] = node number, end node number) or number of paths (argv[1] = "auto", 1-5)
  *	- argv[3]  Algorithm to use (if there's a start node or auto, "A*", "Dijkstra" or "Floyd-Warshall")
  *	- argv[4]  Number of subway lines (if there's a start node or auto, 1-10)
@@ -346,6 +347,25 @@ int main(int argc, char * argv[]) {
 		cout << "Em " << vertices.size() << " nos, o minimo de falhas foi " << min_falha << endl;
 		cout << "O maximo foi " << max_falha << endl;
 		cout << "END"<< endl;
+		getchar();
+		return 0;
+
+	} //string search
+	else if((strcmp(argv[1],"StringSearchExact")==0) || (strcmp(argv[1],"StringSearchAprox")==0)){
+		vector<par> dados_metro;
+		vector<par> dados_autocarro;
+		try {
+			dados_metro = load_names("_metros.txt");
+			dados_autocarro = load_names("_autocarros.txt");
+		} catch (exception & e) {
+			cout << "There was an error opening the files..." << endl;
+			return 1;
+		}
+		linhas_geradas = gera_linhas_nomes(data, linhas_metro, linhas_autocarro, comp_metro, comp_autocarro,dados_metro,dados_autocarro);
+		for(unsigned int i = 0; i < linhas_geradas.size(); i++)
+			printPathColored(data,gv,linhas_geradas[i], linhas_geradas);
+
+		cout << "END" << endl;
 		getchar();
 		return 0;
 

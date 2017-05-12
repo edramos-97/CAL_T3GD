@@ -19,6 +19,33 @@ bool openFile(string filename, ifstream & infile){
 	return true;
 }
 
+vector<par> load_names(string filename){
+	vector<par> res;
+	ifstream file;
+	if(!openFile(filename,file))
+		throw(exception());
+
+	string estacao;
+	while(getline(file,estacao)){
+		res.push_back(par(0,estacao));
+	}
+
+	return res;
+}
+
+string choose_random(vector<par> & vec){
+	while(true){
+		unsigned int i = rand() % vec.size();
+		if(!vec[i].usado){
+			vec[i].usado = true;
+			return vec[i].nome_estacao;
+		}
+		else {
+			cout << vec[i].nome_estacao << " ja foi usado..." << endl;
+		}
+	}
+}
+
 
 vector<unsigned int> computePrefix(string toSearch) {
 	unsigned int m = toSearch.size();

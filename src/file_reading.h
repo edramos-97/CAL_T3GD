@@ -15,6 +15,7 @@
 #include "utils.h"
 #include <vector>
 #include "Graph.h"
+#include "string_find.h"
 
 /** @file */
 
@@ -261,8 +262,6 @@ void abrirFicheiroXY(const std::string& A, const std::string& B,
  * @param comp_metro the length of subway lines
  * @param comp_autocarro the length of bus lines
  */
-
-//FIXME Alterar funcao para adicionar os nomes atraves das variaves globais em utils: nomes_metros, nomes_autocarros.
 vector<vector<NoInfo>> gera_linhas(Graph<NoInfo>& data, unsigned int linhas_metro, unsigned int linhas_autocarro,
 		unsigned int comp_metro, unsigned int comp_autocarro) {
 	vector<vector<NoInfo>> linhas_geradas;
@@ -378,6 +377,183 @@ vector<vector<NoInfo>> gera_linhas(Graph<NoInfo>& data, unsigned int linhas_metr
 		vector<NoInfo> linha_metro;
 		for(unsigned int i = 0; i < linha_provisoria.size(); i++)
 			linha_metro.push_back(NoInfo(linha_provisoria[i].idNo,linha_provisoria[i].longitude, linha_provisoria[i].latitude, 'M'));
+
+		//guarda linha gerada
+		linhas_geradas.push_back(linha_metro);
+
+		unsigned int indice_paragem = 0;
+		while(indice_paragem < linha_provisoria.size())
+		{
+			//nos intermedios
+			if(indice_paragem != 0 && indice_paragem !=  (linha_provisoria.size()-1)){
+				//pode entrar e sair do metro, no ja foi adicionado pelo anterior
+				data.addEdge(linha_metro[indice_paragem], linha_provisoria[indice_paragem],0);
+				data.addEdge(linha_provisoria[indice_paragem], linha_metro[indice_paragem],0);
+
+				//adiciona o no seguinte frente
+				data.addVertex(linha_metro[indice_paragem+1]);
+				//liga caminho do metro com o no da frente
+				data.addEdge(linha_metro[indice_paragem], linha_metro[indice_paragem+1],haversine_km(linha_metro[indice_paragem].latitude,
+						linha_metro[indice_paragem].longitude,
+						linha_metro[indice_paragem+1].latitude,
+						linha_metro[indice_paragem+1].longitude) / VELOCIDADE_METRO);
+
+
+			}//inicial
+			else if(indice_paragem == 0){
+				//adiciona novo nó "sobreposto"
+				data.addVertex(linha_metro[indice_paragem]);
+
+
+				//so pode entrar no metro
+				data.addEdge(linha_provisoria[indice_paragem], linha_metro[indice_paragem],0);
+
+				//adiciona o no seguinte frente
+				data.addVertex(linha_metro[indice_paragem+1]);
+				//liga caminho do metro
+				data.addEdge(linha_metro[indice_paragem], linha_metro[indice_paragem+1],haversine_km(linha_metro[indice_paragem].latitude,
+						linha_metro[indice_paragem].longitude,
+						linha_metro[indice_paragem+1].latitude,
+						linha_metro[indice_paragem+1].longitude) / VELOCIDADE_AUTOCARRO);
+
+			} //no final
+			else if(indice_paragem ==  (linha_provisoria.size()-1)){
+				//so pode sair
+				data.addEdge(linha_metro[indice_paragem], linha_provisoria[indice_paragem],0);
+			}
+			indice_paragem++;
+		}
+		/////
+		numero_linhas_metro++;
+	}
+
+
+	return linhas_geradas;
+}
+
+/**
+ * @brief Generates the bus and metro lines and adds them to a graph, with names of stations.
+ * @param data the graph being worked on
+ * @param linhas_metro the number of subway lines
+ * @param linhas_autocarro the number of bus lines
+ * @param comp_metro the length of subway lines
+ * @param comp_autocarro the length of bus lines
+ */
+vector<vector<NoInfo>> gera_linhas_nomes(Graph<NoInfo>& data, unsigned int linhas_metro, unsigned int linhas_autocarro,
+		unsigned int comp_metro, unsigned int comp_autocarro, vector<par>& dados_metro, vector<par>& dados_autocarro) {
+	vector<vector<NoInfo>> linhas_geradas;
+
+	//indices random
+	unsigned int indiceSource = 0;
+	unsigned int indiceDestiny = 0;
+	//vertices random
+	Vertex<NoInfo> * vertice_ori = NULL;
+	Vertex<NoInfo> * vertice_des = NULL;
+	//linha proposta
+	vector<NoInfo> linha_provisoria;
+
+	//gerar linhas de autocarro
+	unsigned int numero_linhas_autocarro = 0;
+	while (numero_linhas_autocarro < linhas_autocarro) {
+
+		indiceSource = rand() % data.getVertexSet().size();
+		indiceDestiny = rand() % data.getVertexSet().size();
+		vertice_ori = data.getVertex(
+				NoInfo(data.getVertexSet()[indiceSource]->getInfo().idNo, 0, 0,
+						' '));
+		vertice_des = data.getVertex(
+				NoInfo(data.getVertexSet()[indiceDestiny]->getInfo().idNo, 0, 0,
+						' '));
+
+		if (vertice_ori == NULL || vertice_des == NULL
+				|| vertice_ori == vertice_des)
+			continue;
+
+		linha_provisoria = data.getDijkstraPath(vertice_ori->getInfo(),
+				vertice_des->getInfo());
+		if (linha_provisoria.size() < comp_autocarro)
+			continue;
+
+		//cria linha autocarro equivalente à provisoria mas com layer A;
+		vector<NoInfo> linha_autocarro;
+		for(unsigned int i = 0; i < linha_provisoria.size(); i++)
+			 linha_autocarro.push_back(NoInfo(linha_provisoria[i].idNo,linha_provisoria[i].longitude, linha_provisoria[i].latitude, 'A',choose_random(dados_autocarro)));
+
+		//guarda linha gerada
+		linhas_geradas.push_back(linha_autocarro);
+
+		unsigned int indice_paragem = 0;
+		while(indice_paragem < linha_provisoria.size())
+		{
+			//nos intermedios
+			if(indice_paragem != 0 && indice_paragem !=  (linha_provisoria.size()-1)){
+				//pode entrar e sair do autocarro, no ja foi adicionado pelo anterior
+				data.addEdge(linha_autocarro[indice_paragem], linha_provisoria[indice_paragem],0);
+				data.addEdge(linha_provisoria[indice_paragem], linha_autocarro[indice_paragem],0);
+
+				//adiciona o no seguinte frente
+				data.addVertex(linha_autocarro[indice_paragem+1]);
+				//liga caminho do autocarro com o no da frente
+				data.addEdge(linha_autocarro[indice_paragem], linha_autocarro[indice_paragem+1],haversine_km(linha_autocarro[indice_paragem].latitude,
+										linha_autocarro[indice_paragem].longitude,
+										linha_autocarro[indice_paragem+1].latitude,
+										linha_autocarro[indice_paragem+1].longitude) / VELOCIDADE_AUTOCARRO);
+
+
+			}//inicial
+			else if(indice_paragem == 0){
+				//adiciona novo nó "sobreposto"
+				data.addVertex(linha_autocarro[indice_paragem]);
+
+
+				//so pode entrar no autocarro
+				data.addEdge(linha_provisoria[indice_paragem], linha_autocarro[indice_paragem],0);
+
+				//adiciona o no seguinte frente
+				data.addVertex(linha_autocarro[indice_paragem+1]);
+				//liga caminho do autocarro
+				data.addEdge(linha_autocarro[indice_paragem], linha_autocarro[indice_paragem+1],haversine_km(linha_autocarro[indice_paragem].latitude,
+						linha_autocarro[indice_paragem].longitude,
+						linha_autocarro[indice_paragem+1].latitude,
+						linha_autocarro[indice_paragem+1].longitude) / VELOCIDADE_AUTOCARRO);
+
+			} //no final
+			else if(indice_paragem ==  (linha_provisoria.size()-1)){
+				//so pode sair
+				data.addEdge(linha_autocarro[indice_paragem], linha_provisoria[indice_paragem],0);
+			}
+			indice_paragem++;
+		}
+		numero_linhas_autocarro++;
+	}
+
+	//gerar linhas de metro
+	unsigned int numero_linhas_metro = 0;
+	while (numero_linhas_metro < linhas_metro) {
+		indiceSource = rand() % data.getVertexSet().size();
+		indiceDestiny = rand() % data.getVertexSet().size();
+		vertice_ori = data.getVertex(
+				NoInfo(data.getVertexSet()[indiceSource]->getInfo().idNo, 0, 0,
+						' '));
+		vertice_des = data.getVertex(
+				NoInfo(data.getVertexSet()[indiceDestiny]->getInfo().idNo, 0, 0,
+						' '));
+
+		if (vertice_ori == NULL || vertice_des == NULL
+				|| vertice_ori == vertice_des)
+			continue;
+
+		linha_provisoria = data.getDijkstraPath(vertice_ori->getInfo(),
+				vertice_des->getInfo());
+
+		if (linha_provisoria.size() < comp_metro)
+			continue;
+
+		/////
+		//cria linha metro equivalente à provisoria mas com layer M;
+		vector<NoInfo> linha_metro;
+		for(unsigned int i = 0; i < linha_provisoria.size(); i++)
+			linha_metro.push_back(NoInfo(linha_provisoria[i].idNo,linha_provisoria[i].longitude, linha_provisoria[i].latitude, 'M',choose_random(dados_metro)));
 
 		//guarda linha gerada
 		linhas_geradas.push_back(linha_metro);
