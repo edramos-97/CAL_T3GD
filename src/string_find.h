@@ -9,8 +9,16 @@
 #define SRC_STRING_FIND_H_
 
 #include<vector>
-
+#include"utils.h"
 using namespace std;
+
+bool openFile(string filename, ifstream & infile){
+	infile.open(filename.c_str());
+	if(!infile.is_open())
+		return false;
+	return true;
+}
+
 
 vector<unsigned int> computePrefix(string toSearch) {
 	unsigned int m = toSearch.size();

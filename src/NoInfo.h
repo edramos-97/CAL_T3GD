@@ -28,11 +28,13 @@ public:
 	long double longitude;
 	long double latitude;
 	BigAssInteger idNo;
+	string nome_paragem;
 	NoInfo() {
 		longitude = 0.0;
 		latitude = 0.0;
 		idNo = 0;
 		layer = ' ';
+		nome_paragem = "";
 	}
 
 	NoInfo(BigAssInteger id, long double longe, long double lat) {
@@ -40,6 +42,7 @@ public:
 		this->longitude = longe;
 		this->latitude = lat;
 		this->layer = ' ';
+		this->nome_paragem = "";
 
 	}
 
@@ -50,7 +53,17 @@ public:
 					this->longitude = longe;
 					this->latitude = lat;
 					this->layer = lay;
+					this->nome_paragem = "";
 				}
+
+	//FIXME Substituir a invocacao acima por esta no gera_linhas!
+	NoInfo(BigAssInteger id, long double longe, long double lat, char lay,string nome_paragem) {
+						this->idNo = id;
+						this->longitude = longe;
+						this->latitude = lat;
+						this->layer = lay;
+						this->nome_paragem = nome_paragem;
+					}
 
 	friend ostream & operator<<(ostream & os, const NoInfo obj) {
 		os << "idNo: " << obj.idNo << " long: " << obj.longitude << " lat: "

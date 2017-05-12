@@ -261,6 +261,8 @@ void abrirFicheiroXY(const std::string& A, const std::string& B,
  * @param comp_metro the length of subway lines
  * @param comp_autocarro the length of bus lines
  */
+
+//FIXME Alterar funcao para adicionar os nomes atraves das variaves globais em utils: nomes_metros, nomes_autocarros.
 vector<vector<NoInfo>> gera_linhas(Graph<NoInfo>& data, unsigned int linhas_metro, unsigned int linhas_autocarro,
 		unsigned int comp_metro, unsigned int comp_autocarro) {
 	vector<vector<NoInfo>> linhas_geradas;
