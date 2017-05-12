@@ -12,24 +12,18 @@
 #include"utils.h"
 using namespace std;
 
-bool openFile(string filename, ifstream & infile){
-	infile.open(filename.c_str());
-	if(!infile.is_open())
-		return false;
-	return true;
-}
 
 vector<par> load_names(string filename){
 	vector<par> res;
-	ifstream file;
-	if(!openFile(filename,file))
+
+	ifstream infile(filename.c_str());
+	if(!infile.is_open())
 		throw(exception());
-
 	string estacao;
-	while(getline(file,estacao)){
-		res.push_back(par(0,estacao));
+	while(getline(infile,estacao)){
+		par par_teste = par(estacao,false);
+		res.push_back(par_teste);
 	}
-
 	return res;
 }
 
@@ -39,9 +33,6 @@ string choose_random(vector<par> & vec){
 		if(!vec[i].usado){
 			vec[i].usado = true;
 			return vec[i].nome_estacao;
-		}
-		else {
-			cout << vec[i].nome_estacao << " ja foi usado..." << endl;
 		}
 	}
 }

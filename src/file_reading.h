@@ -471,13 +471,13 @@ vector<vector<NoInfo>> gera_linhas_nomes(Graph<NoInfo>& data, unsigned int linha
 
 		linha_provisoria = data.getDijkstraPath(vertice_ori->getInfo(),
 				vertice_des->getInfo());
-		if (linha_provisoria.size() < comp_autocarro)
+		if (linha_provisoria.size() < comp_autocarro || linha_provisoria.size()  > (comp_autocarro + DELTA_TAMANHO_PARAGENS))
 			continue;
 
 		//cria linha autocarro equivalente à provisoria mas com layer A;
 		vector<NoInfo> linha_autocarro;
 		for(unsigned int i = 0; i < linha_provisoria.size(); i++)
-			 linha_autocarro.push_back(NoInfo(linha_provisoria[i].idNo,linha_provisoria[i].longitude, linha_provisoria[i].latitude, 'A',choose_random(dados_autocarro)));
+			linha_autocarro.push_back(NoInfo(linha_provisoria[i].idNo,linha_provisoria[i].longitude, linha_provisoria[i].latitude, 'A',choose_random(dados_autocarro)));
 
 		//guarda linha gerada
 		linhas_geradas.push_back(linha_autocarro);
@@ -546,7 +546,7 @@ vector<vector<NoInfo>> gera_linhas_nomes(Graph<NoInfo>& data, unsigned int linha
 		linha_provisoria = data.getDijkstraPath(vertice_ori->getInfo(),
 				vertice_des->getInfo());
 
-		if (linha_provisoria.size() < comp_metro)
+		if (linha_provisoria.size() < comp_metro || linha_provisoria.size() > (comp_metro + DELTA_TAMANHO_PARAGENS))
 			continue;
 
 		/////

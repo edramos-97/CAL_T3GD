@@ -21,16 +21,17 @@
 #define COR_METRO "ORANGE"
 #define COR_AUTOCARRO "BLUE"
 #define COR_PE "YELLOW"
+#define DELTA_TAMANHO_PARAGENS 10
 
 /*
  * This class facilitates the station naming.
  */
 class par {
 public:
-	BigAssInteger id = 0;
-	string nome_estacao = "";
-	bool usado = false;
-	par(BigAssInteger id, string nome):id(id),nome_estacao(nome){};
+	string nome_estacao;
+	bool usado;
+	par(string nome, bool usado):nome_estacao(nome),usado(usado){};
+	par():nome_estacao(""),usado(false){};
 };
 
 /**
