@@ -1,29 +1,51 @@
 24 Agosto
 Aeroporto
+Alameda
+Alfornelos
 Aliados
 Alto de Pega
+Alto dos Moinhos
+Alvalade
+Amadora Este
+Ameixoeira
+Anjos
 Araujo
+Areeiro
+Arroios
 Arvore
+Avenida
 Azurara
 Baguim
+Baixa Chiado
+Bela Vista
 Bolhao
 Botica
 Brito Capelo
+Cabo Ruivo
+Cais do Sodre
 Camara de Gaia
 Camara de Matosinhos
 Campainha
 Campanha
+Campo Grande
+Campo Pequeno
 Candido dos Reis
+Carnide
 Carolina Michaelis
 Carreira
 Casa da Musica
 Castelo da Maia
+Chelas
+Cidade Universitaria
+Colegio Militar
 Combatentes
 Contumil
 Crestins
 Custio
 Custoias
 Dom Joao II
+Encarnação
+Entre Campos
 EspaÃ§o Natureza
 Esposade
 Estadio do Dragao
@@ -36,40 +58,67 @@ Francos
 General Torres
 Heroismo
 Hospital Sao Joao
+Intendente
 IPO
 ISMAI
 Jardim do Morro
+Jardim Zoologico
 Joao de Deus
 Lapa
+Laranjeiras
 Levada
 Lidador
+Lumiar
 Mandim
 Marques
+Marques de Pombal
+Martim Moniz
 Matosinhos Sul
 Mercado
 Mindelo
 Modivas Centro
 Modivas Sul
+Moscavide
 Nasoni
 Nau Vitoria
+Odivelas
+Olaias
+Olivais
+Oriente
+Parque
 Parque de Real
 Parque Maia
 Pedras Rubras
 Pedro Hispano
 Pias
+Picoas
 Polo Universitario
+Pontinha
 Porta Fronhas
 Povoa de Varzim
+Praça de Espanha
+Quinta das Conchas
 Ramalde
+Rato
+Reboleira
+Restauradores
 Rio Tinto
-Sao Bras
+Roma
+Rossio
+Saldanha
 Salgueiros
+Santa Apolonia
 Santa Clara
 Santo Ovidio
 Sao Bento
+Sao Bras
+Sao Sebastiao
 Senhora da Hora
-Sete Bicas
 Senhor de Matosinhos
+Senhor Roubado
+Sete Bicas
+Telheiras
+Terreiro do Paco
 Trindade
 Varziela
 Vasco da Gama
