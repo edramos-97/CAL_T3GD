@@ -362,8 +362,21 @@ int main(int argc, char * argv[]) {
 			return 1;
 		}
 		linhas_geradas = gera_linhas_nomes(data, linhas_metro, linhas_autocarro, comp_metro, comp_autocarro,dados_metro,dados_autocarro);
-		for(unsigned int i = 0; i < linhas_geradas.size(); i++)
+		for(unsigned int i = 0; i < linhas_geradas.size(); i++){
+			Sleep(1000);
 			printPathColored(data,gv,linhas_geradas[i], linhas_geradas);
+		}
+
+
+		string pesquisa;
+		while(getline(cin,pesquisa)){
+			if(pesquisa == "END")
+				break;
+
+
+			//complexidade palavra
+
+		}
 
 		cout << "END" << endl;
 		getchar();
