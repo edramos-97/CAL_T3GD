@@ -1,0 +1,110 @@
+22770608;Praça da Paz;False
+22770620;Praça da Paz;False
+22770622;Praça da Paz;False
+22770623;Rua de S. Sebastião;False
+22770625;Rua das Forças Armadas;False
+22770633;;False
+22770644;;False
+22770659;Rua das Forças Armadas;False
+22770661;Rua do Cruzeiro Mor;False
+22780638;Rua Tristão Vaz Teixeira;False
+22780646;Rua do Círio de Aldegalega;False
+22780650;Rua do Círio dos Marítimos;False
+22780651;Rua dos Ex-Votos;False
+22780656;Rua Bartolomeu Perestrelo;False
+22780704;Rua Álvaro Tavares Mora;False
+23645634;Rua do Bairro Novo da Atalaia;False
+23645640;Rua Melo Antunes;False
+23645641;Rua do Mercado;False
+23660967;Praceta da Espiga;False
+23660968;Rua do Círio dos Olhos de Água;False
+23661048;Rua Salgueiro Maia;False
+23989445;Rua do Círio Novo;False
+23989449;Rua da Atalaia;False
+26534948;Rua 25 de Abril;False
+164581753;Rua 25 de Abril;False
+164581754;Rua 1 de Maio;False
+164581755;Rua Padre Cruz;False
+176766713;Rua Padre António Vieira;False
+176766714;;False
+176766715;;False
+176766716;;False
+176766717;Rua Manuel dos Santos Reis;False
+176766719;Rua Paço de Arcos;False
+176766721;;False
+229278923;;False
+229278924;Avenida Dom Manuel I;True
+229278925;Avenida Dom Manuel I;False
+229278926;Rua das Forças Armadas;False
+229520117;Rua Infante Dom Francisco;False
+229520118;Rua Infante Dom Francisco;False
+229520119;Avenida Dom Manuel I;True
+229520120;Rua António Joaquim Marques;True
+229520121;Avenida Dom Manuel I;True
+229520122;;True
+229520125;Rua António Ribeiro Dias;True
+255161674;Rua da Hortas;True
+255222346;;True
+263263005;;True
+263263006;Rua Paço de Arcos;True
+263263008;Rua dos Círios;True
+263263009;Travessa do Mercado;False
+263263010;Praça do Operário;False
+263263011;;False
+263263012;Travessa 28 de Setembro;False
+263263013;Rua do Alecrim;False
+263263014;;False
+263263016;Rua Álvaro Tavares Mora;False
+263263017;Avenida 28 de Setembro;False
+263263020;Rua do Círio da Carregueira;False
+263263021;Rua dos Operários;False
+263263022;;False
+296272438;;False
+296272443;Rua António Ribeiro Dias;False
+435206534;Rua do Círio da Alfândega de Lisboa;False
+435206535;Rua do Círio da Azoia;False
+435206536;Rua do Círio da Quinta do Anjo;False
+435206537;Rua Inocência Santos Sousa;False
+435206538;Rua Humberto Delgado;False
+435206539;Rua Alto da Atalaia;False
+435206540;Rua dos Romeiros;False
+435206541;Rua do Peregrino;False
+435209274;;False
+435209275;Rua 25 de Abril;False
+435209276;Rua 25 de Abril;False
+435209277;Rua de Santo António;False
+435209278;Rua de Santo António;False
+435209279;Rua de Santo António;False
+435209281;;False
+435209283;;False
+435209284;;False
+435209285;;False
+435271839;Rua Benvindo Lopes;False
+435271840;Praceta da Espiga;False
+435275920;Travessa do Círio Novo;False
+435275921;Avenida 28 de Setembro;False
+435275924;;True
+435275925;;True
+435275926;Rua do Círio da Carregueira;False
+435275927;;False
+435275928;;False
+435275929;Travessa do Círio Novo;False
+435275930;Rua Álvaro Tavares Mora;False
+435277545;Alameda da Fonte;False
+435277547;Beco do Alecrim;False
+435277548;Beco das Flores;False
+435277549;Beco da Alegria;False
+435277555;;False
+435279095;Rua Infante Dom Francisco;False
+435279096;Rua Infante Dom Francisco;False
+435279097;;False
+435279098;;False
+440761177;Avenida Dom Manuel I;False
+440761178;Rua Infante Dom Francisco;False
+440761179;;False
+440761181;;False
+440761182;;False
+440761183;;False
+440761184;;False
+440761185;;False
+440763774;;True

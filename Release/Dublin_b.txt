@@ -1,0 +1,2021 @@
+151364;Cardiff Lane;False
+151368;Parnell Square East;True
+2294310;Dawson Street;False
+2294311;Kildare Street;False
+2294383;Johnson's Place;False
+3708465;Blackhall Place;False
+3708838;Queen Street;False
+3716924;Liam Mellowes Bridge;False
+3716925;O'Donovan Rossa Bridge;False
+3787451;;False
+3787679;Bridge Street Lower;True
+3787950;George's Quay;False
+3787951;Custom House Quay;False
+3787954;O'Connell Bridge;False
+3787955;O'Connell Street Lower;False
+3787958;O'Connell Street Lower;False
+3788065;Eden Quay;False
+3788281;Tara Street;False
+3788308;Prince's Street North;False
+3788404;O'Connell Street Upper;False
+3788405;O'Connell Street Upper;False
+3789247;North King Street;False
+3789250;May Lane;False
+3789251;Bow Street;False
+3789252;Church Street;False
+3789368;Greek Street;False
+3789372;Beresford Street;False
+3789374;Chancery Place;False
+3789571;North King Street;False
+3789572;Arran Quay;False
+3789575;Merchant's Quay;False
+3789702;Gardiner Street Lower;False
+3789703;Beresford Place;False
+3789941;North Frederick Street;True
+3789993;Shaw Street;False
+3790724;Bachelors Walk;False
+3790874;Nassau Street;False
+3790875;Nassau Street;False
+3791031;Clare Street;False
+3791033;Merrion Street Lower;False
+3791034;Merrion Square North;False
+3791207;Sandwith Street Lower;False
+3791208;City Quay;False
+3791210;Creighton Street;False
+3791291;Pearse Street;False
+3791744;Aungier Street;False
+3791745;Dame Street;False
+3791747;Wellington Quay;False
+3791905;Ormond Quay Lower;False
+3936648;Mountjoy Square North;False
+3936649;Mountjoy Square West;False
+3936650;Mountjoy Square South;False
+3936651;Mountjoy Square East;False
+3936652;Fitzgibbon Street;False
+3936660;Grenville Street;False
+3957125;Summerhill;False
+3957127;Belvedere Place;False
+3957132;Rutland Place;False
+3957136;Gardiner Place;False
+3957139;Parnell Street;False
+3979042;Great Denmark Street;False
+4074523;D'Olier Street;False
+4074527;Merrion Square South;False
+4074528;Merrion Square West;False
+4074531;Lincoln Place;False
+4074533;Lincoln Place;False
+4253728;Pearse Street;False
+4263427;Amiens Street;False
+4263428;Portland Row;False
+4287187;North Strand Road;True
+4287410;Townsend Street;False
+4290616;St Michael's Hill;False
+4375651;College Green;False
+4385385;Hanover Street East;False
+4385390;Erne Street Lower;False
+4385407;Sir John Rogerson's Quay;False
+4385831;Windmill Lane;False
+4385840;;False
+4385842;Gardiner Street Lower;False
+4395627;Granby Row;False
+4395692;Western Way;False
+4395693;Western Way;False
+4395694;Western Way;False
+4395699;Saint Mary's Place;False
+4395700;Saint Mary's Place North;False
+4395858;Berkeley Road;False
+4395890;Blessington Street;False
+4395891;Blessington Street;False
+4395952;Cavendish Row;False
+4395970;Parnell Street;False
+4395982;Dominick Street Lower;False
+4395994;Parnell Street;False
+4396046;Liffey Street Lower;False
+4396053;Capel Street;False
+4396056;Grattan Bridge;False
+4396059;Dame Street;False
+4396062;Dominick Street Upper;False
+4396064;Henrietta Street;False
+4396147;Constitution Hill;False
+4396158;North King Street;False
+4396159;Bolton Street;False
+4396161;Dorset Street Upper;False
+4401523;Aston Quay;False
+4401539;Fleet Street;False
+4401566;Temple Bar;False
+4401569;;False
+4401603;Essex Street East;False
+4401661;Eustace Street;False
+4401701;;False
+4401781;Usher's Quay;False
+4401787;;False
+4408221;Usher's Island;False
+4408238;Inns Quay;False
+4414300;O'Connell Bridge;False
+4414301;O'Connell Bridge;False
+4414302;O'Connell Bridge;False
+4472591;College Street;False
+4472592;College Street;False
+4472595;St. Stephen's Green;False
+4472600;Guild Street;False
+4472602;Seville Place;False
+4472604;Sheriff Street Upper;False
+4472606;Sheriff Street Upper;False
+4475677;;False
+4475679;Grafton Street;False
+4475686;Suffolk Street;False
+4475687;Church Lane;False
+4476041;College Green;False
+4476043;College Green;False
+4476051;St. Stephen's Green;False
+4486557;Cathedral Street;False
+4825239;Chimney View;False
+4825272;Sir John Rogerson's Quay;False
+4825310;Holles Street;False
+4825317;Sandwith Street Upper;False
+4825323;Macken Street;False
+4825324;Hanover Street East;False
+4825332;Lime Street;False
+4825341;Townsend Street;False
+4825343;Magennis Place;False
+4825344;Townsend Street;False
+4825365;Hardwicke Street;False
+4825370;Hardwicke Lane;False
+4825378;Pearse Grove;False
+4829626;Pearse Square;False
+4829628;Byrne's Lane;False
+4829640;Hogan Place;False
+4829652;Boyne Street;False
+4829715;Frederick Court;False
+4829724;Graham Court;False
+4908185;Church Street;False
+4908199;Blackhall Street;False
+4908204;Capel Street;False
+4919195;Butt Bridge;False
+4919196;;False
+4919459;Exchequer Street;False
+4919460;Digges Lane;False
+4919462;Trinity Street;False
+4919463;Saint Andrew Street;False
+4919464;Cork Hill;False
+4919468;Bull Alley Street;False
+4919471;Stephen Street Lower;False
+4919478;Clarendon Street;False
+4919487;Chatham Row;False
+4919489;Chatham Street;False
+4919491;Balfe Street;False
+4919501;Duke Lane Upper;False
+4919535;Noel Purcell Walk;False
+4919538;Fade Street;False
+4919615;William Street South;False
+4919616;Saint Andrew Street;False
+4919617;Wicklow Street;False
+4922921;Erne Place;False
+4925957;Erne Street Upper;False
+4925986;Fenian Street;False
+4926110;Grattan Street;False
+4934596;Grand Canal Street Lower;True
+4934680;Pearse Street;False
+4934681;Lombard Street East;False
+4934682;Pearse Street;False
+4934683;Macken Street;False
+4937392;Summerhill Parade;False
+5200620;Bride Street;False
+5826896;South Great George's Street;False
+5976028;Lord Edward Street;False
+5976030;Bridge Street Lower;False
+6192171;Bride Road;False
+6192247;Golden Lane;False
+6273600;Usher Street;True
+6273610;Arran Street East;False
+6273612;Mary's Lane;False
+7664730;Commons Street;True
+7849019;Molesworth Street;True
+7849021;South Frederick Street;False
+7849022;Setanta Place;False
+7990021;Geraldine Street;False
+7990025;Nelson Street;False
+8045273;Mayor Street Lower;True
+8075819;Lincoln Lane;False
+8080825;Dame Court;False
+8080835;Sean Mac Dermott Street Upper;True
+8111230;Exchange Place;False
+8260281;George's Lane;False
+8403822;Wolfe Tone Street;False
+9186547;Denzille Lane;False
+10564223;Nicholas Street;False
+10590795;Fleet Street;False
+11685016;Grangegorman Upper;False
+11685019;Rathdown Road;False
+12341213;Crinan Strand;False
+12341215;Oriel Street Upper;False
+12341216;Oriel Hall;False
+12341218;;False
+12341219;;False
+12341222;;False
+12341224;Mayor Street Lower;False
+12341232;Crinan Strand;False
+12341233;Sheriff Street Lower;False
+12341234;Talbot Place;False
+12341238;Parnell Street;False
+12341239;Parnell Street;False
+12341240;Matt Talbot Memorial Bridge;False
+12341241;Matt Talbot Memorial Bridge;False
+12341242;Spencer Dock;False
+12341245;North Wall Quay;False
+12341246;Store Street;False
+12341247;Talbot Place;False
+12341248;James Joyce Street;False
+12341254;Store Street;False
+12341256;;False
+12342182;;False
+12343284;Mayor Street Lower;False
+12343286;Mayor Street Lower;False
+12343288;Custom House Quay;False
+12343296;;False
+12854626;Ormond Quay Upper;False
+13857754;St Andrew Lane;False
+13871189;Friary Court;False
+13871198;Brown Street;True
+13871230;New Church Street;True
+13871250;Friary Grove;True
+13871252;Smithfield;False
+13871260;Nicholas Avenue;False
+13871395;Phoenix Street North;False
+13871411;Hammond Lane;False
+13878162;Holles Place;False
+13878201;Grant's Row;False
+13878225;Holles Row;False
+13878308;Wiilson's Place;False
+13878462;Boyne Street;False
+13904645;Killarney Street;False
+13904647;Buckingham Street Lower;False
+13904648;Foley Street;False
+13904649;Beaver Street;False
+13904650;Railway Street;False
+13904651;Rutland Street Lower;False
+13904652;;False
+13904654;Summerhill Place;False
+13904655;;False
+13904656;Empress Place;False
+13904657;Bella Avenue;False
+13904659;Rutland Cottages;False
+13904660;Terrace Place;False
+13904661;Bella Place;False
+13904662;Bailey's Row;False
+13904663;;False
+13904665;Moland Place;False
+13904666;Beresford Lane;False
+13904669;Beaver Close;False
+13904672;Killarney Avenue;False
+13904673;Frankfort Cottage;False
+13904674;;False
+13904675;Sean Mac Dermott Street Lower;False
+13904677;Liberty House;False
+13904678;Mabbot Lane;False
+13904679;;False
+13904682;Bella Street;False
+13904684;;False
+13904686;Portland Close;False
+13904687;Hewardine Terrace;False
+13904689;Foley Street;False
+13904690;Gloucester Place North;False
+13904691;James Joyce Street;False
+13904695;;False
+13904698;Gloucester Place Lower;False
+13904703;Rutland Cottages;False
+13904706;Rutland Street Lower;False
+13904707;Summerhill Place;False
+13904708;Buckingham Street Upper;False
+13904711;Preston Street;False
+13907388;Wood Quay;False
+13907389;Crampton Quay;False
+13987647;Merrion Close;False
+13988840;School House Lane East;False
+13988843;Molesworth Place;False
+13989314;Mark Street;False
+13989316;Bracken's Lane;False
+13989945;;False
+13991723;Spring Garden Lane;False
+13991724;Cards Lane;False
+13994983;Hawkins Street;False
+13995755;Corn Exchange Place;False
+13998362;Prince's Street South;False
+13998367;Peterson's Court;False
+13998368;Mark's Lane;False
+14039949;York Street;False
+14047755;Harbour Court;False
+14047756;Harbour Court;False
+14047758;Thomas Lane;False
+14047759;Cumberland Street North;False
+14047760;Deverell Place;False
+14047761;Northumberland Square;False
+14047763;Earl Place;False
+14047764;Frenchman's Lane;False
+14047766;Talbot Lane;False
+14047767;;False
+14047768;Britain Place;False
+14047769;Sackville Place;False
+14047770;Marlborough Place;False
+14047771;;False
+14047774;Marlborough Street;False
+14047776;;False
+14047777;Old Abbey Street;False
+14047779;Cathal Brugha Street;False
+14047782;Strongs Court;False
+14047787;Gardiner Row;False
+14047788;Grenville Lane;False
+14047789;Bath Lane;False
+14047791;Rutland Place;False
+14047793;Cavendish Row;False
+14047795;Granby Place;False
+14047796;Dominick Place;False
+14047797;Granby Lane;False
+14047799;Frederick Lane North;False
+14047800;;False
+14047801;;False
+14047802;Hardwicke Street;False
+14151839;Anne Street South;False
+14151841;Chatham Lane;False
+14151843;Clarendon Row;False
+14151846;Bow Lane East;False
+14151848;;False
+14152304;Bow Lane East;False
+14152308;Digges Lane;False
+14327271;Bridgefoot Street;False
+14327272;Bridgefoot Street;False
+14331345;James Joyce bridge;False
+14331347;;False
+14401069;Upper Abbey Street;False
+15464769;Mercer Street;False
+16247623;Cork Hill;False
+16309916;Whitefriar Street;False
+16309917;Longford Street Great;False
+16309919;Stephen Street Upper;False
+16551144;St Augustine Street;False
+18927706;Great Strand Street;False
+18928030;North Lotts;False
+19830550;Swan Yard;False
+20709041;Admiral Brown Street;False
+20848438;School Street;True
+20848454;Cornmarket;False
+20848455;Patrick Street;False
+20848457;St Nicholas Place;False
+22820608;Charlemont Parade;True
+22820609;Ulster Terrace;True
+22944424;Xavier Avenue;False
+22962976;Ship Street Little;False
+22962979;Whitefriar Place;False
+22962980;;False
+23045780;John Field Road;False
+23045781;John Field Road;False
+23045782;John Field Road;False
+23045804;Chancery Lane;False
+23050580;;False
+23050581;;False
+23050596;Bride Close;False
+23050597;Bride Close;False
+23050598;Bride Close;False
+23050725;Newcomen Avenue;False
+23050726;Clinch Court;False
+23050727;Newcomen Avenue;False
+23086918;Mary's Abbey;False
+23395388;John Dillon Street;False
+23582497;Erne Place Little;False
+23721226;Crane Lane;False
+23920340;O'Connell Bridge;False
+23920383;O'Connell Bridge;False
+23941602;Bachelor's Way;False
+24231262;O'Donovan Rossa Bridge;False
+24231263;O'Donovan Rossa Bridge;False
+24338010;Dean Swift Square;False
+24349650;Longford Street Little;False
+24450825;Wellington Street Lower;True
+24450826;Paradise Place;True
+24450827;North Strand Road;False
+24601278;Luke Street;False
+24601280;Gloucester Street South;False
+24687121;Drury Street;False
+24687584;Mercer Street;False
+24769545;Hendrick Street;False
+24807207;Haymarket;False
+24953717;Duke Street;False
+24953749;Westmoreland Street;False
+24960743;D'Olier Street;False
+24973955;Pearse Street;False
+24973956;College Street;False
+25009776;Loftus Lane;False
+25094727;Bachelors Walk;False
+25325810;South Cumberland Street;False
+25504731;Parliament Row;True
+25631021;Asdill's Row;False
+25631086;;False
+25631097;Bedford Row;False
+25631272;Essex Gate;False
+25683461;Clarence Mangan Square;False
+25787911;Abbey Cottages;False
+25787912;Byrns Lane;False
+26143790;Moore Street;False
+26143791;Sampsons Lane;False
+26143792;Henry Place;False
+26143903;Moore Lane;False
+26500151;Charleville Mall;False
+26545993;Leinster Street South;False
+26602093;Glovers Alley;False
+27217681;Rainsford Street;False
+27217682;Rainsford Avenue;False
+27217683;Hanbury Lane;False
+27217684;Saint Catherine's Lane West;False
+27220219;;False
+27290949;Constitution Hill;False
+27806076;Exchange Street Lower;False
+27806087;Copper Alley;False
+27806145;Exchange Street Upper;False
+28616375;Ossory Road;False
+29268814;;False
+29268818;;False
+29268819;;False
+29268824;Physiology Square;False
+29268825;;True
+29268826;;True
+29269986;;True
+29269989;;True
+29269990;;True
+29269992;;True
+29269998;;True
+29269999;Botany Bay;True
+29270019;;True
+29270040;;True
+29270136;;True
+29270137;Dawson Lane;True
+29270139;Kildare Place;True
+29333270;Berkeley Place;False
+29333273;Wellington Street Upper;False
+29333277;Myrtle Street;False
+29333376;Parnell Place;False
+29333723;Fontenoy Street;False
+30046888;Northbrook Avenue Upper;False
+30046891;Northbrook Terrace;False
+30454632;North Great Clarence Street;False
+30454633;;False
+30454634;William Street North;False
+30454635;William Street North;False
+30454724;;False
+30454725;Ossory Road;False
+30454726;Ossory Road;False
+30460985;Moss Street;False
+30466177;Hogan Avenue;False
+30466178;Greenore Court;False
+30789748;Merrion Square North;False
+30988140;Oxmantown Lane;False
+30988141;Hendrick Place;False
+30988143;Kirwan Street;False
+30988144;Kirwan Street Cottages;False
+30988145;Kirwan Street Cottages;False
+31004181;Benburb Street;False
+31028273;Grattan Bridge;False
+31028274;Grattan Bridge;False
+31028290;Parnell Street;False
+31897170;Strandville Avenue;False
+32117786;Phibsborough Road;False
+32866834;North Great George's Street;True
+32866836;North Great George's Street;False
+33466812;Hibernian Avenue;True
+33466813;Gaelic Street;True
+33466814;Hyacinth Street;True
+33792370;;False
+33920769;Jervis Street;False
+33921278;Mary Street Little;False
+33969753;Chancery Street;False
+34855952;Samuel Beckett Bridge;False
+34855953;Samuel Beckett Bridge;False
+35059863;Wolfe Tone Street;False
+35060878;Ormond Square;False
+35060879;;False
+35060880;George's Hill;False
+35060881;Saint Michan's Street;False
+35078310;Litton Lane;False
+35078311;Meetinghouse Lane;False
+35078314;Ormond Square;False
+35078315;Little Strand Street;False
+35078316;Ormond Square;False
+35078319;Halston Street;False
+35078320;Little Green Street;False
+35078321;Green Street;False
+35078322;Halston Street;False
+35078324;Campbell's Court;False
+35078325;Anglesea Row;False
+35081617;Chapel Lane;False
+35081619;Chapel Lane;False
+37264302;Adair Lane;False
+37264303;Anne's Lane;False
+37264306;Anne's Lane;True
+37264312;Exchange Court;True
+37264313;Cork Hill;True
+37264314;Chancery Lane;False
+37264795;Crampton Court;False
+37690117;Sir John Rogerson's Quay;False
+37690161;Creighton Street;False
+37691371;Misery Hill;False
+37692157;Parnell Street;False
+37692198;Gardiner Street Middle;False
+37692199;Summerhill;False
+37692282;Mountjoy Street;False
+37692306;Dorset Street Upper;False
+37692391;North Frederick Street;False
+37692415;Cavendish Row;False
+37692490;Abbey Street Lower;False
+37692492;Beresford Place;False
+37720965;North Strand Road;False
+37721078;Pearse Street;False
+37721903;Usher Street;False
+37721991;George's Lane;False
+37721992;George's Lane;False
+37722081;Mary Street;False
+37722122;Middle Abbey Street;False
+37722158;Island Villa;False
+37746962;Gardiner Street Lower;False
+37747137;Dorset Street Upper;False
+37747498;Dorset Street Upper;False
+37747647;Dorset Street Upper;False
+37747648;Temple Street North;False
+37865098;Parliament Street;False
+37865178;Amiens Street;False
+37865179;Amiens Street;False
+37865180;Amiens Street;False
+37866820;Portland Row;False
+37866821;North Strand Road;False
+37955513;Middle Abbey Street;False
+38062537;Coburg Place;False
+38062538;Langrishe Place;False
+38063129;Broadstone;True
+38063199;;True
+38090685;Wilson's Terrace;False
+38090686;Carmans Hall;False
+38090689;Schoolhouse Lane West;False
+38090691;Spencer Row;False
+38090692;Spencer Row;False
+38090693;Spencer Row;False
+38167515;Johnson's Place;False
+38265426;Greenore Terrace;False
+38265427;Carlingford Parade;False
+38358177;Little Britain Street;False
+38358412;Spencer Dock Bridge;False
+38532080;Rostrevor Terrace;False
+38532081;Rostrevor Court;False
+38532082;Eblana Villas;False
+38554251;Grand Canal Street Lower;False
+38554538;Pearse Square;False
+38554539;Pearse Square;False
+38574542;Grattan Place;False
+38574544;Hogan Place;False
+38574546;Erne Terrace (Rear);False
+38574548;Erne Terrace (Front);False
+38574621;Sandwith Street Upper;False
+38587823;Usher's Island;False
+38587899;Ellis Quay;False
+38637143;Erne Place Lower;False
+39022773;White's Lane;False
+39117801;Summer Place;True
+39179549;Morning Star Avenue;True
+39255345;Burgess Lane;False
+39255348;Smithfield;False
+39255350;Red Cow Lane;True
+39476007;;False
+39476010;Rutland Place North;False
+39944031;;True
+39944032;;True
+39944033;;True
+39944034;;True
+39944035;;True
+39994843;Middle Abbey Street;False
+39994845;;False
+39994846;Charles Street West;False
+39994849;Chancery Place;False
+39994851;Jervis Lane Upper;False
+40047164;Downling's Court;True
+40047168;Lombard Court;True
+40093971;;False
+40260270;North Circular Road;False
+40373309;;False
+40564483;;False
+40641511;St Augustine Street;False
+40701185;Harry Street;False
+41191769;Dawson Court;False
+41228866;Primrose Street;False
+41592105;Royal Canal Bank;False
+41592113;Primrose Avenue;False
+41592114;Broadstone Place;False
+41592115;Broadstone Avenue;False
+41592116;;False
+41592118;Mountjoy Street Middle;False
+41592119;Palmerston Place;False
+41592120;Saint Mary's Avenue North;False
+41592121;;False
+41592123;Blessington Lane;False
+41592124;;False
+41772639;Stable Lane;False
+41772640;Arran Street West;False
+41772641;Smithfield;False
+41772642;;False
+41772643;Coke Lane;False
+41772644;Lincoln Lane;False
+41851355;Westland Row;False
+41851356;Westland Row;False
+41851537;Beresford Place;False
+41917642;St. Andrew's Court;False
+42239605;Hardwicke Place;True
+42239606;George's Place;True
+42258797;;True
+42293715;Berkeley Avenue;True
+42293717;Saint Joseph's Parade;False
+42293718;Saint Joseph's Parade;False
+42293719;Adair Court;False
+42293721;;False
+42293722;;False
+42293723;Nerney's Court;False
+42293726;Kelly's Row;False
+42294217;Saint Mary's Avenue North;False
+42294218;Lombard Court;False
+42294221;Nerney's Court;False
+42354218;O'Connell Bridge;True
+42471878;St Michaels Close;False
+42471879;Cross Lane South;True
+42471880;St Audeon's Terrace;True
+42471881;St Michaels Close;False
+42471882;Borris Court;False
+42526536;Clare Lane;False
+42561279;;False
+42638928;Swift's Row;False
+42879970;Meade's Terrace;False
+42879971;Hogan Place;False
+42879972;The Courtyard;False
+42879973;;False
+42880481;Dame Lane;False
+42955377;Noel Purcell Walk;False
+43100899;Gardiner Street Lower;False
+43137181;Parnell Square North;False
+43148951;;False
+43148952;;False
+43249665;;True
+43316112;Essex Street West;False
+43538577;Dame Street;False
+43538578;Copper Alley;False
+43538582;Essex Street East;False
+43538584;Fownes Street Upper;False
+43979761;College Green;False
+43979762;Church Lane;False
+43981320;Hawkins Street;False
+43981321;Burgh Quay;False
+43984178;;False
+44000963;;False
+44069390;Auburn Street;False
+44069391;Broadstone Place;False
+44069392;Shamrock Street;False
+44075407;;False
+44075419;;False
+44075425;;False
+44075974;;False
+44115852;Earl Street South;False
+44115853;Earl Street South;False
+44156325;Library Square;True
+44156332;;True
+44639363;New Square;False
+44641064;;False
+44658727;Seville Place;False
+44658728;Sheriff Street Upper;False
+44658729;Seville Place;False
+44668398;Guild Street;False
+44705512;Sheriff Street Lower;False
+44705513;Sheriff Street Lower;False
+44707920;South Cumberland Street;False
+44707923;South Cumberland Street;False
+44851571;Parnell Street;False
+45530924;Canon Lillis Avenue;True
+45530925;Canon Lillis Avenue;True
+45530928;Sheriff Street Lower;True
+45530929;Oriel Street Lower;True
+45530930;Oriel Street Lower;True
+45530939;;True
+45530940;;True
+45619532;Fourth Avenue;False
+45619542;Seville Terrace;False
+45619551;Third Avenue;False
+45619555;Bellman's Walk;False
+45619556;Bellman's Walk;False
+45619558;Saint Laurence Place East;False
+45619559;Emerald Street;False
+45619563;Emerald Place;False
+45619579;Ferryman's Crossing;False
+45619582;First Avenue;False
+45619593;Second Avenue;False
+45619646;Bellman's Walk;False
+45755442;Sir John Rogerson's Quay;False
+45825602;Custom House Harbour;False
+46055277;Capel Street;False
+46160694;Samuel Beckett Bridge;False
+46160695;Samuel Beckett Bridge;False
+46160696;Cardiff Lane;False
+46161964;Windmill Lane Apartments;False
+46161965;Windmill Lane Apartments;False
+46895350;Mountjoy Square East;False
+46933051;Misery Hill;False
+48461131;Liam Mellowes Bridge;False
+48461132;Liam Mellowes Bridge;False
+48482641;Arbour Place;False
+48483331;St Augustine Street;False
+48483332;Hanover Lane;False
+48964316;Greenore Court;True
+48985672;New Street North;False
+48985673;Father Matthew Square;False
+48985674;Father Matthew Square;False
+48985678;Church Avenue;False
+48985679;Church Terrace;False
+48985680;Stirrup Lane;False
+48985681;;False
+49185439;Poolbeg Street;False
+49185440;Townsend Street;False
+49710026;;False
+49710029;;False
+49710030;;False
+49710032;;False
+49710567;;False
+49710568;;False
+49710569;;False
+49734440;Mountjoy Street;True
+49833759;;True
+49833764;;True
+49921739;;False
+49961184;O'Connell Street Lower;False
+49961185;Beresford Place;False
+49961186;Beresford Place;False
+49961187;Parnell Square East;False
+49961188;Parnell Square North;False
+49961189;O'Connell Street Upper;False
+49974585;Townsend Street;False
+49974586;Lombard Street East;False
+49998776;;False
+50013158;;False
+50013159;;False
+50014737;;False
+50014738;;False
+50014739;;False
+50014740;;False
+50014741;;False
+50014742;;False
+50016333;;False
+50126853;;False
+50126854;;False
+50214631;Talbot Street;False
+51207535;;False
+52288972;Marlborough Street;False
+52303421;Temple Cottages;True
+52321639;Linenhall Terrace;True
+52321640;Lisburn Street;True
+52321641;North King Street;True
+52321642;Linenhall Parade;True
+52321643;Ball's Lane;False
+52321644;Linenhall Street;False
+52324405;Church Street Upper;False
+52324406;Lurgan Street;False
+52375057;Robert Emmet Close;False
+52375059;Engine Alley;False
+52375060;Catherine Street;False
+52375061;Garden Lane;False
+52375062;Crosstick Alley;False
+52375063;Crosstick Alley;False
+52375065;Mark's Alley West;False
+52375066;Spitalfields;False
+52375067;Hanover Street West;False
+52375068;Ash Street;False
+52375071;Swift's Alley;False
+52375072;Molyneaux Yard;False
+52375073;Vicar Street;False
+52375074;;False
+52375077;;False
+52375079;Usher Street;False
+52375080;;False
+52375081;Nicholas Street;False
+52375082;;False
+52822147;Blackhall Place;False
+52879957;College Green;False
+52879958;Cathal Brugha Street;False
+52881220;Thomas Street;False
+52881222;Christchurch Place;False
+52881850;Parnell Street;False
+53561077;Magennis Square;False
+53750891;Dawson Street;False
+53750892;Kildare Street;False
+55200268;Brunswick Street North;False
+55200269;;False
+55333288;City Quay;False
+55668409;Carrolls Court;False
+55814730;Richmond Cottages North;False
+55979303;College Green;False
+56052076;;True
+56427074;;True
+56427581;;True
+56427582;;True
+56427584;;True
+56427585;;True
+56427586;;True
+56681847;Thomas Street;False
+56681848;Bridgefoot Street;False
+56760104;Summerhill;False
+57375222;;False
+57936323;;False
+58326860;;False
+58403833;Custom House Quay;False
+58403835;Custom House Quay;False
+58403837;Custom House Quay;False
+58403838;Custom House Quay;False
+58403839;;False
+58403844;Custom House Quay;False
+59172069;John Street North;False
+59183273;North Wall Quay;False
+59183276;Scherzer Lifting Bridge;False
+59183292;North Wall Quay;False
+59183296;North Wall Quay;False
+59183298;Scherzer Lifting Bridge;False
+59183301;North Wall Quay;False
+59433203;North Richmond Street;False
+59433209;Strandville Avenue;False
+59433210;Strandville Place;False
+60010826;Werburgh Street;False
+60693101;;True
+60758566;Joshua Lane;True
+61717563;Macken Street;False
+61717564;Macken Street;False
+61717757;Nerney's Court;False
+61845134;St Andrew Lane;False
+62000568;;False
+64055562;Custom House Harbour;False
+64055563;Custom House Harbour;False
+64055564;Custom House Harbour;False
+64055566;Custom House Harbour;False
+64226715;Stanhope Street;True
+64270030;;False
+64270035;Fitzwilliam Place North;False
+64270037;Marne Villas;False
+64270039;Grangegorman Lower;False
+64270136;;False
+64270137;Coleraine Street;False
+64270139;Catherine's Lane North;False
+64270140;Prebend Street;False
+64270141;Prebend Street;False
+64361352;Brunswick Street North;True
+67139158;Saint Mary's Terrace;True
+67139159;Saint Mary's Place North;False
+67139161;Dominick Lane;False
+67139163;Long Lane;False
+67139249;;False
+68747753;College Green;False
+68747762;College Green;False
+68748138;College Green;False
+68748484;Nicholas Street;False
+70406680;Matt Talbot Memorial Bridge;False
+70408222;Custom House Quay;False
+70410612;Eden Quay;False
+70410634;George's Quay;False
+70595235;Tara Street;False
+70595236;Hawkins Street;False
+70595240;Tara Street;False
+73654299;Pearse Square West;False
+73680621;D'Olier Street;False
+74213970;;True
+74213972;Westland Square;True
+74232837;Pearse Street;False
+74232843;Hawkins Street;False
+74233405;Grafton Street;False
+74535386;Sandwith Street Upper;True
+74600922;;True
+75450412;Brabazon Square;False
+75450415;Meath Square;False
+75450417;Gray Square;False
+75450419;Reginald Square;False
+75589200;Henrietta Lane;False
+75589201;Yarnhall Street;False
+75589202;Henrietta Place;False
+77499027;Pimlico Cottages;False
+77499031;Brabazon Street;False
+78366805;Erne Place;False
+80439756;Henrietta Place;False
+80448023;Berkeley Street;False
+80450004;Saint Patrick's Place;False
+80450007;Saint Laurance Place;False
+80450010;Saint Michael's Place;False
+80478293;Graham's Row;False
+80479196;Saint Joseph's Place;False
+80479198;Saint Joseph's Place;False
+80479200;Saint Joseph's Place;False
+80479201;Blessington Place;False
+80479202;Saint Joseph's Place;False
+80479204;Saint Joseph's Place;False
+80482076;King's Inns Court;False
+81175883;Matt Talbot Memorial Bridge;False
+82465209;Hotel Yard;False
+83485717;Proby's Lane;False
+83769337;;False
+83805216;Custom House Quay;False
+83805234;Memorial Road;False
+83806415;Beresford Place;False
+83806426;Gardiner Street Upper;False
+84575020;;True
+84678064;Blessington Place;False
+85418325;Blessington Court;False
+85418326;Blessington Court;False
+85418329;Blessington Court;False
+85418330;Blessington Court;False
+85418338;May Cottages;False
+85422698;;False
+85422702;;False
+85422703;King's Inns Court;False
+85422709;;True
+85422710;Wellington Place North;True
+85422712;King's Inns Court;True
+85422715;King's Inns Court;True
+85422718;Royal Canal Terrace;True
+85422719;;True
+85422721;;True
+85422723;;True
+85422724;King's Inns Court;True
+85422726;;True
+85422728;;True
+85422729;;True
+85485924;;True
+85485926;;True
+85485931;;True
+86696476;Blackhall Street;False
+88241228;;False
+88241229;Custom House Harbour;False
+88241240;Custom House Harbour;False
+88241250;Custom House Harbour;False
+88241260;Custom House Harbour;False
+94895438;Bass Place;True
+94895439;;True
+98070083;;False
+98070097;;False
+98070099;;False
+98070106;;False
+98070111;Busáras;False
+98767243;;False
+102694935;;False
+102694955;;False
+102694968;;False
+105885111;;False
+110223239;Duke Lane Lower;False
+110223240;Duke Street;False
+111286353;Eccles Street;False
+111602061;Frederick Lane North;False
+112410779;Hill Street;False
+113549155;Hogan Avenue;True
+113552215;Clarence Place Great;True
+113552216;Clarence Place Great;True
+113556119;;True
+113556122;;True
+113556123;;True
+113556125;;True
+114207151;Beresford Place;False
+114207152;Memorial Road;False
+114207514;;False
+114207515;;False
+114208059;Beresford Place;False
+114208220;Marlborough Street;False
+114208221;Findlater Place;False
+114208222;Champions' Avenue;False
+114208223;Marlborough Street;False
+114208262;Temple Lane North;False
+114208263;Gardiner Lane;False
+114277935;Belvedere Court;True
+115656105;St. Francis Square;False
+115656107;Hanover Square;False
+121166756;Sean Mac Dermott Street Upper;False
+123715787;Hardwicke Place;False
+125814598;Stoneybatter;False
+125814738;Stoneybatter;False
+125822009;Abbey Street Lower;False
+125863788;Essex Quay;False
+125864859;Fishamble Street;False
+125865744;Talbot Street;False
+125872496;George's Quay;False
+125872727;Matt Talbot Memorial Bridge;False
+125872847;Merrion Street Upper;False
+127200696;Blackhall Court;False
+127219363;Newmarket Street;False
+127219367;Coombe Court;False
+127220738;Liberty Square;False
+127546529;Winetavern Street;False
+128005550;Parnell Square North;False
+128005879;Charles Lane;False
+128005880;Tyrrell Place;False
+128093880;Poolbeg Street;False
+128396774;Great Charles Street North;False
+128396775;Sean O'Casey Avenue;False
+128396776;Sean O'Casey Avenue;False
+128396777;Summer Street North;False
+128450676;Island Street;False
+128570043;Christchurch Place;False
+128570947;Bridgefoot Street;False
+128570949;Wormwood Gate;False
+128911064;Liffey Street;False
+128944693;Dame Lane;False
+128947808;North Strand Road;False
+129211781;Back Lane;False
+129211782;Back Lane;False
+129211785;Bridge Street Upper;False
+129211789;Cook Street;True
+129211792;Davis Place;True
+129211795;Dillon Place South;False
+129211799;Francis Street;False
+129211803;Gray Street;False
+129211804;Gray Street;False
+129211807;Hanover Lane;False
+129211815;John Dillon Street;False
+129211817;John Street West;False
+129211818;John's Lane West;False
+129211824;Marrowbone Lane;False
+129211826;Meath Place;False
+129211827;Meath Street;False
+129211837;Pimlico;False
+129211838;Power's Square;False
+129211839;Reginald Street;False
+129211840;Reginald Street;False
+129211842;Ross Road;False
+129211847;Summer Street South;False
+129211848;The Coombe;False
+129211851;Thomas Davis Street;False
+129211857;;False
+129211858;;False
+129211860;;False
+129212225;Anglesea Street;False
+129212226;Aston Place;False
+129212227;Bedford Lane;False
+129212229;Cope Street;False
+129212230;Foster Place;False
+129212232;Price's Lane;False
+129212233;Sycamore Street;False
+129217467;Brunswick Place;False
+129217476;Harmony Row;False
+129217480;South Cumberland Street;False
+129217481;Westland Row;False
+129750571;Leinster Lane;False
+129774671;Bonham Street;False
+129774679;Leinster Market;False
+130277328;North Strand Road;False
+132068706;North Great Clarence Street;False
+132068707;;False
+132759854;Mountjoy Street;False
+133748461;;False
+133748463;;False
+133897256;Swan alley;True
+133909794;Cornmarket;False
+135398926;;False
+135513954;Mayor Street Lower;False
+135582840;Anne Street North;False
+135582842;Cuckoo Lane;False
+135582944;Paul Street;False
+135582946;;False
+136493478;O'Rahilly Parade;False
+136553370;Charleville Avenue;False
+137667338;Braithwaite Street;False
+138406903;Dunne Street;False
+138406904;Dunne Street;False
+140310097;Bessborough Avenue;False
+143278854;Werburgh Street;False
+143866293;Bridge Street Upper;False
+143866298;Christchurch Place;False
+143866302;Christchurch Square;False
+143866305;Cornmarket;False
+143866308;High Street;False
+143866311;Lamb Alley;False
+143866314;Nicholas Street;False
+143866317;Patrick Street;False
+143866321;Patrick Street;False
+143866323;;False
+147075690;Parnell Street;False
+147075696;Capel Street;False
+147077493;King's Inn's Street;False
+150800556;Blessington Street;False
+150800557;Dorset Street Upper;False
+150800558;Dorset Street Upper;False
+150897117;;False
+150897118;;False
+153254952;;True
+153296489;;True
+153296490;;True
+153296494;;True
+153296495;;True
+153340544;Brunswick Street North;False
+153340545;Sir John Rogerson's Quay;False
+153340546;Beresford Place;False
+153360305;;False
+153360306;;False
+154110398;;False
+161492100;;False
+161492103;;False
+162745564;North Wall Quay;False
+162745567;Gardiner Street Lower;False
+162745568;Sheriff Street Lower;False
+164588369;Spencer Bridge;False
+168101450;;True
+168174693;Harcourt Row;True
+174092685;Aldborough Court;False
+174092688;Shamrock Cottages;False
+174092689;Shamrock Place;False
+174092690;Shamrock Terrace;False
+174092694;;False
+174092695;;False
+174092696;;False
+174092698;;False
+174092699;;False
+175468381;Harbour Court;True
+182856021;;True
+186500976;;False
+189829515;;True
+192108786;O'Connell Street Upper;False
+192108787;Parnell Street;False
+192108789;Cathal Brugha Street;True
+227677863;Gloucester Street South;True
+227704823;Anne's Lane;True
+227767347;Bridge Street Upper;True
+227767349;High Street;False
+227817395;Coombe Court;False
+227827217;;False
+227827218;;False
+227827838;Luke Street;False
+227827839;Luke Street;False
+227983488;;False
+228196435;Leinster Market;False
+228196436;Leinster Market;False
+228196437;Leinster Market;False
+228196678;Leinster Market;False
+228211997;;False
+228238790;;False
+228276373;City Quay;False
+228276375;;False
+228313910;;False
+228313911;;False
+228313912;;False
+228762778;;True
+228762779;;True
+228793725;;True
+228968678;;False
+228970885;Glendenning Lane;False
+228970886;Glendenning Lane;True
+228970887;Glendenning Lane;True
+229049446;;True
+229061149;Capel Street;False
+229061150;Capel Street;False
+229061163;Ryder's Row;False
+229119087;;True
+229119088;Bachelor's Way;False
+229119089;Parnell Street;False
+229119090;Bachelor's Way;False
+229142473;;True
+229143705;;True
+229316748;Glovers Alley;False
+229316785;Glovers Alley;False
+229376150;Meath Market;False
+229727179;Eden Quay;False
+229727180;;False
+229727181;;False
+229883912;;False
+229883913;Back Avenue;False
+229999816;;False
+230566866;;False
+230568345;;False
+231109908;;False
+231109909;;False
+231109910;;False
+231109911;;False
+231109912;;False
+231109913;;False
+231109914;;False
+231109915;;False
+231109916;;False
+231109917;;False
+231114822;;False
+231119505;;False
+231119507;;False
+231119519;;False
+231121220;;False
+231154812;;False
+231192209;;False
+231204891;;False
+231250675;Merrion Close;False
+231250676;Merrion Close;False
+231250681;Merrion Street Lower;False
+231323159;;False
+231340188;Fenian Street;False
+231340190;Westland Row;False
+231340191;Westland Row;True
+231436285;;False
+231436286;;False
+233034040;Patrick Heeney Crescent;False
+233037567;Buckingham Street Lower;False
+233037569;Dunne Street;False
+233075610;;False
+233075611;;False
+233153575;Townsend Street;False
+233234720;;False
+233486966;;False
+233487959;Old Abbey Street;False
+233487960;Old Abbey Street;False
+233489754;;False
+233625226;;False
+233674059;;False
+233718296;;False
+233718297;;False
+233718298;;False
+233718299;;False
+233718300;;False
+233790931;Harbour Court;False
+233790932;Harbour Court;False
+233790933;Harbour Court;False
+233790934;Harbour Court;False
+233804883;;False
+233804884;;False
+233804885;;False
+234119655;;False
+237581098;;False
+237581101;;False
+237581107;;False
+237581110;;False
+238740928;Clarendon Row;False
+238740937;;False
+242586599;Bridge Street Lower;False
+242586600;Merchant's Quay;False
+243418478;;False
+244832511;Marlborough Court;False
+244844370;Capel Street;False
+245002793;Matt Talbot Court;False
+245002854;;False
+245002855;;False
+245002856;;False
+245076120;Westland Court;False
+245129254;;False
+250305899;;True
+250305900;;True
+251020950;;False
+251421388;Smithfield;False
+254369234;;False
+254369235;;False
+254369236;;False
+254369237;;False
+254369238;;False
+254372188;Townsend Street;False
+257702077;Bracken's Lane;True
+257772818;Harcourt Row;True
+257772820;Harcourt Row;True
+260607181;Grand Canal Quay;False
+261557471;Western Way;False
+261557474;;False
+261557478;;False
+261557486;;False
+263347946;;False
+264184746;;False
+264672536;;False
+264672537;;False
+264876950;Ship Street Great;False
+264901993;Werburgh Street;False
+265511640;;False
+265511649;;False
+265511650;Bridewell Garda Station;True
+268965318;;False
+270917102;Park Lane;False
+270917103;;False
+271093435;Rosie Hackett Bridge;False
+271165125;Burgh Quay;False
+271946365;Jervis Lane Lower;False
+271946366;;False
+272008417;;False
+272008418;;False
+274240513;Boston Sidings access road;True
+275489577;;True
+275489578;;True
+275506897;Erne Street Upper;False
+275506898;Erne Street Upper;False
+275514020;;False
+275514022;;False
+275514024;;False
+275514025;;False
+275515761;;True
+275520130;;True
+275520132;;True
+278927967;;True
+279504520;;True
+279702284;;False
+279702286;;False
+279902067;;False
+282243995;Guild Street;False
+282243997;Spencer Dock Bridge;False
+282243999;;False
+282244000;;False
+282314680;;False
+282314681;;False
+282317508;Erne Street Upper;False
+282317511;Sandwith Street Upper;True
+282318946;;False
+282571110;;False
+282571111;Rosie Hackett Bridge;False
+282571113;;False
+282571115;Rosie Hackett Bridge;False
+283027965;;True
+283027967;;True
+283027968;;True
+283591404;;True
+283683332;;False
+283940936;;False
+284252268;;False
+284297618;The Narrows;False
+284308270;Botany Square;False
+284403517;;False
+284403518;;False
+284449980;;False
+284812554;;False
+284812555;;False
+285196400;;False
+285487937;Parade Ground;False
+285487940;Eden Quay;False
+285487948;Rosie Hackett Bridge;False
+285944271;;False
+285944272;;False
+285944273;;False
+285944274;;False
+285944275;;False
+285944276;;False
+285944277;;False
+285944278;;False
+285944279;;False
+286884619;;False
+287373378;Blackhall Street;False
+288931984;;False
+288932881;;False
+290548890;;False
+290548891;;False
+290548892;;False
+290556058;;False
+290642261;;False
+291344731;;False
+291344732;;False
+292056033;Upper Castle Yard;False
+292236197;Essex Quay;False
+292662748;Stanley Street;False
+292662749;;False
+292662750;;False
+292662751;;False
+294367690;;False
+294367691;;False
+294367692;;False
+294367693;;False
+294367694;;False
+294367695;;False
+294367696;;False
+294367698;;False
+294367699;;False
+294367700;;False
+294367701;;False
+294367702;;False
+294367703;;False
+295091734;;False
+295881891;;True
+295881892;;True
+295881893;;True
+295881894;;True
+296005381;;True
+296005382;;True
+296573425;;True
+296573426;;True
+296573427;;True
+296573593;;True
+296573594;;True
+296573596;;True
+296576694;;True
+296747002;;True
+296747003;;True
+296747004;;True
+300407826;;True
+301420560;;False
+301420561;;False
+301420562;;False
+304455527;Bertram Court;False
+304489677;;False
+304634278;College Green;False
+305711589;;False
+306917239;;False
+306917243;;False
+306917245;Summer Arch;False
+306917248;;False
+306917249;Healy Street;False
+306917250;;False
+306917251;Thomson Cottages;False
+306917252;Simmons Place;False
+306917253;;False
+306917254;;False
+306917255;Summer Arch;False
+306917256;Summer Arch;False
+306926550;;False
+306926553;;False
+307284096;;False
+307284097;;False
+307284098;;False
+307284099;;False
+307382656;Madden's Court;False
+307382657;Madden's Court;False
+307382658;Madden's Court;False
+307382660;;False
+307799431;;False
+307805528;St. Stephen's Green;False
+307807506;;False
+307807507;;False
+308991478;;False
+308991481;;False
+308991482;;False
+308991483;;False
+310196055;North King Street;True
+310196056;North King Street;False
+310196057;;False
+310196058;;False
+310423001;;False
+310423002;Aldborough Place;False
+310423003;;False
+310423004;Catherine Court;False
+310423010;Bailey's Court;False
+312344191;;True
+312344192;;True
+312344193;;False
+312344194;;True
+313241685;;False
+313543957;;False
+313590902;The Rubrics;False
+313590903;Library Square;False
+314537004;;False
+314875565;;False
+315039862;;True
+315039866;Dublin Castle;True
+315594646;;False
+315594647;;False
+315594648;;False
+315594650;;False
+315594651;;False
+317003246;Christchurch Place;False
+317003249;South Great George's Street;False
+317003256;Liam Mellowes Bridge;False
+317027066;Little Britain Street;True
+317027067;North King Street;True
+317127411;North King Street;False
+317183878;Constitution Hill;False
+317183903;Western Way;False
+317219089;Butt Bridge;False
+317219094;Marrowbone Lane;False
+317219095;Newcomen Bridge;False
+319188637;Frankfort Cottage;False
+319624628;Parnell Square East;False
+325368598;;False
+325368599;;False
+325368600;;False
+327144419;Misery Hill;False
+327144420;Misery Hill;False
+327805506;Grattan Street;False
+329376874;;False
+329656698;;False
+330482280;;False
+330482281;;False
+330482282;;False
+332866617;;False
+332866618;;False
+332866619;;False
+332866620;;False
+332866621;;False
+332866622;;False
+332866623;;False
+334138114;Arbour Hill;False
+338040884;Western Way;False
+338075835;Parnell Square West;False
+339411486;;False
+340535096;;False
+340535097;;False
+340539235;;False
+341333904;;False
+341335944;;False
+341335946;;False
+343896445;Thomas Lane;False
+343896446;Thomas Lane;False
+344524667;O'Connell Bridge;False
+344761137;;False
+347259821;;True
+350218103;Guildford Place;True
+350242371;;True
+350306662;Dublin Castle;True
+350494792;;True
+350494793;;True
+350497554;;True
+350897485;;True
+351495035;;False
+351694868;;False
+351695873;;False
+351697440;Catherine Court;False
+352194287;;False
+352200340;;False
+352200342;;False
+352200345;;False
+352376956;St. Stephen's Green;False
+353628014;;False
+353633113;;False
+354359921;Amiens Street;False
+354359922;Amiens Street;False
+354364719;;False
+354369976;Harbourmaster Place;False
+356748752;;False
+356748753;Parnell Street;False
+356871142;;False
+357010634;;False
+357691238;;False
+358238171;;False
+358238172;;False
+358260291;;False
+358260293;;False
+358531413;;False
+359315101;;False
+359315102;;False
+359385064;;False
+359385065;;False
+360313819;Queen Street;False
+360313820;Church Street Upper;False
+360313821;High Street;False
+360313822;High Street;False
+360313823;Bride Street;False
+360319693;Parnell Street;False
+360319695;Bolton Street;False
+360781898;;False
+361409607;Arran Quay;False
+361409608;Arran Quay;False
+361409609;Queen Street;False
+361585261;Bridge Street Upper;False
+362140293;;True
+362140295;;True
+362140297;;True
+362939722;Moss Street;False
+362939723;Moss Street;False
+362939724;Pearse Street;False
+362939725;Tara Street;False
+362939730;;False
+362954593;Bertram Court;False
+362954594;Bertram Court;False
+362954596;;False
+362967234;Grand Canal Street Lower;False
+362967235;Grand Canal Street Lower;False
+362967236;Macken Street;False
+362967237;Sandwith Street Lower;False
+362967238;Westland Row;False
+363526160;;True
+363537043;;True
+363537421;;True
+363537426;;True
+363539322;;True
+363539323;;True
+363539324;;True
+365164673;;True
+365164674;;True
+365164675;;True
+365839069;;True
+365839070;Terrace Place;True
+365839072;;True
+365974509;;True
+366222937;Nicholas Street;False
+366869433;;False
+366993719;;False
+369359214;Mullinahack;True
+369359215;;True
+369359216;;True
+369359217;;True
+369359219;;True
+369445612;Friary Avenue;False
+369564011;South Great George's Street;False
+369622779;Christchurch Place;False
+369622780;Christchurch Place;False
+369652829;Bride Street;False
+369652830;Stephen Street Upper;False
+369652831;Whitefriar Street;False
+369897003;O'Connell Bridge;False
+369897004;O'Connell Street Lower;False
+369897005;Parnell Street;False
+369977730;Patrick Street;False
+369988984;Swift's Alley;False
+369988985;The Coombe;False
+370381577;Constitution Hill;False
+372152650;;False
+372152651;;False
+372223886;Whitefriar Street;False
+372226836;Castle Street;False
+372226842;Copper Alley;False
+372226854;Exchange Street Upper;False
+372226859;Fishamble Street;False
+372226866;Francis Street;False
+372226870;Francis Street;False
+372226873;Nicholas Street;False
+372226878;Stephen Street Upper;False
+372226881;The Coombe;False
+372245387;Arran Street East;False
+372245388;Capel Street;False
+372245389;Hill Street;False
+372245390;Mountjoy Square West;False
+372245391;Parnell Street;False
+372256216;Church Street;False
+372256221;Mary's Lane;False
+372284307;Fenian Street;False
+372284310;O'Connell Bridge;False
+372284311;Sandwith Street Lower;False
+372451858;;False
+372460210;Cornmarket;False
+372460211;Meath Street;False
+372460212;Pimlico;False
+372460213;Thomas Street;False
+372477029;Pearse Street;False
+372477033;Parnell Street;False
+372558581;;True
+372558582;;True
+372558583;;True
+372558585;;True
+372838323;Lincoln Place;False
+372838324;Pearse Street;False
+372838326;;False
+372838330;Aston Quay;False
+372838332;;False
+373705053;;False
+375584955;;False
+375584956;;False
+375737373;D'Olier Street;False
+375758262;Fenian Street;False
+375758263;Pearse Street;False
+375772038;Dawson Street;False
+375772040;Grattan Bridge;False
+375778083;High Street;False
+375778088;High Street;False
+376223083;;False
+376223087;;False
+376223096;;False
+376223098;;False
+376227010;;False
+376227011;;False
+376229959;;False
+376394510;Grangegorman Upper;False
+376394517;O'Donovan Rossa Bridge;False
+376394518;Rathdown Road;False
+376394519;;False
+376394520;Royal Canal Bank;False
+376465162;The Coombe;False
+376466424;Bull Alley Street;False
+376466425;Bull Alley Street;False
+376662370;Townsend Street;False
+376662375;;False
+376662377;;False
+376662381;;False
+376662385;;False
+376662387;;False
+376662389;;False
+376662390;;False
+376662392;;False
+376666130;;False
+376666133;;False
+376666135;;False
+376666151;;False
+376696352;;False
+376696353;;False
+376696354;;False
+376696355;;False
+376696356;;False
+376696357;;False
+376696358;;False
+376719651;;False
+377667419;;False
+377671919;;False
+377671920;;False
+377949389;Blackhall Place;False
+378831678;;True
+378831679;;True
+378831694;;True
+378831696;;True
+378831697;;True
+383995840;;False
+383996048;;False
+383996050;;False
+384312815;Francis Street;False
+384330741;Father Matthew Bridge;False
+384351845;;False
+384401180;Dorset Street Upper;False
+384401185;Parnell Street;False
+384401186;Sheriff Street Upper;False
+386571734;Magennis Square;False
+386571736;;False
+386571737;Boyne Lane;False
+386571738;;False
+386571739;Devlin's Place;False
+386571745;;False
+386572069;;False
+386572070;;False
+386572071;;False
+386572074;;False
+386572075;;False
+386576557;;False
+386576565;;False
+386577121;;False
+386643085;;False
+386643090;;False
+386643091;;False
+386643092;;False
+386644470;;False
+386644471;;False
+387025200;;False
+387230431;;False
+388116867;;False
+388116868;;False
+389865725;;True
+389865726;;True
+389865727;;True
+389938528;;True
+389939199;;True
+389939200;Capel Court;True
+390817697;Car Park 1;False
+390817698;Car Park 2;False
+394164215;;False
+394167728;;False
+394167729;;False
+394167737;;False
+394167739;;False
+394167742;;False
+394167744;;False
+394167751;;False
+394167757;;False
+394167759;;False
+394167763;;False
+394170565;;False
+394171333;Holles Row;False
+394171334;Holles Row;False
+394171335;Service Yard;False
+394171336;;False
+394172445;;False
+394172446;;False
+394172449;;False
+394172450;;False
+394177982;;False
+394177983;;False
+394233220;;False
+394233222;;False
+394233223;;False
+394233224;;False
+394233225;;False
+394233392;St. Andrew's Court;False
+394235121;;False
+394235126;;False
+394235128;;False
+394235619;;False
+394235621;;False
+394235977;;False
+394235978;;False
+394235979;;False
+394237054;;False
+394237056;;False
+394237057;;False
+394237058;;False
+394237059;;False
+394237060;;False
+394237061;;False
+394240642;;False
+394240644;;False
+394461209;;False
+394461211;;False
+394470426;;False
+394477162;;False
+394477163;Alexander Court;False
+394482512;;False
+394482516;;False
+394482528;;False
+394482530;;False
+394496297;;False
+394496298;;False
+394496300;;False
+394738261;;False
+394738262;;False
+394738263;;False
+394741565;;False
+394741566;;False
+394741567;;False
+394742374;;False
+394742376;;False
+394742377;;False
+394742379;;False
+394742388;;False
+394742389;;False
+394743476;;False
+394743477;;False
+394744906;;False
+394744908;Macken Street;False
+394744910;Macken Street;False
+394745689;;False
+394745691;;False
+394869009;;False
+394869011;;False
+394982255;;False
+394982256;;False
+394990634;;False
+394990635;;False
+394990637;;False
+394990639;Pearse House;False
+394990640;;False
+394990644;Pearse House;False
+394990645;;False
+394991480;;False
+395001663;;False
+395001664;;False
+395001983;;False
+395001984;;False
+395001985;;False
+395061776;Westland Square;False
+395061779;;False
+395064412;;False
+395065661;;False
+395065666;;False
+395065668;;False
+395065669;;False
+395067805;Pearse House;False
+395067807;Pearse House;False
+397464856;Dominick Street Lower;False
+399483545;;False
+399483546;;False
+399483547;;False
+399733390;;False
+399733391;;False
+399733392;;False
+399733395;;False
+399733397;;False
+399733400;;False
+399733401;;False
+399733402;;False
+399733403;;False
+399733404;;False
+399736803;;False
+399736804;;False
+399736805;;False
+399736806;;False
+399736807;;False
+399736811;;False
+399736812;;False
+399736815;;False
+400953171;;False
+400953173;;False
+401764331;;False
+401764333;;False
+401766280;;False
+401766281;;False
+401767522;;False
+401909484;;False
+401909487;;False
+401909488;;False
+401912432;Church Street;False
+403535312;;True
+403663666;;True
+403663668;;True
+403663671;;True
+403663674;;True
+403663678;;True
+403663682;;True
+403663684;;True
+403663685;;True
+403663686;;True
+403663687;;True
+403663688;;True
+403664790;;True
+403664791;;True
+404268319;Capel Street;False
+405364249;;False
+405364253;;False
+405364255;;False
+405364257;Rutland Place North;False
+405364259;;False
+405364261;;False
+405375091;;False
+405375093;;False
+405541753;;False
+405546340;;False
+405546341;;False
+405546342;;False
+405546346;;False
+405558420;;False
+405558421;;False
+405558422;;False
+405562676;;False
+405562677;;False
+405562678;;False
+405573992;;False
+406759416;;False
+406759417;;False
+406759418;;False
+406759419;;False
+411113784;;False
+411113785;;False
+416936759;Castle Street;False
+418991182;Castle Street;False
+421156298;;False
+421604207;;False
+422192140;;False
+422192141;;False
+422192142;;False
+422192143;;False
+422578542;;False
+422578543;Dublin City Council Street Cleaning Depot;False
+422732483;;False
+422732484;;False
+422732485;;False
+422732486;;False
+423009370;;False
+423009371;;False
+423009372;;False
+424908231;;False
+424908232;;False
+424908233;;False
+426470707;;False
+426470708;;False
+427129436;;False
+427129437;;False
+427129438;;False
+428814822;;False
+430591268;Thomas Court;False
+430591274;Oliver Bond Street;False
+430809997;Thomas Street;False
+430809998;Thomas Street;False
+431586188;;False
+431762558;;False
+432565295;Brunswick Street North;False
+436067550;;False
+436633350;;False
+436633351;;False
+436633352;;False
+436773470;;False
+436773473;;False
+436773474;;False
+436773475;;False
+436773476;;False
+437009104;;False
+437009105;Park Lane;False
+437449562;;False
+440034441;Summerhill;False
+440850337;;False
+440850338;;False
+441104812;Earl Place;False
+441104813;Earl Place;False
+442035813;;False
+442035814;;False
+442035815;;False
+442035816;;False
+442035817;;False
+442035818;;False
+442035819;;False
+442035820;;False
+442035822;;False
+442035823;;False
+442035824;;False
+443084400;;False
+445383138;Usher Street;False
+445383139;Bridgefoot Street;False
+445593031;;False
+446608139;;False
+447673903;;False
+447770811;;False
+447770812;;False
+448246013;;False
+448246014;;False
+449107669;;False
+449107670;;False
+449107671;;False
+449107672;;False
+449565517;;True
+455486016;Samuel Beckett Bridge;False
+455486017;Samuel Beckett Bridge;False
+457742911;;False
+461653736;;False
+461653737;;False
+461653738;;False
+461653739;;False
+461653740;;False
+461653741;;False
+461653742;;False
+461653743;;False
+461653744;;False
+461653745;;False
+461653746;;False
+461653886;;False
+461653887;Hotel Yard;False
+461653888;;False
+461653889;;False
+472978013;;False
+473472733;;False
+473472735;;False
+473472738;;False
+473472741;;False
+473472743;;False
+474506101;Beresford Place;False
+474506102;Abbey Street Lower;False
+474590054;Brunswick Street North;False
+481221021;Talbot Street;False
+482926564;North Strand Road;False

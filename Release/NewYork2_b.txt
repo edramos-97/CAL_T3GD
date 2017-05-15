@@ -1,0 +1,1887 @@
+5668983;Szold Place;False
+5668989;West 9th Street;False
+5668993;Patchin Place;False
+5668997;Jones Alley;False
+5668999;Old Slip;False
+5669013;Liberty Street;True
+5669077;;False
+5669190;;False
+5669194;;False
+5669205;Holland Tunnel access;False
+5669206;;False
+5669221;;False
+5669279;Holland Tunnel exit;False
+5669304;;False
+5669320;Hudson Street / Beach Street (West);False
+5669321;Beach Street (East);False
+5669322;Holland Tunnel access;False
+5669348;Holland Tunnel access;False
+5669420;;False
+5669486;;False
+5669581;;False
+5669631;Spruce Street;False
+5669633;Fletcher Street;False
+5669636;;False
+5669639;Pitt Street;False
+5669662;Jackson Street;False
+5669702;Hanover Square;False
+5669742;Broadway;False
+5669745;Broadway;False
+5669804;Platt Street;False
+5669806;West 13th Street;False
+5669809;West 13th Street;True
+5669815;Hanover Street;False
+5669826;Steve Flanders Square;False
+5669829;Murray Street;False
+5669837;;False
+5669842;Cornelia Street;False
+5669857;Delancey Street;False
+5669860;Delancey Street;False
+5669866;Thomas Street;False
+5669882;Park Place;False
+5669892;Kenmare Street;False
+5669899;;False
+5669922;6th Avenue;False
+5669925;Avenue of the Americas;False
+5669933;State Street Plaza;False
+5669935;Duane Street;False
+5669938;Duane Street;False
+5669953;7th Avenue South;False
+5669962;East 10th Street;False
+5669976;Little West 12th Street;False
+5669978;Great Jones Street;False
+5669993;Commerce Street;False
+5670009;East 15th Street;False
+5670010;East 15th Street;False
+5670011;East 15th Street;False
+5670012;Horatio Street;False
+5670036;;False
+5670037;Freeman Alley;False
+5670044;Bleecker Street;False
+5670058;Oliver Street;False
+5670070;Gouverneur Street;False
+5670076;Stanton Street;False
+5670077;Stanton Street;False
+5670079;Broome Street;False
+5670084;Broome Street;False
+5670086;Broome Street;False
+5670087;Greenwich Avenue;False
+5670092;Mott Street;False
+5670108;Marketfield Street;False
+5670118;Cortlandt Alley;False
+5670167;Peck Slip;False
+5670168;Peck Slip;False
+5670170;Waverly Place;False
+5670171;Waverly Place;False
+5670172;Waverly Place;False
+5670174;Cliff Street;False
+5670178;Washington Mews;False
+5670189;East Broadway;True
+5670191;East Broadway;False
+5670193;Wooster Street;False
+5670204;Sheridan Square;False
+5670205;New York Plaza;False
+5670232;Saint Mark's Place;False
+5670238;2nd Place;False
+5670254;Irving Place;True
+5670267;Cedar Street;False
+5670268;Cedar Street;False
+5670299;Gouverneur Slip East;False
+5670313;Extra Place;False
+5670366;Mulberry Street;False
+5670402;Henry Street;False
+5670418;Desbrosses Street;False
+5670432;Greenwich Street;False
+5670440;Hubert Street;False
+5670451;Hudson Street;False
+5670454;Hudson Street;False
+5670462;Dominick Street;False
+5670466;East 24th Street;False
+5670485;East 29th Street;False
+5670488;Thompson Street;False
+5670490;Thompson Street;False
+5670498;Minetta Street;False
+5670510;East 13th Street;False
+5670512;East 13th Street;False
+5670514;Downing Street;False
+5670515;Gouverneur Slip West;False
+5670522;Union Square East;False
+5670532;Rivington Street;False
+5670534;Rivington Street;False
+5670536;Catherine Street;False
+5670551;East 18th Street;False
+5670560;East 3rd Street;False
+5670574;Samuel Dickstein Plaza;False
+5670575;Staple Street;False
+5670578;Cherry Street;False
+5670579;Cherry Street;False
+5670581;Gramercy Park East;False
+5670584;South William Street;False
+5670594;Bowery;False
+5670618;3rd Place;False
+5670621;Avenue C Loop;False
+5670633;Ridge Street;False
+5670647;Benson Street;True
+5670651;West 8th Street;False
+5670652;Allen Street;False
+5670654;Allen Street;False
+5670657;Joseph P. Ward Street;False
+5670658;Bayard Street;False
+5670668;Cortlandt Street;False
+5670673;Gramercy Park North;False
+5670701;20th Street Loop;False
+5670703;Dover Street;False
+5670709;Montgomery Street;False
+5670711;Montgomery Street;False
+5670728;Saint John's Lane;False
+5670731;Union Square West;False
+5670736;Gramercy Park South;False
+5670756;14th Street Loop;False
+5670770;East 20th Street;False
+5670771;East 20th Street;False
+5670773;Centre Market Place;False
+5670778;Gramercy Park West;False
+5670782;Astor Place;False
+5670785;West 17th Street;False
+5670787;First Avenue Loop;False
+5670792;Charlton Street;False
+5670814;Sullivan Street;False
+5670816;Sullivan Street;False
+5670820;Howard Street;False
+5670832;James Street;False
+5670836;7th Avenue;False
+5670876;East 22nd Street;False
+5670877;John Street;False
+5670888;Clinton Street;False
+5670896;Clarkson Street;False
+5670897;West 3rd Street;False
+5670920;Stone Street;False
+5670922;Ludlow Street;False
+5670924;East 14th Street;False
+5670925;Canal Street;False
+5670932;Laight Street;False
+5670941;Bank Street;False
+5670942;Bank Street;False
+5671007;Charles Lane;False
+5671008;Beaver Street;False
+5671028;Spring Street;False
+5671059;Baruch Place;False
+5671061;Baruch Place;False
+5671083;2nd Avenue;False
+5671084;South End Avenue;False
+5671095;Stuyvesant Street;False
+5671111;East 1st Street;False
+5671121;Elk Street;False
+5671140;Little West Street;False
+5671158;Taras Shevchenko Place;False
+5671172;Centre Street;False
+5671179;;False
+5671197;South Street;True
+5671198;;False
+5671202;South Street;False
+5671203;Weehawken Street;False
+5671212;;False
+5671214;Pearl Street;False
+5671221;Bridge Street;False
+5671261;9th Avenue;False
+5671291;Watts Street;False
+5671296;York Street;False
+5671307;River Terrace;False
+5671314;Reade Street;False
+5671322;Lafayette Street;False
+5671327;Vandam Street;False
+5671339;Hester Street;False
+5671341;Hester Street;False
+5671343;Abraham Kazan Street;False
+5671354;North Moore Street;False
+5671359;West 15th Street;False
+5671393;Madison Avenue;False
+5671400;Attorney Street;False
+5671401;East 28th Street;False
+5671402;East 28th Street;False
+5671404;Bialystoker Place;False
+5671410;Mangin Street;False
+5671413;Mangin Street;False
+5671429;East 12th Street;False
+5671434;Pell Street;False
+5671436;Rector Street;False
+5671457;North End Avenue;False
+5671458;North End Avenue;False
+5671459;East 17th Street;False
+5671460;Jones Street;False
+5671472;Lexington Avenue;False
+5671538;Franklin Place;False
+5671543;Hogan Place;False
+5671581;Monroe Street;False
+5671584;Monroe Street;False
+5671587;Park Row;False
+5671593;Frankfort Street;False
+5671599;Dutch Street;False
+5671603;Bedford Street;False
+5671608;West Houston Street;False
+5671615;William Street;False
+5671620;East 23rd Street;True
+5671647;Pike Slip;False
+5671649;Pike Slip;False
+5671659;East 9th Street;False
+5671661;East 9th Street;False
+5671663;East 9th Street;False
+5671668;West 11th Street;False
+5671699;Mount Carmel Place;False
+5671701;East 29th Street;True
+5671711;Mercer Street;False
+5671713;Warren Street;True
+5671717;Saint James Place;False
+5671743;Washington Square East;False
+5671754;West Washington Place;False
+5671756;Columbia Street;False
+5671774;3rd Avenue;False
+5671795;;False
+5671799;Mac Dougal Street;False
+5671866;;False
+5671887;FDR Drive;False
+5671920;Norfolk Street;False
+5671928;Forsyth Street;False
+5671973;Barrow Street;False
+5671991;Grand Street;False
+5672001;Gay Street;False
+5672006;Whitehall Street;False
+5672027;Carlisle Street;False
+5672040;Washington Square South;False
+5672060;Market Slip;False
+5672073;Charles Street;False
+5672076;Front Street;False
+5672093;Lewis Street;False
+5672110;Worth Street;False
+5672129;Delancey Street;False
+5672138;Laguardia Place;False
+5672146;Morris Street;False
+5672148;Morris Street;False
+5672159;Grove Street;False
+5672168;Franklin Street;False
+5672176;4th Avenue;False
+5672178;4th Avenue;False
+5672183;East 5th Street;False
+5672184;East 5th Street;False
+5672187;East 5th Street;False
+5672198;Cooper Square;True
+5672203;Cooper Square;True
+5672211;East 21st Street;False
+5672214;Jersey Street;False
+5672244;West Street;False
+5672269;East 2nd Street;False
+5672275;Cannon Street;False
+5672299;Division Street;False
+5672321;Cleveland Place;False
+5672329;;False
+5672331;Milligan Place;False
+5672334;Great Jones Alley;False
+5672337;;False
+5672377;Church Street;False
+5672402;Rutgers Street;False
+5672409;Baxter Street;False
+5672410;Baxter Street;False
+5672415;East 27th Street;False
+5672434;West 14th Street;False
+5672441;Chrystie Street;False
+5672450;West 19th Street;False
+5672459;;False
+5672487;East 27th Street;False
+5672497;Doyers Street;False
+5672499;Gouverneur Lane;False
+5672510;Morton Street;False
+5672518;Lafayette Court;False
+5672528;Jefferson Street;False
+5672535;Jane Street;False
+5672550;Maiden Lane;False
+5672578;Renwick Street;False
+5672604;East 11th Street;False
+5672607;East 11th Street;False
+5672621;Avenue B;False
+5672625;Bond Street;False
+5672646;Avenue C;False
+5672654;King Street;False
+5672681;Gansevoort Street;False
+5672699;Avenue D;False
+5672706;East 16th Street;True
+5672710;East 16th Street;False
+5672713;East 16th Street;False
+5672715;East 16th Street;False
+5672800;10th Avenue;False
+5672803;Trimble Place;False
+5672851;1st Avenue;False
+5672871;Greene Street;False
+5672873;Greene Street;False
+5672893;Edgar Street;False
+5672896;University Place;False
+5672899;Orchard Street;False
+5672910;Washington Place;False
+5672911;Market Street;False
+5672912;Saint Lukes Place;False
+5672922;Carmine Street;False
+5672925;Battery Place;False
+5672937;Park Avenue South;False
+5672942;Edens Alley;False
+5672948;Nathan D. Perlman Place;False
+5672965;5th Avenue;False
+5672971;Chatham Square;False
+5672973;Trinity Place;False
+5672978;;False
+5672980;Collister Street;False
+5672986;Robert F. Wagner Sr. Place;False
+5672987;Leroy Street;False
+5672988;Leroy Street;False
+5673001;Mac Dougal Alley;False
+5673035;Beekman Street;False
+5673038;Beekman Street;False
+5673047;East Houston Street;False
+5673052;Perry Street;False
+5673073;Water Street;False
+5673075;Moore Street;False
+5673077;Water Street;False
+5673078;Water Street;False
+5673085;East 8th Street;False
+5673089;East 8th Street;False
+5673093;East 4th Street;False
+5673102;West 10th Street;False
+5673119;Pike Street;False
+5673124;Pike Street;False
+5673127;Pike Street;False
+5673157;FDR Drive;False
+5673179;East 28th Street;False
+5673198;;False
+5673205;Exchange Alley;False
+5673210;Crosby Street;False
+5673211;Dey Street;False
+5673299;Bialystoker Place;False
+5673309;Minetta Lane;False
+5673316;Prince Street;False
+5673342;Varick Street;False
+5673359;Catherine Lane;False
+5673367;East 25th Street;True
+5673410;Essex Street;True
+5673424;East Broadway;True
+5673427;Sheriff Street;False
+5673441;Jay Street;False
+5673452;Hudson Street;False
+5673523;East 19th Street;False
+5673526;Cardinal Hayes Place;False
+5673530;Vesey Street;False
+5673532;Vesey Place;False
+5673533;Wanamaker Place;False
+5673581;Gold Street;False
+5673591;Gold Street;False
+5673594;Washington Street;False
+5673605;Washington Street;False
+5673610;Washington Street;False
+5673613;Rutherford Place;False
+5673614;West 4th Street;False
+5673619;West 4th Street;False
+5673622;West 4th Street;False
+5673628;Thames Street;False
+5674356;;False
+5675465;Water Street;False
+5675509;Mc Kenny Street;False
+5676045;Dock Street;False
+5676294;East Way;False
+5676833;John Street;False
+5676929;Anchorage Place;False
+5676939;Navy Street;True
+5677124;Hicks Street;False
+5677463;Marshall Street;True
+5677695;Dock Avenue;True
+5677958;Adams Street;False
+5677962;Adams Street;False
+5678062;Furman Street;False
+5678323;Jay Street;True
+5678368;Poplar Street;False
+5678461;Doughty Street;False
+5678557;Evans Street;False
+5678759;Middagh Street;False
+5678882;Harrison Alley;False
+5678904;York Street;False
+5678932;Hammerhead Avenue;False
+5678955;West Way;True
+5678975;Little Street;False
+5679418;Hudson Avenue;False
+5679611;Willow Street;False
+5679975;Kay Avenue;False
+5680052;Morris Avenue;False
+5680167;Henry Street;False
+5680220;Prospect Street;False
+5680522;Old Dock Street;False
+5680633;Elizabeth Place;False
+5680678;East Way;False
+5680883;Howard Alley;False
+5680986;Admiral Perry Plaza;False
+5681341;West Street;False
+5681399;Bridge Street;False
+5681437;Ship Ways Avenue;True
+5681571;;False
+5681691;Columbia Heights;False
+5681925;Hugh L. Carey Tunnel;False
+5682012;Cranberry Street;False
+5682020;Washington Street;False
+19725512;Bowery Slip;False
+19726066;FDR Drive;False
+19726366;South Street;False
+20254339;New Dock Street;True
+22897633;East 17th Street;False
+22897720;10th Avenue;False
+22898087;FDR Drive;False
+22898269;Church Street;False
+22898643;Broadway;False
+22902608;Union Square East;False
+22902609;Rutherford Place;False
+22902610;Nathan D. Perlman Place;False
+22903923;West Street;False
+22909031;Bloomfield Street;False
+22909196;;True
+22909247;West Street;True
+22909249;West Street;False
+22916321;West 4th Street;False
+22926703;13th Avenue;False
+22927287;West Houston Street;False
+22927373;West 12th Street;False
+22927399;Laight Street;False
+22927411;Vestry Street;False
+22927419;Varick Street;False
+22927462;Washington Street;False
+22927463;Canal Street;False
+22927484;Canal Street;False
+22927486;Watts Street;False
+22927765;;False
+22927850;;False
+22927873;FDR Drive;False
+22927903;;False
+22927906;FDR Drive;False
+22927941;;False
+22927946;1st Place;False
+22928102;West Thames Street;True
+22946628;Holland Tunnel access;False
+23042516;;False
+23042542;York Street;False
+23168540;Main Street;False
+23168547;Plymouth Street;False
+23168559;Pearl Street;False
+23168561;Jay Street;False
+23168562;Jay Street;False
+23168567;Adams Street;False
+23168577;Cadman Plaza East;False
+23168580;York Street;True
+23168582;Front Street;False
+23168586;Water Street;False
+24263967;West Houston Street;False
+24264070;Washington Square North;False
+24264114;Christopher Street;False
+25026344;Murray Street;False
+25162679;East 13th Street;False
+25163419;East 2nd Street;False
+25166891;East 10th Street;False
+25166922;East 14th Street;False
+25167053;East 11 Street;False
+25167065;East 12th Street;False
+25167069;East 12th Street;False
+25167167;;False
+25167210;Avenue D;False
+25167444;East 10th Street;False
+25167462;East 10th Street;False
+25196678;Attorney Street;False
+25198317;Broome Street;False
+25198451;Suffolk Street;False
+25198488;Pitt Street;False
+25199402;West 4th Street;False
+25199870;Thompson Street;False
+25199883;Mercer Street;False
+25561915;;False
+25561967;;False
+25562074;Robert F. Wagner Sr. Place;False
+25562077;;False
+25562079;;False
+25562090;;False
+25564005;Sands Street;False
+25564048;;False
+25564137;;False
+25564255;;False
+25564312;;False
+25564368;Centre Street;False
+25564482;Park Row;False
+25564540;;False
+25564571;Avenue of the Finest;False
+25564580;;False
+25564592;Park Row;True
+32922453;;False
+32922454;;False
+32922456;;False
+32922457;;False
+32922458;;False
+32922459;;False
+32922464;;False
+32922468;;False
+32933563;;False
+32934341;;False
+32934343;;False
+32934351;Whitehall Street;False
+32934353;FDR Drive;False
+32934355;FDR Drive;False
+32934358;;False
+32934362;;False
+32934364;;False
+32935106;FDR Drive;False
+32935107;FDR Drive;False
+32935108;FDR Drive;False
+32935109;FDR Drive;False
+32935111;FDR Drive;False
+32935112;;False
+32935473;FDR Drive;False
+32935474;;False
+32935551;East Houston Street;False
+32935868;;False
+32936245;;False
+32936385;;False
+32936733;;False
+32936735;FDR Drive;False
+32936736;FDR Drive;False
+32936738;FDR Drive;False
+32936739;FDR Drive;False
+32936740;FDR Drive;False
+32936741;FDR Drive;False
+32937063;FDR Drive;False
+32937066;Avenue C;True
+32937832;;False
+32938997;Avenue C;False
+32939000;;False
+32939209;FDR Drive;False
+32972072;East Houston Street;False
+33117932;FDR Drive;False
+33117933;FDR Drive;False
+33804436;Peter Cooper Road;False
+33804446;;False
+34079830;East 21st Street;False
+34079834;East 20th Street;False
+34080062;West 20th Street;False
+34080149;Union Square East;False
+34080174;Broadway;False
+34080508;5th Avenue;False
+34213168;;False
+34625443;West Street;False
+37890350;Broad Street;False
+38254377;Brooklyn-Queens Expressway;False
+38605246;John Street;False
+38605247;John Street;False
+38605248;Front Street;False
+39015289;Hicks Street;False
+39513384;Front Street;False
+39513386;Hicks Street;False
+39513387;Doughty Street;False
+39513388;Everit Street;False
+39513390;Vine Street;False
+39662323;Clinton Street;False
+39662324;Broome Street;False
+39946177;Brooklyn-Queens Expressway;False
+39956200;Broome Street;False
+39956203;East Broadway;False
+39956205;Peck Slip;False
+40174797;Ridge Street;False
+40336235;Brooklyn Bridge;False
+40337615;Williamsburg Bridge;False
+40337665;Williamsburg Bridge;False
+40337681;Delancey Street;False
+40337691;Williamsburg Bridge;False
+40337692;Williamsburg Bridge;False
+40337694;Williamsburg Bridge;False
+40337695;Delancey Street;False
+40338777;Williamsburg Bridge Bikepath;False
+40535495;Henry Street;False
+40709918;Rivington Street;False
+40709921;Bowery;False
+40709927;Bond Street;False
+40709928;Forsyth Street;False
+40709929;Grand Street;False
+40837875;Mechanics Alley;False
+40879212;Broome Street;False
+40879214;FDR Drive;False
+40879216;Market Slip;False
+40879221;Beekman Street;False
+40879223;Gold Street;False
+40956098;Centre Street;False
+41520108;Forsyth Street;False
+42786502;Saint James Place;False
+43203195;Manhattan Bridge;False
+44225575;Vesey Street;False
+46116170;;False
+46116177;;False
+46116180;;False
+46116181;West Street;False
+46116183;Robert F. Wagner Sr. Place;False
+46116280;Brooklyn Bridge;False
+46116314;Centre Street;False
+46116316;;False
+46116326;Park Row;False
+46116329;Barclay Street;False
+46116332;Park Row;False
+46116390;Watts Street;False
+46116403;Broome Street;True
+46116435;Beach Street;False
+46116441;Varick Street;False
+46116442;Laight Street (West) / Hudson Street;False
+46121845;;False
+46121846;;False
+46121847;Old Fulton Street;False
+46121877;Brooklyn Bridge;False
+46121879;;False
+46137555;Sands Street;False
+46139033;Varick Street;False
+46139034;Varick Street;False
+46139035;West Broadway;False
+46139036;West Broadway;False
+46139037;Lafayette Street;False
+46139038;Lafayette Street;False
+46139039;Lafayette Street;False
+46139040;Hudson Street;False
+46139041;Hudson Street;False
+46139042;Hudson Street;False
+46139043;Chrystie Street;True
+46139045;6th Avenue;False
+46139046;6th Avenue;False
+46139047;Allen Street;False
+46139048;Allen Street;False
+46154281;Henry Street;False
+46154282;Canal Street;False
+46154285;Bowery;False
+46154286;South Street;False
+46154287;;False
+46154288;;False
+46154289;East Broadway;True
+46154290;Rutgers Street;True
+46154291;Canal Street;True
+46154294;Mechanics Alley;True
+46154296;Henry Street;False
+46154297;;False
+46154300;Water Street;False
+46154324;Catherine Slip;False
+46154327;Maiden Lane;False
+46154330;Fulton Street;False
+46154332;Front Street;False
+46154337;South Street;False
+46154338;Pine Street;False
+46156708;Laight Street (East) / Canal Street (East);False
+46160083;Park Row;False
+46160098;Spruce Street;False
+46160106;Murray Street;False
+46160153;Beekman Street;False
+46160225;Fulton Street;False
+46160244;Gold Street;False
+46160330;Liberty Street;False
+46160365;Nassau Street;False
+46160386;Exchange Place;False
+46160403;Hanover Square;True
+46160404;Battery Place;True
+46160406;Whitehall Street;False
+46165807;Murray Street;False
+46165808;Vesey Street;False
+46165810;Murray Street;False
+46165812;Murray Street;True
+46165813;Warren Street;True
+46165814;Chambers Street;True
+46165815;North End Avenue;True
+46165816;Albany Street;True
+46165818;;False
+46165819;2nd Place;False
+46165821;3rd Place;False
+46166212;Greenwich Street;False
+46166213;;False
+46171876;Greenwich Street;False
+46171878;West Broadway;False
+46171879;West Broadway;False
+46171880;Murray Street;False
+46171883;West Broadway;False
+46171884;Greenwich Street;False
+46171887;West Broadway;False
+46171888;Liberty Street;False
+46171889;Washington Street;False
+46171907;Thames Street;False
+46177111;;False
+46177116;Brooklyn Bridge;False
+46177117;Brooklyn Bridge;False
+46177118;Brooklyn Bridge;False
+46177122;;False
+46177123;;False
+46177152;Brooklyn Bridge;False
+46177164;;False
+46177171;;False
+46177182;;False
+46177184;;False
+46179210;Manhattan Bridge;False
+46179212;Manhattan Bridge;False
+46186480;;False
+46189288;Manhattan Bridge lower level;False
+46189291;Manhattan Bridge lower level;False
+46201644;FDR Drive;False
+46201646;FDR Drive;False
+46201647;FDR Drive;False
+46201648;FDR Drive;False
+46201649;FDR Drive;False
+46201650;FDR Drive;False
+46201651;FDR Drive;False
+46201652;;False
+46201653;FDR Drive;False
+46201655;East 20th Street;False
+46201665;East Houston Street;False
+46201666;FDR Drive;False
+46201667;FDR Drive;False
+46201668;Essex Street;True
+46201677;Norfolk Street;False
+46201679;Grand Street;True
+46211851;Avenue C;True
+46224832;Catherine Slip;False
+46224850;;False
+46224855;;False
+46332295;West Broadway;False
+46332297;Cortlandt Alley;False
+46332299;Franklin Street;False
+46332300;Harrison Street;False
+46332301;Leonard Street;False
+46332303;;False
+46332304;;False
+46332307;Duane Street;False
+46332308;;False
+46332309;;False
+46334599;East 22nd Street;False
+46334602;West 15th Street;False
+46334605;South Street;False
+46334639;Maiden Lane;True
+46334662;Division Street;False
+46334663;Forsyth Street;False
+46334666;Broome Street;False
+46348767;Broome Street;False
+46348768;Forsyth Street;False
+46348783;East Broadway;False
+46348787;Jackson Street;False
+46348789;;False
+46348790;Jackson Street;False
+46348791;Henry Street;False
+46348792;;False
+46349386;Columbia Street;False
+46349390;Suffolk Street;False
+46349393;Lewis Street;False
+46350693;Vandam Street;False
+46350694;King Street;False
+46350695;Stanton Street;False
+46350707;Spring Street;False
+46350710;Avenue of the Americas;False
+46351263;Stanton Street;False
+46359922;Williamsburg Bridge;False
+46359923;Williamsburg Bridge;False
+46361719;Williamsburg Bridge;False
+46422586;West Street;False
+46431821;10th Avenue;False
+46431822;Charles Street;False
+46431823;Perry Street;False
+46431825;Christopher Street;False
+46431828;Morton Street;False
+46431829;Barrow Street;False
+46582548;Broadway;False
+46582968;East 7th Street;False
+46607937;Carmine Street;False
+46608204;East 5th Street;False
+46608205;East 6th Street;False
+46608336;14th Street Loop;False
+46608946;West 4th Street;False
+46609036;Greenwich Avenue;False
+46610717;Leroy Street;False
+46610719;West 13th Street;False
+46610721;Washington Street;False
+46610722;9th Avenue;False
+46610724;Barrow Street;False
+46610725;Grove Street;False
+46610726;Barrow Street;False
+46610727;7th Avenue South;False
+46610728;West 13th Street;False
+46610729;;False
+46610734;Waverly Place;False
+46613913;Holland Tunnel;False
+46629371;;False
+46629376;Front Street;False
+46629378;FDR Drive;False
+46818451;Brooklyn-Queens Expressway;False
+46819487;;False
+46819491;Jay Street;True
+46819492;Brooklyn-Queens Expressway;False
+46819493;Brooklyn-Queens Expressway;False
+46819497;Bridge Street;False
+46819498;Brooklyn-Queens Expressway;False
+46819499;Brooklyn-Queens Expressway;False
+46819501;Gold Street;False
+46819502;Gold Street;False
+46819503;John Street;False
+46819509;Hudson Avenue;False
+46819510;Prospect Street;False
+46819899;Brooklyn-Queens Expressway;False
+46819900;Brooklyn-Queens Expressway;False
+46819901;Brooklyn-Queens Expressway;False
+46819902;Brooklyn-Queens Expressway;False
+46819903;Brooklyn-Queens Expressway;False
+46819904;Brooklyn-Queens Expressway;False
+46819907;;False
+46819912;Brooklyn-Queens Expressway;False
+46819913;Front Street;False
+46819914;Water Street;True
+46819916;Doughty Street;False
+46819917;Brooklyn-Queens Expressway;False
+46819922;;False
+46819924;John Street;False
+46819926;Jay Street;False
+46820144;Pearl Street;False
+46820145;Pearl Street;False
+46835336;Hicks Street;False
+46835359;Brooklyn-Queens Expressway;False
+46835368;Columbia Heights;False
+46835369;Columbia Heights;False
+46835370;Willow Street;False
+46835371;Middagh Street;False
+46863736;Hudson Avenue;True
+46863794;Old Fulton Street;False
+46863874;Adams Street;False
+47796374;;False
+47796510;Delancey Street;False
+47796678;FDR Drive;False
+47796685;FDR Drive;False
+54369822;East 26th Street;False
+54689817;Front Street;False
+54689818;Fletcher Street;False
+68325062;West Houston Street;False
+68325065;East Houston Street;False
+68668516;Broome Street;False
+68668521;East 23rd Street;True
+68668526;East 14th Street;False
+68668537;Union Square East;False
+68668539;Centre Street;False
+68668541;5th Avenue;False
+68668546;Grand Street;False
+68668553;Hudson Street;False
+68668558;East 8th Street;False
+68668559;Grand Street;False
+68668562;West Broadway;False
+68674966;5th Avenue;False
+68675820;Varick Street;False
+75311776;;False
+75359816;Harrison Street;False
+95181768;West Street;False
+95181773;Hudson Street;False
+106877213;;False
+106877214;;False
+106877215;;False
+106877217;;False
+106877218;;False
+106877219;;False
+106877221;;False
+106877222;;False
+106877223;;False
+110155719;;False
+110489638;East 20th Street;False
+110542343;Suffolk Street;False
+110542344;Suffolk Street;False
+110542345;Suffolk Street;False
+110777345;Canal Street;False
+110777346;Allen Street;False
+110854073;Stanton Street;False
+111826111;Hester Street;False
+112116234;Bowery;False
+112116235;Rivington Street;False
+112116236;The Bowery;False
+112588881;Broad Street;False
+116672631;;False
+116672642;Clarkson Street;False
+118400726;2nd Avenue;False
+118400728;2nd Avenue;False
+122625703;Brooklyn-Queens Expressway;False
+122660450;Brooklyn Bridge;False
+122660451;Brooklyn Bridge;False
+122660454;FDR Drive;False
+122660455;FDR Drive;False
+122660458;;False
+122660459;;False
+122660460;;False
+122660461;;False
+124814435;Hudson Street;False
+125436141;Centre Street;False
+125479715;Hudson Street;False
+125525165;Madison Street;True
+125525171;Madison Street;True
+125527383;FDR Drive;False
+125527384;FDR Drive;False
+125528659;East 3rd Street;False
+126573396;;True
+126573397;Gansevoort Street;False
+127690685;Chambers Street;True
+127691870;Eldridge Street;False
+127691871;Eldridge Street;False
+127691872;Eldridge Street;False
+127691874;Madison Street;True
+127693102;6th Avenue;False
+127693384;8th Avenue;False
+127693388;9th Avenue;False
+129834316;Greenwich Street;False
+134484064;;False
+140391514;;False
+140391516;;False
+140391518;;False
+140391522;Ann Street;False
+144183267;;False
+144183268;;False
+154513051;Front Avenue;False
+155008808;York Street;False
+156994961;West 21st Street;False
+157012386;Bleecker Street;False
+157012387;MacDougal Street;False
+157012388;;False
+157012389;;False
+157012390;;False
+157012391;;False
+157012393;;False
+157012395;;False
+157012396;;False
+157012397;;False
+157012398;Washington Square West;False
+157014135;East 21st Street;False
+157014136;2nd Avenue;False
+157405685;;False
+159657620;Abingdon Square;False
+160801658;;True
+160801660;;True
+161026131;;False
+161026133;;False
+162041587;Avenue C;False
+162041588;FDR Drive;False
+163806028;;False
+164420607;Waverly Place;False
+165672323;Battery Place;False
+165733924;Park Row;False
+165774923;Park Row;False
+165774924;Park Row;False
+165775306;Chatham Square;False
+165777194;Bowery;False
+165777195;Bowery;False
+165777255;The Bowery;False
+165777635;Bowery;False
+165777951;Bowery;False
+165781912;Cooper Square;False
+165781913;Cooper Square;False
+166038132;Chrystie Street;True
+166038145;Chrystie Street;False
+166038501;Manhattan Bridge lower level;False
+167923357;Broadway;False
+170113137;West Houston Street;False
+170113138;West Houston Street;False
+177127289;Bridge Street;False
+177127292;Water Street;False
+177127299;Front Street;False
+177127305;Bridge Street;False
+181375404;East Houston Street;False
+181546837;West Houston Street;False
+181546839;East Houston Street;False
+183010767;Mosco Street;False
+183103091;Brooklyn-Queens Expressway;False
+183103093;Brooklyn-Queens Expressway;False
+183103103;Brooklyn-Queens Expressway;False
+183103105;Brooklyn-Queens Expressway;False
+183103706;;False
+185934187;Delancey Street;False
+188366388;;False
+188366389;;False
+188366390;;False
+188366391;;False
+188494945;;False
+188559800;Elizabeth Street;False
+190550014;Broome Street;False
+191303428;;False
+191304176;Brooklyn-Queens Expressway;False
+194923755;Avenue C;True
+194923759;Park Row;False
+194923760;Chambers Street;False
+194923761;Delancey Street;False
+194923762;East 10th Street;False
+194923763;East 10th Street;False
+194923764;East 14th Street;False
+194923765;East 23rd Street;True
+194923766;East Houston Street;False
+194923768;Essex Street;True
+194923769;Grand Street;True
+194923770;Grand Street;True
+194923773;Grand Street;True
+194923774;Grand Street;True
+194923775;Jackson Street;True
+194923776;Lafayette Street;False
+194923778;Pearl Street;False
+194923781;Pike Street;False
+194923786;Spring Street;False
+194923789;Washington Street;False
+194923790;Washington Street;False
+194923791;West 14th Street;True
+194923795;West 18th Street;False
+194923796;West Houston Street;False
+194923798;Worth Street;True
+194923807;1st Avenue;False
+194923808;1st Avenue;False
+194923810;6th Avenue;False
+194923811;8th Avenue;False
+194926839;East 23rd Street;True
+194926841;FDR Drive;False
+194926842;FDR Drive;False
+195743130;Allen Street;False
+195743137;Battery Place;False
+195743138;Broad Street;True
+195743157;Chrystie Street;True
+195743164;East 14th Street;False
+195743177;East Houston Street;False
+195743178;East Houston Street;False
+195743179;Hudson Street;False
+195743189;Murray Street;True
+195743191;Pike Street;False
+195743195;South End Avenue;True
+195743196;South Street;False
+195743197;Vesey Street;False
+195743199;Water Street;False
+195743225;West Street;False
+195743226;West Street;False
+195743227;West Street;False
+195743228;West Street;False
+195743229;West Street;False
+195743264;West Street;False
+195743267;West Thames Street;True
+195743271;West Thames Street;True
+195743318;2nd Avenue;False
+195743341;5th Avenue;False
+195743554;Avenue A;True
+195743555;Greenwich Avenue;True
+195743556;West 10th Street;False
+195743557;West Street;False
+195743558;West Street;False
+195745911;Canal Street;False
+195745914;East 24th Street;False
+195745915;East 24th Street;False
+195745916;East Houston Street;True
+195745917;East Houston Street;False
+195745920;Ludlow Street;False
+195745925;Bowery;False
+195834894;Bethune Street;False
+196116974;Bethune Street;False
+196116978;Broadway;False
+196116979;Broadway;False
+196116989;Chatham Square;False
+196116997;East 25th Street;False
+196117006;East 8th Street;False
+196117011;East Broadway;False
+196117014;East Broadway;True
+196117028;Greenwich Street;False
+196117032;Hudson Street;False
+196117045;North End Avenue;False
+196117059;Warren Street;True
+196117073;West 14th Street;False
+196117074;West 14th Street;False
+196117075;West 14th Street;True
+196117090;6th Avenue;False
+196117091;7th Avenue;False
+199927849;East Houston Street;False
+199927850;East Houston Street;False
+199930761;Williamsburg Bridge Bikepath;False
+216959248;West 10th Street;False
+216959249;West 10th Street;False
+216959250;West 10th Street;False
+221157083;3rd Avenue;False
+221605485;York Street;True
+221605487;Gold Street;True
+221687788;Rivington Street;False
+221687789;Rivington Street;False
+221687790;Allen Street;False
+221687791;Delancey Street;False
+221687792;Allen Street;False
+221687793;Delancey Street;False
+221687794;Allen Street;False
+221694586;Water Street;False
+221694587;Old Fulton Street;False
+221694588;Front Street;False
+221694589;Front Street;True
+221694590;Main Street;False
+222248830;Gold Street;True
+222248831;Sands Street;False
+222258267;Pearl Street;False
+222258268;Sands Street;False
+222258271;Sands Street;False
+222258276;Jay Street;False
+222258278;Sands Street;False
+222299238;Barclay Street;False
+222299240;West Street;False
+222299242;Chatham Square;False
+222299248;2nd Avenue;False
+222299254;Church Street;False
+222299272;Murray Street;False
+222299273;West Street;False
+222299274;West Street;False
+222299275;Broadway;False
+222299276;1st Avenue;False
+222299277;Church Street;False
+224671408;Pike Street;False
+226040985;Chambers Street;False
+226040986;Chambers Street;False
+226040987;Cherry Street;False
+226040991;East 21st Street;False
+226040994;East 30th Street;False
+226040997;East 30th Street;False
+226041016;Grand Street;False
+226041017;Greenwich Street;False
+226193904;Albany Street;True
+226193905;Albany Street;True
+226193928;South End Avenue;True
+226193929;South Street;True
+226193930;South Street;True
+226193933;Washington Street;False
+226193942;;False
+227064538;Jay Street;False
+227064557;Washington Street;True
+227064558;Washington Street;True
+231393429;Delancey Street;False
+231393430;Essex Street;True
+232270198;2nd Street;False
+232270200;3rd Street;False
+239625022;York Street;False
+239625023;Pearl Street;False
+239626770;Jay Street;True
+239626771;Front Street;False
+239629076;Railroad Avenue;False
+239629079;Gee Avenue;True
+239988110;Bedford Street;False
+242114296;;False
+242114297;;False
+242116474;;False
+242116476;;False
+246085471;Greenwich Street;False
+249664804;;False
+249664805;;False
+249664806;;False
+249664807;;False
+249664808;;False
+250049336;Harrison Street;True
+250049337;Harrison Street;True
+250049338;Harrison Street;True
+250049339;Harrison Street;True
+250172275;;False
+250172276;;False
+250267912;Forsyth Street;False
+256902825;Watts Street;False
+256902826;6th Avenue;False
+256902827;Greenwich Street;False
+256902828;Laight Street (East) / Canal Street (East);False
+256902829;Varick Street;False
+256902830;Broadway;False
+256902831;Worth Street;False
+263088941;Montgomery Street;False
+263563003;Hudson Street / Varick Street / Canal Street (East);False
+275016228;Chambers Street;True
+276670360;Cooper Square;False
+277201109;Broad Street;True
+277201110;Broad Street;False
+278135785;Cadman Plaza West;False
+278135786;Cadman Plaza West;True
+278135787;Prospect Street;False
+281455418;Grand Street;True
+281455419;Grand Street;True
+298734351;Brooklyn Bridge;False
+298734352;Brooklyn Bridge;False
+309148657;Manhattan Bridge;False
+311764601;Old Fulton Street;False
+311764602;Old Fulton Street;False
+313639578;;False
+313639580;;False
+313639585;;False
+315174425;Broome Street;False
+317167966;;False
+317200680;;False
+317349868;;False
+317400960;;False
+317400961;;False
+317400962;Wooster Street;False
+320783774;;False
+320783775;;False
+321993366;West Broadway;False
+321993367;Prince Street;False
+322428254;;True
+324750258;;False
+324750259;;False
+324970100;;False
+324970104;;False
+324970107;;False
+324975283;;False
+325008926;;False
+325008927;;False
+325008932;;False
+335935797;East 24th Street;True
+335935798;East 24th Street;True
+335935799;2nd Avenue;False
+342785522;Varick Street;False
+347306313;West 15th Street;False
+347311223;Delancey Street;False
+347311224;Clinton Street;False
+348477348;West 16th Street;False
+348477349;West 16th Street;False
+348488662;Broome Street;False
+348488665;Broome Street;False
+349369193;Old Fulton Street;False
+349873701;2nd Avenue;False
+349873702;Bowery;False
+350612242;Waverly Place;False
+350726031;9th Avenue;False
+351233495;;False
+351540625;Mercer Street;False
+351540632;Mercer Street;False
+351638330;;False
+351652731;;False
+351652733;;False
+351656331;;False
+351656332;;False
+351656333;;False
+352705236;Washington Square North;False
+352705238;West 4th Street;False
+353655412;Union Square West;False
+353672570;;False
+354393802;;False
+354393808;;False
+356140737;Centre Street;False
+356140743;;False
+357946354;Clinton Street;False
+357946358;;False
+361075845;Lillian Wald Drive;False
+361078731;4th Street;False
+361401709;Theater Alley;False
+361442184;;False
+362684726;;False
+362684727;;False
+362811088;Attorney Street;False
+364262519;;False
+364262520;;False
+364262521;;False
+364262522;;False
+364262530;;False
+364262531;;False
+364262532;;False
+364262732;;False
+370169932;Pearl Street;False
+374421069;Washington Street;False
+374423161;Greenwich Street;False
+374923972;Attorney Street;True
+374923974;Ridge Street;False
+375157261;Brooklyn Bridge;False
+378099315;;False
+378099316;;False
+378363223;2nd Avenue;False
+379498038;;False
+379498039;;False
+380093631;FDR Drive;False
+380093632;FDR Drive;False
+380096992;East 26th Street;True
+380098432;1st Avenue;False
+380099776;East 25th Street;False
+384178817;Water Street;False
+384898122;Orchard Street;False
+385101423;;False
+385102416;East Houston Street;False
+386211349;Thompson Street;False
+386951768;Broadway Alley;False
+386951769;Broadway Alley;False
+386951770;Broadway Alley;False
+388167518;William Street;False
+388167519;Ann Street;False
+388240124;3rd Avenue;False
+388281629;Beaver Street;False
+388281630;Hanover Street;False
+388281631;William Street;False
+388281632;Beaver Street;False
+388281633;Beaver Street;False
+388284037;Beekman Street;False
+388316170;Broad Street;True
+388318981;Broadway;False
+388695705;Canal Street;True
+390122883;;False
+391062195;Steve Flanders Square;False
+392494865;;False
+397839400;Avenue D;False
+401896550;;False
+403405990;Worth Street;False
+409716177;East 25th Street;False
+410303469;;False
+411698787;;False
+412115641;Laight Street;False
+412117872;Greenwich Street;False
+412174929;Beach Street;False
+412180553;Walker Street;False
+412549267;;False
+412875705;West Street;False
+412876925;Canal Street;False
+413045201;Reade Street;False
+413045202;Reade Street;False
+413045905;Greenwich Street;False
+413050334;West Street;False
+413050335;Warren Street;False
+413051876;Albany Street;False
+413052676;West Street;False
+413052855;;False
+413054286;Church Street;False
+413054850;Lispenard Street;False
+413054857;White Street;False
+413056164;Park Row;False
+413201231;Rector Place;False
+413201233;Rector Place;False
+413201428;;True
+413202967;FDR Drive;False
+413203693;West Street;False
+413212450;State Street;True
+413217631;;False
+413217632;Old Slip;False
+413702744;FDR Drive;False
+413704239;;False
+413704324;Washington Street;False
+413704325;Joseph P. Ward Street;False
+413727896;;False
+413727897;Edgar Street;False
+413727898;;False
+413732107;;False
+413749473;Hugh L. Carey Tunnel;False
+414669905;FDR Drive;False
+414743429;Frankfort Street;False
+414743582;Frankfort Street;False
+414744167;;False
+414744944;Pearl Street;False
+414746383;;False
+414746820;Robert F. Wagner Sr. Place;False
+414747619;;False
+414747620;;False
+414747621;;False
+414749641;Park Row;False
+414749642;;False
+414750042;;False
+414750043;;False
+414750044;Madison Street;True
+414751458;Oliver Street;True
+414751576;Worth Street;True
+414893144;Bowery;False
+414894542;Division Street;False
+415882710;Holland Tunnel;False
+420351718;East Houston Street;False
+420351719;East Houston Street;False
+420351720;East Houston Street;False
+420351721;East Houston Street;False
+420351722;East Houston Street;False
+420351723;East Houston Street;False
+420351724;East Houston Street;False
+420351725;East Houston Street;False
+420352240;East Houston Street;False
+420352241;East Houston Street;False
+420352242;East Houston Street;False
+420352243;East Houston Street;False
+420352244;East Houston Street;False
+420352245;East Houston Street;False
+420352246;East Houston Street;False
+420352247;West Houston Street;False
+420352248;West Houston Street;False
+420352249;West Houston Street;False
+420352250;West Houston Street;False
+420352251;West Houston Street;False
+420354140;Delancey Street;False
+420354141;Delancey Street;False
+420354142;Delancey Street;False
+420354145;Delancey Street;False
+420354146;Delancey Street;False
+420354147;Delancey Street;False
+420354355;Grand Street;True
+420354360;Grand Street;True
+420354362;Grand Street;True
+420354363;Grand Street;True
+420354364;Grand Street;True
+420354365;Grand Street;True
+420355076;Bowery;False
+420355077;Bowery;False
+420355078;Bowery;False
+420355079;Bowery;False
+420355080;Bowery;False
+420355081;Bowery;False
+420355082;Bowery;False
+420355083;Bowery;False
+420355085;Cooper Square;False
+420356798;2nd Avenue;False
+420357267;Pike Street;False
+420357268;Pike Street;False
+420357269;Pike Street;False
+420358886;Canal Street;True
+420358887;Canal Street;True
+420358888;Canal Street;True
+420358889;Lafayette Street;False
+420358890;Lafayette Street;False
+420358891;Lafayette Street;False
+420358892;Lafayette Street;False
+420358893;Lafayette Street;False
+420358894;Lafayette Street;False
+420358895;Lafayette Street;False
+420358896;Lafayette Street;False
+420358897;Lafayette Street;False
+420358898;Lafayette Street;False
+420519634;East 23rd Street;True
+420519635;Park Avenue South;False
+420520112;East 19th Street;False
+420520113;Park Avenue South;False
+420522049;West Street;False
+420522050;West Street;False
+420522443;Greenwich Avenue;False
+420522444;West 11th Street;False
+420522695;East 14th Street;False
+420526338;Astor Place;False
+420530113;7th Avenue South;False
+420530114;Bedford Street;False
+420598230;1st Avenue;False
+420598232;1st Avenue;False
+420598234;2nd Avenue;False
+420598236;2nd Avenue;False
+420598238;2nd Avenue;False
+420598241;2nd Avenue;False
+420598248;2nd Avenue;False
+420598252;2nd Avenue;False
+420598256;2nd Avenue;False
+420598262;2nd Avenue;False
+420598266;2nd Avenue;False
+420598270;2nd Avenue;False
+420598275;2nd Avenue;False
+420598281;2nd Avenue;False
+420598286;2nd Avenue;False
+420598289;2nd Avenue;False
+420598294;2nd Avenue;False
+420598299;2nd Avenue;False
+420598304;2nd Avenue;False
+420598310;Union Square East;False
+420598318;7th Avenue South;False
+420598323;7th Avenue South;False
+420598337;8th Avenue;False
+420598345;8th Avenue;False
+420598373;East 23rd Street;True
+420598391;Park Avenue South;False
+420598402;Union Square East;False
+420629927;East Houston Street;False
+420629930;East Houston Street;False
+420629936;East Houston Street;False
+420629940;East Houston Street;False
+420629945;East Houston Street;False
+420772653;Chambers Street;True
+420772654;West Street;False
+420788272;;False
+420788281;;False
+420809408;Canal Street;False
+420809409;Canal Street;False
+420809410;Canal Street;False
+420809411;Canal Street;False
+420809412;Canal Street;False
+420809413;Canal Street;False
+420809414;Canal Street;False
+420809415;Canal Street;False
+420809416;Canal Street;False
+420809417;Canal Street;False
+420809419;Hudson Street;False
+420809420;West Street;False
+420809421;West Street;False
+420809425;West Street;False
+420809434;West Street;False
+420809438;West Street;False
+420809439;West Street;False
+420809440;West Street;False
+420809441;West Street;False
+420809442;West Street;False
+420809443;West Street;False
+420809445;West Street;False
+420809446;West Street;False
+420809448;West Street;False
+420810619;Broadway;False
+420810620;Broadway;False
+420810621;Varick Street;False
+420810622;Varick Street;False
+420810623;Varick Street;False
+420872176;1st Avenue;False
+420872179;1st Avenue;False
+420872180;1st Avenue;False
+420872181;2nd Avenue;False
+420872184;2nd Avenue;False
+420872186;2nd Avenue;False
+420872190;2nd Avenue;False
+420872191;2nd Avenue;False
+420872193;2nd Avenue;False
+420872197;East 23rd Street;True
+420872199;East 23rd Street;True
+420872201;East 23rd Street;True
+420884506;Grand Street;True
+420884524;;False
+420888140;Battery Place;False
+420888141;Battery Place;False
+420888143;Battery Place;False
+420888144;Battery Place;False
+420888145;Battery Place;False
+420888146;Battery Place;False
+420888147;Park Row;False
+420888148;Park Row;False
+420888149;Park Row;False
+420888150;Park Row;False
+420888151;West Street;False
+420888152;West Street;False
+420888153;;False
+420888154;;False
+420890069;FDR Drive;False
+420890074;Pearl Street;False
+420890077;Pearl Street;False
+420890080;Pike Slip;False
+420890085;Pike Slip;False
+420890088;Pike Street;False
+420890089;Pike Street;False
+420890090;Pike Street;False
+420890091;Pike Street;False
+420890092;;False
+420890093;;False
+420895278;Hudson Street;False
+420895279;Hudson Street;False
+420895280;Hudson Street;False
+420895281;Hudson Street;False
+420895282;Hudson Street;False
+420895283;Hudson Street;False
+420895284;Hudson Street;False
+420895285;Hudson Street;False
+421821522;Old Fulton Street;False
+421821527;Old Fulton Street;False
+421821533;Old Fulton Street;False
+421821928;;False
+421824309;East Broadway;True
+421824590;Pike Street;False
+421825692;Broadway;False
+421825693;Broadway;False
+421825694;Centre Street;False
+421825695;East Houston Street;False
+421825696;East Houston Street;False
+421826772;Canal Street;False
+421826773;Essex Street;True
+421826774;Manhattan Bridge;False
+421827957;Delancey Street;False
+421827958;Delancey Street;False
+421827959;Delancey Street;False
+421827960;Delancey Street;False
+421827961;Delancey Street;False
+421827962;Delancey Street;False
+421827963;Delancey Street;False
+421830008;Canal Street;False
+421830413;East Houston Street;False
+421830414;East Houston Street;False
+421831216;State Street;True
+421832640;Canal Street;False
+421832641;Canal Street;False
+421832642;Chambers Street;False
+421832643;Varick Street;False
+421832644;Varick Street;False
+421832645;West Street;False
+421832646;Varick Street;False
+421832647;Hudson Street / Beach Street (West);False
+421832648;Beach Street (East);False
+424094336;Stuyvesant Street;False
+424137951;;False
+425109409;;False
+425109410;;False
+425116728;;False
+428569356;East 23rd Street;True
+428569470;East 26th Street;False
+429041291;;False
+429041293;;False
+430380405;;False
+430408061;;False
+430610046;1st Avenue;False
+430610061;;False
+430610882;East 20th Street;False
+430610885;East 20th Street;False
+430610888;;False
+430610890;;False
+430822974;;False
+430823735;;False
+430823736;;False
+430823738;;False
+430829640;;False
+430829648;;False
+430829693;;False
+430840799;;False
+430868628;;False
+430868634;;False
+432550168;FDR Drive;False
+432550169;FDR Drive;False
+432550255;Brooklyn Bridge;False
+432550256;Brooklyn Bridge;False
+432550257;Brooklyn Bridge;False
+432550258;Brooklyn Bridge;False
+432550259;Brooklyn Bridge;False
+432550260;Brooklyn Bridge;False
+433124968;6th Avenue;False
+433124996;Bleecker Street;False
+433394637;;False
+433394647;6th Avenue;False
+433398367;West Houston Street;False
+433442259;6th Avenue;False
+433442263;East Houston Street;False
+438362422;West Street;False
+438362423;West Street;False
+438363728;Albany Street;False
+438363729;West Street;False
+438366913;Pearl Street;False
+438367285;North Moore Street;False
+438367286;West Street;False
+438368333;West Street;False
+438370108;West Street;False
+438375431;Avenue C;False
+438381568;Avenue C;True
+438384743;1st Avenue;False
+438388090;East 14th Street;False
+438389785;3rd Avenue;False
+438389786;East 14th Street;False
+438390724;East 23rd Street;True
+438899450;Liberty Street;True
+438900013;West Street;False
+438901171;Canal Street;True
+438901426;6th Avenue;False
+438901427;Canal Street;True
+438901945;Oliver Street;True
+439842751;Bowery;False
+439842754;Bowery;False
+439842757;Bowery;False
+439842761;Bowery;False
+439842769;Brooklyn Bridge;False
+439842773;Brooklyn Bridge;False
+439842790;Brooklyn Bridge;False
+439842794;Canal Street;False
+439842799;Christopher Street;False
+439842805;Delancey Street;False
+439842808;East 2nd Street;False
+439842812;East 2nd Street;False
+439842817;East Houston Street;False
+439842820;Grand Street;False
+439842823;Grand Street;False
+439842827;Grand Street;True
+439842831;Grand Street;False
+439842834;Rivington Street;False
+439842835;Spring Street;False
+439842836;Spring Street;False
+439842837;Spring Street;False
+439842838;Stanton Street;False
+439842839;Suffolk Street;False
+439842840;Vesey Street;False
+439842841;Williamsburg Bridge Bikepath;False
+439933928;4th Avenue;False
+439933929;5th Avenue;False
+439933931;6th Avenue;False
+439933934;8th Avenue;False
+439933935;8th Avenue;False
+439933936;Allen Street;False
+439933940;East 21st Street;False
+439933941;East 29th Street;False
+439933942;East 30th Street;False
+439933945;Hudson Street;False
+439933946;Lafayette Street;False
+439933947;Lafayette Street;False
+439933948;MacDougal Street;False
+439933949;Thompson Street;False
+439933951;West Broadway;False
+440268560;;False
+440542774;South Street;False
+440542775;South Street;False
+440633370;Adams Street;False
+440633409;Jay Street;False
+440633414;Jay Street;False
+440633419;John Street;False
+440633423;John Street;False
+440633432;Old Fulton Street;False
+440633435;Old Fulton Street;False
+440633442;Prospect Street;False
+440633447;Prospect Street;False
+440681436;Avenue C;True
+440681437;Avenue C;True
+441167004;;False
+441167005;;False
+443649237;;False
+446864088;Delancey Street;False
+446864089;Orchard Street;False
+446864090;Delancey Street;False
+446864091;Ludlow Street;False
+447018423;Wall Street;False
+450807242;Canal Street;False
+450896752;Clinton Street;False
+451808492;East 15th Street;False
+451808493;East 15th Street;False
+451808494;East 15th Street;False
+451904646;East 8th Street;False
+451905565;6th Avenue;False
+451934311;Prospect Street;False
+451934642;Sands Street;False
+451954038;Rutgers Street;False
+451954039;Madison Street;True
+451954041;Rutgers Street;False
+451954042;Madison Street;True
+451954043;;True
+451954044;Cherry Street;True
+451954045;Cherry Street;False
+451954046;Allen Street;False
+451954047;Canal Street;False
+451954055;Delancey Street;False
+451954060;Delancey Street;False
+451954843;Delancey Street;False
+452098020;Rutgers Slip;False
+452319507;East Houston Street;False
+452339695;East Broadway;True
+452339696;Division Street;False
+452339697;Montgomery Street;False
+452339698;Henry Street;False
+452339699;6th Avenue;False
+452487048;East Houston Street;False
+452487050;East Houston Street;False
+452492203;8th Avenue;False
+453143511;Park Row;False
+453239582;;False
+453239584;;False
+453242694;;False
+453323025;Chrystie Street;False
+453456963;;False
+453527688;;False
+453527689;;False
+453937514;;False
+454031476;Chrystie Street;True
+454963832;Chrystie Street;True
+455501315;Beekman Street;False
+455501322;Park Row;False
+455501328;Park Row;False
+456308943;East 22nd Street;False
+456308944;Park Avenue South;False
+456308945;Park Avenue South;False
+456313635;East Houston Street;False
+456313638;East Houston Street;False
+456315007;Essex Street;True
+456323427;Pike Street;False
+457937084;East Houston Street;False
+457937087;Delancey Street;False
+457937091;Canal Street;False
+458106346;West 17th Street;False
+458106347;West 15th Street;False
+458106348;West 14th Street;True
+458166896;Lexington Avenue;False
+458387408;East Houston Street;False
+458387409;East Houston Street;False
+459865906;;False
+460332196;;False
+460332197;;False
+460534165;;False
+460581660;Furman Street;True
+460581661;Furman Street;True
+460624363;Liberty Street;False
+460624365;Church Street;False
+463035747;Holland Tunnel access;False
+463035843;Delancey Street;False
+463532615;Horatio Street;False
+464522037;Broadway;False
+464683313;East 23rd Street;False
+464683314;Park Avenue South;False
+464683315;East 18th Street;False
+464683316;East 18th Street;False
+464683317;Park Avenue South;False
+464683323;East 17th Street;False
+464683326;Union Square East;False
+464683327;Union Square East;False
+464683328;Park Avenue South;False
+464683329;Park Avenue South;False
+464683330;Park Avenue South;False
+464683332;Park Avenue South;False
+464683336;Park Avenue South;False
+464963297;Bowery;False
+464964299;Chrystie Street;True
+465098276;8th Avenue;False
+465098295;8th Avenue;False
+465101198;West 23rd Street;False
+465250328;;False
+465255350;Varick Street;False
+466956271;Varick Street;False
+466956272;Varick Street;False
+466956273;Broome Street;True
+466956274;Dominick Street;False
+466956276;Varick Street;False
+466956278;Spring Street;False
+467222802;;False
+467222812;Bleecker Street;False
+467222828;Christopher Street;False
+467222844;7th Avenue South;False
+467222856;Canal Street;True
+467523298;Cooper Square;False
+468016990;Plymouth Street;False
+468016991;Plymouth Street;False
+468016992;Plymouth Street;False
+468016993;Plymouth Street;False
+468017915;;False
+468414626;Collister Street;False
+468414627;Hubertt Street;False
+468414628;;False
+468414632;Clarkson Street;False
+468414633;Morton Street;False
+468414634;Morton Street;False
+471524646;;False
+471525336;;False
+471525498;;False
+471543052;;False
+473565703;;True
+473884145;West Street;False
+473884146;10th Avenue;False
+474024817;;False
+474054794;East Houston Street;False
+474054795;Orchard Street;False
+474635896;;False
+474635898;Horatio Street;False
+474635899;Hudson Street;False
+474635900;Hudson Street;False
+474635901;;False
+474635902;Hudson Street;False
+474635904;Hudson Street;False
+474635905;West 12th Street;False
+475867321;West Street;False
+475867322;Warren Street;False
+476756147;;False
+477151468;Avenue C;False
+477151469;Avenue D;False
+479642033;East 12th Street;False
+479642034;East 13th Street;False
+479642035;East 11th Street;False
+479642036;East 10th Street;False
+479642037;East 9th Street;False
+479642038;Saint Mark's Place;False
+479642039;East 7th Street;False
+479642040;East 6th Street;False
+479642042;East 4th Street;False
+479642043;East 3rd Street;False
+480112475;Jane Street;False
+480112476;West 12th Street;False
+480112477;West 12th Street;False
+480112478;West 11th Street;False
+480112479;Perry Street;False
+480112480;Charles Street;False
+480112481;West 10th Street;False
+480112482;Christopher Street;False
+480112483;Morton Street;False
+480112484;Clarkson Street;False
+480682390;Spruce Street;False
+480682391;Gold Street;True
+480682392;Gold Street;True
+480682393;Gold Street;False
+480682394;Platt Street;False
+480682395;Pearl Street;False
+480682396;Water Street;False
+480682397;Nassau Street;False
+480972178;Ericsson PI;False
+481047237;Laguardia Place;False
+481403099;West 17th Street;False
+481403100;East 15th Street;False
+481403101;Thompson Street;False
+481962592;Grand Street;True
+481962896;Delancey Street;False
+482026799;Steve Flanders Square;False
+483707770;Church Street;False

@@ -1,0 +1,164 @@
+117945053;;False
+119749221;;False
+119749223;;False
+119749226;Avenida da Circunvalação;False
+119755879;Rua Professor Firmino Aresta;False
+137051915;Rua dos Marinheiros;False
+137051916;Rua dos Pescadores;False
+137051917;Avenida Hintze Ribeiro;False
+137051918;;False
+137051921;;False
+137051922;;False
+137051923;Rua Arrais João Faustino;False
+138164525;Largo 30 de Outubro;False
+138164526;Travessa Arrais Bicho;False
+138164533;Travessa Xavier L. das Xavegas;False
+138164534;Rua da Sertela;False
+138164536;Rua dos Mercanteis;False
+138164538;Avenida dos Descobrimentos;True
+141040919;Travessa Raúl Brandão;True
+141040921;Rua Arrais Albino Rebelo Cebolão;True
+141040931;Rua Primeiro de Novembro;True
+151689290;;False
+155027263;;False
+156938210;;False
+156938214;;False
+156938215;;False
+156938217;Largo da Ria;False
+156938218;Rua António da Cruz Barbosa;False
+156938220;Avenida 12 de Julho;False
+156938221;Avenida 12 de Julho;False
+156938222;;False
+156938224;Rua da Ria;False
+156938225;;False
+156938226;;False
+156938228;;False
+156938233;Rua dos Galrichos;False
+156938235;;False
+156938236;;False
+156938238;;False
+156938240;Rua da Saudade;True
+157609842;;True
+157609847;Travessa do Chapim Carvoeiro;True
+157609848;;True
+157609851;Rua Henrique José Tavares Junior;True
+157609852;;True
+157609858;;True
+157609859;Travessa Chapim Real;True
+157609861;;True
+157609862;Avenida da Circunvalação;False
+157609864;;False
+157609868;;False
+157609870;;False
+157609871;Travessa do Chapim Azul;False
+157609879;Travessa do Chapim de Poupa;False
+157609882;;False
+157609884;;False
+157613035;;False
+157613036;;False
+157613037;;False
+157613038;;False
+157613040;Rua Salvadores do Nathalie;False
+157613041;;False
+157613042;;False
+160117948;;False
+160117958;;False
+160118048;Rua do Areal;False
+160118076;Rua Professor Firmino Aresta;False
+160118110;;True
+160118130;;False
+160118163;;False
+160118165;;False
+160119944;;True
+160119945;Largo do Chinchorro;True
+160119951;Praceta do Chinchorro;True
+160119952;Rua do Chinchorro;True
+160119954;;True
+160119956;Rua da Branqueira;True
+160119958;;True
+168571674;;True
+168571986;;False
+168572105;;False
+188838646;;False
+188838647;Largo das Areias;False
+188838704;Beco das Areias;False
+188838927;;False
+188838953;;False
+188839162;;False
+191510488;;False
+197700209;Travessa dos Bacalhoeiros;False
+197702112;;False
+197702158;;False
+197702251;;False
+197702285;;False
+197702521;;False
+197703117;;False
+197703150;;True
+197703200;;False
+212336152;;False
+213508587;;False
+213508787;;False
+213508796;;False
+213508869;;False
+213508993;;False
+213509228;;False
+213509235;;False
+213509405;;False
+217364041;;False
+232797953;;False
+232798271;;False
+232798466;;False
+232815536;Avenida dos Descobrimentos;True
+232815537;Rua António Feliciano Castilho;True
+232815538;Rua dos Navegantes;True
+232815814;Rua Maria Augusta da Cruz Barbosa;True
+232815825;Rua 10 de Junho;True
+232815849;Rua Arrais Roberto;True
+232815863;;True
+232815865;;True
+232816045;;True
+232816610;Rua de São Paio;True
+232816663;;True
+232816693;;True
+232838087;;False
+232899731;;False
+232900177;;False
+232900195;;False
+232900205;;False
+232998599;;False
+232998655;;False
+232998716;;False
+232998718;;False
+251085058;Rua 10 de Junho;False
+251085066;;False
+251085070;;False
+323907946;;False
+323907947;Rua Henrique José Tavares Junior;False
+323908337;Rua Professor Firmino Aresta;True
+323908339;;False
+323908341;Rua Professor Firmino Aresta;False
+356256304;Travessa do Areal;False
+356258560;;False
+356477147;;False
+356478917;Rua do Maçarico Real;False
+356479269;Travessa das Marrequinhas;False
+356480150;Travessa do Pato Colhereiro;False
+356480151;Rua Ria de Aveiro;False
+356480300;Avenida 12 de Julho;False
+356481617;Bairro Maria Augusta da Cruz Barbosa;False
+356483747;Rua das Areias;False
+356483750;Praça 10 de Junho;False
+356483754;Praça 10 de Junho;False
+356492282;Rua do Chinchorro;False
+356492283;Rua Primeiro de Novembro;False
+356492284;Avenida Hintze Ribeiro;False
+356492285;Rua António Vieira Pinto;False
+356496478;Rua Salvadores do Nathalie;False
+356496479;Bairro Maria Augusta da Cruz Barbosa;False
+357339960;Praceta do Chinchorro;False
+357342848;Rua dos Marinheiros;True
+357342849;Rua dos Marinheiros;True
+379969698;Travessa dos Navegantes;False
+379969699;Rua dos Marinheiros;True
+379969942;;True
+379970579;;True

@@ -1,0 +1,78 @@
+52205722;Rua Sacadura Cabral;False
+52205731;Avenida do Infante Dom Henrique;False
+52205732;;False
+52205733;Avenida dos Descobrimentos;False
+77882726;;False
+77882731;Rua das Camarinhas;False
+77882732;Rua do Varinel;False
+77882733;Rua Patrícios Em Lisboa;False
+77882734;Rua das Companhas;False
+77882735;Rua Álvares Cabral;False
+77882737;Rua Gonçalo Velho;False
+77882739;Avenida Tomaz Ribeiro;False
+77882740;Rua da Imprensa Portuguesa;False
+77890041;Praça da Varina;False
+77890042;Rua Gago Coutinho;False
+78104547;Rua dos Mercantéis;False
+78121933;Rua Senhor da Piedade;False
+78121942;Rua de São Pedro;False
+78121952;Rua Diogo Cão;False
+78121961;Rua Escrivães das Campanhas;False
+78121964;Rua dos Arrais;False
+78121968;Avenida Fernão de Magalhães;False
+78121977;Avenida do Infante Dom Henrique;False
+78121979;Avenida Fernão de Magalhães;True
+78255063;Rua Moços do Chicote;True
+78255108;Rua das Bateiras;True
+78326292;Rua Sacadura Cabral;True
+78326460;Rua dos Chinchorros;True
+78326492;Rua do Jornal O Comércio do Porto;False
+78326933;;False
+78327969;;False
+78327996;Rua Gonçalo Velho;False
+78621442;;True
+78625852;Rua dos Bombeiros Voluntários do Porto;False
+78625963;Rua Sacadura Cabral;False
+78626958;Rua dos Lavradores;False
+78627514;Avenida dos Descobrimentos;False
+79570201;;False
+79572570;Rua de Sousa Lopes;False
+79573115;Avenida Tomaz Ribeiro;False
+79573141;Rua da Imprensa Portuguesa;False
+81159518;Rua João Pedro Mijoulle;False
+81216787;Avenida da República;False
+81216847;Rua do Bartolomeu Dias;False
+81218743;;False
+81218831;;False
+81218854;;False
+81221738;;False
+81221986;;False
+81222066;;False
+81223584;Rua de Carvalho de Araújo;False
+81224127;Rua das Xá Vegas;False
+81225961;Avenida Fernão de Magalhães;False
+81226028;Avenida dos Descobrimentos;False
+81291544;Rua Família Valente de Almeida;False
+81292296;;False
+81292409;;False
+81293289;;False
+81294771;Rua das Xá Vegas;False
+81295387;Rua Gil Eanes;False
+81295593;Avenida do Emigrante;False
+81295594;Avenida do Emigrante;False
+81626651;Rua das Bateiras;False
+251529349;;False
+251703539;;False
+251703540;;False
+251703542;;False
+252056210;;False
+252056211;;False
+254207158;;False
+377934342;Avenida dos Descobrimentos;True
+377934362;Rua de São Pedro;False
+377934363;Rua de São Pedro;False
+377934644;;False
+377934657;;False
+377934732;;False
+377934790;;False
+437433454;;False

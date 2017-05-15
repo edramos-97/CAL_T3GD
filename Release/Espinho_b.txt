@@ -1,0 +1,324 @@
+37680676;Rua 19;False
+37680683;Rua 19;False
+37680685;Avenida 32;True
+37680687;Rua 7;False
+37680688;Rua 62;False
+37680691;Rua 9;False
+37680692;Rua 22;False
+37680693;Rua 3;False
+37680694;Rua 8;True
+37680695;Rua 5;False
+37680697;;False
+37680698;Rua 1;False
+37680700;Rua 66;False
+37680701;Rua 11;False
+37680702;Rua 11;False
+37680703;Rua 64;False
+37680704;Rua 16;False
+37680711;Rua 15;False
+37680712;Avenida 32;False
+37681026;Rua 23;False
+37681028;Rua 23;False
+37681206;Rua 34;False
+37681207;Rotunda 25 de Abril;False
+37681208;Avenida 32;False
+37681209;Avenida 32;False
+37681212;Rua da Ponte d'Anta;False
+37842089;Rua 25;False
+37842090;Rua 27;False
+37842091;Rua 29;False
+37842092;Rua 31;False
+37842093;Rua 33;False
+37842503;Rua 33;False
+37842504;;False
+37842505;;False
+37842506;Rua do Progresso;False
+37842509;Avenida 32;False
+37842704;Estrada de Santiago;False
+37843031;Avenida 32;False
+37843271;;False
+37843272;Rua 26;False
+37843338;Rua 21;False
+37843340;Rua 14;False
+37843341;Rua 17;False
+37843935;Rua 11;False
+37843936;Rua 18;False
+37843940;Rua 41;False
+37843943;Rua 37;False
+37843944;Rua 14;False
+37843945;Rua 39;False
+37843946;Rua 30;False
+37843950;Rua 35;False
+37843951;Rua 22;False
+37843952;Rua 28;False
+37844586;Rua 21;False
+37844589;Rua 11;False
+37844591;Rua 9;False
+37844595;Rua 30;False
+37844596;Rua 12;False
+37844598;Rua 10;False
+37844602;Rua 6;False
+51230328;Rua 17;False
+61596932;Rua 37;False
+61596933;Rua 39;False
+61596934;Rua 39;False
+61596935;Rua 43;False
+61596936;Rua 4;False
+61596937;Avenida São João de Deus;False
+61596938;Rua Manuel D'Areia;False
+61596939;Rua 14;False
+61596941;Rua 41;False
+61596942;Avenida São João de Deus;False
+61596943;Rua 41;False
+61596945;Travessa do Futebol;False
+61596946;Rua 45;False
+61596947;Rua 39;False
+61596948;Rua 4;False
+61596949;Rua 6;False
+61596950;Rua 43;False
+61596951;Rua 35;False
+61596952;Avenida São João de Deus;False
+61599066;Rua 21;False
+61599067;Rua 29;False
+61599070;Rua 28;False
+61599074;Rua 21;False
+61599123;Rua 12;False
+61599124;Rua 62;False
+61599125;Rua 31;False
+61599126;Rua 6;False
+61599127;Rua 22;False
+61599128;Rua 1A;False
+61599129;Rua 8;False
+61599130;Rua 16;False
+61599339;Rua 15;False
+61599383;Avenida 32;False
+61599714;Rua 25;False
+61599715;Rua 4;False
+61599718;Rua 4;False
+61650532;Rua 31;False
+61650533;Rua 27;False
+61650534;Rua 25;False
+61650679;Rua 32;True
+61650797;Rua 31;True
+61740513;;True
+61740514;;True
+61740515;Largo Adriano Gonçalves;True
+61740516;;True
+61740517;;True
+61740518;;True
+61740519;;True
+61740520;Avenida São João de Deus;False
+61740522;;False
+61740523;;False
+61740524;;False
+61740525;Rua Nossa Senhora do Mar;False
+61740526;;False
+61742510;Rua 32;False
+61743765;Rua de Miros;False
+61743766;;False
+61743767;Zona Industrial de Barros;False
+61743769;Zona Industrial de Barros;False
+61743770;Rua das Fábricas (Norte);False
+61743771;Rua do Loureiro;False
+61743772;Rua das Fábricas (Sul);False
+61743773;Zona Industrial de Barros;False
+61749242;Rua 33;False
+61756254;Rua 33;False
+61756255;Rua 37;False
+61900269;Avenida 32;False
+61900273;Avenida 32;False
+61900276;Rua Nossa Senhora das Dores;False
+61900278;Avenida 32;False
+61900301;Rua das Pedreiras;False
+61900302;Avenida 32;False
+61988542;Rua 2;False
+61988549;Travessa do Futebol;False
+61988573;Rua 13;False
+62049166;Avenida 8;False
+62081952;Travessa dos Loureiros;False
+75666942;;False
+75672378;Avenida 24;False
+77037383;;False
+77037386;;True
+77037390;;True
+77040779;;True
+77607334;Rua 20;True
+77607342;Avenida da Liberdade;True
+78446111;;True
+79292944;;True
+79385475;Rua 4;True
+100653163;Rua 7;True
+100653180;Rua 9;False
+100660024;Avenida 24;False
+100660027;;False
+100660028;Avenida 24;False
+100660033;Avenida 24;False
+100660035;Travessa dos Outeiros;True
+100660038;Avenida 24;False
+100660040;Travessa dos Outeiros;False
+100660908;Rua de Santo António;False
+100661160;;False
+100661161;Rua 32;False
+100661601;Rua 33;False
+100661602;Rua 33;False
+100664354;;False
+109585507;;False
+109963969;Rua 8;False
+109963970;Avenida 8;False
+109963971;;False
+109963972;Rua 8;False
+109963973;Rua 8;False
+110165743;;False
+110166520;;True
+110166522;;True
+110166524;;True
+110166526;;True
+110166527;;True
+110166531;;True
+110270474;;True
+110270477;;True
+116004285;;True
+116004288;;True
+116004351;Rua Monte Lírio;True
+116004371;Rua da Ponte d'Anta;True
+116004377;;True
+116004381;Rua da Ponte d'Anta;True
+116004399;;True
+116004467;;True
+116004526;;True
+116004580;;True
+116004642;Rua da Ponte d'Anta;True
+116004649;;True
+116004651;;True
+116004652;Travessa do Mocho;True
+116004655;;True
+116004660;;True
+116004663;;True
+116004679;Rua 22;True
+116004703;Rua do Mocho;True
+116004724;;True
+116041338;;True
+116041518;;True
+119557017;;True
+119557041;;True
+139129813;Rua 11;False
+139129815;Rua 6;False
+139129818;Rua 6;False
+139132382;Avenida 8;False
+139132384;Avenida 8;False
+139132385;Avenida 8;False
+139132391;Avenida 8;False
+139132393;Rua 8;False
+139140310;;False
+139140313;;False
+141395143;Rua 8;False
+142865544;;False
+142865778;;False
+142865779;;False
+142865780;;False
+142865781;;False
+142997494;Avenida da Liberdade;True
+142997500;;False
+146226047;;False
+146226048;;False
+146226050;;False
+147038829;Rua 2;False
+147038830;Rua 20;True
+147038831;Rua do Golf;True
+147039511;;True
+147039512;;True
+150640068;Rua 21;True
+150640529;Rua 2;True
+150643142;;True
+150643143;;False
+150868534;Rua 17;False
+151728910;Avenida 8;False
+151728935;Rua 19;True
+151728936;Rua 19;False
+151729262;;False
+151729268;;True
+151729284;;True
+151729285;;True
+151729304;;True
+151729314;;True
+151729349;;False
+151729356;;True
+151729359;;False
+151729374;;False
+151729387;;True
+151729388;;True
+151729391;;True
+151729415;;True
+151729430;;True
+151736254;Rua 37;True
+152188739;;True
+152188740;;True
+152188741;;True
+152188742;;True
+152188743;;True
+152188744;;True
+152188745;;True
+152188746;;True
+152188747;;False
+152190835;;False
+152420343;;False
+152420490;;False
+152420491;;False
+152420492;;False
+155831509;;False
+155831510;;False
+167627378;Rua 20;True
+167627379;Rua 20;True
+167627970;;True
+167627971;;True
+167627972;;True
+167628484;;True
+167628485;;True
+167628486;;True
+167628487;;True
+167628488;;True
+167628489;;True
+167630567;Rua 35;False
+167630896;Rua 32;False
+241135855;;False
+281103263;;False
+281120259;Rua 43;True
+294407809;Rua 29;False
+297400619;Rua 15;False
+353079105;Viela do Mocho;False
+376021185;Rua 41;False
+376021186;Avenida 24;False
+406992618;Travessa de Santa Cruz;False
+406992658;;False
+406992663;;False
+406992670;;False
+406992671;;False
+406992672;;False
+406992673;;False
+406992676;;False
+436191732;;False
+436191733;;False
+436191734;;False
+436191735;;False
+436191736;;False
+436191737;;False
+436191738;;False
+436191739;;False
+436191740;;False
+436191741;;False
+436191743;;False
+436191744;;False
+436191745;;False
+468436705;;False
+468443800;;False
+468443801;;False
+468443802;;False
+468443803;;False
+468443804;;False
+468443805;;False
+468443806;;False
+469533424;;False
+477290536;Avenida 24;False
+477290537;;False
+477290544;;False
+477290545;;False

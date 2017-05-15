@@ -1,0 +1,84 @@
+62574165;Rua João de Deus;False
+62574170;Avenida Doutor Renato Araújo;False
+62574173;Avenida Doutor Renato Araújo;False
+62574175;Avenida Doutor Renato Araújo;False
+62574207;Rua João de Deus;False
+62574212;Avenida da Liberdade;False
+64133281;Rua do Dourado;False
+78314312;Rua Visconde de São João da Madeira;False
+78314318;Rua Visconde de São João da Madeira;False
+79686584;;False
+79686719;Rua do Douro;False
+79692585;Rua Júlio Dinis;False
+79692589;Rua 11 de Outubro;True
+130750375;Rua Oliveira Junior;False
+130750376;Rua Oliveira Junior;False
+130750377;Rua Oliveira Junior;True
+136189318;Avenida Doutor Renato Araújo;False
+136189319;Avenida Doutor Renato Araújo;False
+136189320;Avenida Doutor Renato Araújo;False
+136189321;;False
+136191225;;False
+136191230;Avenida Doutor Renato Araújo;False
+136191231;Rua Oliveira Junior;False
+136191232;;True
+136191236;Rua Doutor Maciel;True
+136191581;;False
+136191582;;False
+136191584;Rua 5 de Outubro;False
+140362781;Rua Vasco da Gama;False
+140363297;;False
+140782805;Avenida Benjamim Araújo;False
+140782818;;False
+140782933;;False
+140782980;Rua Eça de Queirós;False
+140782982;Rua Doutor Sá Carneiro;False
+140782986;Rua do Barroco;False
+140783058;;False
+140783090;;True
+140783224;Rua da Liberdade;True
+140783246;;True
+140783251;;True
+140783312;Avenida Benjamim Araújo;False
+140783347;Rua Durbalino Laranjeira;False
+142172285;Avenida Doutor Renato Araújo;False
+142173450;;False
+142789560;;False
+142789561;Rua 11 de Outubro;False
+142789562;Rua Padre Oliveira;False
+142789565;Rua de Santo António;False
+154740799;;True
+154741623;;True
+154741678;;True
+161911487;Rua Infante Dom Henrique;True
+237658181;Rua Infante Dom Henrique;True
+237658182;;True
+237658183;;True
+237684807;;False
+237684819;Avenida Doutor Renato Araújo;False
+237684820;Avenida Doutor Renato Araújo;False
+237699275;;False
+237699276;;False
+237699278;Avenida da Liberdade;False
+237704343;Avenida Doutor Renato Araújo;False
+237704344;Avenida Doutor Renato Araújo;False
+237704354;Avenida Doutor Renato Araújo;False
+237704362;Rua João de Deus;False
+237713093;;False
+237713094;Avenida Doutor Renato Araújo;False
+237713096;Avenida Doutor Renato Araújo;False
+237713506;;False
+259093328;Praça 25 de Abril;True
+304996965;Rua 5 de Outubro;True
+304996966;;True
+305002713;;True
+305002715;;False
+305002717;;False
+305005255;Rua Vasco da Gama;False
+331408658;Rua Oliveira Junior;True
+371603396;Rua 5 de Outubro;False
+371603397;Rua 11 de Outubro;False
+371603398;Largo de Santo António;False
+371603399;Largo de Santo António;False
+371603400;Largo de Santo António;False
+371603401;Rua Alão de Morais;False

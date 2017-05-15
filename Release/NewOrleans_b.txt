@@ -1,0 +1,2664 @@
+12649211;;False
+12649218;Friedrichs Road;False
+12649223;;False
+12649272;;False
+12649325;;False
+12649356;;False
+12649377;;False
+12649392;;False
+12649464;Holmes Boulevard;False
+12649472;Porter St;False
+12649627;;False
+12649633;;False
+12649645;;False
+12649699;;False
+12649708;;False
+12649717;;False
+12649927;;False
+12650112;8th St;False
+12650113;;False
+12650188;;False
+12650377;;False
+12650404;;False
+12650633;;False
+12650702;;False
+12650705;;False
+12650922;;False
+12651072;;False
+12651109;;False
+12651137;Governor Hall St;False
+12651255;;False
+12651322;;False
+12651366;;False
+12651376;;False
+12651445;;False
+12651558;;False
+12651635;;False
+12651648;;False
+12651733;;False
+12651734;;False
+12651791;;False
+12651792;;False
+12651794;;False
+12651797;Evergreen Drive;False
+12651915;;False
+12652037;;False
+12652038;;False
+12652061;;False
+12652072;;False
+12652106;;False
+12652136;;False
+12652137;;False
+12652138;;False
+12652199;;False
+12652312;;False
+12652391;;False
+12652395;;False
+12652450;;False
+12652498;;False
+12652503;;False
+12652504;;False
+12652551;Porter Street;False
+12652565;;False
+12652568;;False
+12652690;;False
+12652752;;False
+12652834;;False
+12652893;;False
+12653013;;False
+12653110;;False
+12653175;;False
+12653240;;False
+12653252;;False
+12653323;;False
+12653326;;False
+12653368;;False
+12653402;;False
+12653405;;False
+12653409;;False
+12653489;;False
+12653562;;False
+12653587;;False
+12653593;;False
+12653607;;False
+12653608;;False
+12653694;;False
+12653697;;False
+12653726;;False
+12653783;;False
+12653863;;False
+12653920;;False
+12653998;;True
+12654063;;False
+12654064;;False
+12654111;;False
+12654156;;False
+12654235;;False
+12654368;;False
+12654450;;False
+12654549;Peony Court;False
+12654606;Chesterfield Street;False
+12654638;Anson Street;False
+12654639;Anson Street;False
+12654672;Dakin Street;False
+12654724;Gretna Boulevard;False
+12654732;Isbell Street;False
+12654735;Pope Street;False
+12654772;Hinyub Street;False
+12654900;Frisella Street;False
+12654949;Friedrichs Road;False
+12655005;Gaulding Street;False
+12655118;3rd Street;False
+12655121;3rd Street;False
+12655201;Kepler Street;False
+12655204;Kepler St;False
+12655277;Jefferson Street;False
+12655290;Derbigny Street;False
+12655524;Hancock St;False
+12655528;Hancock Street;False
+12655531;Hancock Street;False
+12655568;Nel Court;False
+12655608;1st Street;False
+12655610;1st Street;False
+12655617;1st Street;False
+12655619;1st Street;False
+12655745;Monroe Street;False
+12655813;Governor Hall Street;False
+12655816;Governor Hall Street;False
+12655818;Governor Hall Street;False
+12655839;Hector Avenue;False
+12655855;Monticello Avenue;False
+12656039;East Randall Court;False
+12656123;Dupas Street;False
+12656219;Cedarwood Avenue;True
+12656225;Gulf Drive;True
+12656230;Theard Street;True
+12656238;Lavoisier Street;True
+12656294;Wright Avenue;False
+12656298;Wright Avenue;False
+12656404;Hawkins Street;False
+12656405;Hawkins Street;False
+12656479;Broad Street;False
+12656481;Willow Drive;False
+12656482;Willow Drive;False
+12656488;Willow Drive;False
+12656576;Stephens Street;False
+12656593;2nd Street;False
+12656604;2nd Street;False
+12656727;Villemar Place;False
+12656999;Industrial Avenue;False
+12657002;Leboeuf Street;False
+12657003;Leboeuf Street;False
+12657047;Robert Street;False
+12657056;Carricox Street;False
+12657325;Richard Street;False
+12657465;Byron Street;False
+12657494;Virgil Street;False
+12657553;Knight Street;False
+12657561;Lafayette Street;False
+12657752;Palfrey Street;False
+12657754;Palfrey Street;False
+12657823;Jules Avenue;False
+12657934;Heritage Avenue;False
+12657941;Farmington Place;False
+12657955;Hamilton Street;True
+12657967;Gardere Drive;True
+12658004;Marchese Street;True
+12658008;Bolton Street;True
+12658133;Azalea Street;False
+12658164;Lilevy Street;False
+12658165;Lilevy Street;False
+12658269;;False
+12658293;River Road;False
+12658368;O Connor Street;False
+12658370;O Connor Street;False
+12658490;Nel Place;False
+12658516;Bordenave Street;False
+12658541;Adams Street;False
+12658554;Westbank Expressway;False
+12658647;7th Street;False
+12658660;Constanza Drive;False
+12658669;Vernon Street;False
+12658722;Cook Street;False
+12658725;Cook Street;False
+12658726;Cook Street;False
+12658802;5th St;True
+12658854;Kass Street;True
+12658933;Landry Street;True
+12659000;8th Street;False
+12659025;Chilo Street;False
+12659026;Chilo Street;False
+12659106;6th Street;False
+12659180;Weyer Street;False
+12659230;9th Street;False
+12659267;Amelia Street;False
+12659289;Adonis Way;False
+12659337;Arrow Lane;False
+12659350;Terry Parkway;False
+12659354;Terry Parkway;False
+12659464;Dolhonde Street;False
+12659507;Barry Avenue;False
+12659513;Rupp Street;False
+12659592;Milton Street;True
+12659593;Milton Street;True
+12659634;Isabell Street;True
+12659694;Ellen Street;False
+12659715;;False
+12659759;Madison Street;False
+12659789;Wiedman Street;False
+12659790;Tulip Drive;False
+12659800;Porter Street;False
+12659802;Porter Street;False
+12659813;Christopher Drive;False
+12660020;Appletree Lane;False
+12660054;Spruce Street;False
+12660055;Spruce Street;False
+12660075;Mc Donough Avenue;False
+12660177;Coral Avenue;False
+12660322;Ruby Street;True
+12660330;Irving Street;True
+12660426;Ashton Street;False
+12660467;Perry Street;False
+12660482;Brooklyn Avenue;False
+12660486;Brooklyn Avenue;False
+12660771;Ocean Avenue;False
+12660784;North Randall Court;False
+12660815;Cherry Blossom Lane;False
+12660933;Fried Street;False
+12661072;Iris Avenue;False
+12661073;Iris Avenue;False
+12661102;Van Trump Street;False
+12661104;Van Trump Street;False
+12661107;Van Trump Street;False
+12661206;Pratt Street;False
+12661210;Pratt Street;False
+12661224;Jeannette Street;False
+12661268;Pailet Drive;False
+12661276;Lapeyronnie Street;False
+12661366;Coolidge Street;False
+12661451;O Dwyer Place;False
+12661478;Mc Donough Street;False
+12661480;Mc Donough Street;False
+12661481;Truxton Street;False
+12661483;Truxton Street;False
+12661533;Stumpf Boulevard;False
+12661537;Stumpf Boulevard;False
+12661541;Stumpf Blvd;False
+12661564;Huey P Long Avenue;False
+12661566;Huey P Long Avenue;False
+12661571;Huey P Long Avenue;False
+12661585;Solon Street;False
+12661586;Solon Street;False
+12661596;Aquavit Street;False
+12661659;Franklin Avenue;False
+12661661;Franklin Avenue;False
+12661872;Linda Court;False
+12662034;Bark Drive;False
+12662058;Americus Street;False
+12662142;Helen Street;False
+12662144;Helen Street;False
+12662178;Washington Street;False
+12662275;Jefferson Highway;False
+12662351;New England Court;False
+12662449;12th Street;False
+12662650;Avenue A;False
+12662681;Avenue B;False
+12662685;Avenue B;False
+12662695;Avenue C;False
+12662775;Avenue D;False
+12662900;Burmaster Street;False
+12662902;Burmaster St;False
+12662934;Grefer Lane;False
+12662979;Whitney Avenue;False
+12662981;Whitney Avenue;False
+12662987;Whitney Avenue;False
+12663654;Romain Street;True
+12663655;Romain Street;True
+12663657;Romain Street;True
+12663815;Holly Drive;False
+12663887;Harding Street;False
+12664007;Hamilton Road;False
+12664150;Huber Street;False
+12664181;Columbus Street;False
+12664204;Gelbke Drive;False
+12664224;Derbes Drive;False
+12664475;St Michael Court;False
+12664567;10th Street;False
+12664842;Beauregard Drive;True
+12664888;Newton Street;True
+12665034;Knox Road;False
+12665043;Cicero Street;False
+12665114;11th Street;False
+12665170;Holmes Boulevard;False
+12665242;Moss Lane;False
+12665337;Rouyer Street;False
+12665392;Oak Drive;False
+12686523;Palm Terrace;False
+12686554;Ricks Place;False
+12686569;Toledano Street;False
+12686575;Washington Avenue;False
+12686587;Toledano Street;False
+12686613;;False
+12686621;;False
+12686653;;False
+12686654;;False
+12686764;;False
+12686889;;False
+12686909;;False
+12686917;Horseshoe;False
+12687047;;False
+12687141;Calliope Street;False
+12687175;;False
+12687177;;False
+12687180;Convention Center Boulevard;False
+12687185;;False
+12687193;;False
+12687213;Grain Elevator Road;False
+12687226;;False
+12687281;;False
+12687286;Clarence Henry Truckway;False
+12687297;;False
+12687413;Opelousas Avenue;False
+12687424;;False
+12687457;;False
+12687472;;False
+12687487;Calliope Street;False
+12687491;;False
+12687493;;False
+12687511;;False
+12687513;;False
+12687553;;False
+12687612;;False
+12687616;;False
+12687758;;False
+12687874;;True
+12687880;;True
+12687890;;True
+12687925;;False
+12687943;;False
+12687988;;False
+12687998;;False
+12688018;;False
+12688020;;False
+12688021;;False
+12688025;Delachaise Street;False
+12688085;;False
+12688092;;False
+12688094;;False
+12688107;;False
+12688302;;False
+12688306;;False
+12688309;;False
+12688340;;False
+12688383;;False
+12688411;;False
+12688480;;False
+12688495;;False
+12688514;;False
+12688566;;False
+12688572;;False
+12688627;;False
+12688639;;False
+12688693;;False
+12688738;;False
+12688743;;False
+12688778;;False
+12688781;;False
+12688852;;False
+12688865;;False
+12688901;;False
+12688921;;False
+12688922;Zoo Drive;False
+12688924;;False
+12689051;;False
+12689055;;False
+12689080;;False
+12689083;;False
+12689123;;False
+12689182;;True
+12689309;;False
+12689318;;False
+12689369;;False
+12689417;Upperline Street;False
+12689418;;False
+12689421;;False
+12689470;;False
+12689486;Perdido Street;False
+12689523;;False
+12689525;;False
+12689600;;False
+12689737;;False
+12689844;;False
+12689886;;False
+12690061;;False
+12690278;;False
+12690286;Mardi Gras Boulevard;False
+12690289;;False
+12690321;Leonidas Street;False
+12690340;;False
+12690384;;False
+12690386;;False
+12690392;;False
+12690397;;False
+12690404;;False
+12690489;;False
+12690591;;False
+12690693;;False
+12690714;;False
+12690765;;False
+12690773;;False
+12690818;;False
+12690819;;False
+12691022;Mississippi River Trail;False
+12691024;;False
+12691115;;False
+12691132;;False
+12691196;;False
+12691221;;False
+12691223;;False
+12691230;;False
+12691262;;False
+12691312;;False
+12691316;;False
+12691326;;False
+12691361;Independence Street;False
+12691370;;False
+12691384;;False
+12691385;;False
+12691389;;False
+12691398;;False
+12691399;;False
+12691464;;False
+12691481;;False
+12691567;;False
+12691570;;False
+12691572;Adele Street;False
+12691634;;False
+12691635;St Joseph Street;False
+12691657;;False
+12691691;Westbank Expressway;False
+12691704;Perdido Street;False
+12691718;;False
+12691720;;False
+12691800;;False
+12691817;;False
+12691913;;False
+12691961;;False
+12692074;;False
+12692077;;False
+12692083;;False
+12692137;;False
+12692235;Palmetto Street;False
+12692343;;False
+12692395;;False
+12692399;;False
+12692434;;False
+12692442;;False
+12692468;;False
+12692472;;False
+12692475;;False
+12692476;;False
+12692525;;False
+12692688;;False
+12692711;;False
+12692713;;False
+12692779;;False
+12692833;;False
+12693057;;False
+12693070;Calliope Street;False
+12693101;Sanctuary Drive;False
+12693104;;False
+12693116;;False
+12693120;;False
+12693184;;False
+12693185;Broadway Street;False
+12693265;;False
+12693298;;False
+12693371;;False
+12693376;;False
+12693425;Pontchartrain Expy;False
+12693463;;False
+12693472;;False
+12693566;;False
+12693570;;False
+12693571;;False
+12693574;;False
+12693591;;False
+12693600;;False
+12693602;;False
+12693715;;False
+12693758;;False
+12693778;;False
+12693804;;False
+12693856;;False
+12693864;;False
+12693873;;False
+12694005;West Road;False
+12694009;;False
+12694014;;False
+12694016;;False
+12694114;;False
+12694121;;False
+12694229;;False
+12694363;;False
+12694551;;False
+12694576;Hendee Street;False
+12694629;;False
+12694648;;False
+12694669;;False
+12694699;;False
+12694703;;False
+12694708;;False
+12694746;;False
+12694785;Esplanade Avenue;False
+12694803;;False
+12694888;;True
+12694892;;True
+12694893;;True
+12694930;;True
+12695091;;False
+12695093;;False
+12695101;;False
+12695107;;False
+12695109;;False
+12695116;;False
+12695124;;False
+12695128;;False
+12695163;;False
+12695171;;False
+12695199;;False
+12695225;;False
+12695226;;False
+12695333;;False
+12695334;;False
+12695337;West Drive;False
+12695347;;False
+12695369;;False
+12695413;;True
+12695421;;True
+12695498;Newcomb Place;False
+12695550;Elmwood Street;False
+12695558;Palmyra Street;False
+12695587;Pauger Street;False
+12695592;Amazon Street;False
+12695636;North Robertson Street;False
+12695637;North Robertson Street;False
+12695657;Belleville Court;False
+12695662;South Rendon Street;False
+12695664;South Rendon Street;False
+12695666;South Rendon Street;False
+12695670;South Rendon Street;False
+12695683;Dominican Street;False
+12695686;Dominican Street;False
+12695706;State Route 428;False
+12695707;State Route 428;False
+12695741;Hendee Street;False
+12695745;Mardi Gras Boulevard;False
+12695750;Hendee Street;False
+12695841;St Roch Avenue;False
+12695848;Palm Street;False
+12695851;Palm Street;False
+12695891;Pontchartrain Expy;False
+12695903;South Dorgenois Street;False
+12695905;South Dorgenois Street;False
+12695918;Saint Andrew Street;True
+12695921;Saint Andrew Street;True
+12695922;Saint Andrew Street;False
+12695926;Saint Andrew Street;False
+12695929;Saint Andrew Street;False
+12695942;North Peters Street;False
+12695951;North Peters Street;False
+12695973;Alvin Callender Street;False
+12696033;Pearl Street;False
+12696035;Bauman Street;False
+12696059;Palmer Avenue;False
+12696111;6th Street;False
+12696137;Dart Street;False
+12696161;Tulane Avenue;False
+12696179;Tulane Avenue;False
+12696181;Hermosa Street;False
+12696196;Music Street;False
+12696227;Alvar Street;False
+12696289;Saint Bernard Avenue;False
+12696346;Numa Street;False
+12696371;Calhoun Street;False
+12696381;Carroll Street;False
+12696384;Apple Street;False
+12696393;Pelican Avenue;False
+12696402;Chippewa Street;False
+12696403;Chippewa Street;False
+12696409;Chippewa Street;False
+12696518;Everett Place;False
+12696530;Teche Street;False
+12696549;Natchez Street;False
+12696550;McShane Place;False
+12696552;McShane Place;False
+12696616;Bringier Street;False
+12696642;Cucullu Street;False
+12696656;Walnut Street;False
+12696677;Alonzo Street;False
+12696687;Perrier Street;False
+12696689;Perrier Street;False
+12696711;Forshey Street;False
+12696762;Semmes Street;False
+12696812;Capdeville Street;False
+12696847;Canal Street;False
+12696848;Lexington Street;False
+12696921;Valence Street;False
+12696933;Salcedo Street;False
+12696937;Soniat Street;False
+12696944;South Liberty Street;False
+12696945;South Liberty Street;False
+12696946;South Liberty Street;False
+12696947;South Liberty Street;False
+12696949;South Liberty Street;False
+12696951;South Liberty Street;False
+12696952;South Liberty Street;False
+12696953;South Liberty Street;False
+12696954;Philip Street;False
+12696955;Philip Street;False
+12696956;Philip Street;False
+12696969;Soraparu Street;False
+12696970;Soraparu Street;False
+12696971;Soraparu Street;False
+12696988;Florence Drive;False
+12696991;Triangle Street;False
+12697008;Garfield Street;False
+12697012;Garfield Street;False
+12697022;Magnolia Street;False
+12697025;Magnolia Street;False
+12697036;Magnolia Street;False
+12697049;3rd Street;False
+12697050;3rd Street;False
+12697052;West Badine Street;False
+12697060;Burdette Street;False
+12697066;South Miro Street;False
+12697084;South Miro Street;False
+12697095;South Miro Street;False
+12697101;South Miro Street;False
+12697102;South Miro Street;False
+12697107;South Miro Street;False
+12697116;South Miro Street;False
+12697119;South Miro Street;False
+12697152;Cherokee Street;False
+12697173;Madison Avenue;False
+12697179;Cadiz Street;False
+12697182;Cadiz Street;False
+12697185;Nunez Street;False
+12697186;Nunez Street;False
+12697203;Socrates Street;False
+12697206;Socrates Street;False
+12697225;Banks Street;False
+12697272;Crozat Street;False
+12697386;Hurst Street;False
+12697387;Hurst Street;False
+12697390;Hurst Street;False
+12697393;Hurst Street;False
+12697403;French Market Place;False
+12697408;Marengo Street;False
+12697416;Dunlieth Court;False
+12697460;7th Street;False
+12697461;7th Street;False
+12697477;Washington Avenue;False
+12697488;Washington Avenue;False
+12697572;Terpsichore Street;False
+12697601;;False
+12697604;Andrew Higgins Street;False
+12697612;Howard Avenue;False
+12697621;Howard Avenue;False
+12697623;Howard Avenue;False
+12697625;Casa Calvo Street;False
+12697636;Marlborough Gate Place;False
+12697660;Hamilton Street;False
+12697661;Hamilton Street;False
+12697688;Ben Weiner Drive;False
+12697737;Orleans Avenue;False
+12697761;Hickory Street;False
+12697773;Momus Court;False
+12697777;Short Street;False
+12697779;Short Street;False
+12697784;Short Street;False
+12697877;Mazant Street;False
+12697880;Jane Place;False
+12697891;Kerlerec Street;False
+12697904;Camp Street;False
+12697906;Camp Street;False
+12697908;Camp Street;False
+12697909;Camp Street;False
+12697923;Pauline Street;False
+12697940;Fontainebleau Drive;False
+12697954;Saux Lane;False
+12697977;Vallette Street;False
+12698001;Congress Street;False
+12698014;Penn Street;False
+12698024;Simon Bolivar Avenue;False
+12698029;Simon Bolivar Avenue;False
+12698031;Simon Bolivar Avenue;False
+12698062;Gallier Street;False
+12698066;Elba Street;False
+12698097;Elmira Avenue;False
+12698099;La Salle Place;False
+12698144;Saint Charles Avenue;False
+12698148;Lee Circle;False
+12698162;Saint Charles Avenue;False
+12698165;Saint Charles Avenue;False
+12698222;;False
+12698224;South Peters Street;False
+12698239;Farragut Street;False
+12698257;South Saratoga Street;False
+12698259;South Saratoga Street;False
+12698269;South Saratoga Street;False
+12698273;South Saratoga Street;False
+12698282;North Johnson Street;False
+12698288;North Johnson Street;False
+12698295;Dante Street;False
+12698298;Dante Street;False
+12698306;Jackson Avenue;False
+12698312;Jackson Avenue;False
+12698327;St Anthony Street;False
+12698343;Joseph Street;False
+12698379;Chartres Street;False
+12698384;Oak Street;False
+12698411;Maple Street;False
+12698432;;False
+12698475;John Churchill Chase Street;True
+12698519;Dufossat Street;False
+12698542;Union Street;False
+12698606;Orleans Avenue;False
+12698613;Orleans Avenue;False
+12698616;Basin Street;False
+12698647;Lyons Street;False
+12698649;Erie Street;False
+12698652;Trianon Plaza;False
+12698688;Saint Philip Street;False
+12698726;Eve Street;False
+12698738;Saint Ann Street;True
+12698744;Saint Ann Street;False
+12698750;Lesseps Street;False
+12698762;Race Street;False
+12698766;Homer Street;False
+12698768;Homer Street;False
+12698771;Homer Street;False
+12698797;General Degaulle Drive;False
+12698824;Magellan Street;False
+12698831;Magellan Street;False
+12698880;Sanctuary Drive;False
+12698895;Spruce Street;False
+12698933;Jena Street;False
+12698939;Jena Street;False
+12698943;Bourbon Street;False
+12698978;2nd Street;False
+12698980;Chestnut Street;False
+12698981;Chestnut Street;False
+12698987;Chestnut Street;False
+12698989;Chestnut Street;False
+12698995;Hampson Street;False
+12699009;Seguin Street;False
+12699079;Church Street;False
+12699200;Walmsley Avenue;False
+12699277;Zimple Alley;False
+12699418;South Broad Street;False
+12699431;Poeyfarre Street;False
+12699435;Hewes Street;False
+12699437;Hewes Street;False
+12699443;South Tonti Street;False
+12699452;South Tonti Street;False
+12699458;South Tonti Street;False
+12699461;South Tonti Street;False
+12699462;South Tonti Street;False
+12699505;;False
+12699625;France Street;False
+12699660;Jeannette Street;False
+12699672;Magazine Street;False
+12699715;Eden Street;False
+12699717;Hastings Place;False
+12699769;Adams Street;False
+12699825;Milan Street;False
+12699834;Versailles Boulevard;False
+12699836;Versailles Boulevard;False
+12699849;Royal Street;False
+12699854;South Rampart Street;False
+12699860;Constellation Street;False
+12699885;South Lopez Street;False
+12699888;South Lopez Street;False
+12699891;South Lopez Street;False
+12699893;South Lopez Street;False
+12699898;Treme Street;False
+12699902;Treme Street;False
+12699904;Treme Street;False
+12699905;Treme Street;False
+12699908;Benjamin Street;False
+12699909;Benjamin Street;False
+12699911;Benjamin Street;False
+12699932;Cromwell Place;False
+12699938;Olive Street;False
+12699956;Moqueur Lane;False
+12699960;South Telemachus Street;False
+12699963;South Telemachus Street;False
+12699968;Constitution Street;False
+12699975;Delord Street;False
+12699976;University Place;False
+12700014;Alix Street;False
+12700017;Alix Street;False
+12700039;Lasalle Street;False
+12700043;Lasalle Street;False
+12700045;Lasalle Street;False
+12700047;Lasalle Street;False
+12700051;Convention Center Boulevard;False
+12700127;Louisa Street;False
+12700176;South Genois Street;False
+12700179;South Genois Street;False
+12700182;South Genois Street;False
+12700187;Monroe Street;False
+12700189;Monroe Street;False
+12700225;South Dupre Street;False
+12700250;Rosalie Alley;False
+12700251;Rosalie Alley;False
+12700276;D'Hemecourt Street;False
+12700284;Eleonore Street;False
+12700289;State Street Drive;False
+12700331;Grape Street;False
+12700379;Earhart Expressway;False
+12700403;Earhart Boulevard;False
+12700495;Annunciation Street;False
+12700498;Annunciation Street;False
+12700499;Annunciation Street;False
+12700506;Annunciation Street;False
+12700507;Annunciation Street;False
+12700509;Annunciation Street;False
+12700514;Annunciation Street;False
+12700519;General Taylor Street;False
+12700544;Atlantic Avenue;False
+12700556;Architect Street;False
+12700573;Burthe Street;False
+12700602;General Meyer Avenue;False
+12700635;Baudin Street;False
+12700643;North Gayoso Street;False
+12700655;South Roman Street;False
+12700658;South Roman Street;False
+12700660;South Roman Street;False
+12700661;South Roman Street;False
+12700699;Valmont Street;False
+12700700;Valmont Street;False
+12700726;Evergreen Avenue;False
+12700727;Bellecastle Street;False
+12700734;Amann Street;False
+12700736;Bordeaux Street;False
+12700758;Patton Street;False
+12700761;Calliope Street;False
+12700762;Calliope Street;False
+12700763;Calliope Street;False
+12700765;Wagner Street;False
+12700766;Wagner Street;False
+12700768;Celeste Street;False
+12700772;North Rampart Street;False
+12700775;North Rampart Street;False
+12700778;North Rampart Street;False
+12700792;North Dupre Street;False
+12700795;Bloomingdale Court;False
+12700797;Bloomingdale Court;False
+12700817;Webster Street;False
+12700828;Arizona Street;False
+12700841;North White Street;False
+12700894;Calliope Street;False
+12700898;Thalia Street;False
+12700902;Thalia Street;False
+12700909;Thalia Street;False
+12700911;Millaudon Street;False
+12700937;Monticello Avenue;False
+12700944;Monticello Avenue;False
+12700988;North Salcedo Street;False
+12701020;Piety Street;False
+12701036;South Villere Street;False
+12701041;Huso Street;False
+12701075;North Roman Street;False
+12701084;North Roman Street;False
+12701097;North Galvez Street;False
+12701104;North Galvez Street;False
+12701109;North Galvez Street;False
+12701120;High Court;False
+12701157;South Front Street;False
+12701159;South Front Street;False
+12701161;South Front Street;False
+12701175;Peniston Street;False
+12701177;Convention Center Boulevard;False
+12701207;Clinton Street;False
+12701251;Fig Street;False
+12701275;Diana Street;False
+12701277;Diana Street;False
+12701281;Antonine Street;False
+12701283;Seminole Place;False
+12701332;Wilkinson Street;False
+12701336;York Street;False
+12701337;York Street;False
+12701380;South Claiborne Avenue;False
+12701382;South Claiborne Avenue;False
+12701421;Marquette Place;False
+12701437;Cherry Street;False
+12701455;Broadway Street;False
+12701459;Broadway Street;False
+12701464;Broadway Street;False
+12701478;;False
+12701549;Lowerline Street;False
+12701556;Lowerline Street;False
+12701558;Lowerline Street;False
+12701562;1st Street;False
+12701567;1st Street;False
+12701576;Bienville Street;False
+12701577;O'Keefe Avenue;False
+12701588;Bertrand Street;False
+12701623;Rosa Park;False
+12701637;Newcomb Boulevard;False
+12701642;Fern Street;False
+12701643;Fern Street;False
+12701644;Fern Street;False
+12701645;Neron Place;False
+12701646;Neron Place;False
+12701654;Patterson Drive;False
+12701685;Cohn Street;False
+12701697;Delachaise Street;False
+12701699;Dublin Street;False
+12701704;Dublin Street;False
+12701710;Dublin Street;False
+12701722;Broad Place;False
+12701725;Broad Place;False
+12701727;Morgan Street;False
+12701744;Ursulines Avenue;False
+12701745;Ursulines Avenue;False
+12701754;Ursulines Avenue;False
+12701771;Behrman Highway;False
+12701811;Press Street;False
+12701824;North Villere Street;False
+12701826;North Villere Street;False
+12701828;North Villere Street;False
+12701835;Laurel Street;False
+12701840;Laurel Street;False
+12701871;Kraft Place;False
+12701891;Audubon Street;False
+12701893;Audubon Street;False
+12701895;Audubon Street;False
+12701896;Audubon Street;False
+12701906;Sycamore Street;False
+12701911;Euphrosine Street;False
+12701924;Arcade Place;False
+12701941;;False
+12701950;South Robertson Street;False
+12701952;South Robertson Street;False
+12701956;South Robertson Street;False
+12701961;South Robertson Street;False
+12701964;South Robertson Street;False
+12701965;South Robertson Street;False
+12702030;Powder Street;False
+12702072;9th Street;False
+12702085;Wall Boulevard;False
+12702103;Bouny Street;False
+12702106;Aline Street;False
+12702107;Aline Street;False
+12702131;Delaware Street;False
+12702153;Belleville Street;False
+12702261;Erato Street;False
+12702262;Erato Street;False
+12702264;Erato Street;False
+12702265;Erato Street;False
+12702318;South Johnson Street;False
+12702320;South Johnson Street;False
+12702322;South Johnson Street;False
+12702323;South Johnson Street;False
+12702324;South Johnson Street;False
+12702332;Freret Street;False
+12702336;Freret Street;False
+12702343;Freret Street;False
+12702345;South Scott Street;False
+12702353;Clio Street;False
+12702355;Clio Street;False
+12702356;Clio Place;False
+12702360;Independence Street;False
+12702365;Montegut Street;False
+12702410;South Gayoso Street;False
+12702411;South Gayoso Street;False
+12702412;South Gayoso Street;False
+12702416;Breedlove Street;False
+12702418;Willow Street;False
+12702419;Willow Street;False
+12702425;Willow Street;False
+12702427;Willow Street;False
+12702431;Willow Street;False
+12702444;Dumaine Street;False
+12702448;Dumaine Street;False
+12702460;De Armas Street;False
+12702462;De Armas Street;False
+12702465;De Armas Street;False
+12702503;North Prieur Street;False
+12702535;South Cortez Street;False
+12702547;Bradish Alley;False
+12702583;Shepard Street;False
+12702586;Belfast Street;False
+12702587;Elk Place;False
+12702588;Elk Place;False
+12702614;Whitney Avenue;False
+12702619;L B Landry Avenue;False
+12702625;Leontine Street;False
+12702628;Monticello Street;False
+12702632;Vincennes Place;False
+12702674;St Thomas Street;False
+12702675;St Thomas Street;False
+12702678;St Thomas Street;False
+12702689;Green Street;False
+12702694;Green Street;False
+12702696;North Front Boulevard;False
+12702742;Spain Street;False
+12702755;Wirth Place;False
+12702757;South Galvez Street;False
+12702758;South Galvez Street;False
+12702760;South Galvez Street;False
+12702761;South Galvez Street;False
+12702764;South Galvez Street;False
+12702765;South Galvez Street;False
+12702777;Panola Street;False
+12702779;Herman Street;False
+12702785;Louisiana Avenue;False
+12702788;Louisiana Avenue;False
+12702791;Louisiana Avenue;False
+12702792;Louisiana Avenue;False
+12702798;Saint Peter Street;False
+12702799;Saint Peter Street;False
+12702880;Story Street;False
+12702882;Story Street;False
+12702887;State Street;False
+12702938;Arabella Street;False
+12702945;Rousseau Street;False
+12702956;Foucher Street;False
+12702966;Orange Street;False
+12702973;Bodenger Boulevard;False
+12702976;Burgundy Street;False
+12702978;Burgundy Street;False
+12703023;South Carrollton Avenue;False
+12703038;Decatur Street;False
+12703040;Decatur Street;False
+12703056;Joliet Street;False
+12703058;Richmond Place;False
+12703075;Bolivar Street;False
+12703110;Zimple Street;False
+12703124;Danneel Street;False
+12703128;Danneel Street;False
+12703138;South Clark Street;False
+12703141;South Clark Street;False
+12703144;South Clark Street;False
+12703171;Gravier Street;False
+12703173;Park Boulevard;False
+12703216;Rex Place;False
+12703222;Nuns Street;False
+12703232;River Street;False
+12703244;Olivier Street;False
+12703246;Tchoupitoulas Street;False
+12703248;Livaudais Street;False
+12703276;North Miro Street;False
+12703278;North Miro Street;False
+12703347;Lamarque Street;False
+12703348;Lamarque Street;False
+12703351;Lamarque Street;False
+12703354;Lamarque Street;False
+12703361;Edinburgh Street;False
+12703363;Edinburgh Street;False
+12703394;;False
+12703402;Touro Street;False
+12703410;Oak Place;False
+12703416;Baronne Street;False
+12703423;Baronne Street;False
+12703521;Octavia Street;False
+12703593;4th Street;False
+12703605;4th Street;False
+12703606;4th Street;False
+12703619;Lawrence Street;False
+12703621;Lawrence Street;False
+12703630;Lawrence Street;False
+12703644;Carondelet Street;False
+12703734;Jefferson Avenue;False
+12703737;Jefferson Avenue;False
+12703753;Pine Street;False
+12703757;Pine Street;False
+12703759;Pine Street;False
+12703782;Dixon Street;False
+12703786;Dixon Street;False
+12703790;Dixon Street;False
+12703797;Birch Street;False
+12703819;Potomac Street;False
+12703898;Stroelitz Street;False
+12703905;Julia Street;False
+12703907;Julia Street;False
+12703911;Julia Street;False
+12703917;Julia Street;False
+12703972;Governor Nicholls Street;False
+12703974;Ulloa Street;False
+12703993;Melodia Court;False
+12704014;Apricot Street;False
+12704146;Prytania Street;False
+12704150;Prytania Street;False
+12704152;Prytania Street;False
+12704171;Joseph Court;False
+12704247;Saint James Street;False
+12704258;Austerlitz Street;False
+12704291;Franklin Avenue;False
+12704308;Picayune Place;False
+12704321;South Jefferson Davis Parkway;False
+12704324;South Jefferson Davis Parkway;False
+12704327;South Jefferson Davis Parkway;False
+12704329;South Jefferson Davis Parkway;False
+12704333;South Jefferson Davis Parkway;False
+12704336;South Jefferson Davis Parkway;False
+12704373;North Broad Street;False
+12704416;North Tonti Street;False
+12704420;North Tonti Street;False
+12704422;Richard Street;False
+12704443;North Rocheblave Street;False
+12704452;North Rocheblave Street;False
+12704539;Bartholomew Street;False
+12704551;Marais Street;False
+12704558;Marais Street;False
+12704622;South Prieur Street;False
+12704626;South Prieur Street;False
+12704631;South Prieur Street;False
+12704634;South Prieur Street;False
+12704636;South Prieur Street;False
+12704644;Memorial Park Drive;False
+12704777;Coliseum Street;False
+12704779;Coliseum Street;False
+12704787;Coliseum Street;False
+12704792;Coliseum Street;False
+12704861;Barracks Street;False
+12704865;Barracks Street;False
+12704910;Elysian Fields Avenue;False
+12705008;Harmony Street;True
+12705046;South Salcedo Street;True
+12705048;South Salcedo Street;True
+12705052;South Salcedo Street;True
+12705055;South Salcedo Street;True
+12705123;General Ogden Street;False
+12705131;General Ogden Street;False
+12705136;North Lopez Street;False
+12705160;Ptolemy Street;False
+12705161;Ptolemy Street;False
+12705168;Ptolemy Street;False
+12705169;Ptolemy Street;False
+12705217;Division Street;False
+12705234;Opelousas Avenue;False
+12705241;Opelousas Avenue;False
+12705245;Panama Court;False
+12705249;Commerce Street;False
+12705271;Exchange Place;False
+12705293;Mandeville Street;False
+12705320;Colapissa Street;False
+12705372;Louisiana Avenue Parkway;False
+12705375;Euterpe Street;False
+12705377;Euterpe Street;False
+12705380;Darensburg Court;False
+12705386;Behrman Avenue;False
+12705389;;False
+12705411;Herbert Drive;False
+12705436;Perdido Street;False
+12705445;Mc Kenna Street;False
+12705447;Mc Kenna Street;False
+12705454;South Maestri Street;False
+12705537;Hillary Street;False
+12705538;Hillary Street;False
+12705547;Verret Street;False
+12705564;South Diamond Street;False
+12705592;Mars Place;False
+12705624;Nelson Street;False
+12705639;Leake Avenue;False
+12705642;Leake Avenue;False
+12705694;Tchoupitoulas Street;False
+12705712;Constantinople Street;False
+12705722;General Pershing Street;False
+12705727;General Pershing Street;False
+12705735;Vendome Place;False
+12705766;South Derbigny Street;False
+12705768;South Derbigny Street;False
+12705772;South Derbigny Street;False
+12705774;South Derbigny Street;False
+12705777;South Derbigny Street;False
+12705779;South Derbigny Street;False
+12705782;South Derbigny Street;False
+12705788;Sunset Avenue;False
+12705795;Exposition Boulevard;False
+12705798;Barrett Street;False
+12705802;Delaronde Street;False
+12705805;Delaronde Street;False
+12705808;Hollygrove Street;False
+12705812;Hollygrove Street;False
+12705818;Amelia Street;False
+12705820;Amelia Street;False
+12705827;Pleasant Street;False
+12705855;Copernicus Street;False
+12705875;Martinique Alley;False
+12705881;;False
+12705883;Eliza Street;False
+12706011;Leboeuf Street;False
+12706095;HOV Lane;True
+12706101;Loyola Avenue;False
+12706112;Loyola Avenue;False
+12706119;Loyola Avenue;False
+12706124;Pitt Street;False
+12706127;Pitt Street;False
+12706128;Pitt Street;False
+12706130;Pitt Street;False
+12706162;Monroe Court;False
+12706163;Robert Street;False
+12706167;Robert Street;False
+12706173;Robert Street;False
+12706177;Coralie Street;False
+12706206;Felicity Street;False
+12706216;Lauradale Drive;False
+12706222;Oleander Street;False
+12706231;Oleander Street;False
+12706280;Blanc Place;False
+12706391;O'Bannon Street;False
+12706415;North Diamond Street;False
+12706421;Dauphine Street;False
+12706436;Dauphine Street;False
+12706522;Pritchard Place;False
+12706533;Pritchard Place;False
+12706537;Sabine Street;False
+12706555;Conti Street;False
+12706591;Thayer Street;False
+12706594;Thayer Street;False
+12706603;Thayer Street;False
+12706634;Josephine Street;False
+12706638;Josephine Street;False
+12706646;Josephine Street;False
+12706660;Newton Street;False
+12706736;Market Street;False
+12706765;North Claiborne Avenue;False
+12706817;Lavergne Street;False
+12706952;Brooklyn Avenue;False
+12706954;Urania Street;False
+12706957;Majestic Place;False
+12707001;Cleveland Avenue;False
+12707012;;False
+12707084;Frenchmen Street;False
+12707113;Napoleon Avenue;False
+12707125;Napoleon Avenue;False
+12707134;Upperline Street;False
+12707138;Dorsiere Street;False
+12707159;Jane Place;False
+12707166;Atlanta Street;False
+12707168;Atlanta Street;False
+12707176;Henriette DeLille;False
+12707191;Saint Claude Avenue;False
+12707206;Mardi Gras Boulevard;False
+12707212;Mardi Gras Boulevard;False
+12707302;Oretha C Haley Boulevard;False
+12707311;Oretha C Haley Boulevard;True
+12707694;Columbus Street;False
+12707749;Crozat Street;False
+12707761;College Court;False
+12707816;Conery Street;False
+12707818;Conery Street;False
+12707827;Common Street;False
+12707839;Coolidge Court;False
+12707862;;False
+12707868;Saint Louis Street;False
+12707926;Lafayette Street;False
+12707930;Lafayette Street;False
+12707957;Guadalcanal Street;False
+12708001;North Derbigny Street;False
+12708055;Eagle Street;False
+12708060;Eagle Street;False
+12708098;Poland Avenue;False
+12708122;Pacific Avenue;False
+12708125;Pacific Avenue;False
+12708131;Polymnia Street;False
+12708176;Marigny Street;False
+12708191;Cambronne Street;False
+12708195;Cambronne Street;False
+12708201;Audubon Boulevard;False
+12708208;Sumner Street;False
+12708215;South Rocheblave Street;False
+12708218;South Rocheblave Street;False
+12708219;South Rocheblave Street;False
+12708222;South Rocheblave Street;False
+12708233;South Rocheblave Street;False
+12708237;South Rocheblave Street;False
+12708337;Clara Street;False
+12708344;Clara Street;False
+12708346;Clara Street;False
+12708350;Clara Street;False
+12708356;;False
+12708361;Clara Street;False
+12708405;Orpheus Court;False
+12708585;Dryades Street;False
+12708623;Poydras Street;False
+12708634;Bermuda Street;False
+12708659;North Dorgenois Street;False
+12708669;Audubon Place;False
+12708684;Constance Street;False
+12708689;Constance Street;False
+12708695;Constance Street;False
+12708698;Constance Street;False
+12708700;Constance Street;False
+12708702;Constance Street;False
+12708753;Ferry Place;False
+12708782;Ruck Street;False
+12708786;Coral Sea Street;False
+12708863;Nashville Avenue;False
+12708865;Nashville Avenue;False
+12708902;Evelina Street;False
+12708903;Evelina Street;False
+12708907;Elmwood Park Drive;False
+12708908;Slidell Street;False
+12708914;Slidell Street;False
+12708937;Port Street;False
+12708952;Martin Luther King Jr Boulevard;False
+12708957;Martin Luther King Jr Boulevard;False
+12708961;Martin Luther King Jr Boulevard;False
+12708963;Melpomene Street;False
+12708966;Melpomene Street;False
+12708969;Melpomene Street;False
+12708974;Hornet Street;False
+12709163;Mistletoe Street;False
+12709223;Audubon Court;False
+12709228;South White Street;False
+12709232;South White Street;False
+12709237;Mobile Street;False
+23988761;;False
+23989603;Cherry Street;False
+23989981;Jefferson Highway;False
+24007650;Farragut Street;False
+24007684;;False
+24007692;;False
+24007703;Mar Avenue;False
+24007707;Marr Avenue;False
+24007714;;False
+24007716;Hendee Street;False
+24007718;;False
+24007726;HOV Lane;True
+24007727;;False
+24007728;;False
+24007734;;False
+24007747;;False
+24007751;;False
+24007764;Westbank Expy;False
+24007791;Mardi Gras Boulevard;False
+24007807;Behrman Avenue;False
+24007808;Behrman Avenue;False
+24008154;General Meyer Avenue;False
+24008194;Poydras Street;False
+24008304;Religious Street;False
+24008310;Tchoupitoulas Street;False
+24008312;Terpsichore Street;False
+24008316;Religious Street;False
+24008358;Convention Center Boulevard;False
+24008387;Calliope Street;False
+24008477;Carondelet Street;False
+24008483;Camp Street;False
+24008511;Carondelet Street;False
+24008629;South Rampart Street;False
+24012355;Crescent City Connection;False
+24012363;Pontchartrain Expy;False
+24016749;Terpsichore Street;False
+24016750;Terpsichore Street;False
+24016821;;False
+24016822;;False
+24016836;Broadway Street;False
+24016932;Audubon Street;False
+24016943;Leake Avenue;False
+24016999;West Drive;False
+24017061;Constance Street;False
+24017066;Joseph Street;False
+24017068;Joseph Street;False
+24017071;Arabella Street;False
+24017072;Arabella Street;False
+24017123;Jefferson Avenue;False
+24052574;;False
+24052576;;False
+24052578;;False
+24052581;;False
+24052607;;False
+24052611;;False
+24052614;;False
+24052616;;False
+24052617;;False
+24052630;;False
+24052634;;False
+24052916;Gretna Boulevard;False
+24052955;Stumpf Boulevard;False
+24052960;Calhoun Street;False
+24052971;Versailles Boulevard;False
+24052976;Lowerline Street;False
+24052984;Walmsley Avenue;False
+24052985;Apricot Street;False
+24052986;Nashville Avenue;False
+24053021;Vendome Pl;South Vendome Place;False
+24053022;South Jefferson Davis Parkway;False
+24053023;Martin Luther King Jr Boulevard;False
+24053024;Washington Avenue;False
+24053026;Toledano Street;False
+24053036;South Jefferson Davis Parkway;False
+24053042;;False
+24053058;South Jefferson Davis Parkway;False
+24053063;;False
+24294729;Toulouse Street;False
+24294732;Basin Street;False
+24783839;North Rampart Street;False
+24867135;Oak Street;False
+24867148;Plum Street;False
+24867152;Willow Street;False
+24867154;Willow Street;False
+24867168;Jeannette Street;False
+24867182;Neron Place;False
+24881655;West Drive;False
+24882707;South Saratoga Street;False
+24882710;Dufossat Street;False
+24882761;Soniat Street;False
+24882806;Robert Street;False
+24907568;Zimple Street;False
+24907571;Freret Street;False
+24907575;Freret Street;False
+24907578;Freret Street;False
+24907583;Fern Street;False
+24907586;Burdette Street;False
+24907589;Burdette Street;False
+24907671;Magazine Street;False
+24907676;Camp Street;False
+24925482;Toledano Street;False
+24925486;Toledano Street;False
+24925489;Freret Street;False
+24925490;Lasalle Street;False
+24925491;Lasalle Street;False
+25490029;South Broad Street;False
+25490056;South Broad Street;False
+25490092;South White Street;False
+25499396;Chartres Street;False
+25499424;Burgundy Street;False
+25499425;Dauphine Street;False
+25499426;Dauphine Street;False
+25499459;Saint Claude Avenue;False
+25499485;France Street;False
+25499493;Mazant Street;False
+25499497;Bartholomew Street;False
+25499504;Alvar Street;False
+25499507;Pauline Street;False
+25505556;Eleonore Street;False
+25505568;Pitt Street;False
+25505582;Pitt Street;False
+25505595;Constance Street;False
+25505609;Laurel Street;False
+25505614;Patton Street;False
+25867007;;False
+27293719;Hickory Street;False
+27293721;Hickory Street;False
+27293728;Cohn Street;False
+27293735;Spruce Street;False
+27293740;Spruce Street;False
+27293745;Panola Street;False
+27293747;Sycamore Street;False
+27293750;Joliet Street;False
+27293752;Joliet Street;False
+27293821;Short Street;False
+27293822;Short Street;False
+27415682;Hillary Street;False
+27459741;Willow Street;False
+27459742;Willow Street;False
+27479647;Pontchartrain Expressway;False
+27479663;Bienville Street;False
+27761612;South Rampart Street;False
+27761666;Gravier Street;False
+27761667;Gravier Street;False
+27761673;Gravier Street;False
+27797770;;False
+27797786;;False
+27844485;Chartres Street;False
+27856051;;False
+27919149;Hamilton Street;False
+27919157;Hollygrove Street;False
+27919163;Eagle Street;False
+27919175;Nelson Street;False
+27919178;Nelson Street;False
+27919187;Apple Street;False
+27919256;Belfast Street;False
+27919258;Belfast Street;False
+27919270;Apricot Street;False
+27935773;North Maestri Street;False
+27935841;Decatur Street;False
+27935845;North Peters Street;False
+27935855;Governor Nicholls Street;False
+27935906;Basin Street;False
+28021637;Port Street;False
+28022877;St Ferdinand Street;False
+28022961;Press Street;False
+28071589;South Broad Street;False
+28071606;South Broad Street;False
+28109556;Drill Road;False
+28305233;Tulane Avenue;False
+28305434;Pontchartrain Expy;False
+28305435;Pontchartrain Expy;False
+28305527;Pontchartrain Expy;False
+28307270;South Jefferson Davis Parkway;False
+28307271;South Jefferson Davis Parkway;False
+28307287;South Jefferson Davis Parkway;False
+28307290;South Jefferson Davis Parkway;False
+28328647;6th Street;False
+28328653;7th Street;False
+28328662;8th Street;False
+28333352;Euterpe Street;False
+28333374;Polymnia Street;False
+28333529;Josephine Street;False
+28345215;Zoo Drive;False
+28351903;Delachaise Street;False
+28351904;Delachaise Street;False
+28352384;Saint Ann Street;False
+28527005;Birch Street;False
+28527018;Birch Street;False
+28609327;;False
+29050027;D'Hemecourt Street;False
+29050098;Iberville Street;False
+29050107;Iberville Street;False
+29050122;Cleveland Avenue;False
+29050128;North Dupre Street;False
+29091705;Marais Street;False
+29091710;Urquhart Street;False
+29091909;;False
+29812031;Saint Ferdinand Street;False
+29815673;Piety Street;False
+29815803;Desire Street;False
+29815851;Desire Street;False
+29816212;Louisa Street;False
+29816281;Louisa Street;False
+29877464;Oak Street;False
+29877625;;False
+29989900;Saint Claude Avenue;False
+29989901;Saint Claude Avenue;False
+30011428;Orleans Avenue;False
+30029147;Fontainebleau Drive;False
+30029176;South Dupre Street;False
+30034532;Plum Street;False
+30054199;Patterson Drive;False
+30061578;Octavia Street;False
+30061590;Octavia Street;False
+30062335;Saint Peter Street;False
+30062366;Conti Street;False
+30149936;Decatur Street;False
+30954502;Jefferson Avenue;False
+30954511;Jefferson Avenue;False
+30954513;South Galvez Street;False
+30954515;South Galvez Street;False
+31678080;;False
+31678085;Howard Avenue;False
+31678087;Lafayette Street;False
+31678090;Earhart Boulevard;False
+31678099;South Prieur Street;False
+31678104;Poydras Street;False
+31678110;;False
+31678122;South Claiborne Avenue;False
+31678128;South Claiborne Avenue;False
+31678135;South Claiborne Avenue;False
+31678139;Pontchartrain Expy;False
+31678142;Pontchartrain Expy;False
+31678145;Pontchartrain Expy;False
+31678150;Pontchartrain Expy;False
+31678152;Pontchartrain Expy;False
+31678155;Pontchartrain Expy;False
+31678158;;False
+31678161;;False
+31678164;Pontchartrain Expy;False
+31678171;South Claiborne Avenue;False
+31682605;;False
+31682607;;False
+31682609;;False
+31682611;South Peters Street;False
+31682617;;False
+31705445;;False
+31705448;;False
+31705751;;False
+31705752;Orleans Avenue;False
+31705753;;False
+31705754;;False
+32490413;South Claiborne Avenue;False
+33350229;;False
+33747925;Poydras Street;False
+33795899;Fulton Street;False
+33816146;South Galvez Street;False
+33868246;South Dorgenois Street;False
+33868247;South Lopez Street;False
+33868248;South White Street;False
+33868249;South Dupre Street;False
+33919124;Lowerline Street;False
+35394417;Jeannette Street;False
+35418116;Toledano Street;False
+35418117;Toledano Street;False
+35418118;Pleasant Street;False
+35418119;Pleasant Street;False
+35418374;Cadiz Street;False
+36138641;;False
+36138824;Earhart Boulevard;False
+36138839;Earhart Boulevard;False
+36138962;Earhart Boulevard;False
+37586170;Zimple Street;False
+37586171;Burthe Street;False
+37586172;Burthe Street;False
+37586173;Maple Street;False
+37586174;Dante Street;False
+37586175;Dante Street;False
+37586176;Cambronne Street;False
+37586177;Cambronne Street;False
+37602531;North Dorgenois Street;False
+37602535;North Derbigny Street;False
+37606445;South Roman Street;False
+37606446;South Roman Street;False
+37606447;Milan Street;False
+37606448;Milan Street;False
+37606449;Annunciation Street;False
+37606450;Constantinople Street;False
+37606451;Constantinople Street;False
+37606452;Perrier Street;False
+37606453;Perrier Street;False
+37606454;Coliseum Street;False
+37606455;Coliseum Street;False
+37606456;Upperline Street;False
+37606457;Upperline Street;False
+37606458;Joseph Street;False
+37606459;Joseph Street;False
+37606460;Danneel Street;False
+37879232;South Dupre Street;False
+37879233;South White Street;False
+38110721;Marigny Street;False
+38580509;;False
+38883405;;False
+38931842;Willow Street;False
+38931843;Willow Street;False
+38931844;Clara Street;False
+38931845;South Robertson Street;False
+38931846;South Robertson Street;False
+38931847;Magnolia Street;False
+38931848;Magnolia Street;False
+38931849;Jena Street;False
+39712673;Lafayette Street;False
+39712677;4th Street;False
+40219072;South Pierce Street;True
+40219074;South Pierce Street;False
+40219075;Gravier Street;False
+40219081;Gravier Street;False
+40219083;South Scott Street;False
+40219084;South Cortez Street;False
+40219085;South Telemachus Street;False
+40219090;Baudin Street;False
+40219091;Baudin Street;False
+40439947;Olive Street;False
+40594904;Palm Street;False
+40594905;Palm Street;False
+40594906;Short Street;False
+40594907;Calliope Street;False
+41170389;;False
+41170420;;False
+41170423;;False
+41170425;;False
+41170426;;False
+42477234;South Claiborne Avenue;False
+42477237;Dave Dixon Drive;False
+42499188;Orange Street;False
+42499189;Melpomene Street;False
+42499190;Saint Thomas Street;False
+42499191;Thalia Street;False
+42499193;Thalia Street;False
+42499194;Erato Street;False
+42499195;Erato Street;False
+42499196;Thalia Street;False
+42499721;Josephine Street;False
+42499723;Josephine Street;False
+42499724;Brainard Street;False
+42499725;3rd Street;False
+42499726;South Saratoga Street;False
+42499727;Erato Street;False
+42499728;Clio Street;False
+42499729;Clio Street;False
+42499730;Clio Street;False
+42529224;Pontchartrain Expy;False
+44199953;Leontine Street;False
+44199954;Valmont Street;False
+44199955;Valmont Street;False
+44199957;Dufossat Street;False
+44199958;Dufossat Street;False
+52115297;State Street Drive;False
+52115299;McAlister Drive;False
+52186175;Tulane Avenue;False
+52186179;Tulane Avenue;False
+52186184;South Broad Street;False
+52186187;South Broad Street;False
+52186189;South Broad Street;False
+52186191;Tulane Avenue;False
+52186194;South Claiborne Avenue;False
+52186198;South Claiborne Avenue;False
+52186204;Tulane Avenue;False
+52186207;Tulane Avenue;False
+52870605;;False
+52870606;Huey P Long Avenue;False
+52870607;4th Street;False
+52870608;Huey P Long Avenue;False
+52870609;Huey P Long Avenue;False
+52870613;Lafayette Street;False
+52870614;5th Street;False
+52870615;5th Street;False
+56460534;Bayou Road;False
+56460540;South Jefferson Davis Parkway;False
+56460957;Gravier Street;False
+56460958;Gravier Street;False
+56460964;South Tonti Street;False
+56460965;South Rocheblave Street;False
+56463225;North Miro Street;False
+57962187;;False
+57962189;South Carrollton Avenue;False
+57962192;;False
+57962193;;False
+57962194;;False
+57962195;;False
+57962197;;False
+57962199;;False
+57962200;;False
+57971057;South Carrollton Avenue;False
+57971076;South Carrollton Avenue;False
+57971112;South Carrollton Avenue;False
+57971125;Dublin Street;False
+57971133;Cambronne Street;False
+57971141;Cambronne Street;False
+57971158;Palmetto Street;False
+57971169;Pine Street;False
+57971179;Palmetto Street;False
+57971184;Pine Street;False
+58292886;Henriette DeLille;False
+58293254;Ursulines Avenue;False
+58294840;North Prieur Street;False
+59657208;Crescent City Connection;False
+59657209;;True
+59876882;Opelousas Avenue;False
+59876883;Opelousas Avenue;False
+59876884;Verret Street;False
+59876885;Opelousas Avenue;False
+59876886;Opelousas Avenue;False
+59876887;Newton Street;False
+59876888;Nunez Street;False
+59876889;Verret Street;False
+59876890;Vallette Street;False
+59876891;Vallette Street;False
+59876892;Nunez Street;False
+59876902;;False
+59876903;Evelina Street;False
+59988294;Westbank Expressway;False
+59988297;Stumpf Boulevard;False
+59988300;Kepler St;False
+59988301;Franklin Avenue;False
+59988302;Franklin Avenue;False
+59988304;Burmaster Street;False
+59988305;Burmaster St;False
+60972922;South Telemachus Street;False
+60972923;South Cortez Street;False
+60990851;North Villere Street;False
+60990852;Toulouse Street;False
+61109118;East Badine Street;False
+65721736;South Carrollton Avenue;False
+65721756;South Carrollton Avenue;False
+65721766;South Carrollton Avenue;False
+65721774;South Carrollton Avenue;False
+67788920;South Claiborne Avenue;False
+67788923;South Claiborne Avenue;False
+67788924;;False
+67788925;;False
+68035307;Poydras Street;False
+68035309;South Broad Street;False
+68035310;;False
+72878243;Palmetto Street;False
+72884763;;False
+72884764;;False
+72886399;Jefferson Davis Parkway;False
+72886400;Jefferson Davis Pkway;False
+72887966;South Gayoso Street;False
+72887967;South Lopez Street;False
+72887969;;False
+72889701;South Lopez Street;False
+75035130;;False
+75599519;Lawrence Street;False
+79529338;Pelican Avenue;False
+79534152;Opelousas Avenue;False
+79534153;General Degaulle Drive;False
+79534155;Patterson Drive;False
+79534156;Opelousas Avenue;False
+80433326;Lafitte Street;False
+80456706;Shepard Ct;False
+81163824;Plum Street;False
+81163825;South Clark Street;False
+81163826;Plum Street;False
+81163827;South Genois Street;False
+82233430;;False
+83826185;Clouet Street;False
+89609507;;False
+89609509;Newcomb Place;False
+89748652;;False
+89748656;Joliet Street;False
+89752721;Pontchartrain Expy;False
+89752726;Pontchartrain Expy;False
+90544509;Pontchartrain Expy;False
+90544510;;True
+90544511;;False
+90544513;;False
+93508226;Tchoupitoulas Street;False
+93508239;North Peters Street;False
+93508245;Exchange Place;False
+93508248;Tchoupitoulas Street;False
+104572159;Pontchartrain Expy (HOV);True
+104572164;;False
+104572168;;False
+104572170;;False
+104572172;;False
+104572177;Freret Street;False
+105640762;Lasalle Street;False
+105640764;Lasalle Street;False
+105640768;Magazine Street;False
+105657895;South Saratoga Street;False
+105657896;Lasalle Street;False
+105657897;;False
+105657902;South Robertson Street;False
+107615554;Governor Nicholls Street;False
+111542618;Spain Street;False
+111542619;Decatur Street;False
+111542620;Mandeville Street;False
+111542622;Spain Street;False
+112002137;;False
+112002138;;False
+112002139;;False
+112002140;;False
+112002145;;False
+112067018;Poydras Street;False
+112067022;Perdido Street;False
+112067026;Poydras Street;False
+112067031;Perdido Street;False
+114200010;Lafayette Street;False
+114423783;;True
+114476950;Fulton Street;False
+114524963;;False
+114524967;;False
+114524968;;False
+114524972;;False
+114524976;;False
+117379911;Pontchartrain Expy;False
+117380008;;False
+118727223;;False
+118727307;;False
+118807749;;False
+118807768;Pontchartrain Expy;False
+118807788;Pontchartrain Expy;False
+118807820;;False
+119477456;;False
+119477457;Zoo Dr;False
+119477458;;False
+119477459;;False
+119477461;;False
+119477462;;False
+119477463;;False
+119477464;;False
+119477465;;False
+119477466;;False
+119477467;;False
+119477468;;False
+119477469;;False
+119477470;;False
+119477471;;False
+119477472;;False
+119477473;;False
+119725645;North Broad Street;False
+119725733;South Claiborne Avenue;False
+119725740;South Claiborne Avenue;False
+119725745;South Claiborne Avenue;False
+119725751;South Claiborne Avenue;False
+119725757;South Claiborne Avenue;False
+119725761;South Claiborne Avenue;False
+121253623;North Broad Street;False
+122263288;Bertrand Street;False
+122263295;Poydras Street;False
+122263297;;False
+122263298;;False
+122559167;;False
+122559168;;False
+122559169;;False
+122559170;;False
+122559171;;False
+122559172;;False
+122559173;;False
+122559174;;False
+122562740;Clara Street;False
+122562741;Erato Street;False
+122562742;Willow Street;False
+122562743;;False
+122562744;;False
+123203501;Earhart Expressway;False
+123203503;Earhart Expressway;False
+123203521;Mistletoe Street;False
+123203525;HOV Lane;True
+123203526;HOV Lane;True
+123240938;Howard Avenue;False
+123240941;Howard Avenue;False
+123240945;;False
+123240949;South Claiborne Avenue;False
+123240952;South Johnson Street;False
+123240955;St Thomas Street;False
+123240956;;False
+123240959;;False
+123240962;Pontchartrain Expy (HOV);True
+123240965;;False
+123240966;;False
+123240968;;False
+123240969;;False
+123240972;;False
+123240973;;False
+123240974;;False
+123681043;Pontchartrain Expy;False
+124719537;;False
+124719538;;True
+124719541;;False
+124719543;;False
+128527089;;False
+128527091;;False
+128527092;;False
+128527093;;False
+130192901;Margaret Place;False
+132450337;Saint Andrew Street;False
+132911754;River Road;False
+132911804;4th Street;False
+132911805;5th Street;False
+134566919;Palmetto Street;False
+134683818;Belleville Street;False
+134683819;Bermuda Street;False
+134683820;Elmira Avenue;False
+134683821;Evelina Street;False
+139188119;Louisiana Avenue;False
+139188120;Louisiana Avenue;False
+139188121;Louisiana Avenue;False
+139188122;Louisiana Avenue;False
+139188128;Saint Charles Avenue;False
+139188129;Saint Charles Avenue;False
+139189103;Martin Luther King Jr Boulevard;False
+139189104;Martin Luther King Jr Boulevard;False
+139189105;Washington Avenue;False
+139189106;L B Landry Avenue;False
+139189107;L B Landry Avenue;False
+140444595;;False
+140444598;;False
+140444599;;False
+140444606;;False
+140444607;;False
+145658327;Louisiana Avenue;False
+145658328;Louisiana Avenue;False
+145658329;North Peters Street;False
+145658330;Nuns Street;False
+145658331;South Claiborne Avenue;False
+145658332;Saint Charles Avenue;False
+145658333;Saint Charles Avenue;False
+145658334;Saint Mary Street;False
+145658335;Tchoupitoulas Street;False
+145658336;Thalia Street;False
+145658337;;False
+145658339;;False
+145658341;;False
+145658342;;False
+145658343;;False
+145658344;;False
+145658345;;True
+145658346;;False
+145658348;;False
+145658350;;False
+145659880;Tulane Avenue;False
+145659881;Tulane Avenue;False
+145665428;Fontainebleau Drive;False
+145665429;South Carrollton Avenue;False
+145665430;South Claiborne Avenue;False
+145665431;South Claiborne Avenue;False
+149716682;Saint Ann Street;False
+149716824;;False
+149716825;;False
+149716996;;False
+149829698;Napoleon Avenue;False
+149829704;;False
+149829706;Napoleon Avenue;False
+156070639;;False
+156070640;;False
+161582384;;False
+161582388;;False
+161582392;;True
+161582394;;False
+161590919;;False
+161590923;;False
+165535650;Madison Street;False
+165535714;Powder Street;False
+170762274;Gaiennie Street;False
+170762275;John Churchill Chase Street;False
+170762276;Poeyfarre Street;False
+170762277;;False
+174153133;Joseph Street;False
+174154366;South Liberty Street;False
+174155089;Jackson Avenue;False
+174169173;Felicity Street;False
+174169174;Felicity Street;False
+175124043;Girod Street;False
+175124045;Girod Street;False
+175124048;Girod Street;False
+175124050;Girod Street;False
+180008420;South Robertson Street;False
+181653619;Clara Street;False
+181653622;Cleveland Avenue;False
+181653623;Cleveland Avenue;False
+181653626;Clio Street;False
+181653630;Dublin Street;False
+181653636;Howard Avenue;False
+181653639;Howard Avenue;False
+181653669;Julia Street;False
+181653684;North Derbigny Street;False
+181653694;South Broad Street;False
+181653695;South Broad Street;False
+181653720;South Claiborne Avenue;False
+181653725;South Claiborne Avenue;False
+181653730;South Claiborne Avenue;False
+181653734;South Claiborne Avenue;False
+181653780;;False
+181653782;;False
+181653784;;False
+181653785;;False
+181653806;;False
+181653821;;False
+181653837;;False
+181653846;;False
+181653851;;False
+181653861;;False
+181653872;;False
+181653874;;False
+181655918;;False
+183526233;Constance Street;False
+183526234;Earhart Boulevard;False
+183526235;Earhart Boulevard;False
+183526236;Earhart Boulevard;False
+183526237;Henderson Street;False
+183526239;Westbank Expressway;False
+183526240;Westbank Expressway;False
+183526241;Westbank Expressway;False
+183526242;Mardi Gras Boulevard;False
+183526245;;False
+183526246;;False
+183526247;Van Trump Street;False
+183526248;Whitney Avenue;False
+183526249;;False
+183526251;;False
+183526255;;False
+183526260;;False
+183526266;;False
+183526268;;False
+183526269;;False
+183526270;Behrman Avenue;False
+183526272;;False
+183526273;;False
+183526274;;False
+183526275;;False
+183526277;;False
+183526278;;False
+183526281;;False
+183526282;;False
+183526285;;False
+183526286;;False
+183526288;;False
+183526289;;False
+183526291;;False
+183526299;;False
+183526301;;False
+183526304;;False
+183526305;;False
+183526306;;False
+183526308;Mar Avenue;False
+186184197;Canal Street;False
+187888717;Colapissa Street;False
+187888718;Colapissa Street;False
+187888727;Earhart Boulevard;False
+187888728;Earhart Boulevard;False
+187888729;Earhart Boulevard;False
+187888732;Earhart Expressway;False
+187888734;Fig Street;False
+187888746;Pritchard Place;False
+187888749;South Broad Street;False
+187888751;South Broad Street;False
+187888752;South Broad Street;False
+187888758;;False
+187892965;Canal Street;False
+187892967;Canal Street;False
+187892968;Canal Street;False
+187892971;Jackson Avenue;False
+187892973;North Broad Street;False
+187892978;South Carrollton Avenue;False
+208529964;Chartres Street;False
+208529973;Royal Street;False
+208529974;Toulouse Street;False
+208550080;;False
+208606352;Bienville Street;False
+216732459;;False
+225624602;;False
+230889526;Earhart Boulevard;False
+230889528;South Carrollton Avenue;False
+230889532;South Carrollton Avenue;False
+230889535;;False
+230889536;;False
+231243100;;False
+231243101;;False
+231243620;;True
+231243623;;True
+231244344;;True
+231244345;;True
+231244346;;True
+231244350;;True
+231244351;;True
+231244353;;True
+231248824;;True
+231248825;;True
+231248828;;True
+231249151;;True
+231249154;;True
+231249162;;True
+231250858;River Road;True
+231250859;;True
+231250860;;True
+231250862;;True
+232076007;Esplanade Avenue;False
+232076008;Esplanade Avenue;False
+232076010;Esplanade Avenue;False
+234346927;Mar Avenue;False
+238213507;Baronne Street;False
+238213508;Saint Joseph Street;False
+238258625;Magazine Street;False
+238258626;Royal Street;False
+238258627;Saint Louis Street;False
+249575188;Nashville Avenue;False
+252378014;South Liberty Street;False
+255868307;South Derbigny Street;False
+274800043;South Dorgenois Street;False
+274800044;South Dorgenois Street;False
+274862930;Nunez Street;False
+277071418;Perdido Street;False
+277071420;;False
+281654491;Felicity Street;False
+281654579;Chippewa Street;False
+281654580;Chippewa Street;False
+281654581;Chippewa Street;False
+282396188;Bienville Street;False
+283465759;Eagle Street;False
+283465764;Leake Avenue;False
+283465767;Leake Avenue;False
+283465771;Leake Avenue;False
+283465774;Leake Avenue;False
+283465799;Leake Avenue;False
+283465800;Leake Avenue;False
+283465803;Leake Avenue;False
+283465806;Leake Avenue;False
+283465809;Leake Avenue;False
+283465812;Leake Avenue;False
+283465815;Leake Avenue;False
+283465818;Leake Avenue;False
+283465821;Leake Avenue;False
+283465824;Leake Avenue;False
+283465826;Leake Avenue;False
+283465829;Leake Avenue;False
+283465832;Leake Avenue;False
+283465838;Leake Avenue;False
+283465841;Leake Avenue;False
+283465845;Leake Avenue;False
+283465848;Leake Avenue;False
+283465851;Leake Avenue;False
+283465854;Leake Avenue;False
+283465858;Leake Avenue;False
+289217235;Magic Street;False
+289218754;;False
+289218755;;False
+289218756;;False
+294285604;Stumpf Blvd;False
+294285605;Stumpf Boulevard;False
+294285606;Stumpf Boulevard;False
+294560513;Saint Andrew Street;False
+294696359;Sophie Wright Place;False
+294702064;Freret Street;False
+294702068;3rd Street;False
+294702074;Washington Avenue;False
+294702076;Freret Street;False
+294702080;Clara Street;False
+294702084;Louisiana Avenue;False
+294702090;Clara Street;False
+294702096;;False
+294702098;Washington Avenue;False
+294702102;Jackson Avenue;False
+294702105;Saint Andrew Street;False
+294702109;Saint Andrew Street;False
+294703414;Oretha C Haley Boulevard;False
+296720751;Convention Center Boulevard;False
+297202980;Elysian Fields Avenue;False
+297202981;Elysian Fields Avenue;False
+298530931;De Armas Street;True
+298530932;Mardi Gras Boulevard;False
+298530933;Mardi Gras Boulevard;False
+298530934;Nunez Street;False
+298530935;Nunez Street;False
+298530936;;False
+298531343;Hendee Street;False
+298531344;Hendee Street;False
+298698491;;False
+298698492;;False
+298698494;;False
+298698499;;False
+313649178;Drexel Drive;False
+313649179;South Jefferson Davis Parkway;False
+313649180;South Jefferson Davis Parkway;False
+313649181;Drexel Drive;False
+313649182;Martin Luther King Jr Boulevard;False
+313649183;Vendome Pl; South Vendome Place;False
+313649184;South Jefferson Davis Parkway;False
+313649185;Martin Luther King Jr Boulevard;False
+313650618;Martin Luther King Jr Boulevard;False
+313650619;South Claiborne Avenue;False
+313650620;Martin Luther King Jr Boulevard;False
+313650621;South Claiborne Avenue;False
+313651078;Freret Street;False
+313651079;Jefferson Avenue;False
+313651080;Napoleon Avenue;False
+313651081;Freret Street;False
+314492047;Fig Street;True
+314492050;Dublin Street;True
+314492055;Earhart Boulevard;False
+314492057;Earhart Boulevard;False
+314492058;South Carrollton Avenue;False
+317191746;Crescent City Connection (HOV Lane);True
+317191748;;False
+317197571;South Claiborne Avenue;False
+317197583;Cleveland Avenue;False
+318631124;;False
+318631125;;False
+318989019;Elysian Fields Avenue;False
+324138596;Napoleon Avenue;False
+326479623;Joliet Street;False
+327264283;Nelson Street;False
+327273940;Hampson Street;False
+327281123;;False
+327281124;;False
+327281125;;False
+327281126;;False
+327281127;;False
+327281128;;False
+327281129;;False
+327281132;;False
+327281134;;False
+327310878;Burdette Street;False
+327315536;Drexel Drive;False
+327326459;Eve Street;False
+327326740;Martin Luther King Jr Boulevard;False
+327328335;Clio Street;False
+327420936;General Pershing Street;False
+327424151;Versailles Boulevard;False
+327438362;Audubon Place;False
+327457903;Henry Clay Avenue;False
+327494443;East Drive;False
+327579767;Cucullu Street;False
+327579769;Danneel Street;False
+327579771;Magnolia Street;False
+327582064;South Tonti Street;False
+327609097;Foucher Street;False
+327764970;Clarence Henry Truckway;False
+327764971;Grain Elevator Road;False
+327764972;Grain Elevator Road;False
+327764973;Grain Elevator Road;False
+327764974;South Front Street;False
+327764981;;False
+327764982;;False
+327764983;;False
+327764984;;False
+327764985;;False
+327764986;;False
+327767414;Annunciation Street;False
+327823524;Garfield Street;False
+327855492;Chestnut Street;False
+328020338;Saint Andrew Street;False
+328026460;Port of New Orleans Place;False
+328032512;;False
+328032513;;False
+328032514;;False
+328032515;;False
+328032516;;False
+328032517;;False
+328032518;;False
+328032519;;False
+328032520;;False
+328032521;;False
+328032522;;False
+328032523;;False
+328032524;;False
+328032525;;False
+328032526;;False
+328032527;;False
+328032528;;False
+328043254;Peete Street;False
+328043255;South Robertson Street;False
+328043256;;False
+328584021;South Robertson Street;False
+328651543;;False
+328651544;;False
+328651545;;False
+328651546;;False
+328652199;;False
+328778140;Girod Street;False
+328795902;Polymnia Street;False
+328803213;;False
+328803215;;False
+329133457;Palmyra Street;False
+329133458;South Johnson Street;False
+329133459;South Prieur Street;False
+329133460;South Roman Street;False
+329151683;Manasses Place;False
+329157762;Banks Street;False
+329157765;Banks Street;False
+329157769;Cleveland Avenue;False
+329157772;Palmyra Street;False
+329157773;South Miro Street;False
+329157776;South Tonti Street;False
+329160668;;False
+329160669;;False
+329160670;;False
+329160671;;False
+329160672;;False
+329181615;Carondelet Street;False
+329181616;Saint Charles Avenue;False
+329368900;;False
+329369034;;False
+329369035;;False
+329369036;;False
+329369037;;False
+329369038;;False
+330523943;Sala Avenue;False
+331746133;;False
+331746944;;False
+332434874;;False
+333939885;Stumpf Blvd;False
+333939886;Gretna Boulevard;False
+333939887;Stumpf Blvd;False
+333939888;Stumpf Boulevard;False
+333939889;Stumpf Blvd;False
+333939890;Whitney Avenue;False
+338471448;Abalon Court;False
+338471449;Abalon Court;False
+338471450;Abalon Court;False
+338471451;Abalon Court;False
+338471452;Monplaiser Place;False
+338471453;Monplaiser Place;False
+338471454;;False
+338471455;;False
+338474525;Pelican Avenue;False
+338474526;Pelican Avenue;False
+338474527;;False
+338474528;;False
+338474529;;False
+339166988;Henderson Street;False
+339166994;Henderson Street;False
+339166996;Henderson Street;False
+339335840;;False
+339454855;;False
+340228527;Pelican Avenue;True
+342213625;Hero Boulevard;True
+342213626;Leboeuf Street;True
+342213627;Shepard Street;True
+342213628;Vespasian Boulevard;True
+342213629;Wagner Street;True
+342213630;Wagner Street;True
+342213631;Wall Boulevard;True
+342213632;Wall Boulevard;False
+342213633;;False
+342213634;;False
+342213635;;False
+342213636;;False
+342214679;Casa Calvo Street;False
+342214680;Casa Calvo Street;False
+342214681;Farragut Street;False
+342214682;Farragut Street;False
+342214683;Numa Street;False
+342214684;Numa Street;False
+342534545;;False
+342735608;Behrman Avenue;False
+342735615;Donner Drive;False
+342735624;Idaho Street;False
+342735630;;False
+346981509;Alvin Drive;False
+346981511;Oak Dale Drive;False
+346981512;Oak Dale Drive;False
+346981513;Oak Glen Drive;False
+346981514;Oak Glen Drive;False
+346981519;;False
+346981520;;False
+347305621;North Roman Street;False
+347305732;North Derbigny Street;False
+347305733;;False
+350488884;L B Landry Avenue;False
+350488885;Whitney Avenue;False
+350488886;Whitney Avenue;False
+351251558;;False
+351251562;;False
+351251564;;False
+351251565;;False
+351251568;;False
+351251570;;False
+351251574;;False
+352310229;;False
+352310230;;False
+352310231;;False
+352310233;;False
+352310235;;False
+352310237;;False
+352310238;;False
+352310383;;False
+352310384;;False
+352310385;;False
+352334307;;False
+352891238;Addison Street;False
+352891804;Lance Street;False
+355766191;McAlister Drive;False
+357262987;;False
+358375301;Walter Scott Street;False
+358828641;;False
+359613455;Governor Hall Street;False
+359659964;;False
+359659965;;False
+360594772;Lowerline Street;False
+361035472;Plum Street;False
+362025384;Banks Street;False
+364588915;;False
+364588916;;False
+364588917;;False
+364588918;;False
+364588919;;False
+365858924;South Galvez Street;False
+365858932;South Galvez Street;False
+367784433;Saint Louis Street;False
+368822974;;False
+369943382;Lafitte Greenway;False
+370792942;Orleans Avenue;False
+370792943;Orleans Avenue;False
+370794214;Kerlerec Street;False
+370794215;Kerlerec Street;False
+372883406;North Broad Street;False
+376105041;Crescent Park Promenade;False
+376105043;Crescent Park Promenade;False
+376105049;;False
+376105052;;False
+376160540;Baronne Street;False
+391274766;;False
+400562952;Clouet Street;False
+400562953;Clouet Street;False
+400562955;Feliciana Street;False
+400562958;General Pershing Street;False
+400562959;Henriette DeLille;False
+400562966;Terpsichore Street;False
+400562967;Washington Avenue;False
+430681027;;False
+430681031;;False
+442795827;Cohn Street;False
+443227666;;False
+443610735;South Tonti Street;False
+446010805;Tulane Avenue;False
+446010806;South Carrollton Avenue;False
+446011845;;True
+446011846;South Broad Street;True
+446012012;;False
+446013079;South Lopez Street;False
+446013080;Perdido Street;False
+446013081;South Gayoso Street;False
+446013082;South Gayoso Street;False
+446013083;;False
+446013084;Poydras Street;False
+446013093;;True
+446014284;South Broad Street;False
+446014285;South Broad Street;False
+449293095;Poeyfarre Street;True
+449293096;Constance Street;False
+449293097;John Churchill Chase Street;False
+449293098;Annunciation Street;False
+449293198;Orleans Avenue;False
+449293199;Basin Street;False
+449293200;Saint Louis Street;True
+449293419;Saint Louis Street;False
+449293420;North Broad Street;False
+456791456;;False
+456867570;North Claiborne Avenue;False
+462799354;Mandaville ADA crossing;False
+463267871;;False
+464616124;;False
+464616133;;False
+464616146;Port of New Orleans Place;False
+464619426;;False
+464624458;Foucher Street;False
+477965604;Lafayette Street;False
+478461687;North Peters Street;False
+478461688;North Peters Street;False
+478461691;North Peters Street;False
+478461693;Decatur Street;False
+478461694;Decatur Street;False
+478461717;Decatur Street;False
+478486763;;False
+478486804;;False
+478486826;Piety Street Arch;False
+478486827;;False
+478486874;;False
+478486875;;False
+478486877;;False
+478486878;;False
+478529620;;False
+478529622;;False
+478529623;;False
+478529717;;False
+478529724;;False
+478529725;;False
+478529726;;False
+478529727;;False
+478529728;;False
+478529729;;False
+478538487;;False
+478538488;;False
+478538489;;False
+478538490;;False
+478538491;;False
+478538492;;False
+478538493;;False
+478538494;;False
+478538495;;False
+478538496;;False
+478538497;;False
+478538498;;False
+478538499;;False
+478538500;;False
+478538501;;False
+478538502;;False
+478538503;East Badine Street;False
+478538505;East Badine Street;False
+478538506;;False
+478538507;;False
+478538508;;False
+478538509;;False
+478538512;;False
+478538513;;False
+478538514;;False
+478538516;;False
+478538517;;False
+478538589;;False
+478727858;;False
+479052602;;False
+479052603;;False
+479052604;;False
+479052638;;False
+479052639;;False
+479052640;;False
+479052641;;False
+479052642;;False
+479052643;;False
+479052644;;False
+479052653;;False
+479052654;;False
+479052655;;False
+479052656;;False
+479052657;;False
+479052658;;False
+479052659;;False
+479174479;;False
+479174493;;False
+479174494;;False
+479174495;;False
+479174497;;False
+479174499;;False
+479174500;;False
+479174505;;False
+479174506;;False
+479174507;;False
+479174510;;False
+479174511;;False
+479376228;;False
+479583261;;False
+479583264;;False
+479583274;;False
+479604190;;False
+479604191;;False
+479604192;;False
+479604193;;False
+479604194;;False
+479604195;;False
+479604196;;False
+479611598;;False
+479611599;;False
+479611600;;False
+479611604;;False
+479616096;;False
+479616097;;False
+479616099;;False
+479616100;;False
+479733310;;False
+479733311;;False
+479733315;;False
+479733316;;False
+479733317;Notre Dame Street;False
+479733318;;False
+479733319;Julia Street;False
+479812219;;False
+480518806;Ursulines Avenue;False
+481221532;;False
+481221535;;False
+481307406;;False
+481376368;;False
+481689273;Iberville Street;False
+481709854;Bienville Street;False
+481709855;Bienville Street;False
+481709856;Bienville Street;False
+481709857;Marais Street;False
+481709858;Marais Street;False
+482072676;;False
+482072681;;False
+482125554;;False
+482245756;Poydras Street;False
+482245757;Poydras Street;False
+482245758;Poydras Street;False
+482245759;Poydras Street;False
+482245781;;False
+482245786;;False
+482245792;;False
+482289832;;False
+482519354;;False
+482519355;;False
+482519356;;False
+482519357;;False
+482519358;;False
+482519359;;False
+482519360;;False
+482519361;;False
+482519363;;False
+482519364;;False
+482519365;;False
+482519366;;False
+482519367;;False
+482519368;;False
+482519369;;False
+482519370;;False
+482519372;;False
+482575768;Henderson Street;False
+482575769;Port of New Orleans Place;False
+482671793;;False
+482671797;;False
+482671798;;False
+482671799;;False
+482671800;;False
+482671802;;False
+482671803;;False
+482671804;;False
+482671805;;False
+482671806;;False
+482671807;;False
+482671808;;False
+482697388;Annunciation Street;False
+482697391;;False
+482697393;Poe Street;False
+482768324;;False
+482828825;;False
+482835932;;False
+482835934;;False
+482877970;;False
+483747928;;False
