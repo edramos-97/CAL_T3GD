@@ -75,7 +75,7 @@ void read_nodes_degrees(const std::string& A, GraphViewer*& gv,
 		NoInfo temp(idNo % 100000000, X, Y); //x long, y lat
 
 		gv->addNode(idNo % 100000000, x, maxYwindow - y);
-		cout << "x: " << x << " y: " << y << endl;
+		//cout << "x: " << x << " y: " << y << endl;
 		grafo.addVertex(temp);
 
 	}

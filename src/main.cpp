@@ -12,7 +12,6 @@
 #include "string_find.h"
 #include "file_reading.h"
 
-
 /** @file */
 
 template<>
@@ -257,7 +256,6 @@ void teste_colorir(Graph<NoInfo>& data, GraphViewer*& gv, int numCaminhos,
 	}
 }
 
-
 /**
  * The main function.
  *
@@ -282,8 +280,9 @@ int main(int argc, char * argv[]) {
 	srand(time(NULL));
 	vector<vector<NoInfo>> linhas_geradas;
 
-	if(argc != 15){
-		cout << "There was an input error, please contact the developers." << endl;
+	if (argc != 15) {
+		cout << "There was an input error, please contact the developers."
+				<< endl;
 		return 1;
 	}
 
@@ -293,7 +292,7 @@ int main(int argc, char * argv[]) {
 	int yMaxW = atoi(argv[10]);
 
 	GraphViewer * gv = new GraphViewer(xMaxW, yMaxW, false); //not dynamic
-	gv->setBackground(ficheiro+".png");
+	gv->setBackground(ficheiro + ".png");
 	gv->createWindow(xMaxW, yMaxW);
 	gv->defineEdgeCurved(false);
 	gv->defineEdgeDashed(true);
@@ -306,7 +305,8 @@ int main(int argc, char * argv[]) {
 	corners.maxLong = atof(argv[13]);
 	corners.maxLat = atof(argv[14]);
 
-	abrirFicheiroXY(ficheiro+"_a.txt", ficheiro+"_b.txt",ficheiro+"_c.txt", data, gv, corners, xMaxW, yMaxW);
+	abrirFicheiroXY(ficheiro + "_a.txt", ficheiro + "_b.txt",
+			ficheiro + "_c.txt", data, gv, corners, xMaxW, yMaxW);
 
 	int linhas_metro = atoi(argv[4]);
 	int linhas_autocarro = atoi(argv[6]);
@@ -314,44 +314,45 @@ int main(int argc, char * argv[]) {
 	int comp_autocarro = atoi(argv[7]);
 
 	int number_of_paths = -1;
-	if(strcmp(argv[1],"auto")==0){
-		linhas_geradas = gera_linhas(data, linhas_metro, linhas_autocarro, comp_metro, comp_autocarro);
+	if (strcmp(argv[1], "auto") == 0) {
+		linhas_geradas = gera_linhas(data, linhas_metro, linhas_autocarro,
+				comp_metro, comp_autocarro);
 		number_of_paths = atoi(argv[2]);
-		testFloidWarshal_big(data,gv,number_of_paths);
+		testFloidWarshal_big(data, gv, number_of_paths);
 		cout << "END" << endl;
 		getchar();
 		return 0;
 
-	}
-	else if(strcmp(argv[1],"comp")==0){
-		testExecutionTimes(data,gv);
+	} else if (strcmp(argv[1], "comp") == 0) {
+		testExecutionTimes(data, gv);
 		cout << "END" << endl;
 		getchar();
 		return 0;
-	}
-	else if(strcmp(argv[1],"Connectivity")==0){
+	} else if (strcmp(argv[1], "Connectivity") == 0) {
 		vector<int> soma;
 		vector<Vertex<NoInfo>*> vertices = data.getVertexSet();
-		for(unsigned int i = 0; i < vertices.size(); i++){
+		for (unsigned int i = 0; i < vertices.size(); i++) {
 			vector<NoInfo> tentativa = data.bfs(vertices[i]);
-			soma.push_back(vertices.size()-tentativa.size());
+			soma.push_back(vertices.size() - tentativa.size());
 		}
 		int max_falha = 0;
 		int min_falha = vertices.size();
-		for(int ind : soma){
-			if(ind < min_falha)
+		for (int ind : soma) {
+			if (ind < min_falha)
 				min_falha = ind;
-			if(ind > max_falha)
+			if (ind > max_falha)
 				max_falha = ind;
 		}
-		cout << "Em " << vertices.size() << " nos, o minimo de falhas foi " << min_falha << endl;
+		cout << "Em " << vertices.size() << " nos, o minimo de falhas foi "
+				<< min_falha << endl;
 		cout << "O maximo foi " << max_falha << endl;
-		cout << "END"<< endl;
+		cout << "END" << endl;
 		getchar();
 		return 0;
 
 	} //string search
-	else if((strcmp(argv[1],"StringSearchExact")==0) || (strcmp(argv[1],"StringSearchAprox")==0)){
+	else if ((strcmp(argv[1], "SearchExact") == 0)
+			|| (strcmp(argv[1], "SearchApprox") == 0)) {
 		vector<par> dados_metro;
 		vector<par> dados_autocarro;
 		try {
@@ -361,19 +362,73 @@ int main(int argc, char * argv[]) {
 			cout << "There was an error opening the files..." << endl;
 			return 1;
 		}
-		linhas_geradas = gera_linhas_nomes(data, linhas_metro, linhas_autocarro, comp_metro, comp_autocarro,dados_metro,dados_autocarro);
-		for(unsigned int i = 0; i < linhas_geradas.size(); i++){
+		linhas_geradas = gera_linhas_nomes(data, linhas_metro, linhas_autocarro,
+				comp_metro, comp_autocarro, dados_metro, dados_autocarro);
+
+		for (unsigned int i = 0; i < linhas_geradas.size(); i++)
+			for (unsigned int j = 0; j < linhas_geradas[i].size(); j++)
+				cout << linhas_geradas[i][j].nome_paragem << endl;
+
+		for (unsigned int i = 0; i < linhas_geradas.size(); i++) {
 			Sleep(1000);
-			printPathColored(data,gv,linhas_geradas[i], linhas_geradas);
+			printPathColored(data, gv, linhas_geradas[i], linhas_geradas);
 		}
 
 
 		string pesquisa;
-		while(getline(cin,pesquisa)){
-			if(pesquisa == "END")
+		while (getline(cin, pesquisa)) {
+			if (pesquisa == "END")
 				break;
+			vector<NoInfo> occorrencias_palavra;
+			vector<string> info_adicional;
+			vector<unsigned int> pi = computePrefix(pesquisa);
+			for (unsigned int i = 0; i < linhas_geradas.size(); i++) {
+				for (unsigned int j = 0; j < linhas_geradas[i].size(); j++) {
+					if (kmpStringMatchGivenPi(linhas_geradas[i][j].nome_paragem,
+							pesquisa, pi) > 0){
+						occorrencias_palavra.push_back(linhas_geradas[i][j]);
+						if(j == 0)
+							info_adicional.push_back("INI");
+						else if(j == (linhas_geradas[i].size()-1))
+							info_adicional.push_back("FIM");
+						else info_adicional.push_back("NORM");
+					}
 
 
+				}
+			}
+
+			if(occorrencias_palavra.size() == 0){
+				cout << "SEM CAMINHOS, INICIAR PROCURA APROXIMADA" << endl;
+			}
+			for (unsigned int i = 0; i < occorrencias_palavra.size(); i++) {
+				cout << "changed" << endl;
+				for(unsigned int index = 0; index < 15 ; index++){
+					gv->setVertexColor(occorrencias_palavra[i].idNo, "GRAY");
+					gv->setVertexSize(occorrencias_palavra[i].idNo, 30);
+					gv->rearrange();
+					Sleep(100);
+					gv->setVertexColor(occorrencias_palavra[i].idNo, "WHITE");
+					gv->setVertexSize(occorrencias_palavra[i].idNo, 40);
+					gv->rearrange();
+					Sleep(100);
+				}
+				if(info_adicional[i] == "NORM"){
+					gv->setVertexColor(occorrencias_palavra[i].idNo, COR_NO_NORMAL);
+					gv->setVertexSize(occorrencias_palavra[i].idNo, 25);
+				}
+				else if(info_adicional[i] == "INI"){
+					gv->setVertexColor(occorrencias_palavra[i].idNo, COR_NO_INICIO);
+					gv->setVertexSize(occorrencias_palavra[i].idNo, 30);
+				}
+				else{
+					gv->setVertexColor(occorrencias_palavra[i].idNo, COR_NO_FIM);
+					gv->setVertexSize(occorrencias_palavra[i].idNo, 30);
+				}
+				gv->rearrange();
+			}
+
+			//
 			//complexidade palavra
 
 		}
@@ -382,32 +437,35 @@ int main(int argc, char * argv[]) {
 		getchar();
 		return 0;
 
-	}
-	else { //no inicio para o fim
-		linhas_geradas = gera_linhas(data, linhas_metro, linhas_autocarro, comp_metro, comp_autocarro);
-		Vertex<NoInfo> * origem = data.getVertex(NoInfo(atoi(argv[1]),0,0,' '));
-		Vertex<NoInfo> * destino = data.getVertex(NoInfo(atoi(argv[2]),0,0,' '));
-		if(origem == NULL || destino == NULL){
+	} else { //no inicio para o fim
+		linhas_geradas = gera_linhas(data, linhas_metro, linhas_autocarro,
+				comp_metro, comp_autocarro);
+		Vertex<NoInfo> * origem = data.getVertex(
+				NoInfo(atoi(argv[1]), 0, 0, ' '));
+		Vertex<NoInfo> * destino = data.getVertex(
+				NoInfo(atoi(argv[2]), 0, 0, ' '));
+		if (origem == NULL || destino == NULL) {
 			cout << "There is no such path" << endl;
 			return 2;
 		}
 		vector<NoInfo> caminho;
-		if(strcmp(argv[3],"A*")==0){
+		if (strcmp(argv[3], "A*") == 0) {
 			preparaA_star(data, destino->getInfo());
-			caminho = data.getA_starPath(origem->getInfo(),destino->getInfo());
+			caminho = data.getA_starPath(origem->getInfo(), destino->getInfo());
 
-		}else if (strcmp(argv[3],"Dijkstra")==0){
-			caminho = data.getDijkstraPath(origem->getInfo(),destino->getInfo());
+		} else if (strcmp(argv[3], "Dijkstra") == 0) {
+			caminho = data.getDijkstraPath(origem->getInfo(),
+					destino->getInfo());
 
-		}else if(strcmp(argv[3],"Floyd-Warshall")==0){
-			caminho = data.getfloydWarshallPath(origem->getInfo(),destino->getInfo());
-		}else {
+		} else if (strcmp(argv[3], "Floyd-Warshall") == 0) {
+			caminho = data.getfloydWarshallPath(origem->getInfo(),
+					destino->getInfo());
+		} else {
 			cout << "There is no such Algorithm." << endl;
 			return 3;
 		}
 
-
-		printPathColored(data,gv,caminho, linhas_geradas);
+		printPathColored(data, gv, caminho, linhas_geradas);
 		cout << "END" << endl;
 		getchar();
 		return 0;
