@@ -374,7 +374,6 @@ int main(int argc, char * argv[]) {
 			printPathColored(data, gv, linhas_geradas[i], linhas_geradas);
 		}
 
-
 		string pesquisa;
 		while (getline(cin, pesquisa)) {
 			if (pesquisa == "END")
@@ -385,25 +384,25 @@ int main(int argc, char * argv[]) {
 			for (unsigned int i = 0; i < linhas_geradas.size(); i++) {
 				for (unsigned int j = 0; j < linhas_geradas[i].size(); j++) {
 					if (kmpStringMatchGivenPi(linhas_geradas[i][j].nome_paragem,
-							pesquisa, pi) > 0){
+							pesquisa, pi) > 0) {
 						occorrencias_palavra.push_back(linhas_geradas[i][j]);
-						if(j == 0)
+						if (j == 0)
 							info_adicional.push_back("INI");
-						else if(j == (linhas_geradas[i].size()-1))
+						else if (j == (linhas_geradas[i].size() - 1))
 							info_adicional.push_back("FIM");
-						else info_adicional.push_back("NORM");
+						else
+							info_adicional.push_back("NORM");
 					}
-
 
 				}
 			}
-
-			if(occorrencias_palavra.size() == 0){
-				cout << "SEM CAMINHOS, INICIAR PROCURA APROXIMADA" << endl;
+			if (occorrencias_palavra.size() == 0) {
+				cout << "Paragem Desconhecida!" << endl;
 			}
+
 			for (unsigned int i = 0; i < occorrencias_palavra.size(); i++) {
 				cout << "changed" << endl;
-				for(unsigned int index = 0; index < 15 ; index++){
+				for (unsigned int index = 0; index < 15; index++) {
 					gv->setVertexColor(occorrencias_palavra[i].idNo, "GRAY");
 					gv->setVertexSize(occorrencias_palavra[i].idNo, 30);
 					gv->rearrange();
@@ -413,19 +412,31 @@ int main(int argc, char * argv[]) {
 					gv->rearrange();
 					Sleep(100);
 				}
-				if(info_adicional[i] == "NORM"){
-					gv->setVertexColor(occorrencias_palavra[i].idNo, COR_NO_NORMAL);
+				if (info_adicional[i] == "NORM") {
+					gv->setVertexColor(occorrencias_palavra[i].idNo,
+							COR_NO_NORMAL);
 					gv->setVertexSize(occorrencias_palavra[i].idNo, 25);
-				}
-				else if(info_adicional[i] == "INI"){
-					gv->setVertexColor(occorrencias_palavra[i].idNo, COR_NO_INICIO);
+				} else if (info_adicional[i] == "INI") {
+					gv->setVertexColor(occorrencias_palavra[i].idNo,
+							COR_NO_INICIO);
 					gv->setVertexSize(occorrencias_palavra[i].idNo, 30);
-				}
-				else{
-					gv->setVertexColor(occorrencias_palavra[i].idNo, COR_NO_FIM);
+				} else {
+					gv->setVertexColor(occorrencias_palavra[i].idNo,
+							COR_NO_FIM);
 					gv->setVertexSize(occorrencias_palavra[i].idNo, 30);
 				}
 				gv->rearrange();
+
+				if (occorrencias_palavra.size() == 0
+						|| (strcmp(argv[1], "SearchApprox") == 0)) {
+					cout << "INICIAR PESQUISA APROXIMADA" << endl;
+
+
+
+
+
+
+				}
 			}
 
 			//
