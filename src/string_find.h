@@ -124,6 +124,8 @@ int distancia_entre_palavras(string pattern, string texto) {
 
 int naiveStringMatch(string text, string pattern) {
 	int sum = 0;
+	if(pattern.length() > text.length())
+		return sum;
 	for (unsigned int i = 0; i <= (text.size() - pattern.size()); i++) {
 		unsigned int inicioTexto = i;
 		unsigned int inicioPattern = 0;
@@ -146,7 +148,7 @@ int naiveStringMatch(string text, string pattern) {
 }
 
 void printMoreProximate(const vector<vector<NoInfo>> &linhas_geradas,
-		const vector<vector<int>> &distancias, int numero_lista) {
+		const vector<vector<int>> &distancias,unsigned  int numero_lista) {
 	vector<string> lista;
 	vector<int> diferencas;
 	int min = 10000;

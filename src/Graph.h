@@ -302,6 +302,7 @@ bool Graph<T>::addEdge(const T &sourc, const T &dest, long double w) {
 	typename vector<Vertex<T>*>::iterator ite = vertexSet.end();
 	int found = 0;
 	Vertex<T> *vS, *vD;
+	vS = NULL; vD = NULL; //TODO CUIDADO COM ISTO
 	while (found != 2 && it != ite) {
 		if ((*it)->info == sourc) {
 			vS = *it;
@@ -329,6 +330,7 @@ bool Graph<T>::addEdge(const T &sourc, const T &dest, long double w,
 	typename vector<Vertex<T>*>::iterator ite = vertexSet.end();
 	int found = 0;
 	Vertex<T> *vS, *vD;
+	vS = NULL; vD = NULL; //TODO CUIDADO COM ISTO2
 	while (found != 2 && it != ite) {
 		if ((*it)->info == sourc) {
 			vS = *it;
@@ -354,6 +356,7 @@ bool Graph<T>::removeEdge(const T &sourc, const T &dest) {
 	typename vector<Vertex<T>*>::iterator ite = vertexSet.end();
 	int found = 0;
 	Vertex<T> *vS, *vD;
+	vS = NULL; vD = NULL; //TODO CUIDADO COM ISTO3
 	while (found != 2 && it != ite) {
 		if ((*it)->info == sourc) {
 			vS = *it;

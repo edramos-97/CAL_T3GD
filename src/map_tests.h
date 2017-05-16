@@ -20,7 +20,7 @@
 
 #define COR_METRO "ORANGE"
 #define COR_AUTOCARRO "BLUE"
-#define COR_PE "GREEN"
+#define COR_PE_LINHA "GREEN" //TODO : dei update disto, testar!! por causa do warning, estava COR_PE
 #define COR_NO_NORMAL "RED"
 #define COR_NO_INICIO "CYAN"
 #define COR_NO_FIM "BLACK"
@@ -60,7 +60,7 @@ static void printPathColored(Graph<NoInfo>& data, GraphViewer*& gv,
 		} else if (caminho[i].layer == ' ' && caminho[i + 1].layer == ' ') {
 			gv->setEdgeColor(
 					data.getVertex(NoInfo(caminho[i].idNo, 0, 0, ' '))->getIdEdge(
-							NoInfo(caminho[i + 1].idNo, 0, 0, ' ')), COR_PE);
+							NoInfo(caminho[i + 1].idNo, 0, 0, ' ')), COR_PE_LINHA);
 		} else
 			gv->setEdgeColor(
 					data.getVertex(NoInfo(caminho[i].idNo, 0, 0, ' '))->getIdEdge(
@@ -106,7 +106,7 @@ static void printPathColored(Graph<NoInfo>& data, GraphViewer*& gv,
 		} else if (caminho[i].layer == ' ' && caminho[i + 1].layer == ' ') {
 			gv->setEdgeColor(
 					data.getVertex(NoInfo(caminho[i].idNo, 0, 0, ' '))->getIdEdge(
-							NoInfo(caminho[i + 1].idNo, 0, 0, ' ')), COR_PE);
+							NoInfo(caminho[i + 1].idNo, 0, 0, ' ')), COR_PE_LINHA);
 		} else
 			gv->setEdgeColor(
 					data.getVertex(NoInfo(caminho[i].idNo, 0, 0, ' '))->getIdEdge(

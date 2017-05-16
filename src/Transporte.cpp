@@ -12,6 +12,8 @@ using namespace std;
 Transporte::Transporte() {
 	nome = "";
 	custo = 0.0;
+	tempo_espera = 0;
+	velocidade_media = 0;
 }
 
 Transporte::~Transporte() {

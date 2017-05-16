@@ -377,13 +377,15 @@ int main(int argc, char * argv[]) {
 
 		string pesquisa;
 		while (getline(cin, pesquisa)) {
+			for(int i = 0; i < 34;i++) cout << endl;
+			cout << pesquisa << endl;
 			if (pesquisa == "END")
 				break;
 
 			vector<NoInfo> occorrencias_palavra;
 			vector<string> info_adicional;
 
-			cout << "kmp:" << endl;
+			//cout << "kmp:" << endl;
 			auto start_kmp = std::chrono::high_resolution_clock::now();
 			occorrencias_palavra.clear();
 			info_adicional.clear();
@@ -404,8 +406,8 @@ int main(int argc, char * argv[]) {
 				}
 			}
 			auto end_kmp = std::chrono::high_resolution_clock::now();
-
-			cout << "naive:" << endl;
+			//cout << "end kmp:" << endl;
+			//cout << "naive:" << endl;
 			auto start_naive = std::chrono::high_resolution_clock::now();
 			occorrencias_palavra.clear();
 			info_adicional.clear();
@@ -424,14 +426,21 @@ int main(int argc, char * argv[]) {
 
 				}
 			}
+
 			auto end_naive = std::chrono::high_resolution_clock::now();
+			//cout << "end naive:" << endl;
 
 			if (occorrencias_palavra.size() == 0) {
 				cout << "Paragem Desconhecida!" << endl;
 			}
+			else {
+				cout << "Encontrei:" << endl;
+				for(unsigned int i = 0; i < occorrencias_palavra.size() ; i++)
+					cout << i+1 << "-> " << occorrencias_palavra[i] << endl;
+			}
 
 			for (unsigned int i = 0; i < occorrencias_palavra.size(); i++) {
-				cout << "changed" << endl;
+				//cout << "changed" << endl;
 				for (unsigned int index = 0; index < 15; index++) {
 					gv->setVertexColor(occorrencias_palavra[i].idNo, "GRAY");
 					gv->setVertexSize(occorrencias_palavra[i].idNo, 30);
@@ -457,47 +466,54 @@ int main(int argc, char * argv[]) {
 				}
 				gv->rearrange();
 
-				auto start_partial = std::chrono::high_resolution_clock::now();
-				auto end_partial = std::chrono::high_resolution_clock::now();
+			}
 
-				if (occorrencias_palavra.size() == 0
-						|| (strcmp(argv[1], "SearchApprox") == 0)) {
-					cout << "INICIAR PESQUISA APROXIMADA" << endl;
-					start_partial = std::chrono::high_resolution_clock::now();
-					//pesquisa aprox
-					vector<vector<int>> distancias;
-					for(unsigned int linha = 0; linha < linhas_geradas.size(); linha++){
-						vector<int> distancia_linha_atual;
-						for(unsigned int no = 0; no < linhas_geradas[linha].size(); no++){
-							distancia_linha_atual.push_back(distancia_entre_palavras(linhas_geradas[linha][no].nome_paragem,pesquisa));
-						}
-						distancias.push_back(distancia_linha_atual);
+			auto start_partial = std::chrono::high_resolution_clock::now();
+			auto end_partial = std::chrono::high_resolution_clock::now();
+
+			if (occorrencias_palavra.size() == 0
+					|| (strcmp(argv[1], "SearchApprox") == 0)) {
+				cout << "INICIAR PESQUISA APROXIMADA" << endl;
+				start_partial = std::chrono::high_resolution_clock::now();
+				//pesquisa aprox
+				vector<vector<int>> distancias;
+				for (unsigned int linha = 0; linha < linhas_geradas.size();
+						linha++) {
+					vector<int> distancia_linha_atual;
+					for (unsigned int no = 0; no < linhas_geradas[linha].size();
+							no++) {
+						distancia_linha_atual.push_back(
+								distancia_entre_palavras(
+										linhas_geradas[linha][no].nome_paragem,
+										pesquisa));
 					}
-					end_partial = std::chrono::high_resolution_clock::now();
-
-					cout << PARAGENS_APROX << " com maior proximidade em relacao a " << pesquisa << ":"<< endl;
-					printMoreProximate(linhas_geradas,distancias,PARAGENS_APROX);
+					distancias.push_back(distancia_linha_atual);
 				}
+				end_partial = std::chrono::high_resolution_clock::now();
 
-				cout << "TEMPO QUE DEMOROU A PROCURAR" << endl;
-
-				//complexidade palavra
-				cout << "KMP demorou:"
-						<< (double) std::chrono::duration_cast<
-								std::chrono::microseconds>(end_kmp - start_kmp).count()
-						<< endl;
-
-				cout << "Naive demorou:"
-						<< (double) std::chrono::duration_cast<
-								std::chrono::microseconds>(
-								end_naive - start_naive).count() << endl;
-
-				cout << "Partial matching:"
-						<< (double) std::chrono::duration_cast<
-								std::chrono::microseconds>(
-								end_partial - start_partial).count() << endl;
+				cout << PARAGENS_APROX << " com maior proximidade em relacao a "
+						<< pesquisa << ":" << endl;
+				printMoreProximate(linhas_geradas, distancias, PARAGENS_APROX);
 
 			}
+
+			cout << "TEMPO QUE DEMOROU A PROCURAR" << endl;
+
+			//complexidade palavra
+			cout << "KMP demorou:"
+					<< (double) std::chrono::duration_cast<
+							std::chrono::microseconds>(end_kmp - start_kmp).count()
+					<< endl;
+
+			cout << "Naive demorou:"
+					<< (double) std::chrono::duration_cast<
+							std::chrono::microseconds>(end_naive - start_naive).count()
+					<< endl;
+
+			cout << "Partial matching:"
+					<< (double) std::chrono::duration_cast<
+							std::chrono::microseconds>(
+							end_partial - start_partial).count() << endl;
 		}
 
 		cout << "END" << endl;
