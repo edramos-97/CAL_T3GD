@@ -431,16 +431,30 @@ int main(int argc, char * argv[]) {
 						|| (strcmp(argv[1], "SearchApprox") == 0)) {
 					cout << "INICIAR PESQUISA APROXIMADA" << endl;
 
-
-
-
-
-
 				}
+
+				cout << "TEMPO QUE DEMOROU A PROCURAR" << endl;
+				//
+				//complexidade palavra
+
+				/**
+
+				 * auto startA_star = std::chrono::high_resolution_clock::now();
+						for (unsigned int i = 0; i < REP_FOR; i++) {
+							pathA = data.getA_starPath(ori->getInfo(), des->getInfo());
+						}
+						auto endA_star = std::chrono::high_resolution_clock::now();
+						cout
+								<< (double) std::chrono::duration_cast<std::chrono::microseconds>(
+										endA_star - startA_star).count() << endl;
+
+						mediaAstar += (double) std::chrono::duration_cast<std::chrono::microseconds>(
+								endA_star - startA_star).count();
+
+				 */
 			}
 
-			//
-			//complexidade palavra
+
 
 		}
 
