@@ -366,9 +366,13 @@ int main(int argc, char * argv[]) {
 		linhas_geradas = gera_linhas_nomes(data, linhas_metro, linhas_autocarro,
 				comp_metro, comp_autocarro, dados_metro, dados_autocarro);
 
+
 		for (unsigned int i = 0; i < linhas_geradas.size(); i++)
-			for (unsigned int j = 0; j < linhas_geradas[i].size(); j++)
-				cout << linhas_geradas[i][j].nome_paragem << endl;
+			for (unsigned int j = 0; j < linhas_geradas[i].size(); j++){
+				//cout << linhas_geradas[i][j].nome_paragem << endl;
+				gv->setVertexLabel(linhas_geradas[i][j].idNo,linhas_geradas[i][j].nome_paragem);
+			}
+
 
 		for (unsigned int i = 0; i < linhas_geradas.size(); i++) {
 			Sleep(1000);
@@ -376,9 +380,10 @@ int main(int argc, char * argv[]) {
 		}
 
 		string pesquisa;
+		cout << "DIGITE A SUA PESQUISA:" << endl;
 		while (getline(cin, pesquisa)) {
-			for(int i = 0; i < 34;i++) cout << endl;
-			cout << pesquisa << endl;
+			//for(int i = 0; i < 34;i++) cout << endl;
+			//cout << pesquisa << endl;
 			if (pesquisa == "END")
 				break;
 
@@ -436,7 +441,7 @@ int main(int argc, char * argv[]) {
 			else {
 				cout << "Encontrei:" << endl;
 				for(unsigned int i = 0; i < occorrencias_palavra.size() ; i++)
-					cout << i+1 << "-> " << occorrencias_palavra[i] << endl;
+					cout << i+1 << "-> " << occorrencias_palavra[i].nome_paragem << endl;
 			}
 
 			for (unsigned int i = 0; i < occorrencias_palavra.size(); i++) {
@@ -514,6 +519,8 @@ int main(int argc, char * argv[]) {
 					<< (double) std::chrono::duration_cast<
 							std::chrono::microseconds>(
 							end_partial - start_partial).count() << endl;
+
+			cout << endl << "DIGITE A SUA PESQUISA:" << endl;
 		}
 
 		cout << "END" << endl;
