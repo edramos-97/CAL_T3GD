@@ -381,8 +381,11 @@ int main(int argc, char * argv[]) {
 
 			vector<NoInfo> occorrencias_palavra;
 			vector<string> info_adicional;
-			auto start_kmp = std::chrono::high_resolution_clock::now();
+
 			cout << "kmp:" << endl;
+			auto start_kmp = std::chrono::high_resolution_clock::now();
+			occorrencias_palavra.clear();
+			info_adicional.clear();
 			vector<unsigned int> pi = computePrefix(pesquisa);
 			for (unsigned int i = 0; i < linhas_geradas.size(); i++) {
 				for (unsigned int j = 0; j < linhas_geradas[i].size(); j++) {
@@ -400,8 +403,26 @@ int main(int argc, char * argv[]) {
 				}
 			}
 			auto end_kmp = std::chrono::high_resolution_clock::now();
+
+			cout << "naive:" << endl;
 			auto start_naive = std::chrono::high_resolution_clock::now();
-			cout << "naive:" <<endl;
+			occorrencias_palavra.clear();
+			info_adicional.clear();
+			for (unsigned int i = 0; i < linhas_geradas.size(); i++) {
+				for (unsigned int j = 0; j < linhas_geradas[i].size(); j++) {
+					if (naiveStringMatch(linhas_geradas[i][j].nome_paragem,
+							pesquisa) > 0) {
+						occorrencias_palavra.push_back(linhas_geradas[i][j]);
+						if (j == 0)
+							info_adicional.push_back("INI");
+						else if (j == (linhas_geradas[i].size() - 1))
+							info_adicional.push_back("FIM");
+						else
+							info_adicional.push_back("NORM");
+					}
+
+				}
+			}
 			auto end_naive = std::chrono::high_resolution_clock::now();
 
 			if (occorrencias_palavra.size() == 0) {
@@ -422,15 +443,15 @@ int main(int argc, char * argv[]) {
 				}
 				if (info_adicional[i] == "NORM") {
 					gv->setVertexColor(occorrencias_palavra[i].idNo,
-							COR_NO_NORMAL);
+					COR_NO_NORMAL);
 					gv->setVertexSize(occorrencias_palavra[i].idNo, 25);
 				} else if (info_adicional[i] == "INI") {
 					gv->setVertexColor(occorrencias_palavra[i].idNo,
-							COR_NO_INICIO);
+					COR_NO_INICIO);
 					gv->setVertexSize(occorrencias_palavra[i].idNo, 30);
 				} else {
 					gv->setVertexColor(occorrencias_palavra[i].idNo,
-							COR_NO_FIM);
+					COR_NO_FIM);
 					gv->setVertexSize(occorrencias_palavra[i].idNo, 30);
 				}
 				gv->rearrange();
@@ -449,14 +470,20 @@ int main(int argc, char * argv[]) {
 				cout << "TEMPO QUE DEMOROU A PROCURAR" << endl;
 
 				//complexidade palavra
-				cout << "KMP demorou:"<< (double) std::chrono::duration_cast<std::chrono::microseconds>(
-						end_kmp - start_kmp).count() << endl;
+				cout << "KMP demorou:"
+						<< (double) std::chrono::duration_cast<
+								std::chrono::microseconds>(end_kmp - start_kmp).count()
+						<< endl;
 
-				cout << "Naive demorou:" << (double) std::chrono::duration_cast<std::chrono::microseconds>(
-						end_naive - start_naive).count() << endl;
+				cout << "Naive demorou:"
+						<< (double) std::chrono::duration_cast<
+								std::chrono::microseconds>(
+								end_naive - start_naive).count() << endl;
 
-				cout << "Partial matching:" << (double) std::chrono::duration_cast<std::chrono::microseconds>(
-						end_partial - start_partial).count() << endl;
+				cout << "Partial matching:"
+						<< (double) std::chrono::duration_cast<
+								std::chrono::microseconds>(
+								end_partial - start_partial).count() << endl;
 
 			}
 		}

@@ -56,7 +56,6 @@ public:
 					this->nome_paragem = "";
 				}
 
-	//FIXME Substituir a invocacao acima por esta no gera_linhas!
 	NoInfo(BigAssInteger id, long double longe, long double lat, char lay,string nome_paragem) {
 						this->idNo = id;
 						this->longitude = longe;

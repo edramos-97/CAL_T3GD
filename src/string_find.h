@@ -127,4 +127,29 @@ int distancia_entre_palavras(string pattern, string texto){
 }
 
 
+int naiveStringMatch(string text, string pattern) {
+	int sum = 0;
+	for(unsigned int i = 0; i <= (text.size()-pattern.size()) ; i++){
+		unsigned int inicioTexto = i;
+		unsigned int inicioPattern = 0;
+		while(true){
+			if(pattern[inicioPattern] == text[inicioTexto]){
+				if(inicioPattern == (pattern.size()-1)){
+					sum++;
+					break;
+				}
+				else {
+					inicioPattern++;
+					inicioTexto++;
+				}
+			}
+			else {
+				break;
+			}
+
+
+		}
+	}
+	return sum;
+}
 #endif /* SRC_STRING_FIND_H_ */
