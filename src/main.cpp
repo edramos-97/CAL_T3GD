@@ -13,8 +13,8 @@
 #include "file_reading.h"
 
 #define PARAGENS_APROX 10
-#define REPETE_ALGORITS 100
-#define REPETE_PARTIAL 100
+#define REPETE_ALGORITS 200
+#define REPETE_PARTIAL 200
 /** @file */
 
 template<>
@@ -368,13 +368,12 @@ int main(int argc, char * argv[]) {
 		linhas_geradas = gera_linhas_nomes(data, linhas_metro, linhas_autocarro,
 				comp_metro, comp_autocarro, dados_metro, dados_autocarro);
 
-
 		for (unsigned int i = 0; i < linhas_geradas.size(); i++)
-			for (unsigned int j = 0; j < linhas_geradas[i].size(); j++){
+			for (unsigned int j = 0; j < linhas_geradas[i].size(); j++) {
 				//cout << linhas_geradas[i][j].nome_paragem << endl;
-				gv->setVertexLabel(linhas_geradas[i][j].idNo,linhas_geradas[i][j].nome_paragem);
+				gv->setVertexLabel(linhas_geradas[i][j].idNo,
+						linhas_geradas[i][j].nome_paragem);
 			}
-
 
 		for (unsigned int i = 0; i < linhas_geradas.size(); i++) {
 			Sleep(1000);
@@ -394,59 +393,65 @@ int main(int argc, char * argv[]) {
 
 			//cout << "kmp:" << endl;
 			auto start_kmp = std::chrono::high_resolution_clock::now();
-			for(int numero = 0; numero < REPETE_ALGORITS ; numero++){
-			occorrencias_palavra.clear();
-			info_adicional.clear();
-			vector<unsigned int> pi = computePrefix(pesquisa);
-			for (unsigned int i = 0; i < linhas_geradas.size(); i++) {
-				for (unsigned int j = 0; j < linhas_geradas[i].size(); j++) {
-					if (kmpStringMatchGivenPi(linhas_geradas[i][j].nome_paragem,
-							pesquisa, pi) > 0) {
-						occorrencias_palavra.push_back(linhas_geradas[i][j]);
-						if (j == 0)
-							info_adicional.push_back("INI");
-						else if (j == (linhas_geradas[i].size() - 1))
-							info_adicional.push_back("FIM");
-						else
-							info_adicional.push_back("NORM");
-					}
+			vector<unsigned int> pi = computePrefix(pesquisa); //todo check this out, plus, increment no. words
+			for (int numero = 0; numero < REPETE_ALGORITS; numero++) {
+				occorrencias_palavra.clear();
+				info_adicional.clear();
 
+				for (unsigned int i = 0; i < linhas_geradas.size(); i++) {
+					for (unsigned int j = 0; j < linhas_geradas[i].size();
+							j++) {
+						if (kmpStringMatchGivenPi(
+								linhas_geradas[i][j].nome_paragem, pesquisa, pi)
+								> 0) {
+							occorrencias_palavra.push_back(
+									linhas_geradas[i][j]);
+							if (j == 0)
+								info_adicional.push_back("INI");
+							else if (j == (linhas_geradas[i].size() - 1))
+								info_adicional.push_back("FIM");
+							else
+								info_adicional.push_back("NORM");
+						}
+
+					}
 				}
-			}
 			}
 			auto end_kmp = std::chrono::high_resolution_clock::now();
 			//cout << "end kmp:" << endl;
 			//cout << "naive:" << endl;
 			auto start_naive = std::chrono::high_resolution_clock::now();
-			for(int numero = 0; numero < REPETE_ALGORITS; numero++){
-			occorrencias_palavra.clear();
-			info_adicional.clear();
-			for (unsigned int i = 0; i < linhas_geradas.size(); i++) {
-				for (unsigned int j = 0; j < linhas_geradas[i].size(); j++) {
-					if (naiveStringMatch(linhas_geradas[i][j].nome_paragem,
-							pesquisa) > 0) {
-						occorrencias_palavra.push_back(linhas_geradas[i][j]);
-						if (j == 0)
-							info_adicional.push_back("INI");
-						else if (j == (linhas_geradas[i].size() - 1))
-							info_adicional.push_back("FIM");
-						else
-							info_adicional.push_back("NORM");
-					}
+			for (int numero = 0; numero < REPETE_ALGORITS; numero++) {
+				occorrencias_palavra.clear();
+				info_adicional.clear();
+				for (unsigned int i = 0; i < linhas_geradas.size(); i++) {
+					for (unsigned int j = 0; j < linhas_geradas[i].size();
+							j++) {
+						if (naiveStringMatch(linhas_geradas[i][j].nome_paragem,
+								pesquisa) > 0) {
+							occorrencias_palavra.push_back(
+									linhas_geradas[i][j]);
+							if (j == 0)
+								info_adicional.push_back("INI");
+							else if (j == (linhas_geradas[i].size() - 1))
+								info_adicional.push_back("FIM");
+							else
+								info_adicional.push_back("NORM");
+						}
 
+					}
 				}
-			}
 			}
 			auto end_naive = std::chrono::high_resolution_clock::now();
 			//cout << "end naive:" << endl;
 
 			if (occorrencias_palavra.size() == 0) {
 				cout << "Paragem Desconhecida!" << endl;
-			}
-			else {
+			} else {
 				cout << "Encontrei:" << endl;
-				for(unsigned int i = 0; i < occorrencias_palavra.size() ; i++)
-					cout << i+1 << "-> " << occorrencias_palavra[i].nome_paragem << endl;
+				for (unsigned int i = 0; i < occorrencias_palavra.size(); i++)
+					cout << i + 1 << "-> "
+							<< occorrencias_palavra[i].nome_paragem << endl;
 			}
 
 			for (unsigned int i = 0; i < occorrencias_palavra.size(); i++) {
@@ -510,20 +515,54 @@ int main(int argc, char * argv[]) {
 			cout << "TEMPO QUE DEMOROU A PROCURAR" << endl;
 
 			//complexidade palavra
-			cout << "KMP repetido " << REPETE_ALGORITS << " vezes demorou:"
+			cout << "MILISECONDS:" << endl;
+			cout << "1-KMP repetido " << REPETE_ALGORITS << " vezes demorou:"
+					<< (double) std::chrono::duration_cast<
+							std::chrono::milliseconds>(end_kmp - start_kmp).count()
+					<< "ms." << endl;
+
+			cout << "2-Naive repetido " << REPETE_ALGORITS << " vezes demorou:"
+					<< (double) std::chrono::duration_cast<
+							std::chrono::milliseconds>(end_naive - start_naive).count()
+					<< "ms." << endl;
+
+			cout << "3-Partial matching repetido " << REPETE_PARTIAL << " vezes:"
+					<< (double) std::chrono::duration_cast<
+							std::chrono::milliseconds>(
+							end_partial - start_partial).count() << "ms."
+					<< endl;
+			cout << "MICROSECONDS:" << endl;
+			cout << "1-KMP repetido " << REPETE_ALGORITS << " vezes demorou:"
+					<< (double) std::chrono::duration_cast<
+							std::chrono::microseconds>(end_kmp - start_kmp).count()
+					<< "us." << endl;
+
+			cout << "2-Naive repetido " << REPETE_ALGORITS << " vezes demorou:"
+					<< (double) std::chrono::duration_cast<
+							std::chrono::microseconds>(end_naive - start_naive).count()
+					<< "us." << endl;
+
+			cout << "3-Partial matching repetido " << REPETE_PARTIAL << " vezes:"
+					<< (double) std::chrono::duration_cast<
+							std::chrono::microseconds>(
+							end_partial - start_partial).count() << "us."
+					<< endl;
+			cout << "NANOSECONDS:" << endl;
+			cout << "1-KMP repetido " << REPETE_ALGORITS << " vezes demorou:"
 					<< (double) std::chrono::duration_cast<
 							std::chrono::nanoseconds>(end_kmp - start_kmp).count()
-					<< endl;
+					<< "ns." << endl;
 
-			cout << "Naive repetido " << REPETE_ALGORITS << " vezes demorou:"
+			cout << "2-Naive repetido " << REPETE_ALGORITS << " vezes demorou:"
 					<< (double) std::chrono::duration_cast<
 							std::chrono::nanoseconds>(end_naive - start_naive).count()
-					<< endl;
+					<< "ns." << endl;
 
-			cout << "Partial matching repetido " << REPETE_PARTIAL << " vezes:"
+			cout << "3-Partial matching repetido " << REPETE_PARTIAL << " vezes:"
 					<< (double) std::chrono::duration_cast<
 							std::chrono::nanoseconds>(
-							end_partial - start_partial).count() << endl;
+							end_partial - start_partial).count() << "ns."
+					<< endl;
 
 			cout << endl << "DIGITE A SUA PESQUISA:" << endl;
 		}
