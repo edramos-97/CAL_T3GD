@@ -12,31 +12,29 @@
 #include"utils.h"
 using namespace std;
 
-
-vector<par> load_names(string filename){
+vector<par> load_names(string filename) {
 	vector<par> res;
 
 	ifstream infile(filename.c_str());
-	if(!infile.is_open())
+	if (!infile.is_open())
 		throw(exception());
 	string estacao;
-	while(getline(infile,estacao)){
-		par par_teste = par(estacao,false);
+	while (getline(infile, estacao)) {
+		par par_teste = par(estacao, false);
 		res.push_back(par_teste);
 	}
 	return res;
 }
 
-string choose_random(vector<par> & vec){
-	while(true){
+string choose_random(vector<par> & vec) {
+	while (true) {
 		unsigned int i = rand() % vec.size();
-		if(!vec[i].usado){
+		if (!vec[i].usado) {
 			vec[i].usado = true;
 			return vec[i].nome_estacao;
 		}
 	}
 }
-
 
 vector<unsigned int> computePrefix(string toSearch) {
 	unsigned int m = toSearch.size();
@@ -58,8 +56,8 @@ vector<unsigned int> computePrefix(string toSearch) {
 	return pi;
 }
 
-
-unsigned int kmpStringMatchGivenPi(string input, string toSearch,const vector<unsigned int>& pi) {
+unsigned int kmpStringMatchGivenPi(string input, string toSearch,
+		const vector<unsigned int>& pi) {
 	unsigned int occ = 0;
 	unsigned int n = input.size();
 	unsigned int m = toSearch.size();
@@ -78,7 +76,6 @@ unsigned int kmpStringMatchGivenPi(string input, string toSearch,const vector<un
 	}
 	return occ;
 }
-
 
 unsigned int kmpStringMatch(string input, string toSearch) {
 	unsigned int occ = 0;
@@ -101,55 +98,90 @@ unsigned int kmpStringMatch(string input, string toSearch) {
 	return occ;
 }
 
-int distancia_entre_palavras(string pattern, string texto){
-	vector<vector<int>> D(pattern.size()+1,vector<int>(texto.size()+1,0));
+int distancia_entre_palavras(string pattern, string texto) {
+	vector<vector<int>> D(pattern.size() + 1, vector<int>(texto.size() + 1, 0));
 
-	for(unsigned int i = 0; i <= pattern.size(); i++)
+	for (unsigned int i = 0; i <= pattern.size(); i++)
 		D[i][0] = i;
-	for(unsigned int j = 0; j <= texto.size(); j++)
-			D[0][j] = j;
+	for (unsigned int j = 0; j <= texto.size(); j++)
+		D[0][j] = j;
 
-	for(unsigned int i = 1; i <= pattern.size(); i++){
-		for(unsigned int j = 1; j <= texto.size(); j++){
-			if(pattern[i-1] == texto[j-1]){
-				D[i][j] = D[i-1][j-1];
-			}
-			else {
+	for (unsigned int i = 1; i <= pattern.size(); i++) {
+		for (unsigned int j = 1; j <= texto.size(); j++) {
+			if (pattern[i - 1] == texto[j - 1]) {
+				D[i][j] = D[i - 1][j - 1];
+			} else {
 
-				D[i][j] = 1 + min(min(D[i-1][j-1], D[i-1][j]), D[i][j-1]);
+				D[i][j] = 1
+						+ min(min(D[i - 1][j - 1], D[i - 1][j]), D[i][j - 1]);
 			}
 		}
 	}
-
 
 	return D[pattern.size()][texto.size()];
 
 }
 
-
 int naiveStringMatch(string text, string pattern) {
 	int sum = 0;
-	for(unsigned int i = 0; i <= (text.size()-pattern.size()) ; i++){
+	for (unsigned int i = 0; i <= (text.size() - pattern.size()); i++) {
 		unsigned int inicioTexto = i;
 		unsigned int inicioPattern = 0;
-		while(true){
-			if(pattern[inicioPattern] == text[inicioTexto]){
-				if(inicioPattern == (pattern.size()-1)){
+		while (true) {
+			if (pattern[inicioPattern] == text[inicioTexto]) {
+				if (inicioPattern == (pattern.size() - 1)) {
 					sum++;
 					break;
-				}
-				else {
+				} else {
 					inicioPattern++;
 					inicioTexto++;
 				}
-			}
-			else {
+			} else {
 				break;
 			}
-
 
 		}
 	}
 	return sum;
+}
+
+void printMoreProximate(const vector<vector<NoInfo>> &linhas_geradas,
+		const vector<vector<int>> &distancias, int numero_lista) {
+	vector<string> lista;
+	vector<int> diferencas;
+	int min = 10000;
+	int max = 0;
+	for(unsigned int i = 0; i < distancias.size(); i++){
+		for(unsigned int j = 0; j < distancias[i].size(); j++){
+			if(distancias[i][j] < min)
+				min = distancias[i][j];
+			if(distancias[i][j] > max)
+				max = distancias[i][j];
+		}
+	}
+
+	while(lista.size() < numero_lista || min > max){
+		for(unsigned int i = 0; i < distancias.size(); i++){
+				for(unsigned int j = 0; j < distancias[i].size(); j++){
+					if(distancias[i][j] == min){
+						lista.push_back(linhas_geradas[i][j].nome_paragem);
+						diferencas.push_back(min);
+						if(lista.size() >= numero_lista)
+							break;
+					}
+				}
+				if(lista.size() >= numero_lista)
+					break;
+			}
+		if(lista.size() >= numero_lista)
+			break;
+		min++;
+	}
+
+	for(unsigned int ind = 0; ind < lista.size(); ind++){
+		cout << ind+1 << ": " << lista[ind] << " -> " << diferencas[ind] << endl;
+	}
+
+	return;
 }
 #endif /* SRC_STRING_FIND_H_ */

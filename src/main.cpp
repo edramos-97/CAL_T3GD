@@ -12,6 +12,7 @@
 #include "string_find.h"
 #include "file_reading.h"
 
+#define PARAGENS_APROX 10
 /** @file */
 
 template<>
@@ -464,7 +465,18 @@ int main(int argc, char * argv[]) {
 					cout << "INICIAR PESQUISA APROXIMADA" << endl;
 					start_partial = std::chrono::high_resolution_clock::now();
 					//pesquisa aprox
+					vector<vector<int>> distancias;
+					for(unsigned int linha = 0; linha < linhas_geradas.size(); linha++){
+						vector<int> distancia_linha_atual;
+						for(unsigned int no = 0; no < linhas_geradas[linha].size(); no++){
+							distancia_linha_atual.push_back(distancia_entre_palavras(linhas_geradas[linha][no].nome_paragem,pesquisa));
+						}
+						distancias.push_back(distancia_linha_atual);
+					}
 					end_partial = std::chrono::high_resolution_clock::now();
+
+					cout << PARAGENS_APROX << " com maior proximidade em relacao a " << pesquisa << ":"<< endl;
+					printMoreProximate(linhas_geradas,distancias,PARAGENS_APROX);
 				}
 
 				cout << "TEMPO QUE DEMOROU A PROCURAR" << endl;
