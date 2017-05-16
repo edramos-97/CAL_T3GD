@@ -378,8 +378,11 @@ int main(int argc, char * argv[]) {
 		while (getline(cin, pesquisa)) {
 			if (pesquisa == "END")
 				break;
+
 			vector<NoInfo> occorrencias_palavra;
 			vector<string> info_adicional;
+			auto start_kmp = std::chrono::high_resolution_clock::now();
+			cout << "kmp:" << endl;
 			vector<unsigned int> pi = computePrefix(pesquisa);
 			for (unsigned int i = 0; i < linhas_geradas.size(); i++) {
 				for (unsigned int j = 0; j < linhas_geradas[i].size(); j++) {
@@ -396,6 +399,11 @@ int main(int argc, char * argv[]) {
 
 				}
 			}
+			auto end_kmp = std::chrono::high_resolution_clock::now();
+			auto start_naive = std::chrono::high_resolution_clock::now();
+			cout << "naive:" <<endl;
+			auto end_naive = std::chrono::high_resolution_clock::now();
+
 			if (occorrencias_palavra.size() == 0) {
 				cout << "Paragem Desconhecida!" << endl;
 			}
@@ -427,35 +435,30 @@ int main(int argc, char * argv[]) {
 				}
 				gv->rearrange();
 
+				auto start_partial = std::chrono::high_resolution_clock::now();
+				auto end_partial = std::chrono::high_resolution_clock::now();
+
 				if (occorrencias_palavra.size() == 0
 						|| (strcmp(argv[1], "SearchApprox") == 0)) {
 					cout << "INICIAR PESQUISA APROXIMADA" << endl;
-
+					start_partial = std::chrono::high_resolution_clock::now();
+					//pesquisa aprox
+					end_partial = std::chrono::high_resolution_clock::now();
 				}
 
 				cout << "TEMPO QUE DEMOROU A PROCURAR" << endl;
-				//
+
 				//complexidade palavra
+				cout << "KMP demorou:"<< (double) std::chrono::duration_cast<std::chrono::microseconds>(
+						end_kmp - start_kmp).count() << endl;
 
-				/**
+				cout << "Naive demorou:" << (double) std::chrono::duration_cast<std::chrono::microseconds>(
+						end_naive - start_naive).count() << endl;
 
-				 * auto startA_star = std::chrono::high_resolution_clock::now();
-						for (unsigned int i = 0; i < REP_FOR; i++) {
-							pathA = data.getA_starPath(ori->getInfo(), des->getInfo());
-						}
-						auto endA_star = std::chrono::high_resolution_clock::now();
-						cout
-								<< (double) std::chrono::duration_cast<std::chrono::microseconds>(
-										endA_star - startA_star).count() << endl;
+				cout << "Partial matching:" << (double) std::chrono::duration_cast<std::chrono::microseconds>(
+						end_partial - start_partial).count() << endl;
 
-						mediaAstar += (double) std::chrono::duration_cast<std::chrono::microseconds>(
-								endA_star - startA_star).count();
-
-				 */
 			}
-
-
-
 		}
 
 		cout << "END" << endl;
