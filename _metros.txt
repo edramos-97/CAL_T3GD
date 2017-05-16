@@ -1,8 +1,12 @@
 24 Agosto
 Aeroporto
+Airport T1
+Airport T2
 Alameda
+Alfons X
 Alfornelos
 Aliados
+Almeda
 Alto de Pega
 Alto dos Moinhos
 Alvalade
@@ -10,15 +14,27 @@ Amadora Este
 Ameixoeira
 Anjos
 Araujo
+Arc de Triomf
 Areeiro
 Arroios
 Arvore
 Avenida
+Avinguda Carrilet
+Avinguda Tibidabo
 Azurara
+Bac de Roda
+Badal
+Badalona
+Badalona Pompeu Fabra
 Baguim
 Baixa Chiado
+Barcelona Sants
+Barceloneta
 Bela Vista
+Bellvitge
+Bogatell
 Bolhao
+Bon Pastor
 Botica
 Brito Capelo
 Cabo Ruivo
@@ -29,102 +45,203 @@ Campainha
 Campanha
 Campo Grande
 Campo Pequeno
+Can Boixeres
 Candido dos Reis
+Can Peixauet
+Can Serra
+Can Vidalet
+Canyelles
+Can Zam
 Carnide
 Carolina Michaelis
 Carreira
 Casa da Musica
 Castelo da Maia
+Catalunya
 Chelas
 Cidade Universitaria
+Ciutat Meridiana
+Ciutat Vella
+Clot
 Colegio Militar
+Collblanc
 Combatentes
 Contumil
 Crestins
 Custio
 Custoias
+Diagonal
+District of Les Corts
 Dom Joao II
+Drassanes
+Eixample
+El Carmel
+El Prat de Llobregat
+El Putxet
+Encants
 Encarnação
 Entre Campos
+Ernest Lluch
 Espaco Natureza
+Espanya
 Esposade
 Estadio do Dragao
 Estadio do Mar
+Fabra i Puig
 Fanzeres
 Faria Guimaraes
+Fira
+Florida
+Fondo
+Fontana
 Fonte do Cuco
 Forum Maia
 Francos
+Gavarra
 General Torres
+Girona
+Gorg
+Gornal
 Heroismo
+Horta
+Hospital de Bellvitge
 Hospital Sao Joao
+Hostafrancs
 Intendente
 IPO
 ISMAI
 Jardim do Morro
 Jardim Zoologico
+Jaume I
+Joanic
 Joao de Deus
+La Bonanova
 Lapa
+La Pau
 Laranjeiras
+La Salut
+Les Corts
+Les Moreres
+Lesseps
+Les Tres Torres
 Levada
+Liceu
 Lidador
+Llacuna
+Llucmajor
 Lumiar
 Mandim
+Maragall
+Maria Cristina
+Marina
 Marques
 Marques de Pombal
 Martim Moniz
+Mas Blau
 Matosinhos Sul
+Mercabarna
 Mercado
+Mercat Nou
 Mindelo
 Modivas Centro
 Modivas Sul
+Montbau
+Montcada i Reixac
+Monumental
 Moscavide
+Mundet
+Muntaner
 Nasoni
 Nau Vitoria
+Navas
+Nou Barris
 Odivelas
 Olaias
 Olivais
+Onze de Setembre
 Oriente
+Palau Reial
+Parc Nou
 Parque
 Parque de Real
 Parque Maia
 Pedras Rubras
 Pedro Hispano
+Penitents
+Pep Ventura
 Pias
 Picoas
+Poblenou
+Poble Sec
 Polo Universitario
 Pontinha
 Porta Fronhas
 Povoa de Varzim
 Praça de Espanha
+Pubilla Cases
 Quinta das Conchas
 Ramalde
+Rambla Just Oliveras
 Rato
 Reboleira
+Reina Elisenda
+Renfe
 Restauradores
 Rio Tinto
+Rocafort
 Roma
+Roquetes
 Rossio
+Sagrera
 Saldanha
 Salgueiros
 Santa Apolonia
 Santa Clara
+Santa Coloma
+Santa Coloma de Gramenet
+Sant Andreu
+Sant Andreu Arenal
+Sant Andreu Comtal
+Sant Antoni
+Santa Rosa
+Sant Boi
+Sant Boi de Llobregat
+Sant Gervasi
+Sant Ildefons
+Sant Josep
 Santo Ovidio
+Sant Roc
 Sao Bento
 Sao Bras
 Sao Sebastiao
+Selva de Mar
 Senhora da Hora
 Senhor de Matosinhos
 Senhor Roubado
 Sete Bicas
 Telheiras
 Terreiro do Paco
+Tetuan
+Torras i Bages
+Torrassa
+Tramvia Blau
 Trindade
+Trinitat Nova
+Trinitat Vella
+Universitat
+Urgell
+Urquinaona
+Valldaura
 Varziela
 Vasco da Gama
 Venda Nova
+Verdaguer
 Verdes
+Verneda
 Vila do Conde
+Vilapicina
 Vilar do Pinheiro
+Virrei Amat
 Viso
+Zona Franca
 Zona Industrial
