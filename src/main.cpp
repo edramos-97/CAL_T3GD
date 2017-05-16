@@ -13,6 +13,8 @@
 #include "file_reading.h"
 
 #define PARAGENS_APROX 10
+#define REPETE_ALGORITS 100
+#define REPETE_PARTIAL 100
 /** @file */
 
 template<>
@@ -392,6 +394,7 @@ int main(int argc, char * argv[]) {
 
 			//cout << "kmp:" << endl;
 			auto start_kmp = std::chrono::high_resolution_clock::now();
+			for(int numero = 0; numero < REPETE_ALGORITS ; numero++){
 			occorrencias_palavra.clear();
 			info_adicional.clear();
 			vector<unsigned int> pi = computePrefix(pesquisa);
@@ -410,10 +413,12 @@ int main(int argc, char * argv[]) {
 
 				}
 			}
+			}
 			auto end_kmp = std::chrono::high_resolution_clock::now();
 			//cout << "end kmp:" << endl;
 			//cout << "naive:" << endl;
 			auto start_naive = std::chrono::high_resolution_clock::now();
+			for(int numero = 0; numero < REPETE_ALGORITS; numero++){
 			occorrencias_palavra.clear();
 			info_adicional.clear();
 			for (unsigned int i = 0; i < linhas_geradas.size(); i++) {
@@ -431,7 +436,7 @@ int main(int argc, char * argv[]) {
 
 				}
 			}
-
+			}
 			auto end_naive = std::chrono::high_resolution_clock::now();
 			//cout << "end naive:" << endl;
 
@@ -505,19 +510,19 @@ int main(int argc, char * argv[]) {
 			cout << "TEMPO QUE DEMOROU A PROCURAR" << endl;
 
 			//complexidade palavra
-			cout << "KMP demorou:"
+			cout << "KMP repetido " << REPETE_ALGORITS << " vezes demorou:"
 					<< (double) std::chrono::duration_cast<
-							std::chrono::microseconds>(end_kmp - start_kmp).count()
+							std::chrono::nanoseconds>(end_kmp - start_kmp).count()
 					<< endl;
 
-			cout << "Naive demorou:"
+			cout << "Naive repetido " << REPETE_ALGORITS << " vezes demorou:"
 					<< (double) std::chrono::duration_cast<
-							std::chrono::microseconds>(end_naive - start_naive).count()
+							std::chrono::nanoseconds>(end_naive - start_naive).count()
 					<< endl;
 
-			cout << "Partial matching:"
+			cout << "Partial matching repetido " << REPETE_PARTIAL << " vezes:"
 					<< (double) std::chrono::duration_cast<
-							std::chrono::microseconds>(
+							std::chrono::nanoseconds>(
 							end_partial - start_partial).count() << endl;
 
 			cout << endl << "DIGITE A SUA PESQUISA:" << endl;
