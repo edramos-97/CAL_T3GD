@@ -58,6 +58,8 @@ vector<unsigned int> computePrefix(string toSearch) {
 
 unsigned int kmpStringMatchGivenPi(string input, string toSearch,
 		const vector<unsigned int>& pi) {
+	if(toSearch.length() > input.length())
+		return 0;
 	unsigned int occ = 0;
 	unsigned int n = input.size();
 	unsigned int m = toSearch.size();

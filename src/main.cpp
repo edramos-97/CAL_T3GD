@@ -13,7 +13,7 @@
 #include "file_reading.h"
 
 #define PARAGENS_APROX 10
-#define REPETE_ALGORITS 200
+#define REPETE_ALGORITS 100
 #define REPETE_PARTIAL 200
 /** @file */
 
