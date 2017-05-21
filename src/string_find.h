@@ -106,27 +106,6 @@ unsigned int kmpStringMatchGivenPi(string input, string toSearch,
 	return occ;
 }
 
-//unsigned int kmpStringMatch(string input, string toSearch) {
-//	unsigned int occ = 0;
-//	unsigned int n = input.size();
-//	unsigned int m = toSearch.size();
-//	vector<unsigned int> pi = computePrefix(toSearch);
-//	unsigned int q = 0;
-//	for (size_t i = 1; i <= n; i++) {
-//		while (q > 0 && toSearch.at(q) != input.at(i - 1)) {
-//			q = pi.at(q);
-//		}
-//		if (toSearch.at(q) == input.at(i - 1)) {
-//			q++;
-//		}
-//		if (q == m) {
-//			occ++;
-//			q = pi.at(q);
-//		}
-//	}
-//	return occ;
-//}
-
 /**
  * @brief Calculates the edit distance between a pattern and the text.
  * @param pattern the pattern being matched
