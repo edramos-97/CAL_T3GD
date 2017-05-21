@@ -264,7 +264,7 @@ void teste_colorir(Graph<NoInfo>& data, GraphViewer*& gv, int numCaminhos,
  *
  * It receives up to 14 arguments:
  *  - argv[1]  Start node (node number), assess connectivity ("Connectivity"), complexity ("comp") or auto ("auto")
- *             or exact string search ("StringSearchExact") or aproximate string search ("StringSearchAprox");
+ *             or exact string search ("StringSearchExact") or approximate string search ("StringSearchAprox");
  *  - argv[2]  End node (argv[1] = node number, end node number) or number of paths (argv[1] = "auto", 1-5)
  *	- argv[3]  Algorithm to use (if there's a start node or auto, "A*", "Dijkstra" or "Floyd-Warshall")
  *	- argv[4]  Number of subway lines (if there's a start node or auto, 1-10)

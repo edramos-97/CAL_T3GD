@@ -12,6 +12,14 @@
 #include"utils.h"
 using namespace std;
 
+/** @file */
+
+
+/**
+ * @brief Loads the station names from their text files into the program.
+ * @param filename the file with the station names
+ * @return a vector with pairs corresponding a name to a boolean value (if it already exists or not)
+ */
 vector<par> load_names(string filename) {
 	vector<par> res;
 
@@ -26,6 +34,11 @@ vector<par> load_names(string filename) {
 	return res;
 }
 
+/**
+ * @brief Chooses a random station.
+ * @param vec a vector with pairs of names and boolean values indicating if they already exist
+ * @return a random unnused station
+ */
 string choose_random(vector<par> & vec) {
 	while (true) {
 		unsigned int i = rand() % vec.size();
@@ -36,6 +49,12 @@ string choose_random(vector<par> & vec) {
 	}
 }
 
+/**
+ * @brief Computes the prefix for the KMP algorithm.
+ * @param toSearch the pattern that will be searched
+ * @return a vector with the KMP prefix for the pattern.
+ * @see kmpStringMatchGivenPi
+ */
 vector<unsigned int> computePrefix(string toSearch) {
 	unsigned int m = toSearch.size();
 	vector<unsigned int> pi(m + 1, 0);
@@ -56,6 +75,14 @@ vector<unsigned int> computePrefix(string toSearch) {
 	return pi;
 }
 
+/**
+ * @brief The main KMP algorithm.
+ * @param input the text being searched
+ * @param toSearch the pattern being matched
+ * @param pi the KMP algorithm prefix for toSearch
+ * @see computePrefix
+ * @return the number of occurrences of toSearch in input
+ */
 unsigned int kmpStringMatchGivenPi(string input, string toSearch,
 		const vector<unsigned int>& pi) {
 	if(toSearch.length() > input.length())
@@ -79,27 +106,33 @@ unsigned int kmpStringMatchGivenPi(string input, string toSearch,
 	return occ;
 }
 
-unsigned int kmpStringMatch(string input, string toSearch) {
-	unsigned int occ = 0;
-	unsigned int n = input.size();
-	unsigned int m = toSearch.size();
-	vector<unsigned int> pi = computePrefix(toSearch);
-	unsigned int q = 0;
-	for (size_t i = 1; i <= n; i++) {
-		while (q > 0 && toSearch.at(q) != input.at(i - 1)) {
-			q = pi.at(q);
-		}
-		if (toSearch.at(q) == input.at(i - 1)) {
-			q++;
-		}
-		if (q == m) {
-			occ++;
-			q = pi.at(q);
-		}
-	}
-	return occ;
-}
+//unsigned int kmpStringMatch(string input, string toSearch) {
+//	unsigned int occ = 0;
+//	unsigned int n = input.size();
+//	unsigned int m = toSearch.size();
+//	vector<unsigned int> pi = computePrefix(toSearch);
+//	unsigned int q = 0;
+//	for (size_t i = 1; i <= n; i++) {
+//		while (q > 0 && toSearch.at(q) != input.at(i - 1)) {
+//			q = pi.at(q);
+//		}
+//		if (toSearch.at(q) == input.at(i - 1)) {
+//			q++;
+//		}
+//		if (q == m) {
+//			occ++;
+//			q = pi.at(q);
+//		}
+//	}
+//	return occ;
+//}
 
+/**
+ * @brief Calculates the edit distance between a pattern and the text.
+ * @param pattern the pattern being matched
+ * @param texto the text being searched
+ * @return the edit distance between pattern and texto
+ */
 int distancia_entre_palavras(string pattern, string texto) {
 	vector<vector<int>> D(pattern.size() + 1, vector<int>(texto.size() + 1, 0));
 
@@ -124,6 +157,12 @@ int distancia_entre_palavras(string pattern, string texto) {
 
 }
 
+/**
+ * @brief Searches for occurrences of a pattern with a naive algorithm.
+ * @param pattern the pattern being matched
+ * @param text the text being searched
+ * @return the occurrences of pattern in text
+ */
 int naiveStringMatch(string text, string pattern) {
 	int sum = 0;
 	if(pattern.length() > text.length())
@@ -149,6 +188,12 @@ int naiveStringMatch(string text, string pattern) {
 	return sum;
 }
 
+/**
+ * @brief Prints the n-th closest matches for the pattern.
+ * @param linhas_geradas a vector with all the bus/subway lines generated
+ * @param distancias the edit distances between the pattern and each stop
+ * @param numero_lista the number of matches being shown
+ */
 void printMoreProximate(const vector<vector<NoInfo>> &linhas_geradas,
 		const vector<vector<int>> &distancias,unsigned  int numero_lista) {
 	vector<string> lista;
